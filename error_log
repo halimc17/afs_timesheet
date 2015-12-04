@@ -1,0 +1,65 @@
+[23-Sep-2015 02:23:45 UTC] PHP Fatal error:  Call to a member function update_lastLogin() on a non-object in /home/afs/public_html/timesheet/application/models/login_model.php on line 40
+[23-Sep-2015 02:36:20 UTC] PHP Fatal error:  Call to a member function row() on a non-object in /home/afs/public_html/timesheet/application/models/login_model.php on line 28
+[23-Sep-2015 14:04:03 UTC] PHP Fatal error:  Call to a member function is_loggedin() on a non-object in /home/afs/public_html/timesheet/application/controllers/home.php on line 15
+[23-Sep-2015 14:35:33 UTC] PHP Fatal error:  Call to a member function get_records() on a non-object in /home/afs/public_html/timesheet/application/controllers/user.php on line 17
+[24-Sep-2015 01:40:35 UTC] PHP Fatal error:  Call to a member function get_records() on a non-object in /home/afs/public_html/timesheet/application/controllers/user.php on line 18
+[05-Oct-2015 07:47:58 UTC] PHP Parse error:  syntax error, unexpected T_ECHO in /home/afs/public_html/timesheet/application/controllers/matter.php on line 31
+[09-Oct-2015 01:29:00 UTC] PHP Parse error:  syntax error, unexpected T_STRING, expecting T_VARIABLE in /home/afs/public_html/timesheet/application/models/personil_model.php on line 24
+[09-Oct-2015 01:56:23 UTC] PHP Parse error:  syntax error, unexpected '`', expecting ',' or ';' in /home/afs/public_html/timesheet/application/views/matter_view.php on line 54
+[09-Oct-2015 02:18:34 UTC] PHP Parse error:  syntax error, unexpected $end in /home/afs/public_html/timesheet/application/views/view_formMatter.php on line 182
+[09-Oct-2015 02:26:15 UTC] PHP Fatal error:  Call to undefined function createIdMatter() in /home/afs/public_html/timesheet/application/controllers/matter.php on line 35
+[09-Oct-2015 02:26:39 UTC] PHP Fatal error:  Call to undefined function createIdMatter() in /home/afs/public_html/timesheet/application/controllers/matter.php on line 35
+[09-Oct-2015 02:27:05 UTC] PHP Fatal error:  Call to undefined function createIdMatter() in /home/afs/public_html/timesheet/application/controllers/matter.php on line 53
+[09-Oct-2015 02:27:11 UTC] PHP Fatal error:  Call to undefined function createIdMatter() in /home/afs/public_html/timesheet/application/controllers/matter.php on line 53
+[09-Oct-2015 02:27:29 UTC] PHP Fatal error:  Call to undefined function createIdMatter() in /home/afs/public_html/timesheet/application/controllers/matter.php on line 53
+[09-Oct-2015 02:27:34 UTC] PHP Fatal error:  Call to undefined function createIdMatter() in /home/afs/public_html/timesheet/application/controllers/matter.php on line 53
+[09-Oct-2015 02:28:21 UTC] PHP Fatal error:  Call to a member function createIdMatter() on a non-object in /home/afs/public_html/timesheet/application/controllers/matter.php on line 53
+[09-Oct-2015 03:38:38 UTC] PHP Fatal error:  Call to a member function get_records() on a non-object in /home/afs/public_html/timesheet/application/controllers/matter.php on line 51
+[09-Oct-2015 03:48:27 UTC] PHP Fatal error:  Call to a member function get_records() on a non-object in /home/afs/public_html/timesheet/application/controllers/matter.php on line 52
+[09-Oct-2015 07:02:42 UTC] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/afs/public_html/timesheet/application/controllers/sub_matter.php on line 29
+[11-Oct-2015 01:08:02 UTC] PHP Fatal error:  Function name must be a string in /home/afs/public_html/timesheet/application/views/clientEdit_view.php on line 61
+[11-Oct-2015 13:28:28 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/afs/public_html/timesheet/application/controllers/client.php on line 57
+[11-Oct-2015 15:29:01 UTC] PHP Fatal error:  Cannot redeclare class Personil_model in /home/afs/public_html/timesheet/application/models/jabatan_model.php on line 23
+[11-Oct-2015 15:30:23 UTC] PHP Fatal error:  Cannot redeclare class Personil_model in /home/afs/public_html/timesheet/application/models/jabatan_model.php on line 20
+[11-Oct-2015 15:31:19 UTC] PHP Fatal error:  Cannot redeclare class Personil_model in /home/afs/public_html/timesheet/application/models/jabatan_model.php on line 20
+[13-Oct-2015 02:30:13 UTC] PHP Parse error:  syntax error, unexpected T_STRING, expecting T_VARIABLE in /home/afs/public_html/timesheet/application/models/matter_model.php on line 44
+[13-Oct-2015 02:31:02 UTC] PHP Parse error:  syntax error, unexpected T_STRING, expecting T_VARIABLE in /home/afs/public_html/timesheet/application/models/matter_model.php on line 44
+[13-Oct-2015 02:32:07 UTC] PHP Fatal error:  Call to undefined method Personil_model::edit_record() in /home/afs/public_html/timesheet/application/controllers/matter.php on line 82
+[21-Oct-2015 09:09:48 UTC] PHP Fatal error:  Call to a member function get_attorney() on a non-object in /home/afs/public_html/timesheet/application/controllers/matter.php on line 54
+[21-Oct-2015 09:10:10 UTC] PHP Fatal error:  Call to a member function result() on a non-object in /home/afs/public_html/timesheet/application/models/personil_model.php on line 41
+[21-Oct-2015 09:15:50 UTC] PHP Parse error:  syntax error, unexpected $end in /home/afs/public_html/timesheet/application/views/formMatter_view.php on line 324
+[21-Oct-2015 13:36:35 UTC] PHP Fatal error:  Call to undefined method Personil_model::get_bankcruptcy() in /home/afs/public_html/timesheet/application/controllers/matter.php on line 70
+[21-Oct-2015 13:37:48 UTC] PHP Fatal error:  Call to undefined method Personil_model::get_bankcruptcy() in /home/afs/public_html/timesheet/application/controllers/matter.php on line 70
+[23-Oct-2015 00:38:45 UTC] PHP Fatal error:  Class 'Lumpsum_model' not found in /home/afs/public_html/timesheet/system/core/Loader.php on line 303
+[23-Oct-2015 23:37:16 UTC] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/afs/public_html/timesheet/application/controllers/matter.php on line 31
+[23-Oct-2015 23:37:24 UTC] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/afs/public_html/timesheet/application/controllers/matter.php on line 31
+[23-Oct-2015 23:37:27 UTC] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/afs/public_html/timesheet/application/controllers/matter.php on line 31
+[23-Oct-2015 23:53:29 UTC] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING, expecting ')' in /home/afs/public_html/timesheet/application/controllers/matter.php on line 109
+[24-Oct-2015 15:42:07 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ')' in /home/afs/public_html/timesheet/application/controllers/matter.php on line 71
+[25-Oct-2015 06:34:33 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/afs/public_html/timesheet/application/views/assigned_view.php on line 61
+[25-Oct-2015 06:34:52 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/afs/public_html/timesheet/application/views/assigned_view.php on line 61
+[25-Oct-2015 06:36:04 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/afs/public_html/timesheet/application/views/assigned_view.php on line 61
+[25-Oct-2015 06:36:28 UTC] PHP Parse error:  syntax error, unexpected T_ECHO in /home/afs/public_html/timesheet/application/views/assigned_view.php on line 61
+[25-Oct-2015 06:36:34 UTC] PHP Parse error:  syntax error, unexpected T_ECHO in /home/afs/public_html/timesheet/application/views/assigned_view.php on line 61
+[25-Oct-2015 06:40:51 UTC] PHP Parse error:  syntax error, unexpected T_STRING, expecting T_VARIABLE in /home/afs/public_html/timesheet/application/controllers/matter.php on line 37
+[25-Oct-2015 06:43:45 UTC] PHP Fatal error:  Call to undefined method Matter::load() in /home/afs/public_html/timesheet/application/controllers/matter.php on line 38
+[25-Oct-2015 15:24:00 UTC] PHP Fatal error:  Call to undefined method Personil_model::get_wcc() in /home/afs/public_html/timesheet/application/controllers/matter.php on line 86
+[26-Oct-2015 04:30:54 UTC] PHP Fatal error:  Call to undefined method CI_DB_mysql_driver::result() in /home/afs/public_html/timesheet/application/models/client_model.php on line 15
+[27-Oct-2015 01:45:38 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/afs/public_html/timesheet/application/controllers/matter.php on line 52
+[27-Oct-2015 02:17:32 UTC] PHP Fatal error:  Call to a member function add_record() on a non-object in /home/afs/public_html/timesheet/application/controllers/matter.php on line 142
+[04-Nov-2015 00:37:05 UTC] PHP Parse error:  syntax error, unexpected T_OBJECT_OPERATOR in /home/afs/public_html/timesheet/application/controllers/user.php on line 78
+[04-Nov-2015 00:37:34 UTC] PHP Parse error:  syntax error, unexpected T_OBJECT_OPERATOR in /home/afs/public_html/timesheet/application/controllers/user.php on line 78
+[04-Nov-2015 00:40:08 UTC] PHP Parse error:  syntax error, unexpected T_IF in /home/afs/public_html/timesheet/application/controllers/user.php on line 60
+[04-Nov-2015 00:40:33 UTC] PHP Parse error:  syntax error, unexpected T_IF in /home/afs/public_html/timesheet/application/controllers/user.php on line 60
+[06-Nov-2015 02:20:37 UTC] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home/afs/public_html/timesheet/application/views/matter_view.php on line 84
+[06-Nov-2015 02:33:19 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/afs/public_html/timesheet/application/views/matter_view.php on line 84
+[06-Nov-2015 02:35:00 UTC] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home/afs/public_html/timesheet/application/views/matter_view.php on line 84
+[06-Nov-2015 02:35:08 UTC] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home/afs/public_html/timesheet/application/views/matter_view.php on line 84
+[06-Nov-2015 02:35:12 UTC] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home/afs/public_html/timesheet/application/views/matter_view.php on line 84
+[06-Nov-2015 06:47:40 UTC] PHP Fatal error:  Cannot redeclare Matter::editPayment() in /home/afs/public_html/timesheet/application/controllers/matter.php on line 297
+[09-Nov-2015 07:14:10 UTC] PHP Parse error:  syntax error, unexpected $end, expecting T_FUNCTION in /home/afs/public_html/timesheet/application/controllers/matter.php on line 329
+[09-Nov-2015 07:16:02 UTC] PHP Fatal error:  Call to a member function get_record() on a non-object in /home/afs/public_html/timesheet/application/controllers/matter.php on line 324
+[09-Nov-2015 07:36:57 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/afs/public_html/timesheet/application/controllers/matter.php on line 325
+[09-Nov-2015 07:37:11 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/afs/public_html/timesheet/application/controllers/matter.php on line 325
+[26-Nov-2015 04:22:39 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/afs/public_html/timesheet/application/views/formSubMatter_view.php on line 15
+[26-Nov-2015 04:22:56 UTC] PHP Parse error:  syntax error, unexpected ')' in /home/afs/public_html/timesheet/application/views/formSubMatter_view.php on line 20
