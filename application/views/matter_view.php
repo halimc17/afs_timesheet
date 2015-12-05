@@ -655,13 +655,11 @@
 																		<th>Open Date</th>
 																		<th>Close Date</th>
 																		<th>Success Fee</th>
-																		<th>Term 1</th>
-																		<th>Term 2</th>
-																		<th>Term 3</th>																		
+																																
 																		<th>Sub Matter</th>
 																		<th>Assign</th>
 																		<th>Active</th>
-																		<th>Action</th>
+																		<th style="width:160px;">Action</th>
 																	</tr>
 																</thead>
 																<tbody>	
@@ -677,10 +675,7 @@
 																		<td><?php echo $row->open_date; ?></td>																				
 																		<td><?php echo $row->close_date; ?></td>																				
 																		<td><?php echo number_format($row->success_fee); ?></td>																				
-																		<td><?php echo number_format($row->term1); ?></td>																				
-																		<td><?php echo number_format($row->term2); ?></td>																				
-																		<td><?php echo number_format($row->term3); ?></td>																																																																																														
-																		<td>0</td>																																																																																														
+																																				<td>0</td>																																																																																														
 																		<td align="center">
 																			<a href="<?php echo site_url('matter/assign/'); ?>/<?php echo $row->id_matter; ?>">
 																				<?php echo $row->assigned; ?>
@@ -700,16 +695,16 @@
 																		</td>
 																		
 																		<td>																			
-																			<button type="button" name="btnEditActionLumpsum" class="btn btn-green btn-icon" id="<?php echo $row->id_matter; ?>">
-																				Edit
+																			<button type="button" name="btnEditActionLumpsum" class="btn btn-success" id="<?php echo $row->id_matter; ?>">
+																				
 																				<i class="entypo-pencil"></i>
 																			</button>
-																			<button type="button" name="btnAddSub" class="btn btn-green btn-icon" id="<?php echo $row->id_matter; ?>">
-																				Add Sub
+																			<button type="button" name="btnAddSub" class="btn btn-success" id="<?php echo $row->id_matter; ?>">
+																				
 																				<i class="entypo-plus"></i>
 																			</button>
-																			<button type="button" name="btnDeleteAction" onclick="gotodelete('<?php echo $row->id_matter; ?>')" class="btn btn-red btn-icon" id="1">
-																				Delete
+																			<button type="button" name="btnDeleteAction" onclick="gotodelete('<?php echo $row->id_matter; ?>')" class="btn btn-danger" id="1">
+																			
 																				<i class="entypo-trash"></i>
 																			</button>																																																
 																		</td>
@@ -725,10 +720,7 @@
 																		<th>Matter</th>
 																		<th>Open Date</th>
 																		<th>Close Date</th>
-																		<th>Success Fee</th>
-																		<th>Term 1</th>
-																		<th>Term 2</th>
-																		<th>Term 3</th>																		
+																		<th>Success Fee</th>													
 																		<th>Sub Matter</th>
 																		<th>Assign</th>
 																		<th>Active</th>
@@ -763,16 +755,10 @@
 																		<th>Matter</th>
 																		<th>Open Date</th>
 																		<th>Close Date</th>
-																		<th>MP</th>
-																		<th>P</th>
-																		<th>JP</th>
-																		<th>SA</th>
-																		<th>MA</th>
-																		<th>JA</th>
-																		<th>Disc(%)</th>
+																		
 																		<th>Assign</th>
 																		<th>Active</th>
-																		<th style="width:200px;">Action</th>
+																		<th style="width:160px;">Action</th>
 																	</tr>
 																</thead>
 																<tbody>	
@@ -787,13 +773,7 @@
 																		<td><?php echo $row2->matter; ?></td>																																																																										
 																		<td><?php echo $row2->open_date; ?></td>																				
 																		<td><?php echo $row2->close_date; ?></td>																				
-																		<td><?php echo number_format($row2->managing_partner); ?></td>																				
-																		<td><?php echo number_format($row2->partner); ?></td>																				
-																		<td><?php echo number_format($row2->junior_partner); ?></td>																				
-																		<td><?php echo number_format($row2->senior_associate); ?></td>																				
-																		<td><?php echo number_format($row2->senior_associate); ?></td>																				
-																		<td><?php echo number_format($row2->junior_associate); ?></td>																				
-																		<td><?php echo $row2->disc; ?></td>																																																								
+																																																																										
 																		<td>
 																			<a href="<?php echo site_url('matter/assign/'); ?>/<?php echo $row2->id_matter; ?>">
 																				<?php echo $row2->assigned; ?>
@@ -801,12 +781,12 @@
 																		</td>																																																								
 																		<td align="center"><i class="entypo entypo-check"></i></td>
 																		<td class="center">
-																			<button type="button" name="btnEditActionHourly" class="btn btn-green btn-icon" id="<?php echo $row2->id_matter; ?>">
-																				Edit
+																			<button type="button" name="btnEditActionHourly" class="btn btn-success" id="<?php echo $row2->id_matter; ?>">
+																				
 																				<i class="entypo-pencil"></i>
 																			</button>
-																			<button type="button" name="btnDeleteAction" onclick="gotodelete('<?php echo $row2->id_matter; ?>')" class="btn btn-red btn-icon" id="2">
-																				Delete
+																			<button type="button" name="btnDeleteAction" onclick="gotodelete('<?php echo $row2->id_matter; ?>')" class="btn btn-danger" id="2">
+																				
 																				<i class="entypo-trash"></i>
 																			</button>											
 																		</td>
@@ -822,13 +802,7 @@
 																		<th>Matter</th>
 																		<th>Open Date</th>
 																		<th>Close Date</th>
-																		<th>MP</th>
-																		<th>P</th>
-																		<th>JP</th>
-																		<th>SA</th>
-																		<th>MA</th>
-																		<th>JA</th>
-																		<th>Disc</th>
+																		
 																		<th>Assign</th>
 																		<th>Active</th>
 																		<th>Action</th>
@@ -867,7 +841,7 @@
 																			<th style="width:250px;">Description</th>																		
 																			<th>Assign</th>
 																			<th>Active</th>
-																			<th style="width:200px;">Action</th>
+																			<th style="width:160px;">Action</th>
 																		</tr>
 																	</thead>
 																	<tbody>	
@@ -894,12 +868,12 @@
 																			</td>																																																								
 																			<td align="center"><i class="entypo entypo-check"></i></td>
 																			<td class="center">
-																				<button type="button" name="btnEditActionRetainer" class="btn btn-green btn-icon" id="<?php echo $row3->id_matter; ?>">
-																					Edit
+																				<button type="button" name="btnEditActionRetainer" class="btn btn-success" id="<?php echo $row3->id_matter; ?>">
+																					
 																					<i class="entypo-pencil"></i>
 																				</button>
-																				<button type="button" name="btnDeleteAction" onclick="gotodelete('<?php echo $row3->id_matter; ?>')" class="btn btn-red btn-icon" id="">
-																					Delete
+																				<button type="button" name="btnDeleteAction" onclick="gotodelete('<?php echo $row3->id_matter; ?>')" class="btn btn-danger" id="">
+																				
 																					<i class="entypo-trash"></i>
 																				</button>											
 																			</td>
@@ -953,7 +927,7 @@
 																			<th style="width:250px;">Description</th>																		
 																			<th>Assign</th>
 																			<th>Active</th>
-																			<th style="width:200px;">Action</th>
+																			<th style="width:160px;">Action</th>
 																		</tr>
 																	</thead>
 																	<tbody>	
@@ -977,12 +951,12 @@
 																			</td>																																																																										
 																			<td align="center"><i class="entypo entypo-check"></i></td>
 																			<td class="center">
-																				<button type="button" name="btnEditActionSuccessfee" class="btn btn-green btn-icon" id="<?php echo $row4->id_matter; ?>">
-																					Edit
+																				<button type="button" name="btnEditActionSuccessfee" class="btn btn-success" id="<?php echo $row4->id_matter; ?>">
+																					
 																					<i class="entypo-pencil"></i>
 																				</button>
-																				<button type="button" name="btnDeleteAction" onclick="gotodelete('<?php echo $row4->id_matter; ?>')" class="btn btn-red btn-icon" id="">
-																					Delete
+																				<button type="button" name="btnDeleteAction" onclick="gotodelete('<?php echo $row4->id_matter; ?>')" class="btn btn-danger" id="">
+																					
 																					<i class="entypo-trash"></i>
 																				</button>											
 																			</td>
@@ -1013,13 +987,13 @@
 									<div class="tab-pane <?php if($active == 5){echo "active";} ?>" id="probono">
 											
 											<div class="row">
-												<div class="col-md-8">	
+												<div class="col-md-12">	
 													<button type="button" class="btn btn-info" onclick="add_probono()" style="float:right;">+ Add New</button>
 												</div>
 											</div>	
 											<br />
 											<div class="row">
-											<div class="col-md-8">	
+											<div class="col-md-12">	
 																<table class="table table-bordered datatable" id="table-probono">
 																	<thead>
 																		<tr>
@@ -1029,10 +1003,11 @@
 																			<th>Matter</th>
 																			<th>Open Date</th>
 																			<th>Close Date</th>																			
-																			<th style="width:250px;">Description</th>																		
+																			<th>Description</th>																		
+																			<th>Sub Matter</th>
 																			<th>Assign</th>
 																			<th>Active</th>
-																			<th style="width:200px;">Action</th>
+																			<th style="width:160px;">Action</th>
 																		</tr>
 																	</thead>
 																	<tbody>	
@@ -1047,7 +1022,8 @@
 																			<td><?php echo $row5->matter; ?></td>																																																																										
 																			<td><?php echo $row5->open_date; ?></td>																				
 																			<td><?php echo $row5->close_date; ?></td>																																																										
-																			<td><?php echo $row5->description; ?></td>																																																								
+																			<td style="width:250px;"><?php echo $row5->description; ?></td>																																																								
+																			<td>0</td>																																																								
 																			<td>
 																				<a href="<?php echo site_url('matter/assign/'); ?>/<?php echo $row5->id_matter; ?>">
 																				<?php echo $row5->assigned; ?>
@@ -1055,12 +1031,12 @@
 																			</td>																																																								
 																			<td align="center"><i class="entypo entypo-check"></i></td>
 																			<td class="center">
-																				<button type="button" name="btnEditActionProbono" class="btn btn-green btn-icon" id="<?php echo $row5->id_matter; ?>">
-																					Edit
+																				<button type="button" name="btnEditActionProbono" class="btn btn-success" id="<?php echo $row5->id_matter; ?>">
+																					
 																					<i class="entypo-pencil"></i>
 																				</button>
-																				<button type="button" name="btnDeleteAction" onclick="gotodelete('<?php echo $row5->id_matter; ?>')" class="btn btn-red btn-icon" id="">
-																					Delete
+																				<button type="button" name="btnDeleteAction" onclick="gotodelete('<?php echo $row5->id_matter; ?>')" class="btn btn-danger" id="">
+																					
 																					<i class="entypo-trash"></i>
 																				</button>											
 																			</td>
@@ -1076,7 +1052,8 @@
 																			<th>Matter</th>
 																			<th>Open Date</th>
 																			<th>Close Date</th>																			
-																			<th style="width:250px;">Description</th>																		
+																			<th>Description</th>																		
+																			<th>Sub Matter</th>
 																			<th>Assign</th>
 																			<th>Active</th>
 																			<th style="width:140px;">Action</th>
@@ -1098,6 +1075,7 @@
 										<div class="row">
 											<!--<div class="scrollable" data-height="120">-->											
 											<div class="col-md-12">	
+												<table class="table table-bordered datatable" id="table-project">
 																<thead>
 																	<tr>
 																		<th>No</th>
@@ -1107,15 +1085,10 @@
 																		<th>Open Date</th>
 																		<th>Close Date</th>
 																		<th>Success Fee</th>
-																		<th>Term 1</th>
-																		<th>Term 2</th>
-																		<th>Term 3</th>
-																		<th>Desc. Term 1</th>
-																		<th>Desc. Term 2</th>
-																		<th>Desc. Term 3</th>
+																		<th>Sub Matter</th>
 																		<th>Assign</th>
 																		<th>Active</th>
-																		<th style="width:200px;">Action</th>
+																		<th style="width:169px;">Action</th>
 																	</tr>
 																</thead>
 																<tbody>	
@@ -1131,12 +1104,8 @@
 																		<td><?php echo $row6->open_date; ?></td>																				
 																		<td><?php echo $row6->close_date; ?></td>																				
 																		<td><?php echo number_format($row6->success_fee); ?></td>																				
-																		<td><?php echo number_format($row6->success_fee); ?></td>																				
-																		<td><?php echo number_format($row6->term2); ?></td>																				
-																		<td><?php echo number_format($row6->term3); ?></td>																				
-																		<td><?php echo $row6->desc_term1; ?></td>																				
-																		<td><?php echo $row6->desc_term2; ?></td>																				
-																		<td><?php echo $row6->desc_term3; ?></td>																																																								
+																		<td>0</td>																				
+																																																																										
 																		<td align="center">
 																			<a href="<?php echo site_url('matter/assign/'); ?>/<?php echo $row6->id_matter; ?>">
 																				<?php echo $row6->assigned; ?>
@@ -1144,12 +1113,12 @@
 																		</td>																																																								
 																		<td align="center"><i class="entypo entypo-check"></i></td>
 																		<td class="center">
-																			<button type="button" name="btnEditActionProject" class="btn btn-green btn-icon" id="<?php echo $row6->id_matter; ?>">
-																				Edit
+																			<button type="button" name="btnEditActionProject" class="btn btn-success" id="<?php echo $row6->id_matter; ?>">
+																				
 																				<i class="entypo-pencil"></i>
 																			</button>
-																			<button type="button" name="btnDeleteAction" onclick="gotodelete('<?php echo $row6->id_matter; ?>')" class="btn btn-red btn-icon" id="">
-																				Delete
+																			<button type="button" name="btnDeleteAction" onclick="gotodelete('<?php echo $row6->id_matter; ?>')" class="btn btn-danger" id="">
+																				
 																				<i class="entypo-trash"></i>
 																			</button>											
 																		</td>
@@ -1165,13 +1134,8 @@
 																		<th>Matter</th>
 																		<th>Open Date</th>
 																		<th>Close Date</th>
-																		<th>Success Fee</th>
-																		<th>Term 1</th>
-																		<th>Term 2</th>
-																		<th>Term 3</th>
-																		<th>Desc. Term 1</th>
-																		<th>Desc. Term 2</th>
-																		<th>Desc. Term 3</th>
+																		<th>Success Fee</th>																		
+																		<th>Sub Matter</th>
 																		<th>Assign</th>
 																		<th>Active</th>
 																		<th>Action</th>

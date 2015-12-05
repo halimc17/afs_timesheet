@@ -159,7 +159,7 @@
 										<th>Divisi</th>
 										<th>Jabatan</th>
 										<th>Active</th>
-										<th>Action</th>
+										<th style="width:160px;">Action</th>
 									</tr>
 								</thead>
 								<tbody>	
@@ -192,12 +192,12 @@
 												<?php } ?>												
 										</td>
 										<td class="center">
-											<button type="button" name="btnEditAction" class="btn btn-green btn-icon" id="<?php echo $row->id_user; ?>">
-												Edit
+											<button type="button" name="btnEditAction" class="btn btn-success" id="<?php echo $row->id_user; ?>">
+												
 												<i class="entypo-pencil"></i>
 											</button>
-											<button type="button" name="btnDeleteAction" class="btn btn-red btn-icon" id="<?php echo $row->id_user; ?>">
-												Delete
+											<button type="button" name="btnDeleteAction" class="btn btn-danger" id="<?php echo $row->id_user; ?>">
+												
 												<i class="entypo-trash"></i>
 											</button>											
 										</td>

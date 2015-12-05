@@ -122,7 +122,7 @@
 										<th>Address</th>
 										<th>Inisial</th>
 										<th>Potensial</th>
-										<th>Action</th>
+										<th style="width:160px;">Action</th>
 									</tr>
 								</thead>
 								<tbody>	
@@ -141,12 +141,12 @@
 										<td><?php echo $row->inisial; ?></td>
 										<td align="center"><i class="glyphicon glyphicon-remove"></i></td>
 										<td class="center">
-											<button type="button" name="btnEditAction" class="btn btn-green btn-icon" id="<?php echo $row->id_client; ?>">
-												Edit
+											<button type="button" name="btnEditAction" class="btn btn-success" id="<?php echo $row->id_client; ?>">
+												
 												<i class="entypo-pencil"></i>
 											</button>
-											<button type="button" name="btnDeleteAction" class="btn btn-red btn-icon" id="<?php echo $row->id_client; ?>">
-												Delete
+											<button type="button" name="btnDeleteAction" class="btn btn-danger" id="<?php echo $row->id_client; ?>">
+												
 												<i class="entypo-trash"></i>
 											</button>											
 										</td>
