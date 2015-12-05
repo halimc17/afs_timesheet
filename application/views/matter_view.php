@@ -2056,6 +2056,75 @@
 																	</div>							
 																</div>
 															</div>
+
+															<div class="row">
+																<div class="col-md-6">
+																	<div class="form-group">
+																		<label for="sub_successfee" class="control-label">Success Fee</label>
+																		<input type="text" class="form-control" id="sub_successfee" name="sub_successfee" value="" />																		
+																	</div>
+																</div>	
+															</div>
+
+															<div class="row">
+																<div class="col-md-4">
+																	<div class="form-group">
+																		<label for="sub_term1" class="control-label">Term 1</label>
+																		<input type="text" class="form-control" id="sub_term1" name="sub_term1" value="" />																		
+																	</div>
+																</div>
+																<div class="col-md-4">
+																	<div class="form-group" style="padding-left:10px;">
+																		<label for="sub_term2" class="control-label">Term 2</label>
+																		<input type="text" class="form-control" id="sub_term2" name="sub_term2" value="" />																		
+																	</div>
+																</div>
+																<div class="col-md-4">
+																	<div class="form-group" style="padding-left:10px;">
+																		<label for="sub_term3" class="control-label">Term 3</label>
+																		<input type="text" class="form-control" id="sub_term3" name="sub_term3" value="" />																		
+																	</div>
+																</div>	
+															</div>
+
+															<div class="row">
+																<div class="col-md-4">
+																	<div class="form-group">
+																		<label for="sub_desc_term1" class="control-label">Desc Term 1</label>																		
+																		<textarea class="form-control" id="sub_desc_term1" name="sub_desc_term1"></textarea>
+																	</div>
+																</div>
+																<div class="col-md-4">
+																	<div class="form-group" style="padding-left:10px;">
+																		<label for="sub_desc_term2" class="control-label">Desc Term 2</label>
+																		<textarea class="form-control" id="sub_desc_term2" name="sub_desc_term2"></textarea>
+																	</div>
+																</div>
+																<div class="col-md-4">
+																	<div class="form-group" style="padding-left:10px;">
+																		<label for="sub_desc_term3" class="control-label">Desc Term 3</label>
+																		<textarea class="form-control" id="sub_desc_term3" name="sub_desc_term3"></textarea>
+																	</div>
+																</div>	
+															</div>
+
+															<div class="row">
+																<div class="col-md-12">
+																	<div class="form-group">
+																		<label for="sub_description" class="control-label">Desc Term 3</label>
+																		<textarea class="form-control" id="sub_description" name="sub_description"></textarea>
+																	</div>
+																</div>
+															</div>
+
+															<div class="row">
+																<div class="col-md-12">																	
+																	<div class="form-group">
+																		<button type="button" class="btn btn-info">SUBMIT</button>
+																	</div>																	
+																</div>
+															</div>
+
 														</form>
 														<!-- end form sub lumsump -->
 													</div>
