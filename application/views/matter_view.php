@@ -63,6 +63,11 @@
 			edit_project(id);
 		});
 
+		$('[name="btnAddSub"]').button().on( "click", function() {	
+			var id = $(this).attr("id");		
+			addSubMatter(id);
+		});
+
 
 		var table = $("#table-lumpsum").dataTable({
 			"sPaginationType": "bootstrap",
@@ -112,6 +117,10 @@
 			
 		});
 	});
+
+	function addSubMatter(id){
+		$('#modal-subMatter').modal('show'); 
+	}
 	
 	//add dan edit matter lumpsum
 	function saveLumpsum(){
@@ -648,13 +657,11 @@
 																		<th>Success Fee</th>
 																		<th>Term 1</th>
 																		<th>Term 2</th>
-																		<th>Term 3</th>
-																		<th>Desc. Term 1</th>
-																		<th>Desc. Term 2</th>
-																		<th>Desc. Term 3</th>
+																		<th>Term 3</th>																		
+																		<th>Sub Matter</th>
 																		<th>Assign</th>
 																		<th>Active</th>
-																		<th style="width:200px;">Action</th>
+																		<th>Action</th>
 																	</tr>
 																</thead>
 																<tbody>	
@@ -672,10 +679,8 @@
 																		<td><?php echo number_format($row->success_fee); ?></td>																				
 																		<td><?php echo number_format($row->term1); ?></td>																				
 																		<td><?php echo number_format($row->term2); ?></td>																				
-																		<td><?php echo number_format($row->term3); ?></td>																				
-																		<td><?php echo $row->desc_term1; ?></td>																				
-																		<td><?php echo $row->desc_term2; ?></td>																				
-																		<td><?php echo $row->desc_term3; ?></td>																																																								
+																		<td><?php echo number_format($row->term3); ?></td>																																																																																														
+																		<td>0</td>																																																																																														
 																		<td align="center">
 																			<a href="<?php echo site_url('matter/assign/'); ?>/<?php echo $row->id_matter; ?>">
 																				<?php echo $row->assigned; ?>
@@ -694,15 +699,19 @@
 																				<?php } ?>												
 																		</td>
 																		
-																		<td class="center">																			
+																		<td>																			
 																			<button type="button" name="btnEditActionLumpsum" class="btn btn-green btn-icon" id="<?php echo $row->id_matter; ?>">
 																				Edit
 																				<i class="entypo-pencil"></i>
 																			</button>
+																			<button type="button" name="btnAddSub" class="btn btn-green btn-icon" id="<?php echo $row->id_matter; ?>">
+																				Add Sub
+																				<i class="entypo-plus"></i>
+																			</button>
 																			<button type="button" name="btnDeleteAction" onclick="gotodelete('<?php echo $row->id_matter; ?>')" class="btn btn-red btn-icon" id="1">
 																				Delete
 																				<i class="entypo-trash"></i>
-																			</button>											
+																			</button>																																																
 																		</td>
 																	</tr>
 																<?php	$counter++;}
@@ -719,10 +728,8 @@
 																		<th>Success Fee</th>
 																		<th>Term 1</th>
 																		<th>Term 2</th>
-																		<th>Term 3</th>
-																		<th>Desc. Term 1</th>
-																		<th>Desc. Term 2</th>
-																		<th>Desc. Term 3</th>
+																		<th>Term 3</th>																		
+																		<th>Sub Matter</th>
 																		<th>Assign</th>
 																		<th>Active</th>
 																		<th>Action</th>
@@ -1939,6 +1946,233 @@
 			</div>
 		</div>
 	</div> <!-- form Project -->
+
+	<div class="modal fade custom-width" id="modal-subMatter">
+		<div class="modal-dialog" style="width: 800px;">
+			<div class="modal-content">
+				
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Add new Sub Matter</h4>
+				</div>
+				
+				<div class="modal-body">
+
+					<!-- begin tab panel-->					
+					<div class="col-md-12">					
+										<ul class="nav nav-tabs bordered"><!-- available classes "bordered", "right-aligned" -->
+											<li class="active">
+												<a href="#subLumpsum" data-toggle="tab">
+													<span class="visible-xs"><i class="entypo-home"></i></span>
+													<span class="hidden-xs">LUMPSUM</span>
+												</a>
+											</li>
+											<li>
+												<a href="#subHourly" data-toggle="tab">
+													<span class="visible-xs"><i class="entypo-user"></i></span>
+													<span class="hidden-xs">HOURLY</span>
+												</a>
+											</li>
+											<li>
+												<a href="#subRetainer" data-toggle="tab">
+													<span class="visible-xs"><i class="entypo-mail"></i></span>
+													<span class="hidden-xs">RETAINER</span>
+												</a>
+											</li>
+											<li>
+												<a href="#subSuccessfee" data-toggle="tab">
+													<span class="visible-xs"><i class="entypo-cog"></i></span>
+													<span class="hidden-xs">SUCCESS FEE</span>
+												</a>
+											</li>
+											<li>
+												<a href="#subProbono" data-toggle="tab">
+													<span class="visible-xs"><i class="entypo-cog"></i></span>
+													<span class="hidden-xs">PROBONO</span>
+												</a>
+											</li>
+											<li>
+												<a href="#subProjects" data-toggle="tab">
+													<span class="visible-xs"><i class="entypo-cog"></i></span>
+													<span class="hidden-xs">PROJECT</span>
+												</a>
+											</li>
+										</ul>
+										
+										<div class="tab-content">
+											<div class="tab-pane active" id="subLumpsum">																								
+												<div class="row">
+													<div class="col-md-12">
+														<!-- form sub lumsump -->
+														<form role="form" class="form-horizontal form-groups-bordered" method="post" action="" style="padding:10px;" id="formSubLumpsum">
+															<div class="row">
+																<div class="col-md-6">						
+																	<div class="form-group">
+																		<label for="sub_id_matter" class="control-label">Id Matter</label>
+																		<input type="text" class="form-control" id="sub_id_matter" name="sub_id_matter" value="" />																		
+																	</div>							
+																</div>	
+																<div class="col-md-6">						
+																	<div class="form-group" style="padding-left:10px;">
+																		<label for="sub_id_sub_matter" class="control-label">Id Sub Matter</label>
+																		<input type="text" class="form-control" id="sub_id_sub_matter" name="sub_id_sub_matter" value="" />																		
+																	</div>							
+																</div>																								
+															</div>
+
+															<div class="row">
+																<div class="col-md-12">						
+																	<div class="form-group">
+																		<label for="sub_matter" class="control-label">Matter</label>
+																		<input type="text" class="form-control" id="sub_matter" name="sub_matter" value="">
+																		<input type="hidden" class="form-control" id="sub_id_payment" name="sub_id_payment" value="1">
+																	</div>							
+																</div>
+																
+															</div>
+															
+															<div class="row">
+																<div class="col-md-6">						
+																	<div class="form-group">
+																		<label for="sub_open_date" class="control-label">Open Date</label>							
+																		<div class="input-group">
+																			<input type="text" class="form-control datepicker" data-format="yyyy-mm-dd" name="sub_open_date">												
+																			<div class="input-group-addon">
+																				<a href="#"><i class="entypo-calendar"></i></a>
+																			</div>
+																		</div>
+																	</div>						
+																</div>
+																
+																<div class="col-md-6">						
+																	<div class="form-group" style="padding-left:10px;">
+																		<label for="sub_close_date" class="control-label">Close date</label>
+																		<div class="input-group">
+																			<input type="text" class="form-control datepicker" data-format="yyyy-mm-dd" name="sub_close_date">												
+																			<div class="input-group-addon">
+																				<a href="#"><i class="entypo-calendar"></i></a>
+																			</div>
+																		</div>
+																	</div>							
+																</div>
+															</div>
+														</form>
+														<!-- end form sub lumsump -->
+													</div>
+												</div>
+												
+											</div>
+											<div class="tab-pane" id="subHourly">
+												
+												<div class="row">
+													<div class="col-md-12">
+														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+														tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+														quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+														consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+														cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+														proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+														
+													</div>
+												</div>
+
+											</div>
+											<div class="tab-pane" id="subRetainer">
+												
+													
+												<div class="row">
+													<div class="col-md-12">
+														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+														tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+														quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+														consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+														cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+														proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+														
+													</div>
+												</div>
+													
+											</div>
+											
+											<div class="tab-pane" id="subSuccessfee">
+																									
+												<div class="row">
+													<div class="col-md-12">
+														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+														tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+														quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+														consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+														cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+														proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+														
+													</div>
+												</div>
+
+											</div>
+
+											<div class="tab-pane" id="subProbono">
+												
+												
+												<div class="row">
+													<div class="col-md-12">
+														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+														tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+														quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+														consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+														cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+														proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+														tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+														quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+														consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+														cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+														proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+														tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+														quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+														consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+														cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+														proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+														
+													</div>
+												</div>
+
+											</div>
+
+											<div class="tab-pane" id="subProject">
+													
+												<div class="row">
+													<div class="col-md-12">
+														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+														tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+														quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+														consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+														cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+														proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+														
+													</div>
+												</div>
+
+											</div>
+										</div>
+										
+										
+									</div>
+					<!-- end tab panel-->					
+
+				</div>
+				
+				<div class="modal-footer">
+					<!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+					<!--<button type="button" class="btn btn-info">Save changes</button>-->
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 		
 	<link rel="stylesheet" href="<?php echo base_url(); ?>template/assets/js/datatables/responsive/css/datatables.responsive.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>template/assets/js/select2/select2-bootstrap.css">

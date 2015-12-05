@@ -91,18 +91,12 @@
 													<tr>
 														<th>No</th>
 														<th>Id Matter</th>														
-														<th>Id SUb Matter</th>
+														<th>Id Sub Matter</th>
 														<th>Client</th>
 														<th>Matter</th>
 														<th>Open Date</th>
 														<th>Close Date</th>
 														<th>Success Fee</th>
-														<th>Term 1</th>
-														<th>Term 2</th>
-														<th>Term 3</th>
-														<th>Desc. Term1</th>
-														<th>Desc. Term2</th>
-														<th>Desc. Term3</th>
 														<th>Assign</th>
 														<th>Active</th>
 														<th>Action</th>
@@ -119,14 +113,8 @@
 														<td>Firefox 1.0</td>
 														<td>Firefox 1.0</td>
 														<td>Firefox 1.0</td>
+														<td>Firefox 1.0</td>														
 														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Win 98+ / OSX.2+</td>
-														<td>1.7</td>
-														<td class="center">A</td>
 													</tr>
 													<tr>
 														<td>Gecko</td>
@@ -140,30 +128,18 @@
 														<td>Firefox 1.0</td>
 														<td>Firefox 1.0</td>
 														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Win 98+ / OSX.2+</td>
-														<td>1.7</td>
-														<td class="center">A</td>
 													</tr>																								
 												</tbody>
 												<tfoot>
 													<tr>
 														<th>No</th>
-														<th>Id Matter</th>
-														<th>Id Sub Matter</th>														
+														<th>Id Matter</th>														
+														<th>Id Sub Matter</th>
 														<th>Client</th>
 														<th>Matter</th>
 														<th>Open Date</th>
 														<th>Close Date</th>
 														<th>Success Fee</th>
-														<th>Term 1</th>
-														<th>Term 2</th>
-														<th>Term 3</th>
-														<th>Desc. Term1</th>
-														<th>Desc. Term2</th>
-														<th>Desc. Term3</th>
 														<th>Assign</th>
 														<th>Active</th>
 														<th>Action</th>

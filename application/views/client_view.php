@@ -105,7 +105,7 @@
 				<div class="panel panel-default panel-shadow" data-collapsed="0"><!-- to apply shadow add class "panel-shadow" -->
 					<!-- panel head -->
 					<div class="panel-heading">
-						<div class="panel-title">Client List AFS</div>
+						<div class="panel-title">Client List</div>
 					</div>
 					<!-- panel body -->
 					<div class="panel-body">
