@@ -25,6 +25,19 @@
 </script>	
 
 <div class="main-content">
+	<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default panel-shadow" data-collapse="0">
+					<div class="panel-heading">
+						<div class="panel-title">Matter Detail</div>
+					</div>
+					<div class="panel-body">
+						<p>This is panel</p>
+					</div>
+				</div>
+			</div>
+		<!-- Footer -->
+	</div>	
 
 	<div class="row">
 			<div class="col-md-12">

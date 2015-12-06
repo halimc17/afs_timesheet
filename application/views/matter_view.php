@@ -669,7 +669,7 @@
 																	foreach($records as $row){ ?>
 																	<tr class="odd gradeX">
 																		<td><?php echo $counter; ?></td>																				
-																		<td><?php echo $row->id_matter; ?></td>																				
+																		<td><a href="<?php echo site_url('sub_matter/get_record/')."/".$row->id_matter."/".$row->id_payment; ?>"><?php echo $row->id_matter; ?></a></td>																				
 																		<td><?php echo $row->nama_client; ?></td>																				
 																		<td><?php echo $row->matter; ?></td>																																																																										
 																		<td><?php echo $row->open_date; ?></td>																				
@@ -1917,7 +1917,7 @@
 				
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">Add new Sub Matter</h4>
+					<h4 class="modal-title-subMatter">Add new Sub Matter</h4>
 				</div>
 				
 				<div class="modal-body">
@@ -2075,7 +2075,7 @@
 															<div class="row">
 																<div class="col-md-12">
 																	<div class="form-group">
-																		<label for="sub_description" class="control-label">Desc Term 3</label>
+																		<label for="sub_description" class="control-label">Keterangan</label>
 																		<textarea class="form-control" id="sub_description" name="sub_description"></textarea>
 																	</div>
 																</div>
@@ -2099,12 +2099,128 @@
 												
 												<div class="row">
 													<div class="col-md-12">
-														<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-														tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-														quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-														consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-														cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-														proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+														<form role="form" class="form-horizontal form-groups-bordered" method="post" action="" style="padding:10px;" id="formSubHourly">
+															<div class="row">
+																<div class="col-md-6">						
+																	<div class="form-group">
+																		<label for="sub_id_matter" class="control-label">Id Matter</label>
+																		<input type="text" class="form-control" id="sub_id_matter" name="sub_id_matter" value="" />																		
+																	</div>							
+																</div>	
+																<div class="col-md-6">						
+																	<div class="form-group" style="padding-left:10px;">
+																		<label for="sub_id_sub_matter" class="control-label">Id Sub Matter</label>
+																		<input type="text" class="form-control" id="sub_id_sub_matter" name="sub_id_sub_matter" value="" />																		
+																	</div>							
+																</div>
+															</div>
+
+															<div class="row">
+																<div class="col-md-12">						
+																	<div class="form-group">
+																		<label for="sub_matter" class="control-label">Matter</label>
+																		<input type="text" class="form-control" id="sub_matter" name="sub_matter" value="" />																		
+																	</div>							
+																</div>																	
+															</div>
+
+															<div class="row">
+																<div class="col-md-6">						
+																	<div class="form-group">
+																		<label for="sub_open_date" class="control-label">Open Date</label>							
+																		<div class="input-group">
+																			<input type="text" class="form-control datepicker" data-format="yyyy-mm-dd" name="sub_open_date">												
+																			<div class="input-group-addon">
+																				<a href="#"><i class="entypo-calendar"></i></a>
+																			</div>
+																		</div>
+																	</div>						
+																</div>
+																
+																<div class="col-md-6">						
+																	<div class="form-group" style="padding-left:10px;">
+																		<label for="sub_close_date" class="control-label">Close date</label>
+																		<div class="input-group">
+																			<input type="text" class="form-control datepicker" data-format="yyyy-mm-dd" name="sub_close_date">												
+																			<div class="input-group-addon">
+																				<a href="#"><i class="entypo-calendar"></i></a>
+																			</div>
+																		</div>
+																	</div>							
+																</div>
+															</div>
+
+															<div class="row">
+																<div class="col-md-6">						
+																	<div class="form-group">
+																		<label for="sub_managing_partner" class="control-label">Managing Partner</label>
+																		<input type="text" class="form-control" id="sub_managing_partner" name="sub_managing_partner" value="" />																		
+																	</div>							
+																</div>	
+																<div class="col-md-6">						
+																	<div class="form-group" style="padding-left:10px;">
+																		<label for="sub_partner" class="control-label">Partner</label>
+																		<input type="text" class="form-control" id="sub_partner" name="sub_partner" value="" />																		
+																	</div>							
+																</div>
+															</div>
+
+															<div class="row">
+																<div class="col-md-6">						
+																	<div class="form-group">
+																		<label for="sub_junior_partner" class="control-label">Junior Partner</label>
+																		<input type="text" class="form-control" id="sub_junior_partner" name="sub_junior_partner" value="" />																		
+																	</div>							
+																</div>	
+																<div class="col-md-6">						
+																	<div class="form-group" style="padding-left:10px;">
+																		<label for="sub_senior_associate" class="control-label">Senior Associate</label>
+																		<input type="text" class="form-control" id="sub_senior_associate" name="sub_senior_associate" value="" />																		
+																	</div>							
+																</div>
+															</div>
+
+															<div class="row">
+																<div class="col-md-6">						
+																	<div class="form-group">
+																		<label for="sub_mid_associate" class="control-label">Mid Associate</label>
+																		<input type="text" class="form-control" id="sub_mid_associate" name="sub_mid_associate" value="" />																		
+																	</div>							
+																</div>	
+																<div class="col-md-6">						
+																	<div class="form-group" style="padding-left:10px;">
+																		<label for="sub_junior_associate" class="control-label">Junior Associate</label>
+																		<input type="text" class="form-control" id="sub_junior_associate" name="sub_junior_associate" value="" />																		
+																	</div>							
+																</div>
+															</div>
+
+															<div class="row">
+																<div class="col-md-6">						
+																	<div class="form-group">
+																		<label for="sub_disc" class="control-label">Disc (%)</label>
+																		<input type="text" class="form-control" id="sub_disc" name="sub_disc" value="" />																		
+																	</div>							
+																</div>																	
+															</div>
+
+															<div class="row">
+																<div class="col-md-12">
+																	<div class="form-group">
+																		<label for="sub_description" class="control-label">Keterangan</label>
+																		<textarea class="form-control" id="sub_description" name="sub_description"></textarea>
+																	</div>
+																</div>
+															</div>
+
+															<div class="row">
+																<div class="col-md-12">																	
+																	<div class="form-group">
+																		<button type="button" class="btn btn-info">SUBMIT</button>
+																	</div>																	
+																</div>
+															</div>
+														</form>
 														
 													</div>
 												</div>

@@ -17,7 +17,8 @@ class Sub_matter extends CI_Controller {
 	}	
 	
 	public function get_record(){
-		
+		$this->load->view('sub_matter_view');
+
 	}
 	
 	

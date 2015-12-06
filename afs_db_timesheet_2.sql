@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2015-12-05 22:20:11
+Date: 2015-12-06 11:36:52
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -958,14 +958,15 @@ tb_matter_lumpsum.description,
 tb_client.nama_client,
 tb_payment.payment_name,
 tb_matter.id,
-(SELECT COUNT(id_matter) FROM tb_matter_assign WHERE tb_matter_assign.id_matter = tb_matter.id_matter) AS assigned
+(SELECT COUNT(id_matter) FROM tb_matter_assign WHERE tb_matter_assign.id_matter = tb_matter.id_matter) AS assigned,
+tb_matter.id_payment
 FROM
 tb_matter
 INNER JOIN tb_matter_lumpsum ON tb_matter_lumpsum.id_matter = tb_matter.id_matter
 INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
 INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment
 WHERE
-tb_matter.id_matter = tb_matter_lumpsum.id_matter ; ;
+tb_matter.id_matter = tb_matter_lumpsum.id_matter ;
 
 -- ----------------------------
 -- View structure for v_matter_probono
