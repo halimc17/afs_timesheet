@@ -141,29 +141,435 @@
 
 							}elseif(isset($hourly)){
 								$row = json_decode($hourly);
-								echo $row->{'id_matter'};	
-								echo "<br />";	
-								echo $row->{'payment_name'};
+								?>
+								<div class="row">
+									<div class="col-md-6">
+										<table class="table table-bordered">
+											<thead>
+												<tr>
+													<th width="40px">No</th>
+													<th>Parameter</th>
+													<th>value</th>
+												</tr>
+											</thead>
+											
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>Id Matter</td>
+													<td><?php echo $row->{'id_matter'}; ?></td>
+												</tr>
+												
+												<tr>
+													<td>2</td>
+													<td>Client</td>
+													<td><?php echo $row->{'nama_client'} ?></td>
+												</tr>
+												
+												<tr>
+													<td>3</td>
+													<td>Matter</td>
+													<td><?php echo $row->{'matter'}; ?></td>
+												</tr>
+
+												<tr>
+													<td>4</td>
+													<td>Open Date</td>
+													<td><?php echo $row->{'open_date'}; ?></td>
+												</tr>
+
+												<tr>
+													<td>5</td>
+													<td>Close Date</td>
+													<td><?php echo $row->{'close_date'}; ?></td>
+												</tr>
+
+												<tr>
+													<td>6</td>
+													<td>Description</td>
+													<td><?php echo $row->{'description'}; ?></td>
+												</tr>
+												
+											</tbody>
+										</table>	
+									</div>
+									<div class="col-md-6">
+										<table class="table table-bordered">
+											<thead>
+												<tr>
+													<th width="40px">No</th>
+													<th width="200px">Parameter</th>
+													<th>value</th>
+												</tr>
+											</thead>
+											
+											<tbody>												
+												<tr>
+													<td>1</td>
+													<td>Managing Partner</td>
+													<td><?php echo number_format($row->{'managing_partner'}); ?></td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>Partner</td>
+													<td><?php echo number_format($row->{'partner'}); ?></td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>Junior Partner</td>
+													<td><?php echo number_format($row->{'junior_partner'}); ?></td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>Senior Associate</td>
+													<td><?php echo number_format($row->{'senior_associate'}); ?></td>
+												</tr>
+												<tr>
+													<td>5</td>
+													<td>Mid Associate</td>
+													<td><?php echo number_format($row->{'mid_associate'}); ?></td>
+												</tr>
+												<tr>
+													<td>6</td>
+													<td>Junior Associate</td>
+													<td><?php echo number_format($row->{'junior_associate'}); ?></td>
+												</tr>
+												<tr>
+													<td>7</td>
+													<td>Disc (%)</td>
+													<td><?php echo $row->{'disc'}; ?></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<?php
 							}elseif(isset($retainer)){
 								$row = json_decode($retainer);
-								echo $row->{'id_matter'};	
-								echo "<br />";	
-								echo $row->{'payment_name'};
+								?>
+								<div class="row">
+									<div class="col-md-6">
+										<table class="table table-bordered">
+											<thead>
+												<tr>
+													<th width="40px">No</th>
+													<th width="200px">Parameter</th>
+													<th>value</th>
+												</tr>
+											</thead>
+											
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>Id Matter</td>
+													<td><?php echo $row->{'id_matter'}; ?></td>
+												</tr>
+												
+												<tr>
+													<td>2</td>
+													<td>Client</td>
+													<td><?php echo $row->{'nama_client'} ?></td>
+												</tr>
+												
+												<tr>
+													<td>3</td>
+													<td>Matter</td>
+													<td><?php echo $row->{'matter'}; ?></td>
+												</tr>
+
+												<tr>
+													<td>4</td>
+													<td>Open Date</td>
+													<td><?php echo $row->{'open_date'}; ?></td>
+												</tr>
+
+												<tr>
+													<td>5</td>
+													<td>Close Date</td>
+													<td><?php echo $row->{'close_date'}; ?></td>
+												</tr>
+
+												<tr>
+													<td>6</td>
+													<td>Description</td>
+													<td><?php echo $row->{'description'}; ?></td>
+												</tr>
+												
+											</tbody>
+										</table>	
+									</div>
+									<div class="col-md-6">
+										<table class="table table-bordered">
+											<thead>
+												<tr>
+													<th width="40px">No</th>
+													<th width="200px">Parameter</th>
+													<th>value</th>
+												</tr>
+											</thead>
+											
+											<tbody>												
+												<tr>
+													<td>1</td>
+													<td>Jangka Waktu</td>
+													<td><?php echo number_format($row->{'jangka_waktu'}); ?></td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>Biaya</td>
+													<td><?php echo number_format($row->{'biaya'}); ?></td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>Jam</td>
+													<td><?php echo number_format($row->{'jam'}); ?></td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>Disc</td>
+													<td><?php echo number_format($row->{'disc'}); ?></td>
+												</tr>												
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<?php
 							}elseif(isset($successfee)){
 								$row = json_decode($successfee);
-								echo $row->{'id_matter'};	
-								echo "<br />";	
-								echo $row->{'payment_name'};
+								?>
+								<div class="row">
+									<div class="col-md-6">
+										<table class="table table-bordered">
+											<thead>
+												<tr>
+													<th width="40px">No</th>
+													<th width="200px">Parameter</th>
+													<th>value</th>
+												</tr>
+											</thead>
+											
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>Id Matter</td>
+													<td><?php echo $row->{'id_matter'}; ?></td>
+												</tr>
+												
+												<tr>
+													<td>2</td>
+													<td>Client</td>
+													<td><?php echo $row->{'nama_client'} ?></td>
+												</tr>
+												
+												<tr>
+													<td>3</td>
+													<td>Matter</td>
+													<td><?php echo $row->{'matter'}; ?></td>
+												</tr>
+
+												<tr>
+													<td>4</td>
+													<td>Open Date</td>
+													<td><?php echo $row->{'open_date'}; ?></td>
+												</tr>
+
+												<tr>
+													<td>5</td>
+													<td>Close Date</td>
+													<td><?php echo $row->{'close_date'}; ?></td>
+												</tr>
+
+												<tr>
+													<td>6</td>
+													<td>Description</td>
+													<td><?php echo $row->{'description'}; ?></td>
+												</tr>
+												
+											</tbody>
+										</table>	
+									</div>
+									<div class="col-md-6">
+										<table class="table table-bordered">
+											<thead>
+												<tr>
+													<th width="40px">No</th>
+													<th width="200px">Parameter</th>
+													<th>value</th>
+												</tr>
+											</thead>
+											
+											<tbody>												
+												<tr>
+													<td>1</td>
+													<td>Biaya</td>
+													<td><?php echo number_format($row->{'biaya'}); ?></td>
+												</tr>																							
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<?php
 							}elseif(isset($probono)){
 								$row = json_decode($probono);
-								echo $row->{'id_matter'};	
-								echo "<br />";	
-								echo $row->{'payment_name'};
+								?>
+								<div class="row">
+									<div class="col-md-6">
+										<table class="table table-bordered">
+											<thead>
+												<tr>
+													<th width="40px">No</th>
+													<th width="200px">Parameter</th>
+													<th>value</th>
+												</tr>
+											</thead>
+											
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>Id Matter</td>
+													<td><?php echo $row->{'id_matter'}; ?></td>
+												</tr>
+												
+												<tr>
+													<td>2</td>
+													<td>Client</td>
+													<td><?php echo $row->{'nama_client'} ?></td>
+												</tr>
+												
+												<tr>
+													<td>3</td>
+													<td>Matter</td>
+													<td><?php echo $row->{'matter'}; ?></td>
+												</tr>
+
+												<tr>
+													<td>4</td>
+													<td>Open Date</td>
+													<td><?php echo $row->{'open_date'}; ?></td>
+												</tr>
+
+												<tr>
+													<td>5</td>
+													<td>Close Date</td>
+													<td><?php echo $row->{'close_date'}; ?></td>
+												</tr>
+
+												<tr>
+													<td>6</td>
+													<td>Description</td>
+													<td><?php echo $row->{'description'}; ?></td>
+												</tr>
+												
+											</tbody>
+										</table>	
+									</div>									
+								</div>
+								<?php
 							}elseif(isset($project)){
 								$row = json_decode($project);
-								echo $row->{'id_matter'};	
-								echo "<br />";	
-								echo $row->{'payment_name'};
+								?>
+								<div class="row">
+									<div class="col-md-6">
+										<table class="table table-bordered">
+											<thead>
+												<tr>
+													<th width="40px">No</th>
+													<th>Parameter</th>
+													<th>value</th>
+												</tr>
+											</thead>
+											
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>Id Matter</td>
+													<td><?php echo $row->{'id_matter'}; ?></td>
+												</tr>
+												
+												<tr>
+													<td>2</td>
+													<td>Client</td>
+													<td><?php echo $row->{'nama_client'} ?></td>
+												</tr>
+												
+												<tr>
+													<td>3</td>
+													<td>Matter</td>
+													<td><?php echo $row->{'matter'}; ?></td>
+												</tr>
+
+												<tr>
+													<td>4</td>
+													<td>Open Date</td>
+													<td><?php echo $row->{'open_date'}; ?></td>
+												</tr>
+
+												<tr>
+													<td>5</td>
+													<td>Close Date</td>
+													<td><?php echo $row->{'close_date'}; ?></td>
+												</tr>
+
+												<tr>
+													<td>6</td>
+													<td>Description</td>
+													<td><?php echo $row->{'description'}; ?></td>
+												</tr>
+												
+											</tbody>
+										</table>	
+									</div>
+									<div class="col-md-6">
+										<table class="table table-bordered">
+											<thead>
+												<tr>
+													<th width="40px">No</th>
+													<th width="200px">Parameter</th>
+													<th>value</th>
+												</tr>
+											</thead>
+											
+											<tbody>												
+												<tr>
+													<td>1</td>
+													<td>Success Fee</td>
+													<td><?php echo number_format($row->{'success_fee'}); ?></td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>Term 1</td>
+													<td><?php echo number_format($row->{'term1'}); ?></td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>Term 2</td>
+													<td><?php echo number_format($row->{'term2'}); ?></td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>Term 3</td>
+													<td><?php echo number_format($row->{'term3'}); ?></td>
+												</tr>
+												<tr>
+													<td>5</td>
+													<td>Description Term 1</td>
+													<td><?php echo $row->{'desc_term1'}; ?></td>
+												</tr>
+												<tr>
+													<td>6</td>
+													<td>Description Term 2</td>
+													<td><?php echo $row->{'desc_term2'}; ?></td>
+												</tr>
+												<tr>
+													<td>7</td>
+													<td>Description Term 3</td>
+													<td><?php echo $row->{'desc_term3'}; ?></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<?php
 							}
 							
 						 ?>						
