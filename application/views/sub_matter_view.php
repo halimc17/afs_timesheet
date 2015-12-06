@@ -32,7 +32,141 @@
 						<div class="panel-title">Matter Detail</div>
 					</div>
 					<div class="panel-body">
-						<p>This is panel</p>
+						<?php 							
+							if(isset($lumpsum)){
+								$row = json_decode($lumpsum);								
+								?>
+								<div class="row">
+									<div class="col-md-6">
+										<table class="table table-bordered">
+											<thead>
+												<tr>
+													<th width="40px">No</th>
+													<th>Parameter</th>
+													<th>value</th>
+												</tr>
+											</thead>
+											
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>Id Matter</td>
+													<td><?php echo $row->{'id_matter'}; ?></td>
+												</tr>
+												
+												<tr>
+													<td>2</td>
+													<td>Client</td>
+													<td><?php echo $row->{'nama_client'} ?></td>
+												</tr>
+												
+												<tr>
+													<td>3</td>
+													<td>Matter</td>
+													<td><?php echo $row->{'matter'}; ?></td>
+												</tr>
+
+												<tr>
+													<td>4</td>
+													<td>Open Date</td>
+													<td><?php echo $row->{'open_date'}; ?></td>
+												</tr>
+
+												<tr>
+													<td>5</td>
+													<td>Close Date</td>
+													<td><?php echo $row->{'close_date'}; ?></td>
+												</tr>
+
+												<tr>
+													<td>6</td>
+													<td>Description</td>
+													<td><?php echo $row->{'description'}; ?></td>
+												</tr>
+												
+											</tbody>
+										</table>	
+									</div>
+									<div class="col-md-6">
+										<table class="table table-bordered">
+											<thead>
+												<tr>
+													<th width="40px">No</th>
+													<th width="200px">Parameter</th>
+													<th>value</th>
+												</tr>
+											</thead>
+											
+											<tbody>												
+												<tr>
+													<td>1</td>
+													<td>Success Fee</td>
+													<td><?php echo number_format($row->{'success_fee'}); ?></td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>Term 1</td>
+													<td><?php echo number_format($row->{'term1'}); ?></td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>Term 2</td>
+													<td><?php echo number_format($row->{'term2'}); ?></td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>Term 3</td>
+													<td><?php echo number_format($row->{'term3'}); ?></td>
+												</tr>
+												<tr>
+													<td>5</td>
+													<td>Description Term 1</td>
+													<td><?php echo $row->{'desc_term1'}; ?></td>
+												</tr>
+												<tr>
+													<td>6</td>
+													<td>Description Term 2</td>
+													<td><?php echo $row->{'desc_term2'}; ?></td>
+												</tr>
+												<tr>
+													<td>7</td>
+													<td>Description Term 3</td>
+													<td><?php echo $row->{'desc_term3'}; ?></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<?php
+
+							}elseif(isset($hourly)){
+								$row = json_decode($hourly);
+								echo $row->{'id_matter'};	
+								echo "<br />";	
+								echo $row->{'payment_name'};
+							}elseif(isset($retainer)){
+								$row = json_decode($retainer);
+								echo $row->{'id_matter'};	
+								echo "<br />";	
+								echo $row->{'payment_name'};
+							}elseif(isset($successfee)){
+								$row = json_decode($successfee);
+								echo $row->{'id_matter'};	
+								echo "<br />";	
+								echo $row->{'payment_name'};
+							}elseif(isset($probono)){
+								$row = json_decode($probono);
+								echo $row->{'id_matter'};	
+								echo "<br />";	
+								echo $row->{'payment_name'};
+							}elseif(isset($project)){
+								$row = json_decode($project);
+								echo $row->{'id_matter'};	
+								echo "<br />";	
+								echo $row->{'payment_name'};
+							}
+							
+						 ?>						
 					</div>
 				</div>
 			</div>

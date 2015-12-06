@@ -768,7 +768,7 @@
 																	foreach($records_hourly as $row2){ ?>
 																	<tr class="odd gradeX">
 																		<td><?php echo $counter2; ?></td>																				
-																		<td><?php echo $row2->id_matter; ?></td>
+																		<td><a href="<?php echo site_url('sub_matter/get_record/')."/".$row2->id_matter."/".$row2->id_payment; ?>"><?php echo $row2->id_matter; ?></a></td>
 																		<td><?php echo $row2->nama_client; ?></td>																				
 																		<td><?php echo $row2->matter; ?></td>																																																																										
 																		<td><?php echo $row2->open_date; ?></td>																				
@@ -851,7 +851,7 @@
 																		foreach($records_retainer as $row3){ ?>
 																		<tr class="odd gradeX">
 																			<td><?php echo $counter3; ?></td>																				
-																			<td><?php echo $row3->id_matter; ?></td>																				
+																			<td><a href="<?php echo site_url('sub_matter/get_record/')."/".$row3->id_matter."/".$row3->id_payment; ?>"><?php echo $row3->id_matter; ?></a></td>																				
 																			<td><?php echo $row3->nama_client; ?></td>																				
 																			<td><?php echo $row3->matter; ?></td>																																																																										
 																			<td><?php echo $row3->open_date; ?></td>																				
@@ -937,7 +937,7 @@
 																		foreach($records_successfee as $row4){ ?>
 																		<tr class="odd gradeX">
 																			<td><?php echo $counter4; ?></td>																				
-																			<td><?php echo $row4->id_matter; ?></td>																				
+																			<td><a href="<?php echo site_url('sub_matter/get_record/')."/".$row4->id_matter."/".$row4->id_payment; ?>"><?php echo $row4->id_matter; ?></a></td>																				
 																			<td><?php echo $row4->nama_client; ?></td>																				
 																			<td><?php echo $row4->matter; ?></td>																																																																										
 																			<td><?php echo $row4->open_date; ?></td>																																																																										
@@ -1017,7 +1017,7 @@
 																		foreach($records_probono as $row5){ ?>
 																		<tr class="odd gradeX">
 																			<td><?php echo $counter5; ?></td>																				
-																			<td><?php echo $row5->id_matter; ?></td>																				
+																			<td><a href="<?php echo site_url('sub_matter/get_record/')."/".$row5->id_matter."/".$row5->id_payment; ?>"><?php echo $row5->id_matter; ?></a></td>
 																			<td><?php echo $row5->nama_client; ?></td>																				
 																			<td><?php echo $row5->matter; ?></td>																																																																										
 																			<td><?php echo $row5->open_date; ?></td>																				
@@ -1098,7 +1098,7 @@
 																	foreach($records_project as $row6){ ?>
 																	<tr class="odd gradeX">
 																		<td><?php echo $counter6; ?></td>																				
-																		<td><?php echo $row6->id_matter; ?></td>																				
+																		<td><a href="<?php echo site_url('sub_matter/get_record/')."/".$row6->id_matter."/".$row6->id_payment; ?>"><?php echo $row6->id_matter; ?></a></td>																				
 																		<td><?php echo $row6->nama_client; ?></td>																				
 																		<td><?php echo $row6->matter; ?></td>																																																																										
 																		<td><?php echo $row6->open_date; ?></td>																				

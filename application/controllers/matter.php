@@ -35,7 +35,8 @@ class Matter extends CI_Controller {
 
 	public function get_record(){
 		$this->load->model('v_matter_lumpsum_model');
-		$data = $this->v_matter_lumpsum_model->get_record();	
+		$data = $this->v_matter_lumpsum_model->get_record();			
+
 		echo json_encode($data);
 	}
 
