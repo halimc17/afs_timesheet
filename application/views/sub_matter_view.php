@@ -17,6 +17,11 @@
 			saveSubLumpsum();
 		});
 
+		$('[name="btnEditActionLumpsum"]').button().on( "click", function() {	
+			var id = $(this).attr("id");		
+			editSubLumpsum(id);
+		});
+
 
 		var table = $("#tableSubLumpsum").dataTable({
 			"sPaginationType": "bootstrap",
@@ -87,6 +92,16 @@
 		return a;
 	}
 
+	function editSubLumpsum(id){
+		save_method = 'edit';
+		$('.modal-title').text('Edit Sub Matter (LUMPSUM)');
+		$('[name="btnSubmitLumpsum"]').text('Update');
+
+		$('html, body').animate({ scrollTop: 0 }, 'fast');
+		$('#modalLumpsum').modal('show');
+		
+	}
+
 	function saveSubLumpsum(){
 		if(save_method == 'add'){
 			url = "<?php echo site_url('sub_matter/addRecord_subLumpsum'); ?>";
@@ -136,6 +151,8 @@
       	var textbox = document.getElementById('txt_id_subMatter');      	
 	    textbox.value = id_matter;	    
 	}
+
+	
 
 	function add_subHourly(){
 		$('html, body').animate({ scrollTop: 0 }, 'fast');
@@ -309,13 +326,17 @@
 												<tr>
 													<td>4</td>
 													<td>Open Date</td>
-													<td><?php echo $row->{'open_date'}; ?></td>
+													<td><?php 
+													$openDate = new DateTime($row->{'open_date'});
+													echo $openDate->format('d-m-Y'); ?></td>
 												</tr>
 
 												<tr>
 													<td>5</td>
 													<td>Close Date</td>
-													<td><?php echo $row->{'close_date'}; ?></td>
+													<td><?php 
+													$closeDate = new DateTime($row->{'close_date'});
+													echo $closeDate->format('d-m-Y'); ?></td>
 												</tr>
 
 												<tr>
@@ -815,7 +836,7 @@
 						 ?>						
 					</div>
 				</div>
-			</div> <!-- row header  matter -->
+			</div> <!-- row header  matter --> <!-- row matter detail -->
 		<!-- Footer -->
 	</div>	
 
@@ -904,8 +925,12 @@
 														<td><?php echo $counter; ?></td>														
 														<td><?php echo $row->id_submatter; ?></td>
 														<td><?php echo $row->matter; ?></td>
-														<td><?php echo $row->open_date; ?></td>
-														<td><?php echo $row->close_date; ?></td>
+														<td><?php 
+														$openDate = new DateTime($row->open_date);
+														echo $openDate->format('d-m-Y'); ?></td>
+														<td><?php 
+														$closeDate = new DateTime($row->close_date);
+														echo $closeDate->format('d-m-Y'); ?></td>
 														<td><?php echo number_format($row->success_fee); ?></td>
 														<td>0</td>														
 														<td align="center">
@@ -914,7 +939,7 @@
 															</button>
 														</td>														
 														<td align="center">
-															<button type="button" name="btnEditActionLumpsum" class="btn btn-success" id="#">																				
+															<button type="button" name="btnEditActionLumpsum" class="btn btn-success" id="<?php echo $row->id_submatter; ?>">																				
 																<i class="entypo-pencil"></i>
 															</button>
 															<button type="button" name="btnDeleteAction" onclick="#" class="btn btn-danger" id="">	
@@ -1320,22 +1345,10 @@
 
 					</div>
 				</div>
-			</div>
+			</div> <!-- row sub matter -->
 	</div>
 
-	<div class="row">
-			<div class="col-md-12">
-				<div class="panel panel-default panel-shadow" data-collapse="0">
-					<div class="panel-heading">
-						<div class="panel-title">Panel 3</div>
-					</div>
-					<div class="panel-body">
-						<p>This is panel</p>
-					</div>
-				</div>
-			</div>
-		<!-- Footer -->
-	</div>	
+		
 	<div class="row">
 		<?php $this->load->view('footer_view'); ?>
 	</div>

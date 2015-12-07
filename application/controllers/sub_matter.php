@@ -59,7 +59,7 @@ class Sub_matter extends CI_Controller {
 		//$obj = json_decode($data);
 		//echo $obj->{'id_matter'};
 		$this->load->model('sublumpsum_model');
-		$data['records'] = $this->sublumpsum_model->get_records();
+		$data['records'] = $this->sublumpsum_model->get_record();
 
 		$this->load->view('sub_matter_view', $data);
 

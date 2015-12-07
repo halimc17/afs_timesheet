@@ -16,6 +16,11 @@ class Sublumpsum_model extends CI_Model{
     }
 	
 	public function get_record(){
+		$this->db->from('v_submatter_lumpsum');
+        $this->db->where('id_matter',$this->uri->segment(3));
+        $query = $this->db->get();
+ 
+        return $query->result();
 		
 	}
 	
