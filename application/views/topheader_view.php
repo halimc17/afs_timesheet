@@ -67,13 +67,7 @@
 						</li>
 						<li>
 							<a href="<?php echo site_url('/matter');?>">
-								<span>Matter</span>	</a>
-							<ul>
-								<li>
-									<a href="<?php echo site_url('/sub_matter');?>">
-									<span>Sub Matter</span>	</a>
-								</li>
-							</ul>							
+								<span>Matter</span>	</a>						
 						</li>
 						<li>
 							<a href="ui-typography.html">

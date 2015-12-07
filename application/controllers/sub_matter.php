@@ -65,13 +65,57 @@ class Sub_matter extends CI_Controller {
 	
 	
 	
-	public function addRecord(){
+	public function addRecord_subLumpsum(){
+		$data = array('id_submatter' => $this->input->post('txt_id_subMatter'),
+				'id_matter' => $this->input->post('txt_id_matter_h'),
+                'id_payment' => $this->input->post('txt_id_payment'),
+                'matter' => $this->input->post('txt_sub_matter'),
+                'open_date' => $this->input->post('txt_open_date'),
+                'close_date' => $this->input->post('txt_close_date'));
+
+		$data2 = array('id_submatter' => $this->input->post('txt_id_subMatter'),
+				'success_fee' => $this->input->post('txt_success_fee'),
+				'term1' => $this->input->post('txt_term1'),
+				'term2' => $this->input->post('txt_term2'),
+				'term3' => $this->input->post('txt_term3'),
+				'desc_term1' => $this->input->post('txt_desc_term1'),
+				'desc_term2' => $this->input->post('txt_desc_term2'),
+				'desc_term3' => $this->input->post('txt_desc_term3'),
+				'description' => $this->input->post('txt_keterangan'));
+
+		$this->load->model('submatter_model');
+		$this->load->model('sublumpsum_model');
+
+        $this->submatter_model->add_record($data);
+        $this->sublumpsum_model->add_record($data2);
+
+        echo json_encode(array("status" => TRUE));
 		
-		$this->load->model('matter_model');		
-		$query = $this->matter_model->get_record();
-		$data['records'] = $query;
+	}
+
+	public function addRecord_subHourly(){
 		
-		$this->load->view("subMatter_view", $data);
+		
+	}
+
+	public function addRecord_subRetainer(){
+		
+		
+	}
+
+	public function addRecord_subSuccessfee(){
+		
+		
+	}
+
+	public function addRecord_subProbono(){
+		
+		
+	}
+
+	public function addRecord_subProject(){
+		
+		
 	}
 	
 	

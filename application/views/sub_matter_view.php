@@ -13,6 +13,11 @@
 	
 	jQuery(document).ready(function($)
 	{
+		$('[name="btnSubmitLumpsum"]').button().on( "click", function() {			
+			saveSubLumpsum();
+		});
+
+
 		var table = $("#tableSubLumpsum").dataTable({
 			"sPaginationType": "bootstrap",
 			"sDom": "<'row'<'col-xs-6 col-left'l><'col-xs-6 col-right'<'export-data'T>f>r>t<'row'<'col-xs-6 col-left'i><'col-xs-6 col-right'p>>",
@@ -62,36 +67,198 @@
 		});
 	});
 
-	function add_subLumpsum(){
-		//alert('add sub lumsump');
+	function paymentType(){
+		var id = "<?php echo $this->uri->segment(3); ?>";
+		var paymentType = "<?php echo $this->uri->segment(4); ?>";
+
+		if(paymentType == 1){
+			var a = "<?php echo site_url('matter/get_record'); ?>/"+id;
+		}else if(paymentType == 2){
+			var a = "<?php echo site_url('matter/get_record_hourly'); ?>/"+id;
+		}else if(paymentType == 3){
+			var a = "<?php echo site_url('matter/get_record_retainer'); ?>/"+id;
+		}else if(paymentType == 4){
+			var a = "<?php echo site_url('matter/get_record_successfee'); ?>/"+id;
+		}else if(paymentType == 5){
+			var a = "<?php echo site_url('matter/get_record_probono'); ?>/"+id;
+		}else if(paymentType == 6){
+			var a = "<?php echo site_url('matter/get_record_project'); ?>/"+id;
+		}
+		return a;
+	}
+
+	function saveSubLumpsum(){
+		if(save_method == 'add'){
+			url = "<?php echo site_url('sub_matter/addRecord_subLumpsum'); ?>";
+		}else{
+			url = "<?php echo site_url('sub_matter/editRecord_subLumpsum'); ?>";
+		}
+
+		$.ajax({
+			url : url,
+			type : "POST",
+			data : $('#formSubLumpsum').serialize(),
+			dataType : "JSON",
+			success : function(data){
+				$('#modalLumpsum').modal('hide');				
+			},
+			error: function (jqXHR, textStatus, errorThrown)
+	            {
+	                alert('Error adding / update data');
+	            } 
+		});
+	}
+
+	
+	function add_subLumpsum(){		
+		
+		save_method = 'add';
 		$('html, body').animate({ scrollTop: 0 }, 'fast');
 		$('#modalLumpsum').modal('show');
+		$('#formSubLumpsum')[0].reset();
+
+		var id = "<?php echo $this->uri->segment(3); ?>";
+		var url = paymentType();
+		$.ajax({
+			url: url,
+			type: "GET",
+			dataType: "JSON",
+			success: function(data){
+				$('[name="txt_id_matter_disabled"]').val(data.id_matter);
+				$('[name="txt_id_matter_h"]').val(data.id_matter);
+				$('[name="txt_nama_client"]').val(data.nama_client);
+				$('[name="txt_matter"]').val(data.matter);
+			}
+		});
+
+		var id_matter = generateUUID();
+      	var textbox = document.getElementById('txt_id_subMatter');      	
+	    textbox.value = id_matter;	    
 	}
 
 	function add_subHourly(){
 		$('html, body').animate({ scrollTop: 0 }, 'fast');
 		$('#modalHourly').modal('show');	
+
+		var id = "<?php echo $this->uri->segment(3); ?>";
+		var url = paymentType();
+		$.ajax({
+			url: url,
+			type: "GET",
+			dataType: "JSON",
+			success: function(data){
+				$('[name="txt_id_matter_disabled"]').val(data.id_matter);				
+				$('[name="txt_nama_client"]').val(data.nama_client);
+				$('[name="txt_matter"]').val(data.matter);
+			}
+		});
+
+		var id_matter = generateUUID();
+      	var textbox = document.getElementById('txt_id_subMatter');      	
+	    textbox.value = id_matter;	
 	}
 
 	function add_subRetainer(){
 		$('html, body').animate({ scrollTop: 0 }, 'fast');
 		$('#modalRetainer').modal('show');
+
+		var id = "<?php echo $this->uri->segment(3); ?>";
+		var url = paymentType();
+		$.ajax({
+			url: url,
+			type: "GET",
+			dataType: "JSON",
+			success: function(data){
+				$('[name="txt_id_matter_disabled"]').val(data.id_matter);
+				$('[name="txt_nama_client"]').val(data.nama_client);
+				$('[name="txt_matter"]').val(data.matter);
+			}
+		});
+
+		var id_matter = generateUUID();
+      	var textbox = document.getElementById('txt_id_subMatter');      	
+	    textbox.value = id_matter;	
 	}
 
 	function add_subSuccessfee(){
 		$('html, body').animate({ scrollTop: 0 }, 'fast');
 		$('#modalSuccessfee').modal('show');
+
+		var id = "<?php echo $this->uri->segment(3); ?>";
+		var url = paymentType();
+		$.ajax({
+			url: url,
+			type: "GET",
+			dataType: "JSON",
+			success: function(data){
+				$('[name="txt_id_matter_disabled"]').val(data.id_matter);
+				$('[name="txt_nama_client"]').val(data.nama_client);
+				$('[name="txt_matter"]').val(data.matter);
+			}
+		});
+
+		var id_matter = generateUUID();
+      	var textbox = document.getElementById('txt_id_subMatter');      	
+	    textbox.value = id_matter;	
 	}
 
 	function add_subProbono(){
 		$('html, body').animate({ scrollTop: 0 }, 'fast');
 		$('#modalProbono').modal('show');
+
+		var id = "<?php echo $this->uri->segment(3); ?>";
+		var url = paymentType();
+		$.ajax({
+			url: url,
+			type: "GET",
+			dataType: "JSON",
+			success: function(data){
+				$('[name="txt_id_matter_disabled"]').val(data.id_matter);
+				$('[name="txt_nama_client"]').val(data.nama_client);
+				$('[name="txt_matter"]').val(data.matter);
+			}
+		});
+
+		var id_matter = generateUUID();
+      	var textbox = document.getElementById('txt_id_subMatter');      	
+	    textbox.value = id_matter;	
 	}
 
 	function add_subProject(){
 		//alert('project')
 		$('html, body').animate({ scrollTop: 0 }, 'fast');
 		$('#modalProject').modal('show');
+
+		var id = "<?php echo $this->uri->segment(3); ?>";
+		var url = paymentType();
+		$.ajax({
+			url: url,
+			type: "GET",
+			dataType: "JSON",
+			success: function(data){
+				$('[name="txt_id_matter_disabled"]').val(data.id_matter);
+				$('[name="txt_nama_client"]').val(data.nama_client);
+				$('[name="txt_matter"]').val(data.matter);
+			}
+		});
+
+		var id_matter = generateUUID();
+      	var textbox = document.getElementById('txt_id_subMatter');      	
+	    textbox.value = id_matter;	
+	}
+
+	function generateUUID(){
+	    var d = new Date().getTime();
+	    if(window.performance && typeof window.performance.now === "function"){
+	        d += performance.now();; //use high-precision timer if available
+	    }
+	    var uuid = 'S-AFSxxxxx4xxyxxxxx'.replace(/[xy]/g, function(c) {
+	        var r = (d + Math.random()*16)%16 | 0;
+	        d = Math.floor(d/16);
+	        return (c=='x' ? r : (r&0x3|0x8)).toString(16);
+	    });
+
+	    return uuid.toUpperCase();	   
 	}
 		
 </script>	
@@ -738,22 +905,20 @@
 														<td>Firefox 1.0</td>
 														<td>Firefox 1.0</td>
 														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>														
-														<td>Firefox 1.0</td>
-													</tr>
-													<tr>
-														<td>Gecko</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-													</tr>																								
+														<td align="center">
+															<button type="button" name="btnActive" class="btn btn-success" onclick="#" />
+																<i class="entypo-check"></i>
+															</button>
+														</td>														
+														<td align="center">
+															<button type="button" name="btnEditActionProject" class="btn btn-success" id="#">																				
+																<i class="entypo-pencil"></i>
+															</button>
+															<button type="button" name="btnDeleteAction" onclick="#" class="btn btn-danger" id="">	
+																<i class="entypo-trash"></i>
+															</button>
+														</td>
+													</tr>																																				
 												</tbody>
 												<tfoot>
 													<tr>
@@ -793,8 +958,7 @@
 														<th>Client</th>
 														<th>Matter</th>
 														<th>Open Date</th>
-														<th>Close Date</th>
-														<th>Success Fee</th>
+														<th>Close Date</th>														
 														<th>Assign</th>
 														<th>Active</th>
 														<th>Action</th>
@@ -808,25 +972,22 @@
 														<td>Firefox 1.0</td>
 														<td>Firefox 1.0</td>
 														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
 														<td>Firefox 1.0</td>														
 														<td>Firefox 1.0</td>
-													</tr>
-													<tr>
-														<td>Gecko</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-													</tr>																								
+														<td align="center">
+															<button type="button" name="btnActive" class="btn btn-success" onclick="#" />
+																<i class="entypo-check"></i>
+															</button>
+														</td>														
+														<td align="center">
+															<button type="button" name="btnEditActionProject" class="btn btn-success" id="#">																				
+																<i class="entypo-pencil"></i>
+															</button>
+															<button type="button" name="btnDeleteAction" onclick="#" class="btn btn-danger" id="">	
+																<i class="entypo-trash"></i>
+															</button>
+														</td>
+													</tr>																																					
 												</tbody>
 												<tfoot>
 													<tr>
@@ -836,8 +997,7 @@
 														<th>Client</th>
 														<th>Matter</th>
 														<th>Open Date</th>
-														<th>Close Date</th>
-														<th>Success Fee</th>
+														<th>Close Date</th>														
 														<th>Assign</th>
 														<th>Active</th>
 														<th>Action</th>
@@ -862,16 +1022,19 @@
 												<thead>
 													<tr>
 														<th>No</th>
-														<th>Id Matter</th>														
-														<th>Id Sub Matter</th>
+														<th>Id Matter</th>																		
 														<th>Client</th>
 														<th>Matter</th>
 														<th>Open Date</th>
 														<th>Close Date</th>
-														<th>Success Fee</th>
+														<th>Jangka Waktu</th>
+														<th>Biaya</th>
+														<th>Jam</th>
+														<th>Disc (%)</th>
+														<th style="width:250px;">Description</th>																		
 														<th>Assign</th>
 														<th>Active</th>
-														<th>Action</th>
+														<th style="width:160px;">Action</th>
 													</tr>
 												</thead>
 												<tbody>													
@@ -887,34 +1050,38 @@
 														<td>Firefox 1.0</td>
 														<td>Firefox 1.0</td>														
 														<td>Firefox 1.0</td>
-													</tr>
-													<tr>
-														<td>Gecko</td>
 														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-													</tr>																								
+														<td align="center">
+															<button type="button" name="btnActive" class="btn btn-success" onclick="#" />
+																<i class="entypo-check"></i>
+															</button>
+														</td>
+														<td align="center">
+															<button type="button" name="btnEditActionProject" class="btn btn-success" id="#">																				
+																<i class="entypo-pencil"></i>
+															</button>
+															<button type="button" name="btnDeleteAction" onclick="#" class="btn btn-danger" id="">	
+																<i class="entypo-trash"></i>
+															</button>
+														</td>
+													</tr>																																				
 												</tbody>
 												<tfoot>
 													<tr>
 														<th>No</th>
-														<th>Id Matter</th>														
-														<th>Id Sub Matter</th>
+														<th>Id Matter</th>																		
 														<th>Client</th>
 														<th>Matter</th>
 														<th>Open Date</th>
 														<th>Close Date</th>
-														<th>Success Fee</th>
+														<th>Jangka Waktu</th>
+														<th>Biaya</th>
+														<th>Jam</th>
+														<th>Disc (%)</th>
+														<th style="width:250px;">Description</th>																		
 														<th>Assign</th>
 														<th>Active</th>
-														<th>Action</th>
+														<th style="width:160px;">Action</th>
 													</tr>
 												</tfoot>
 											</table>
@@ -938,13 +1105,13 @@
 												<thead>
 													<tr>
 														<th>No</th>
-														<th>Id Matter</th>														
-														<th>Id Sub Matter</th>
+														<th>Id Matter</th>																		
 														<th>Client</th>
 														<th>Matter</th>
 														<th>Open Date</th>
-														<th>Close Date</th>
-														<th>Success Fee</th>
+														<th>Close Date</th>																			
+														<th>Biaya</th>																			
+														<th>Description</th>																		
 														<th>Assign</th>
 														<th>Active</th>
 														<th>Action</th>
@@ -961,33 +1128,31 @@
 														<td>Firefox 1.0</td>
 														<td>Firefox 1.0</td>
 														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>														
-														<td>Firefox 1.0</td>
-													</tr>
-													<tr>
-														<td>Gecko</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
+														<td align="center">
+															<button type="button" name="btnActive" class="btn btn-success" onclick="#" />
+																<i class="entypo-check"></i>
+															</button>
+														</td>														
+														<td align="center">
+															<button type="button" name="btnEditActionProject" class="btn btn-success" id="#">																				
+																<i class="entypo-pencil"></i>
+															</button>
+															<button type="button" name="btnDeleteAction" onclick="#" class="btn btn-danger" id="">	
+																<i class="entypo-trash"></i>
+															</button>
+														</td>
 													</tr>																								
 												</tbody>
 												<tfoot>
 													<tr>
 														<th>No</th>
-														<th>Id Matter</th>														
-														<th>Id Sub Matter</th>
+														<th>Id Matter</th>																		
 														<th>Client</th>
 														<th>Matter</th>
 														<th>Open Date</th>
-														<th>Close Date</th>
-														<th>Success Fee</th>
+														<th>Close Date</th>																			
+														<th>Biaya</th>																			
+														<th>Description</th>																		
 														<th>Assign</th>
 														<th>Active</th>
 														<th>Action</th>
@@ -1013,16 +1178,16 @@
 												<thead>
 													<tr>
 														<th>No</th>
-														<th>Id Matter</th>														
-														<th>Id Sub Matter</th>
+														<th>Id Matter</th>																		
 														<th>Client</th>
 														<th>Matter</th>
 														<th>Open Date</th>
-														<th>Close Date</th>
-														<th>Success Fee</th>
+														<th>Close Date</th>																			
+														<th>Description</th>																		
+														<th>Sub Matter</th>
 														<th>Assign</th>
 														<th>Active</th>
-														<th>Action</th>
+														<th style="width:160px;">Action</th>
 													</tr>
 												</thead>
 												<tbody>													
@@ -1036,36 +1201,34 @@
 														<td>Firefox 1.0</td>
 														<td>Firefox 1.0</td>
 														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>														
-														<td>Firefox 1.0</td>
-													</tr>
-													<tr>
-														<td>Gecko</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-													</tr>																								
+														<td align="center">
+															<button type="button" name="btnActive" class="btn btn-success" onclick="#" />
+																<i class="entypo-check"></i>
+															</button>
+														</td>														
+														<td align="center">
+															<button type="button" name="btnEditActionProject" class="btn btn-success" id="#">																				
+																<i class="entypo-pencil"></i>
+															</button>
+															<button type="button" name="btnDeleteAction" onclick="#" class="btn btn-danger" id="">	
+																<i class="entypo-trash"></i>
+															</button>
+														</td>
+													</tr>																																				
 												</tbody>
 												<tfoot>
 													<tr>
 														<th>No</th>
-														<th>Id Matter</th>														
-														<th>Id Sub Matter</th>
+														<th>Id Matter</th>																		
 														<th>Client</th>
 														<th>Matter</th>
 														<th>Open Date</th>
-														<th>Close Date</th>
-														<th>Success Fee</th>
+														<th>Close Date</th>																			
+														<th>Description</th>																		
+														<th>Sub Matter</th>
 														<th>Assign</th>
 														<th>Active</th>
-														<th>Action</th>
+														<th style="width:160px;">Action</th>
 													</tr>
 												</tfoot>
 											</table>
@@ -1088,16 +1251,16 @@
 												<thead>
 													<tr>
 														<th>No</th>
-														<th>Id Matter</th>														
-														<th>Id Sub Matter</th>
+														<th>Id Matter</th>																		
 														<th>Client</th>
 														<th>Matter</th>
 														<th>Open Date</th>
 														<th>Close Date</th>
 														<th>Success Fee</th>
+														<th>Sub Matter</th>
 														<th>Assign</th>
 														<th>Active</th>
-														<th>Action</th>
+														<th style="width:169px;">Action</th>
 													</tr>
 												</thead>
 												<tbody>													
@@ -1111,36 +1274,34 @@
 														<td>Firefox 1.0</td>
 														<td>Firefox 1.0</td>
 														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>														
-														<td>Firefox 1.0</td>
-													</tr>
-													<tr>
-														<td>Gecko</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-													</tr>																								
+														<td align="center">
+															<button type="button" name="btnActive" class="btn btn-success" onclick="#" />
+																<i class="entypo-check"></i>
+															</button>
+														</td>														
+														<td align="center">
+															<button type="button" name="btnEditActionProject" class="btn btn-success" id="#">																				
+																<i class="entypo-pencil"></i>
+															</button>
+															<button type="button" name="btnDeleteAction" onclick="#" class="btn btn-danger" id="">	
+																<i class="entypo-trash"></i>
+															</button>
+														</td>
+													</tr>																							
 												</tbody>
 												<tfoot>
 													<tr>
 														<th>No</th>
-														<th>Id Matter</th>														
-														<th>Id Sub Matter</th>
+														<th>Id Matter</th>																		
 														<th>Client</th>
 														<th>Matter</th>
 														<th>Open Date</th>
 														<th>Close Date</th>
 														<th>Success Fee</th>
+														<th>Sub Matter</th>
 														<th>Assign</th>
 														<th>Active</th>
-														<th>Action</th>
+														<th style="width:169px;">Action</th>
 													</tr>
 												</tfoot>
 											</table>
@@ -1189,13 +1350,13 @@
 				
 				<div class="modal-body">
 				
-				<form role="form" class="form-horizontal form-groups-bordered" method="post" action="" style="padding:10px;" id="formLumpsum">
+				<form role="form" class="form-horizontal form-groups-bordered" method="post" action="" style="padding:10px;" id="formSubLumpsum">
 								<div class="row">
 									<div class="col-md-6">						
 										<div class="form-group">
 											<label for="txt_id_matter" class="control-label">Id Matter</label>
-											<input type="text" class="form-control" id="txt_id_matter_disabled" name="txt_id_matter_disabled" value="" disabled />
-											<input type="hidden" class="form-control" id="txt_id_matter" name="txt_id_matter" value="" />
+											<input type="text" class="form-control" id="txt_id_matter_disabled" name="txt_id_matter_disabled" value="<?php echo $this->uri->segment(3) ?>" disabled />
+											<input type="hidden" class="form-control" id="txt_id_matter_h" name="txt_id_matter_h" value="" />
 										</div>							
 									</div>									
 									<div class="col-md-6">						
@@ -1212,6 +1373,15 @@
 											<label for="txt_matter" class="control-label">Matter</label>
 											<input type="text" class="form-control" id="txt_matter" name="txt_matter" value="" disabled />
 											<input type="hidden" class="form-control" id="txt_id_payment" name="txt_id_payment" value="1">
+										</div>							
+									</div>									
+								</div>
+
+								<div class="row">
+									<div class="col-md-12">						
+										<div class="form-group">
+											<label for="txt_id_subMatter" class="control-label">Id Sub Matter</label>
+											<input type="text" class="form-control" id="txt_id_subMatter" name="txt_id_subMatter" value="" />											
 										</div>							
 									</div>									
 								</div>
@@ -1339,8 +1509,8 @@
 								<div class="row">
 									<div class="col-md-6">						
 										<div class="form-group">
-											<label for="txt_id_matter_h" class="control-label">Id Matter</label>
-											<input type="text" class="form-control" id="txt_id_matter_h_disabled" name="txt_id_matter_h_disabled" value="" disabled />
+											<label for="txt_id_matter_disabled" class="control-label">Id Matter</label>
+											<input type="text" class="form-control" id="txt_id_matter_disabled" name="txt_id_matter_disabled" value="" disabled />
 											<input type="hidden" class="form-control" id="txt_id_matter_h" name="txt_id_matter_h" value=""  />
 											<input type="hidden" class="form-control" id="txt_id_payment" name="txt_id_payment" value="2"> <!--id payment hourly-->
 										</div>							
@@ -1493,8 +1663,8 @@
 								<div class="row">
 									<div class="col-md-6">						
 										<div class="form-group">
-											<label for="txt_id_matter_r" class="control-label">Id Matter</label>
-											<input type="text" class="form-control" id="txt_id_matter_r_disabled" name="txt_id_matter_r_disabled" value="" disabled />
+											<label for="txt_id_matter_disabled" class="control-label">Id Matter</label>
+											<input type="text" class="form-control" id="txt_id_matter_disabled" name="txt_id_matter_disabled" value="" disabled />
 											<input type="hidden" class="form-control" id="txt_id_matter_r" name="txt_id_matter_r" value=""  />
 											<input type="hidden" class="form-control" id="txt_id_payment" name="txt_id_payment" value="3"  />
 										</div>							
@@ -1621,8 +1791,8 @@
 								<div class="row">
 									<div class="col-md-6">						
 										<div class="form-group">
-											<label for="txt_id_matter" class="control-label">Id Matter</label>
-											<input type="text" class="form-control" id="txt_id_matter_s_disabled" name="txt_id_matter_s_disabled" value="" disabled />
+											<label for="txt_id_matter_disabled" class="control-label">Id Matter</label>
+											<input type="text" class="form-control" id="txt_id_matter_disabled" name="txt_id_matter_disabled" value="" disabled />
 											<input type="hidden" class="form-control" id="txt_id_matter_s" name="txt_id_matter_s" value="" />
 											<input type="hidden" class="form-control" id="txt_id_payment" name="txt_id_payment" value="4" />
 										</div>							
@@ -1729,8 +1899,8 @@
 								<div class="row">
 									<div class="col-md-6">						
 										<div class="form-group">
-											<label for="txt_id_matter" class="control-label">Id Matter</label>
-											<input type="text" class="form-control" id="txt_id_matter_p_disabled" name="txt_id_matter_p_disabled" value="" disabled />
+											<label for="txt_id_matter_disabled" class="control-label">Id Matter</label>
+											<input type="text" class="form-control" id="txt_id_matter_disabled" name="txt_id_matter_disabled" value="" disabled />
 											<input type="hidden" class="form-control" id="txt_id_matter_p" name="txt_id_matter_p" value="" />
 											<input type="hidden" class="form-control" id="txt_id_payment" name="txt_id_payment" value="5" />
 										</div>							
@@ -1826,8 +1996,8 @@
 								<div class="row">
 									<div class="col-md-6">						
 										<div class="form-group">
-											<label for="txt_id_matter" class="control-label">Id Matter</label>
-											<input type="text" class="form-control" id="txt_id_matter_pr_disabled" name="txt_id_matter_pr_disabled" value="" disabled />
+											<label for="txt_id_matter_disabled" class="control-label">Id Matter</label>
+											<input type="text" class="form-control" id="txt_id_matter_disabled" name="txt_id_matter_disabled" value="" disabled />
 											<input type="hidden" class="form-control" id="txt_id_matter_pr" name="txt_id_matter_pr" value=""  />
 											<input type="hidden" class="form-control" id="txt_id_payment" name="txt_id_payment" value="6" />
 										</div>							
