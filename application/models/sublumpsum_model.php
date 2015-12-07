@@ -8,8 +8,11 @@ class Sublumpsum_model extends CI_Model{
     }
 
   
-    public function get_records(){     
-		
+    public function get_records(){   
+
+    	$this->db->order_by("id_submatter", "desc");
+		$query = $this->db->get('v_submatter_lumpsum');
+		return $query->result(); 
     }
 	
 	public function get_record(){

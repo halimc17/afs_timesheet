@@ -101,6 +101,7 @@
 			dataType : "JSON",
 			success : function(data){
 				$('#modalLumpsum').modal('hide');				
+				window.location = "<?php echo site_url('sub_matter/get_record/'.$this->uri->segment(3).'/'.$this->uri->segment(4)); ?>";
 			},
 			error: function (jqXHR, textStatus, errorThrown)
 	            {
@@ -881,10 +882,8 @@
 											<table class="table table-bordered datatable" id="tableSubLumpsum">
 												<thead>
 													<tr>
-														<th>No</th>
-														<th>Id Matter</th>														
-														<th>Id Sub Matter</th>
-														<th>Client</th>
+														<th>No</th>														
+														<th>Id Sub Matter</th>														
 														<th>Matter</th>
 														<th>Open Date</th>
 														<th>Close Date</th>
@@ -894,24 +893,28 @@
 														<th>Action</th>
 													</tr>
 												</thead>
-												<tbody>													
+												<tbody>	
+												<?php 
+												$counter = 1;
+												if(isset($records)){
+													foreach($records as $row){ ?>
+
+												
 													<tr>
-														<td>Gecko</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
+														<td><?php echo $counter; ?></td>														
+														<td><?php echo $row->id_submatter; ?></td>
+														<td><?php echo $row->matter; ?></td>
+														<td><?php echo $row->open_date; ?></td>
+														<td><?php echo $row->close_date; ?></td>
+														<td><?php echo number_format($row->success_fee); ?></td>
+														<td>0</td>														
 														<td align="center">
 															<button type="button" name="btnActive" class="btn btn-success" onclick="#" />
 																<i class="entypo-check"></i>
 															</button>
 														</td>														
 														<td align="center">
-															<button type="button" name="btnEditActionProject" class="btn btn-success" id="#">																				
+															<button type="button" name="btnEditActionLumpsum" class="btn btn-success" id="#">																				
 																<i class="entypo-pencil"></i>
 															</button>
 															<button type="button" name="btnDeleteAction" onclick="#" class="btn btn-danger" id="">	
@@ -919,13 +922,13 @@
 															</button>
 														</td>
 													</tr>																																				
+												<?php $counter++;}
+												} ?>												
 												</tbody>
 												<tfoot>
 													<tr>
-														<th>No</th>
-														<th>Id Matter</th>														
-														<th>Id Sub Matter</th>
-														<th>Client</th>
+														<th>No</th>														
+														<th>Id Sub Matter</th>														
 														<th>Matter</th>
 														<th>Open Date</th>
 														<th>Close Date</th>
