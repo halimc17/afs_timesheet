@@ -699,10 +699,7 @@
 																				
 																				<i class="entypo-pencil"></i>
 																			</button>
-																			<button type="button" name="btnAddSub" class="btn btn-success" id="<?php echo $row->id_matter; ?>">
-																				
-																				<i class="entypo-plus"></i>
-																			</button>
+																			
 																			<button type="button" name="btnDeleteAction" onclick="gotodelete('<?php echo $row->id_matter; ?>')" class="btn btn-danger" id="1">
 																			
 																				<i class="entypo-trash"></i>
