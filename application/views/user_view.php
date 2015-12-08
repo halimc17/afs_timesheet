@@ -159,7 +159,7 @@
 										<th>Divisi</th>
 										<th>Jabatan</th>
 										<th>Active</th>
-										<th style="width:160px;">Action</th>
+										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>	
@@ -191,7 +191,7 @@
 														</button>
 												<?php } ?>												
 										</td>
-										<td class="center">
+										<td class="center" width="120">
 											<button type="button" name="btnEditAction" class="btn btn-success" id="<?php echo $row->id_user; ?>">
 												
 												<i class="entypo-pencil"></i>

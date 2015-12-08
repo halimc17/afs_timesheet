@@ -753,6 +753,7 @@
 																		<th>Open Date</th>
 																		<th>Close Date</th>
 																		
+																		<th>Sub Matter</th>
 																		<th>Assign</th>
 																		<th>Active</th>
 																		<th style="width:160px;">Action</th>
@@ -770,6 +771,7 @@
 																		<td><?php echo $row2->matter; ?></td>																																																																										
 																		<td><?php echo $row2->open_date; ?></td>																				
 																		<td><?php echo $row2->close_date; ?></td>																				
+																		<td>0</td>																				
 																																																																										
 																		<td>
 																			<a href="<?php echo site_url('matter/assign/'); ?>/<?php echo $row2->id_matter; ?>">
@@ -800,6 +802,7 @@
 																		<th>Open Date</th>
 																		<th>Close Date</th>
 																		
+																		<th>Sub Matter</th>
 																		<th>Assign</th>
 																		<th>Active</th>
 																		<th>Action</th>
@@ -832,10 +835,8 @@
 																			<th>Open Date</th>
 																			<th>Close Date</th>
 																			<th>Jangka Waktu</th>
-																			<th>Biaya</th>
-																			<th>Jam</th>
-																			<th>Disc (%)</th>
-																			<th style="width:250px;">Description</th>																		
+																																					
+																			<th>Sub Matter</th>
 																			<th>Assign</th>
 																			<th>Active</th>
 																			<th style="width:160px;">Action</th>
@@ -854,10 +855,8 @@
 																			<td><?php echo $row3->open_date; ?></td>																				
 																			<td><?php echo $row3->close_date; ?></td>																				
 																			<td><?php echo $row3->jangka_waktu; ?></td>																				
-																			<td><?php echo number_format($row3->biaya); ?></td>																				
-																			<td><?php echo $row3->jam; ?></td>																				
-																			<td><?php echo $row3->disc; ?></td>																																																								
-																			<td><?php echo $row3->description; ?></td>																																																								
+																			<td>0</td>																				
+																																																																											
 																			<td>
 																				<a href="<?php echo site_url('matter/assign/'); ?>/<?php echo $row3->id_matter; ?>">
 																				<?php echo $row3->assigned; ?>
@@ -887,10 +886,8 @@
 																			<th>Open Date</th>
 																			<th>Close Date</th>
 																			<th>Jangka Waktu</th>
-																			<th>Biaya</th>
-																			<th>Jam</th>
-																			<th>Disc (%)</th>
-																			<th>Description</th>																		
+																																					
+																			<th>Sub Matter</th>
 																			<th>Assign</th>
 																			<th>Active</th>
 																			<th>Action</th>
@@ -921,7 +918,8 @@
 																			<th>Open Date</th>
 																			<th>Close Date</th>																			
 																			<th>Biaya</th>																			
-																			<th style="width:250px;">Description</th>																		
+																																					
+																			<th>Sub Matter</th>
 																			<th>Assign</th>
 																			<th>Active</th>
 																			<th style="width:160px;">Action</th>
@@ -939,8 +937,8 @@
 																			<td><?php echo $row4->matter; ?></td>																																																																										
 																			<td><?php echo $row4->open_date; ?></td>																																																																										
 																			<td><?php echo $row4->close_date; ?></td>																																																																										
-																			<td><?php echo $row4->biaya; ?></td>																																																																										
-																			<td><?php echo $row4->description; ?></td>																																																																										
+																			<td><?php echo number_format($row4->biaya); ?></td>																																																																										
+																			<td>0</td>																																																																										
 																			<td>
 																				<a href="<?php echo site_url('matter/assign/'); ?>/<?php echo $row4->id_matter; ?>">
 																				<?php echo $row4->assigned; ?>
@@ -970,7 +968,7 @@
 																			<th>Open Date</th>
 																			<th>Close Date</th>																			
 																			<th>Biaya</th>																			
-																			<th>Description</th>																		
+																			<th>Sub Matter</th>																		
 																			<th>Assign</th>
 																			<th>Active</th>
 																			<th>Action</th>

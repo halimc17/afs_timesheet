@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost
-Source Server Version : 50616
+Source Server Version : 50505
 Source Host           : localhost:3306
 Source Database       : afs_db_timesheet_2
 
 Target Server Type    : MYSQL
-Target Server Version : 50616
+Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2015-12-08 14:55:37
+Date: 2015-12-08 22:41:28
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -224,9 +224,7 @@ INSERT INTO `tb_matter` VALUES ('23', 'AFS7ad474b2bb3cfb61', '64', '1', 'Soverig
 INSERT INTO `tb_matter` VALUES ('29', 'AFS6e6424a49a7292ca', '65', '2', 'Taman Harapan indah matter', '2015-10-26', '2015-11-17', '1', null);
 INSERT INTO `tb_matter` VALUES ('32', 'AFS564984b758dfae90', '68', '2', 'Tiny Tantoro Matter', '2015-11-02', '2015-11-26', '1', null);
 INSERT INTO `tb_matter` VALUES ('34', 'AFSb95be4d09a01ad52', '54', '2', 'RCTI Matter', '2015-10-27', '2015-11-19', '1', null);
-INSERT INTO `tb_matter` VALUES ('35', 'AFS4a03148558bf54b8', '70', '1', 'Trimartheo Matter', '2015-10-29', '2015-11-24', '1', null);
 INSERT INTO `tb_matter` VALUES ('36', 'AFS4774c475ab2bd559', '50', '2', 'Matter Postindo', '2015-11-02', '2015-11-25', '1', null);
-INSERT INTO `tb_matter` VALUES ('37', 'AFS35f3b400da90646f', '49', '1', 'Matter PT Pelni', '2015-11-10', '2015-11-18', '1', null);
 INSERT INTO `tb_matter` VALUES ('40', 'AFS7da134ac29af768a', '93', '3', 'matter', '2015-11-04', '2015-11-09', '1', null);
 INSERT INTO `tb_matter` VALUES ('42', 'AFSca5da4dafbb8730c', '61', '3', 'Matter Semesta Marga Raya', '2015-11-11', '2015-11-18', '1', null);
 INSERT INTO `tb_matter` VALUES ('43', 'AFSf185e4fedb457a56', '29', '3', 'asdasdasd', '2015-11-03', '2015-11-18', '1', null);
@@ -269,7 +267,7 @@ CREATE TABLE `tb_matter_assign` (
   `id_matter` varchar(255) DEFAULT NULL,
   `id_user` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_matter_assign`)
-) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=110 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_matter_assign
@@ -293,14 +291,6 @@ INSERT INTO `tb_matter_assign` VALUES ('21', 'AFS736324E40B7213D5', '12');
 INSERT INTO `tb_matter_assign` VALUES ('22', 'AFS736324E40B7213D5', '18');
 INSERT INTO `tb_matter_assign` VALUES ('23', 'AFS736324E40B7213D5', '16');
 INSERT INTO `tb_matter_assign` VALUES ('24', 'AFS736324E40B7213D5', '21');
-INSERT INTO `tb_matter_assign` VALUES ('25', 'AFS35f3b400da90646f', '15');
-INSERT INTO `tb_matter_assign` VALUES ('26', 'AFS35f3b400da90646f', '7');
-INSERT INTO `tb_matter_assign` VALUES ('27', 'AFS35f3b400da90646f', '17');
-INSERT INTO `tb_matter_assign` VALUES ('28', 'AFS35f3b400da90646f', '19');
-INSERT INTO `tb_matter_assign` VALUES ('29', 'AFS35f3b400da90646f', '21');
-INSERT INTO `tb_matter_assign` VALUES ('30', 'AFS4a03148558bf54b8', '2');
-INSERT INTO `tb_matter_assign` VALUES ('31', 'AFS4a03148558bf54b8', '5');
-INSERT INTO `tb_matter_assign` VALUES ('32', 'AFS4a03148558bf54b8', '10');
 INSERT INTO `tb_matter_assign` VALUES ('33', 'AFSAB9A14867B837358', '8');
 INSERT INTO `tb_matter_assign` VALUES ('34', 'AFSAB9A14867B837358', '15');
 INSERT INTO `tb_matter_assign` VALUES ('35', 'AFSAB9A14867B837358', '14');
@@ -371,6 +361,8 @@ INSERT INTO `tb_matter_assign` VALUES ('104', 'AFS8BC5A412C8B6D5F0', '15');
 INSERT INTO `tb_matter_assign` VALUES ('105', 'AFSAB81B4A09AE0254E', '3');
 INSERT INTO `tb_matter_assign` VALUES ('106', 'AFSAB81B4A09AE0254E', '11');
 INSERT INTO `tb_matter_assign` VALUES ('107', 'AFSAB81B4A09AE0254E', '13');
+INSERT INTO `tb_matter_assign` VALUES ('108', 'AFS0d6d048c58aad681', '19');
+INSERT INTO `tb_matter_assign` VALUES ('109', 'AFS0d6d048c58aad681', '10');
 
 -- ----------------------------
 -- Table structure for tb_matter_hourly
@@ -422,8 +414,6 @@ CREATE TABLE `tb_matter_lumpsum` (
 -- Records of tb_matter_lumpsum
 -- ----------------------------
 INSERT INTO `tb_matter_lumpsum` VALUES ('7', 'AFS7ad474b2bb3cfb61', '500000000', '150000000', '150000000', '200000000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Desc Term 2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'ooo');
-INSERT INTO `tb_matter_lumpsum` VALUES ('13', 'AFS4a03148558bf54b8', '10000000', '10000000', '5000000', '1000000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet');
-INSERT INTO `tb_matter_lumpsum` VALUES ('14', 'AFS35f3b400da90646f', '50000000', '10000000', '20000000', '30000000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo');
 INSERT INTO `tb_matter_lumpsum` VALUES ('18', 'AFS736324E40B7213D5', '200000', '25000000', '30000000', '45000000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'lorem ipsum dolor sit amet', 'lorem ipsum dolor sit amet', 'lorem ipsum dolor sit amet');
 INSERT INTO `tb_matter_lumpsum` VALUES ('19', 'AFS658284946853C50B', '120000000', '10000000', '20000000', '30000000', 'lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'lorem ipsum dolor sit amet', 'ggg');
 INSERT INTO `tb_matter_lumpsum` VALUES ('20', 'AFS4D7C74079B187959', '65000000', '50000000', '500000', '60000000', 'lorem ipsum dolor sit amet', 'lorem ipsum dolor sit amet', 'lorem ipsum dolor sit amet', 'lorem ipsum dolor sit amet');
@@ -547,7 +537,7 @@ CREATE TABLE `tb_matter_successfee` (
 -- Records of tb_matter_successfee
 -- ----------------------------
 INSERT INTO `tb_matter_successfee` VALUES ('1', 'AFS2015201591333', '50000000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo');
-INSERT INTO `tb_matter_successfee` VALUES ('2', 'AFS2015201530333', '150000000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo');
+INSERT INTO `tb_matter_successfee` VALUES ('2', 'AFS2015201530333', '200000000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo');
 INSERT INTO `tb_matter_successfee` VALUES ('3', 'AFS2015225885522', '50000000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo');
 INSERT INTO `tb_matter_successfee` VALUES ('4', 'AFS3dd2346679882199', '12', '12');
 INSERT INTO `tb_matter_successfee` VALUES ('5', 'AFS331064e5bb248901', '120000000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo');
@@ -943,7 +933,7 @@ INSERT INTO `tb_user` VALUES ('46', 'Teddy Syaiful', 'TS', '444444', '000000', '
 -- View structure for v_matter_assign
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_assign`;
-CREATE   VIEW `v_matter_assign` AS SELECT
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost`  VIEW `v_matter_assign` AS SELECT
 tb_matter_assign.id_matter_assign,
 tb_matter_assign.id_matter,
 tb_matter_assign.id_user,
@@ -951,13 +941,13 @@ tb_user.nama,
 tb_user.inisial
 FROM
 tb_matter_assign
-INNER JOIN tb_user ON tb_user.id_user = tb_matter_assign.id_user ;
+INNER JOIN tb_user ON tb_user.id_user = tb_matter_assign.id_user ; ;
 
 -- ----------------------------
 -- View structure for v_matter_hourly
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_hourly`;
-CREATE  SQL SECURITY DEFINER  VIEW `v_matter_hourly` AS SELECT
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_hourly` AS SELECT
 tb_matter.id_matter,
 tb_matter.id_client,
 tb_matter.id_payment,
@@ -983,13 +973,13 @@ INNER JOIN tb_matter_hourly ON tb_matter_hourly.id_matter = tb_matter.id_matter
 INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
 INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment
 WHERE
-tb_matter.id_matter = tb_matter_hourly.id_matter ;
+tb_matter.id_matter = tb_matter_hourly.id_matter ; ;
 
 -- ----------------------------
 -- View structure for v_matter_lumpsum
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_lumpsum`;
-CREATE  SQL SECURITY DEFINER  VIEW `v_matter_lumpsum` AS SELECT
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_lumpsum` AS SELECT
 tb_matter.id_matter,
 tb_matter.id_client,
 tb_matter.matter,
@@ -1016,13 +1006,13 @@ INNER JOIN tb_matter_lumpsum ON tb_matter_lumpsum.id_matter = tb_matter.id_matte
 INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
 INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment
 WHERE
-tb_matter.id_matter = tb_matter_lumpsum.id_matter ;
+tb_matter.id_matter = tb_matter_lumpsum.id_matter ; ;
 
 -- ----------------------------
 -- View structure for v_matter_probono
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_probono`;
-CREATE  SQL SECURITY DEFINER  VIEW `v_matter_probono` AS SELECT
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_probono` AS SELECT
 tb_matter.id_matter,
 tb_matter.id_client,
 tb_matter.id_payment,
@@ -1041,13 +1031,13 @@ INNER JOIN tb_matter_probono ON tb_matter_probono.id_matter = tb_matter.id_matte
 INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
 INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment
 WHERE
-tb_matter.id_matter = tb_matter_probono.id_matter ;
+tb_matter.id_matter = tb_matter_probono.id_matter ; ;
 
 -- ----------------------------
 -- View structure for v_matter_project
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_project`;
-CREATE  SQL SECURITY DEFINER  VIEW `v_matter_project` AS SELECT
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_project` AS SELECT
 tb_matter.id_matter,
 tb_matter.id_client,
 tb_matter.id_payment,
@@ -1073,13 +1063,13 @@ INNER JOIN tb_matter_project ON tb_matter_project.id_matter = tb_matter.id_matte
 INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
 INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment
 WHERE
-tb_matter.id_matter = tb_matter_project.id_matter ;
+tb_matter.id_matter = tb_matter_project.id_matter ; ;
 
 -- ----------------------------
 -- View structure for v_matter_retainer
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_retainer`;
-CREATE  SQL SECURITY DEFINER  VIEW `v_matter_retainer` AS SELECT
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_retainer` AS SELECT
 tb_matter.id_matter,
 tb_matter.id_client,
 tb_matter.id_payment,
@@ -1102,13 +1092,13 @@ INNER JOIN tb_matter_retainer ON tb_matter_retainer.id_matter = tb_matter.id_mat
 INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
 INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment
 WHERE
-tb_matter.id_matter = tb_matter_retainer.id_matter ;
+tb_matter.id_matter = tb_matter_retainer.id_matter ; ;
 
 -- ----------------------------
 -- View structure for v_matter_successfee
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_successfee`;
-CREATE  SQL SECURITY DEFINER  VIEW `v_matter_successfee` AS SELECT
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_successfee` AS SELECT
 tb_matter.id_matter,
 tb_matter.id_client,
 tb_matter.id_payment,
@@ -1128,13 +1118,13 @@ INNER JOIN tb_matter_successfee ON tb_matter_successfee.id_matter = tb_matter.id
 INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
 INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment
 WHERE
-tb_matter.id_matter = tb_matter_successfee.id_matter ;
+tb_matter.id_matter = tb_matter_successfee.id_matter ; ;
 
 -- ----------------------------
 -- View structure for v_submatter_lumpsum
 -- ----------------------------
 DROP VIEW IF EXISTS `v_submatter_lumpsum`;
-CREATE  SQL SECURITY DEFINER  VIEW `v_submatter_lumpsum` AS SELECT
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_submatter_lumpsum` AS SELECT
 tb_submatter.id_submatter,
 tb_submatter.id_matter,
 tb_submatter.id_payment,
@@ -1156,13 +1146,13 @@ FROM
 tb_submatter
 INNER JOIN tb_sublumpsum ON tb_sublumpsum.id_submatter = tb_submatter.id_submatter
 INNER JOIN tb_matter ON tb_submatter.id_matter = tb_matter.id_matter
-INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client ;
+INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client ; ;
 
 -- ----------------------------
 -- View structure for v_user
 -- ----------------------------
 DROP VIEW IF EXISTS `v_user`;
-CREATE   VIEW `v_user` AS SELECT
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost`  VIEW `v_user` AS SELECT
 tb_user.id_user,
 tb_user.nama,
 tb_user.inisial,
