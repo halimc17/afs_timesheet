@@ -15,12 +15,21 @@ class Sublumpsum_model extends CI_Model{
 		return $query->result(); 
     }
 	
-	public function get_record(){
+	public function get_record(){ // by id matter
 		$this->db->from('v_submatter_lumpsum');
         $this->db->where('id_matter',$this->uri->segment(3));
         $query = $this->db->get();
  
         return $query->result();
+		
+	}
+
+	public function get_record2(){ //by id sub matter
+		$this->db->from('v_submatter_lumpsum');
+        $this->db->where('id_submatter',$this->uri->segment(3));
+        $query = $this->db->get();
+ 
+        return $query->row();
 		
 	}
 	

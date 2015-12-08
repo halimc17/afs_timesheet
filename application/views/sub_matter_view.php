@@ -97,8 +97,33 @@
 		$('.modal-title').text('Edit Sub Matter (LUMPSUM)');
 		$('[name="btnSubmitLumpsum"]').text('Update');
 
-		$('html, body').animate({ scrollTop: 0 }, 'fast');
-		$('#modalLumpsum').modal('show');
+		//$('#formSubLumpsum')[0].reset();		
+
+		$.ajax({
+			url : "<?php echo site_url('sub_matter/getRecord_lumpsum'); ?>/"+id,
+			type: "GET",
+			dataType: "JSON",
+			success: function(data){
+				$('[name="txt_nama_client"]').val(data.nama_client);								
+				$('[name="txt_matter"]').val(data.matter);	
+				$('[name="txt_sub_matter"]').val(data.submatter);	
+				$('[name="txt_id_subMatter"]').val(data.id_submatter);	
+				$('[name="txt_open_date"]').val(data.open_date);	
+				$('[name="txt_close_date"]').val(data.close_date);	
+				$('[name="txt_success_fee"]').val(data.success_fee);	
+				$('[name="txt_term1"]').val(data.term1);	
+				$('[name="txt_term2"]').val(data.term2);	
+				$('[name="txt_term3"]').val(data.term3);	
+				$('[name="txt_desc_term1"]').val(data.desc_term1);	
+				$('[name="txt_desc_term2"]').val(data.desc_term2);	
+				$('[name="txt_desc_term3"]').val(data.desc_term3);	
+				$('[name="txt_keterangan"]').val(data.description);	
+
+				$('html, body').animate({ scrollTop: 0 }, 'fast');
+				$('#modalLumpsum').modal('show');
+			}
+
+		})
 		
 	}
 
@@ -924,7 +949,7 @@
 													<tr>
 														<td><?php echo $counter; ?></td>														
 														<td><?php echo $row->id_submatter; ?></td>
-														<td><?php echo $row->matter; ?></td>
+														<td><?php echo $row->submatter; ?></td>
 														<td><?php 
 														$openDate = new DateTime($row->open_date);
 														echo $openDate->format('d-m-Y'); ?></td>
@@ -1372,7 +1397,7 @@
 										<div class="form-group">
 											<label for="txt_id_matter" class="control-label">Id Matter</label>
 											<input type="text" class="form-control" id="txt_id_matter_disabled" name="txt_id_matter_disabled" value="<?php echo $this->uri->segment(3) ?>" disabled />
-											<input type="hidden" class="form-control" id="txt_id_matter_h" name="txt_id_matter_h" value="" />
+											<input type="hidden" class="form-control" id="txt_id_matter_h" name="txt_id_matter_h" value="<?php echo $this->uri->segment(3) ?>" />
 										</div>							
 									</div>									
 									<div class="col-md-6">						
@@ -1495,10 +1520,8 @@
 											<textarea class="form-control" id="txt_keterangan" name="txt_keterangan"></textarea>
 										</div>							
 									</div>
-								</div>							
-					
-				</div>
-				
+								</div>	
+				</div>				
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					<button type="button" name="btnSubmitLumpsum" class="btn btn-info">Save changes</button>

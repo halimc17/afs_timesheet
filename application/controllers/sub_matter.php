@@ -95,6 +95,37 @@ class Sub_matter extends CI_Controller {
 		
 	}
 
+	public function editRecord_subLumpsum(){
+
+		$data = array(
+                'id_submatter' => $this->input->post('txt_id_subMatter'),
+                'id_matter' => $this->input->post('txt_id_matter_h'),
+                'id_payment' => $this->input->post('txt_id_payment'),
+                'matter' => $this->input->post('txt_sub_matter'),
+                'open_date' => $this->input->post('txt_open_date'),
+                'close_date' => $this->input->post('txt_close_date')                
+            );
+
+		$data2 = array(
+				'id_submatter' => $this->input->post('txt_id_subMatter'),
+				'success_fee' => $this->input->post('txt_success_fee'),
+				'term1' => $this->input->post('txt_term1'),
+				'term2' => $this->input->post('txt_term2'),
+				'term3' => $this->input->post('txt_term3'),
+				'desc_term1' => $this->input->post('txt_desc_term1'),
+				'desc_term2' => $this->input->post('txt_desc_term2'),
+				'desc_term3' => $this->input->post('txt_desc_term3'),
+				'description' => $this->input->post('txt_keterangan')
+			);
+
+		$this->load->model('submatter_model');
+		$this->load->model('sublumpsum_model');
+        $this->submatter_model->update_record(array('id_submatter' => $this->input->post('txt_id_subMatter')), $data);
+        $this->sublumpsum_model->update_record(array('id_submatter' => $this->input->post('txt_id_subMatter')), $data2);
+        echo json_encode(array("status" => TRUE));
+
+	}
+
 	public function addRecord_subHourly(){
 		
 		
@@ -118,6 +149,13 @@ class Sub_matter extends CI_Controller {
 	public function addRecord_subProject(){
 		
 		
+	}
+
+	public function getRecord_lumpsum(){
+		$this->load->model('sublumpsum_model');
+		$data = $this->sublumpsum_model->get_record2();			
+
+		echo json_encode($data);
 	}
 	
 	
