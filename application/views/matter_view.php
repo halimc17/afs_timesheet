@@ -675,7 +675,7 @@
 																		<td><?php echo $row->open_date; ?></td>																				
 																		<td><?php echo $row->close_date; ?></td>																				
 																		<td><?php echo number_format($row->success_fee); ?></td>																				
-																																				<td>0</td>																																																																																														
+																		<td align="center"><?php echo $row->jml_subMatter; ?></td>																																																																																														
 																		<td align="center">
 																			<a href="<?php echo site_url('matter/assign/'); ?>/<?php echo $row->id_matter; ?>">
 																				<?php echo $row->assigned; ?>

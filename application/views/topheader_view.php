@@ -100,13 +100,17 @@
 						</button>
 					</form>
 				</li>
-			</ul>						
-			
+			</ul>	
+
+
 			<!-- notifications and other links -->
 			<ul class="nav navbar-right pull-right">
 				
 				<!-- raw links -->
 				
+				<li class="sep"></li>
+
+				<li><a href="#"><?php echo $this->session->userdata('nama'); ?></a></li>
 				
 				<li class="sep"></li>
 				

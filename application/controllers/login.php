@@ -17,18 +17,13 @@ class Login extends CI_Controller {
 		$password=md5($this->input->post('txt_password'));
 		$result = $this->login_model->validate($username,$password);
 		
-		if($result) {			
-			
+		if($result) {	
+
 			redirect('home/');
-			//$this->load->view('home_view');			
-			//redirect(base_url());
-			//echo "login berhasil";
-			
 			
 		}else{        
 			
 			$this->index();
-			//echo "login gagal";
 		}
 		
 	}	
@@ -45,7 +40,7 @@ class Login extends CI_Controller {
 		'username'     => '',
 		'loggedin' => FALSE,
 		);
-		$this->session->unset_userdata($newdata );
+		$this->session->unset_userdata($newdata);
 		$this->session->sess_destroy();
 		$this->index();
 	}

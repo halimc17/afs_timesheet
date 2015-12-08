@@ -68,6 +68,8 @@ function getRandomInt(min, max)
 		
 	</div>
 </div>
+<?php //echo $this->session->userdata('nama'); ?>
+
 
 <br />
 

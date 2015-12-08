@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2015-12-08 10:06:04
+Date: 2015-12-08 14:55:37
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -206,7 +206,7 @@ CREATE TABLE `tb_matter` (
   `active` int(11) DEFAULT '1',
   `input_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`,`id_matter`)
-) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_matter
@@ -250,7 +250,7 @@ INSERT INTO `tb_matter` VALUES ('68', 'AFS00D1847DBAA78D93', '70', '3', 'Matter 
 INSERT INTO `tb_matter` VALUES ('69', 'AFS0E45D4D7D9CE6C1D', '35', '4', 'Matter Meckel Ali', '2015-11-04', '2015-11-26', '1', null);
 INSERT INTO `tb_matter` VALUES ('70', 'AFSFBF5148DCB265314', '13', '5', 'ooo', '2015-10-28', '2015-11-26', '1', null);
 INSERT INTO `tb_matter` VALUES ('71', 'AFSFE6A3430FA469C79', '17', '6', 'Matter Firhand Ali', '2015-11-03', '2015-11-27', '1', null);
-INSERT INTO `tb_matter` VALUES ('72', 'AFS658284946853C50B', '60', '1', 'aaa', '2015-12-08', '2015-12-25', '1', null);
+INSERT INTO `tb_matter` VALUES ('72', 'AFS658284946853C50B', '60', '1', 'Matter setia utama properti', '2015-12-08', '2015-12-25', '1', null);
 INSERT INTO `tb_matter` VALUES ('73', 'AFS4D7C74079B187959', '51', '1', 'Matter Queeen', '2016-01-06', '2016-04-15', '1', null);
 INSERT INTO `tb_matter` VALUES ('74', 'AFSAB9A14867B837358', '43', '1', 'Matter MNC Finance', '2015-08-03', '2016-08-25', '1', null);
 INSERT INTO `tb_matter` VALUES ('75', 'AFSB96EF4389949BE9B', '55', '1', 'Matter Reliance group', '2015-11-29', '2016-01-01', '1', null);
@@ -258,6 +258,7 @@ INSERT INTO `tb_matter` VALUES ('76', 'AFSD2FAF4BCC8DF6014', '56', '1', 'Matter 
 INSERT INTO `tb_matter` VALUES ('77', 'AFS2D13B4B86BA57C07', '51', '1', 'Matter Queen Loyak Talang GUla', '2015-09-06', '2016-01-02', '1', null);
 INSERT INTO `tb_matter` VALUES ('78', 'AFSACD0347408681778', '47', '1', 'Matter NIko', '2015-12-07', '2015-12-25', '1', null);
 INSERT INTO `tb_matter` VALUES ('79', 'AFSAB81B4A09AE0254E', '46', '1', 'NDSC Matter', '2015-10-05', '2015-11-29', '1', null);
+INSERT INTO `tb_matter` VALUES ('80', 'AFS8BC5A412C8B6D5F0', '65', '2', 'Matter Taman harapan indah', '2015-08-30', '2016-01-09', '1', null);
 
 -- ----------------------------
 -- Table structure for tb_matter_assign
@@ -268,7 +269,7 @@ CREATE TABLE `tb_matter_assign` (
   `id_matter` varchar(255) DEFAULT NULL,
   `id_user` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_matter_assign`)
-) ENGINE=InnoDB AUTO_INCREMENT=102 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=108 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_matter_assign
@@ -364,6 +365,12 @@ INSERT INTO `tb_matter_assign` VALUES ('97', 'AFSFD06A4ED99CEA986', '14');
 INSERT INTO `tb_matter_assign` VALUES ('99', 'AFSFD06A4ED99CEA986', '15');
 INSERT INTO `tb_matter_assign` VALUES ('100', 'AFSFD06A4ED99CEA986', '3');
 INSERT INTO `tb_matter_assign` VALUES ('101', 'AFSf185e4fedb457a56', '2');
+INSERT INTO `tb_matter_assign` VALUES ('102', 'AFS8BC5A412C8B6D5F0', '6');
+INSERT INTO `tb_matter_assign` VALUES ('103', 'AFS8BC5A412C8B6D5F0', '11');
+INSERT INTO `tb_matter_assign` VALUES ('104', 'AFS8BC5A412C8B6D5F0', '15');
+INSERT INTO `tb_matter_assign` VALUES ('105', 'AFSAB81B4A09AE0254E', '3');
+INSERT INTO `tb_matter_assign` VALUES ('106', 'AFSAB81B4A09AE0254E', '11');
+INSERT INTO `tb_matter_assign` VALUES ('107', 'AFSAB81B4A09AE0254E', '13');
 
 -- ----------------------------
 -- Table structure for tb_matter_hourly
@@ -381,7 +388,7 @@ CREATE TABLE `tb_matter_hourly` (
   `disc` int(255) DEFAULT NULL,
   `description` text,
   PRIMARY KEY (`id_hourly`,`id_matter`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_matter_hourly
@@ -391,6 +398,7 @@ INSERT INTO `tb_matter_hourly` VALUES ('7', 'AFSb95be4d09a01ad52', '100000000', 
 INSERT INTO `tb_matter_hourly` VALUES ('8', 'AFS4774c475ab2bd559', '10000000', '15000000', '2000000', '30000000', '5000000', '2000000', '12', 'keterangan');
 INSERT INTO `tb_matter_hourly` VALUES ('11', 'AFSA768E4E0C9F2E431', '120000000', '30000000', '30000000', '50000000', '90000000', '10000000', '25', 'Lorem ipsum dolor sit amet');
 INSERT INTO `tb_matter_hourly` VALUES ('12', 'AFS8D9A348C3B629E4A', '50000000', '10000000', '20000000', '500000', '15000000', '10000000', '25', 'lorem ipsum dolor sit amet');
+INSERT INTO `tb_matter_hourly` VALUES ('13', 'AFS8BC5A412C8B6D5F0', '50000000', '10000000', '20000000', '30000000', '60000000', '10000000', '25', 'lorem ipsum dolor sit amet');
 
 -- ----------------------------
 -- Table structure for tb_matter_lumpsum
@@ -659,17 +667,23 @@ CREATE TABLE `tb_sublumpsum` (
   `desc_term3` varchar(255) DEFAULT NULL,
   `description` text,
   PRIMARY KEY (`id_sublumpsum`,`id_submatter`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_sublumpsum
 -- ----------------------------
-INSERT INTO `tb_sublumpsum` VALUES ('1', 'S-AFS7EAA545F9BF17B', '250000000', '50000000', '100000000', '100000000', 'desc term1', 'desc term 2', 'desc term 3', 'keterangan');
-INSERT INTO `tb_sublumpsum` VALUES ('2', 'S-AFSC81A04F68BFE87', '123123', '1121', '1212', '121', 'asd', 'asd', 'asd', 'asd');
+INSERT INTO `tb_sublumpsum` VALUES ('1', 'S-AFS7EAA545F9BF17B', '14000000', '50000000', '100000000', '100000000', 'desc term1', 'desc term 2', 'desc term 3', 'keterangan');
+INSERT INTO `tb_sublumpsum` VALUES ('2', 'S-AFSC81A04F68BFE87', '13000000', '1121', '1212', '121', 'asd', 'asd', 'asd', 'asd');
 INSERT INTO `tb_sublumpsum` VALUES ('3', 'S-AFS616334E689B4A3', '150000000', '50000000', '50000000', '50000000', '333', '333', '333', '333');
-INSERT INTO `tb_sublumpsum` VALUES ('4', 'S-AFSD2D3E4E78F003B', '150000', '55', '55', '55', '55', '55', '55', '55');
+INSERT INTO `tb_sublumpsum` VALUES ('4', 'S-AFSD2D3E4E78F003B', '10000000', '250000', '30000000', '45000000', 'lorem ipsum dolor sit amet', 'lorem ipsum dolor sit amet', 'lorem ipsum dolor sit amet', 'lorem ipsum dolor sit amet');
 INSERT INTO `tb_sublumpsum` VALUES ('5', 'S-AFSC0C8A47797C49B', '120000000', '55', '66', '55', 'op', 'op', 'op', 'op');
 INSERT INTO `tb_sublumpsum` VALUES ('6', 'S-AFS031184059037AF', '123', '123', '123', '123', 'asd', 'asd', 'asd', 'asd');
+INSERT INTO `tb_sublumpsum` VALUES ('7', 'S-AFS1BC444C2828CE2', '50000000', '10000000', '20000000', '20000000', 'ooo', 'ooo', 'ooo', 'ooo');
+INSERT INTO `tb_sublumpsum` VALUES ('8', 'S-AFS27BC646584AA4F', '60000000', '20000000', '30000000', '10000000', 'ppp', 'ppp', 'ppp', 'ppp');
+INSERT INTO `tb_sublumpsum` VALUES ('9', 'S-AFSE490147281945C', '150000000', '50000000', '50000000', '50000000', 'kkk', 'kkk', 'kkk', 'kkk');
+INSERT INTO `tb_sublumpsum` VALUES ('10', 'S-AFS8854B4B4A6A1EB', '50000000', '10000000', '20000000', '20000000', 'ggg', 'ggg', 'ggg', 'ggg');
+INSERT INTO `tb_sublumpsum` VALUES ('11', 'S-AFS20FF34AE82A357', '80000000', '20000000', '40000000', '20000000', 'ooo', 'ooo', 'ooo', 'ooo');
+INSERT INTO `tb_sublumpsum` VALUES ('12', 'S-AFS8FD7044E8D22DD', '350000000', '150000000', '100000000', '100000000', 'lorem ipsum dolor sit amet', 'lorem ipsum dolor sit amet', 'lorem ipsum dolor sit amet', 'lorem ipsum dolor sit amet');
 
 -- ----------------------------
 -- Table structure for tb_submatter
@@ -690,11 +704,17 @@ CREATE TABLE `tb_submatter` (
 -- Records of tb_submatter
 -- ----------------------------
 INSERT INTO `tb_submatter` VALUES ('S-AFS031184059037AF', 'AFSACD0347408681778', '1', 'sub mater dua', '2015-11-29 00:00:00', '2015-12-06 00:00:00', '1');
+INSERT INTO `tb_submatter` VALUES ('S-AFS1BC444C2828CE2', 'AFSAB81B4A09AE0254E', '1', 'tambahan sub matter', '2015-12-06 00:00:00', '2015-12-25 00:00:00', '1');
+INSERT INTO `tb_submatter` VALUES ('S-AFS20FF34AE82A357', 'AFSD2FAF4BCC8DF6014', '1', 'sub matter dua sri wahyusih', '2015-12-09 00:00:00', '2016-01-09 00:00:00', '1');
+INSERT INTO `tb_submatter` VALUES ('S-AFS27BC646584AA4F', 'AFSAB81B4A09AE0254E', '1', 'tambahan sub matter ke dua', '2015-12-15 00:00:00', '2016-01-02 00:00:00', '1');
 INSERT INTO `tb_submatter` VALUES ('S-AFS616334E689B4A3', 'AFSAB81B4A09AE0254E', '1', 'sub matter ke tiga', '2015-11-29 00:00:00', '2015-12-25 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFS7EAA545F9BF17B', 'AFSAB81B4A09AE0254E', '1', 'Sub Matter NDSC', '2015-11-29 00:00:00', '2015-12-11 00:00:00', '1');
+INSERT INTO `tb_submatter` VALUES ('S-AFS7EAA545F9BF17B', 'AFSAB81B4A09AE0254E', '1', 'Lorem ipsum dolor sit amet', '2015-11-29 00:00:00', '2015-12-11 00:00:00', '1');
+INSERT INTO `tb_submatter` VALUES ('S-AFS8854B4B4A6A1EB', 'AFSD2FAF4BCC8DF6014', '1', 'sub matter rita sri wahyusih', '2015-07-26 00:00:00', '2016-01-01 00:00:00', '1');
+INSERT INTO `tb_submatter` VALUES ('S-AFS8FD7044E8D22DD', 'AFS4922b4c5ba927ffc', '1', 'Sub Matter baru', '2015-11-29 00:00:00', '2015-12-23 00:00:00', '1');
 INSERT INTO `tb_submatter` VALUES ('S-AFSC0C8A47797C49B', 'AFSACD0347408681778', '1', 'sub matter', '2015-11-29 00:00:00', '2015-12-17 00:00:00', '1');
 INSERT INTO `tb_submatter` VALUES ('S-AFSC81A04F68BFE87', 'AFSAB81B4A09AE0254E', '1', 'sub matter ke dua', '2015-11-29 00:00:00', '2015-12-19 00:00:00', '1');
 INSERT INTO `tb_submatter` VALUES ('S-AFSD2D3E4E78F003B', 'AFSAB81B4A09AE0254E', '1', 'sub matter ke empat', '2015-11-29 00:00:00', '2015-12-17 00:00:00', '1');
+INSERT INTO `tb_submatter` VALUES ('S-AFSE490147281945C', 'AFSAB81B4A09AE0254E', '1', 'sub matter awal dua', '2015-09-27 00:00:00', '2015-12-26 00:00:00', '1');
 
 -- ----------------------------
 -- Table structure for tb_submatter_assign
@@ -923,7 +943,7 @@ INSERT INTO `tb_user` VALUES ('46', 'Teddy Syaiful', 'TS', '444444', '000000', '
 -- View structure for v_matter_assign
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_assign`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost`  VIEW `v_matter_assign` AS SELECT
+CREATE   VIEW `v_matter_assign` AS SELECT
 tb_matter_assign.id_matter_assign,
 tb_matter_assign.id_matter,
 tb_matter_assign.id_user,
@@ -937,7 +957,7 @@ INNER JOIN tb_user ON tb_user.id_user = tb_matter_assign.id_user ;
 -- View structure for v_matter_hourly
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_hourly`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_hourly` AS SELECT
+CREATE  SQL SECURITY DEFINER  VIEW `v_matter_hourly` AS SELECT
 tb_matter.id_matter,
 tb_matter.id_client,
 tb_matter.id_payment,
@@ -969,7 +989,7 @@ tb_matter.id_matter = tb_matter_hourly.id_matter ;
 -- View structure for v_matter_lumpsum
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_lumpsum`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_lumpsum` AS SELECT
+CREATE  SQL SECURITY DEFINER  VIEW `v_matter_lumpsum` AS SELECT
 tb_matter.id_matter,
 tb_matter.id_client,
 tb_matter.matter,
@@ -988,6 +1008,7 @@ tb_client.nama_client,
 tb_payment.payment_name,
 tb_matter.id,
 (SELECT COUNT(id_matter) FROM tb_matter_assign WHERE tb_matter_assign.id_matter = tb_matter.id_matter) AS assigned,
+(SELECT COUNT(id_matter) FROM tb_submatter WHERE tb_submatter.id_matter = tb_matter.id_matter) AS jml_subMatter,
 tb_matter.id_payment
 FROM
 tb_matter
@@ -1001,7 +1022,7 @@ tb_matter.id_matter = tb_matter_lumpsum.id_matter ;
 -- View structure for v_matter_probono
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_probono`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_probono` AS SELECT
+CREATE  SQL SECURITY DEFINER  VIEW `v_matter_probono` AS SELECT
 tb_matter.id_matter,
 tb_matter.id_client,
 tb_matter.id_payment,
@@ -1026,7 +1047,7 @@ tb_matter.id_matter = tb_matter_probono.id_matter ;
 -- View structure for v_matter_project
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_project`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_project` AS SELECT
+CREATE  SQL SECURITY DEFINER  VIEW `v_matter_project` AS SELECT
 tb_matter.id_matter,
 tb_matter.id_client,
 tb_matter.id_payment,
@@ -1058,7 +1079,7 @@ tb_matter.id_matter = tb_matter_project.id_matter ;
 -- View structure for v_matter_retainer
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_retainer`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_retainer` AS SELECT
+CREATE  SQL SECURITY DEFINER  VIEW `v_matter_retainer` AS SELECT
 tb_matter.id_matter,
 tb_matter.id_client,
 tb_matter.id_payment,
@@ -1087,7 +1108,7 @@ tb_matter.id_matter = tb_matter_retainer.id_matter ;
 -- View structure for v_matter_successfee
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_successfee`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_successfee` AS SELECT
+CREATE  SQL SECURITY DEFINER  VIEW `v_matter_successfee` AS SELECT
 tb_matter.id_matter,
 tb_matter.id_client,
 tb_matter.id_payment,
@@ -1113,7 +1134,7 @@ tb_matter.id_matter = tb_matter_successfee.id_matter ;
 -- View structure for v_submatter_lumpsum
 -- ----------------------------
 DROP VIEW IF EXISTS `v_submatter_lumpsum`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_submatter_lumpsum` AS SELECT
+CREATE  SQL SECURITY DEFINER  VIEW `v_submatter_lumpsum` AS SELECT
 tb_submatter.id_submatter,
 tb_submatter.id_matter,
 tb_submatter.id_payment,
@@ -1141,7 +1162,7 @@ INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client ;
 -- View structure for v_user
 -- ----------------------------
 DROP VIEW IF EXISTS `v_user`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost`  VIEW `v_user` AS SELECT
+CREATE   VIEW `v_user` AS SELECT
 tb_user.id_user,
 tb_user.nama,
 tb_user.inisial,
