@@ -463,5 +463,4 @@ class Matter extends CI_Controller {
 
 		redirect('matter/assign/'.$this->uri->segment(3));
 	}
-
 }

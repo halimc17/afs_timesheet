@@ -33,6 +33,7 @@ class Login_model extends CI_Model{
                     'id_user' => $row->id_user,
                     'nama' => $row->nama,
                     'username' => $row->username,
+                    'inisial' => $row->inisial,
                     'status' => $row->status,
 					'id_jabatan' => $row->id_jabatan,
                     'logged_in' => TRUE

@@ -32,8 +32,8 @@
 							</a>
 						</li>
 						<li>
-							<a href="layout-collapsed-sidebar.html">
-								<span>Timesheet Lists</span>
+							<a href="<?php echo site_url('timesheet/') ?>">
+								<span>Timesheet</span>
 							</a>
 						</li>
 						<li>
