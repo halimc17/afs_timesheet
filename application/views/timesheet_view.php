@@ -20,7 +20,7 @@
 		});
 	});
 
-	function inputTimesheet(){
+	function inputTimesheet(){		
 		$('#formTimesheet')[0].reset(); // reset form on modals
 		$('html, body').animate({ scrollTop: 0 }, 'fast');
       	$('#modalTimesheet').modal('show');
@@ -71,7 +71,7 @@
 											</button>
 										</td>
 									</tr>
-								<?php	$counter++; }
+								<?php	$counter++;}
 								} ?>
 									
 								</tbody>
@@ -123,8 +123,13 @@
 						</div>
 						<div class="col-md-6">						
 							<div class="form-group" style="padding-left:10px;">
-								<label for="txt_date" class="control-label">Date</label>							
-								<input type="text" class="form-control" id="txt_date" name="txt_date" value="">
+								<label for="txt_date" class="control-label">Date</label>
+								<div class="input-group">
+									<input type="text" class="form-control datepicker" data-format="yyyy-mm-dd" name="txt_date">												
+									<div class="input-group-addon">
+										<a href="#"><i class="entypo-calendar"></i></a>
+									</div>
+								</div>														
 							</div>						
 						</div>
 					</div>
@@ -183,6 +188,7 @@
 	<script src="<?php echo base_url(); ?>template/assets/js/resizeable.js"></script>
 	<script src="<?php echo base_url(); ?>template/assets/js/neon-api.js"></script>
 	<script src="<?php echo base_url(); ?>template/assets/js/jquery.dataTables.min.js"></script>
+	<script src="<?php echo base_url(); ?>template/assets/js/bootstrap-datepicker.js"></script>
 	<script src="<?php echo base_url(); ?>template/assets/js/datatables/TableTools.min.js"></script>
 	<script src="<?php echo base_url(); ?>template/assets/js/dataTables.bootstrap.js"></script>
 	<script src="<?php echo base_url(); ?>template/assets/js/datatables/jquery.dataTables.columnFilter.js"></script>

@@ -25,12 +25,7 @@
 						<i class="entypo-layout"></i>
 						<span>Attorney</span>
 					</a>
-					<ul>
-						<li>
-							<a href="<?php echo base_url(); ?>index.php/matter/input_timesheet">
-								<span>Input Timesheet</span>
-							</a>
-						</li>
+					<ul>						
 						<li>
 							<a href="<?php echo site_url('timesheet/') ?>">
 								<span>Timesheet</span>
@@ -49,17 +44,7 @@
 						<i class="entypo-newspaper"></i>
 						<span>Administrator</span>
 					</a>
-					<ul>
-						<li>
-							<a href="ui-panels.html">
-								<span>Attorney daily timesheet</span>
-							</a>
-						</li>
-						<li>
-							<a href="ui-tiles.html">
-								<span>Reports</span>
-							</a>
-						</li>
+					<ul>						
 						<li>
 							<a href="<?php echo base_url(); ?>index.php/client/">
 								<span>Clients</span>
@@ -68,17 +53,7 @@
 						<li>
 							<a href="<?php echo site_url('/matter');?>">
 								<span>Matter</span>	</a>						
-						</li>
-						<li>
-							<a href="ui-typography.html">
-								<span>Attorney</span>
-							</a>
-						</li>
-						<li>
-							<a href="ui-tabs-accordions.html">
-								<span>Work Type</span>
-							</a>
-						</li>
+						</li>						
 						<li>
 							<a href="<?php echo site_url('user/'); ?>">
 								<span>User Management</span>

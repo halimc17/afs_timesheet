@@ -933,7 +933,7 @@ INSERT INTO `tb_user` VALUES ('46', 'Teddy Syaiful', 'TS', '444444', '000000', '
 -- View structure for v_matter_assign
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_assign`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost`  VIEW `v_matter_assign` AS SELECT
+CREATE VIEW `v_matter_assign` AS SELECT
 tb_matter_assign.id_matter_assign,
 tb_matter_assign.id_matter,
 tb_matter_assign.id_user,
@@ -947,7 +947,7 @@ INNER JOIN tb_user ON tb_user.id_user = tb_matter_assign.id_user ; ;
 -- View structure for v_matter_hourly
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_hourly`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_hourly` AS SELECT
+CREATE  VIEW `v_matter_hourly` AS SELECT
 tb_matter.id_matter,
 tb_matter.id_client,
 tb_matter.id_payment,
@@ -979,7 +979,7 @@ tb_matter.id_matter = tb_matter_hourly.id_matter ; ;
 -- View structure for v_matter_lumpsum
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_lumpsum`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_lumpsum` AS SELECT
+CREATE  VIEW `v_matter_lumpsum` AS SELECT
 tb_matter.id_matter,
 tb_matter.id_client,
 tb_matter.matter,
@@ -1012,7 +1012,7 @@ tb_matter.id_matter = tb_matter_lumpsum.id_matter ; ;
 -- View structure for v_matter_probono
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_probono`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_probono` AS SELECT
+CREATE  VIEW `v_matter_probono` AS SELECT
 tb_matter.id_matter,
 tb_matter.id_client,
 tb_matter.id_payment,
@@ -1037,7 +1037,7 @@ tb_matter.id_matter = tb_matter_probono.id_matter ; ;
 -- View structure for v_matter_project
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_project`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_project` AS SELECT
+CREATE  VIEW `v_matter_project` AS SELECT
 tb_matter.id_matter,
 tb_matter.id_client,
 tb_matter.id_payment,
@@ -1069,7 +1069,7 @@ tb_matter.id_matter = tb_matter_project.id_matter ; ;
 -- View structure for v_matter_retainer
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_retainer`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_retainer` AS SELECT
+CREATE  VIEW `v_matter_retainer` AS SELECT
 tb_matter.id_matter,
 tb_matter.id_client,
 tb_matter.id_payment,
@@ -1098,7 +1098,7 @@ tb_matter.id_matter = tb_matter_retainer.id_matter ; ;
 -- View structure for v_matter_successfee
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_successfee`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_successfee` AS SELECT
+CREATE  VIEW `v_matter_successfee` AS SELECT
 tb_matter.id_matter,
 tb_matter.id_client,
 tb_matter.id_payment,
@@ -1124,7 +1124,7 @@ tb_matter.id_matter = tb_matter_successfee.id_matter ; ;
 -- View structure for v_submatter_lumpsum
 -- ----------------------------
 DROP VIEW IF EXISTS `v_submatter_lumpsum`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_submatter_lumpsum` AS SELECT
+CREATE  VIEW `v_submatter_lumpsum` AS SELECT
 tb_submatter.id_submatter,
 tb_submatter.id_matter,
 tb_submatter.id_payment,
@@ -1152,7 +1152,7 @@ INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client ; ;
 -- View structure for v_user
 -- ----------------------------
 DROP VIEW IF EXISTS `v_user`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost`  VIEW `v_user` AS SELECT
+CREATE VIEW `v_user` AS SELECT
 tb_user.id_user,
 tb_user.nama,
 tb_user.inisial,
