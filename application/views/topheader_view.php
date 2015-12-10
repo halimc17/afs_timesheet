@@ -44,9 +44,14 @@
 						<i class="entypo-newspaper"></i>
 						<span>Administrator</span>
 					</a>
-					<ul>						
+					<ul>
 						<li>
-							<a href="<?php echo base_url(); ?>index.php/client/">
+							<a href="<?php echo site_url('setup/'); ?>">
+								<span>Setup</span>
+							</a>
+						</li>						
+						<li>
+							<a href="<?php echo site_url('client/'); ?>">
 								<span>Clients</span>
 							</a>
 						</li>

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2015-12-09 21:27:25
+Date: 2015-12-10 16:36:21
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -206,7 +206,7 @@ CREATE TABLE `tb_matter` (
   `active` int(11) DEFAULT '1',
   `input_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`,`id_matter`)
-) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_matter
@@ -248,7 +248,7 @@ INSERT INTO `tb_matter` VALUES ('66', 'AFSA768E4E0C9F2E431', '67', '2', 'Matter 
 INSERT INTO `tb_matter` VALUES ('67', 'AFS8D9A348C3B629E4A', '61', '2', 'Matter Semesta Marga Raya', '2015-10-26', '2015-11-25', '1', null);
 INSERT INTO `tb_matter` VALUES ('68', 'AFS00D1847DBAA78D93', '70', '3', 'Matter Trimartheo', '2015-10-28', '2015-11-12', '1', null);
 INSERT INTO `tb_matter` VALUES ('69', 'AFS0E45D4D7D9CE6C1D', '35', '4', 'Matter Meckel Ali', '2015-11-04', '2015-11-26', '1', null);
-INSERT INTO `tb_matter` VALUES ('70', 'AFSFBF5148DCB265314', '13', '5', 'ooo', '2015-10-28', '2015-11-26', '1', null);
+INSERT INTO `tb_matter` VALUES ('70', 'AFSFBF5148DCB265314', '13', '5', 'Lorem Ipsum dolor sit amet', '2015-10-28', '2015-11-26', '1', null);
 INSERT INTO `tb_matter` VALUES ('71', 'AFSFE6A3430FA469C79', '17', '6', 'Matter Firhand Ali', '2015-11-03', '2015-11-27', '1', null);
 INSERT INTO `tb_matter` VALUES ('72', 'AFS658284946853C50B', '60', '1', 'Matter setia utama properti', '2015-12-08', '2015-12-25', '1', null);
 INSERT INTO `tb_matter` VALUES ('73', 'AFS4D7C74079B187959', '51', '1', 'Matter Queeen', '2016-01-06', '2016-04-15', '1', null);
@@ -259,7 +259,9 @@ INSERT INTO `tb_matter` VALUES ('77', 'AFS2D13B4B86BA57C07', '51', '1', 'Matter 
 INSERT INTO `tb_matter` VALUES ('78', 'AFSACD0347408681778', '47', '1', 'Matter NIko', '2015-12-07', '2015-12-25', '1', null);
 INSERT INTO `tb_matter` VALUES ('79', 'AFSAB81B4A09AE0254E', '46', '1', 'NDSC Matter', '2015-10-05', '2015-11-29', '1', null);
 INSERT INTO `tb_matter` VALUES ('80', 'AFS8BC5A412C8B6D5F0', '65', '2', 'Matter Taman harapan indah', '2015-08-30', '2016-01-09', '1', null);
-INSERT INTO `tb_matter` VALUES ('81', 'AFSB9B294A74838818B', '57', '1', 'bbbbb', '2015-12-16', '2015-12-31', '1', null);
+INSERT INTO `tb_matter` VALUES ('81', 'AFSB9B294A74838818B', '57', '1', 'Matter Robert Tantular', '2015-12-16', '2015-12-31', '1', null);
+INSERT INTO `tb_matter` VALUES ('82', 'AFSA19964291B6C4D3A', '93', '6', 'asdasdasd', '2015-11-30', '2016-01-01', '1', null);
+INSERT INTO `tb_matter` VALUES ('83', 'AFS885C849D48C12BBD', '76', '6', 'fgfggf', '2015-11-29', '2015-12-23', '1', null);
 
 -- ----------------------------
 -- Table structure for tb_matter_assign
@@ -439,7 +441,7 @@ INSERT INTO `tb_matter_lumpsum` VALUES ('23', 'AFSD2FAF4BCC8DF6014', '50000000',
 INSERT INTO `tb_matter_lumpsum` VALUES ('24', 'AFS2D13B4B86BA57C07', '120000000', '20000000', '50000000', '50000000', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet');
 INSERT INTO `tb_matter_lumpsum` VALUES ('25', 'AFSACD0347408681778', '150000000', '50000000', '15000000', '60000000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet');
 INSERT INTO `tb_matter_lumpsum` VALUES ('26', 'AFSAB81B4A09AE0254E', '350000000', '250000000', '50000000', '100000000', 'Lorem ipsum dolor sit amet', 'lorem ipsum dolor', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo');
-INSERT INTO `tb_matter_lumpsum` VALUES ('27', 'AFSB9B294A74838818B', '500000000', '100000000', '200000000', '200000000', 'iouiouiou', 'iouiouiouiou', 'iouiouiouio', 'iouiouiouioiou');
+INSERT INTO `tb_matter_lumpsum` VALUES ('27', 'AFSB9B294A74838818B', '500000000', '100000000', '200000000', '200000000', 'iouiouiou', 'iouiouiouiou', 'iouiouiouio', 'Keterangan matter robert tantular');
 
 -- ----------------------------
 -- Table structure for tb_matter_ope
@@ -496,7 +498,7 @@ CREATE TABLE `tb_matter_project` (
   `desc_term3` text,
   `description` text,
   PRIMARY KEY (`id_project`,`id_matter`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_matter_project
@@ -508,6 +510,8 @@ INSERT INTO `tb_matter_project` VALUES ('4', 'AFS27a9e4852adf3e22', '14000000', 
 INSERT INTO `tb_matter_project` VALUES ('5', 'AFSb9e1c4a129735b96', '120000000', '1000000', '2000000', '3000000', 'lorem ipsum dolor sit amet', 'lorem ipsum dolor sit amet', 'lorem ipsum dolor sit amet', 'lorem ipsum dolor sit amet');
 INSERT INTO `tb_matter_project` VALUES ('6', 'AFS93D5C418EA446A26', '220000000', '3500000', '100000000', '150000000', 'lorem ipsum dolor sit amet', 'lorem ipsum dolor sit amet', 'lorem ipsum dolor sit amet', 'lorem ipsum dolor sit amet');
 INSERT INTO `tb_matter_project` VALUES ('7', 'AFSFE6A3430FA469C79', '120000000', '105000000', '1500000', '15000000', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet');
+INSERT INTO `tb_matter_project` VALUES ('8', 'AFSA19964291B6C4D3A', '1231', '23', '23', '23', 'asdadasdads', 'asdasdasd', 'asdasd', 'asdasdsadasd');
+INSERT INTO `tb_matter_project` VALUES ('9', 'AFS885C849D48C12BBD', '120000000', '10000000', '20000000', '30000000', 'ooo', 'ooo', 'ooo', 'ooo');
 
 -- ----------------------------
 -- Table structure for tb_matter_retainer
@@ -598,22 +602,6 @@ INSERT INTO `tb_payment` VALUES ('5', 'PROBONO');
 INSERT INTO `tb_payment` VALUES ('6', 'PROJECT');
 
 -- ----------------------------
--- Table structure for tb_probono
--- ----------------------------
-DROP TABLE IF EXISTS `tb_probono`;
-CREATE TABLE `tb_probono` (
-  `id_probono` int(11) NOT NULL AUTO_INCREMENT,
-  `id_matter` varchar(255) NOT NULL,
-  `description` text,
-  PRIMARY KEY (`id_probono`,`id_matter`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of tb_probono
--- ----------------------------
-INSERT INTO `tb_probono` VALUES ('1', 'AFS2015201591777', 'Description Probono');
-
--- ----------------------------
 -- Table structure for tb_project
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_project`;
@@ -635,6 +623,33 @@ CREATE TABLE `tb_project` (
 -- Records of tb_project
 -- ----------------------------
 INSERT INTO `tb_project` VALUES ('1', 'AFS2015201591444', '50000000', '10000000', '20000000', '50000000', 'Desc', 'Desc', 'Desc', 'Desc');
+
+-- ----------------------------
+-- Table structure for tb_reimburstment
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_reimburstment`;
+CREATE TABLE `tb_reimburstment` (
+  `id_reimburstment` int(11) NOT NULL AUTO_INCREMENT,
+  `id_matter` varchar(255) DEFAULT NULL,
+  `id_user` int(11) DEFAULT NULL,
+  `type_reimburstment` int(11) DEFAULT NULL,
+  `jumlah` float DEFAULT NULL,
+  `input_date` date DEFAULT NULL,
+  PRIMARY KEY (`id_reimburstment`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of tb_reimburstment
+-- ----------------------------
+INSERT INTO `tb_reimburstment` VALUES ('7', 'AFS35f3b400da90646f', '15', '3', '50000', '2015-12-10');
+INSERT INTO `tb_reimburstment` VALUES ('8', 'AFS35f3b400da90646f', '15', '5', '1500000', '2015-12-10');
+INSERT INTO `tb_reimburstment` VALUES ('9', 'AFS35f3b400da90646f', '15', '6', '15000', '2015-12-10');
+INSERT INTO `tb_reimburstment` VALUES ('10', 'AFS4D7C74079B187959', '1', '1', '5000000', '2015-12-10');
+INSERT INTO `tb_reimburstment` VALUES ('11', 'AFSAB9A14867B837358', '15', '4', '300000', '2015-12-10');
+INSERT INTO `tb_reimburstment` VALUES ('12', 'AFSFBF5148DCB265314', '15', '6', '150000', '2015-12-10');
+INSERT INTO `tb_reimburstment` VALUES ('13', 'AFSb95be4d09a01ad52', '15', '7', '1500000', '2015-12-10');
+INSERT INTO `tb_reimburstment` VALUES ('14', 'AFSAB9A14867B837358', '15', '1', '50000', '2015-12-10');
+INSERT INTO `tb_reimburstment` VALUES ('15', 'AFS35f3b400da90646f', '15', '2', '25000', '2015-12-10');
 
 -- ----------------------------
 -- Table structure for tb_subhourly
@@ -674,7 +689,7 @@ CREATE TABLE `tb_sublumpsum` (
   `desc_term3` varchar(255) DEFAULT NULL,
   `description` text,
   PRIMARY KEY (`id_sublumpsum`,`id_submatter`)
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_sublumpsum
@@ -695,6 +710,9 @@ INSERT INTO `tb_sublumpsum` VALUES ('13', 'S-AFS1C17744F8EEC43', '50000000', '10
 INSERT INTO `tb_sublumpsum` VALUES ('14', 'S-AFSF61654AEA8B982', '50000000', '10000000', '10000000', '30000000', 'ppp', 'ppp', 'ppp', 'ppp');
 INSERT INTO `tb_sublumpsum` VALUES ('15', 'S-AFS9D9734FCA467CB', '150000000', '10000000', '25000000', '25000000', 'ooo', 'ooo', 'ooo', 'ooo');
 INSERT INTO `tb_sublumpsum` VALUES ('16', 'S-AFS2A5E6439B4C89E', '123', '123', '123', '123', 'asdasd', 'asd', 'asdasdasda', 'dadadad');
+INSERT INTO `tb_sublumpsum` VALUES ('17', 'S-AFS3561C4E0801602', '30000000', '10000000', '20000000', '0', 'ASDASD', 'ADAS', 'DADAD', 'ASDASD');
+INSERT INTO `tb_sublumpsum` VALUES ('18', 'S-AFS536EF486A8A5DA', '123', '11', '11', '11', '11', '11', '11', '111');
+INSERT INTO `tb_sublumpsum` VALUES ('19', 'S-AFS8F2474F3A0D27F', '120000', '100000', '200000', '30000', 'ooo', 'ooo', 'oo', 'ooo');
 
 -- ----------------------------
 -- Table structure for tb_submatter
@@ -720,9 +738,12 @@ INSERT INTO `tb_submatter` VALUES ('S-AFS1C17744F8EEC43', 'AFS2D13B4B86BA57C07',
 INSERT INTO `tb_submatter` VALUES ('S-AFS20FF34AE82A357', 'AFSD2FAF4BCC8DF6014', '1', 'sub matter dua sri wahyusih', '2015-12-09 00:00:00', '2016-01-09 00:00:00', '1');
 INSERT INTO `tb_submatter` VALUES ('S-AFS27BC646584AA4F', 'AFSAB81B4A09AE0254E', '1', 'tambahan sub matter ke dua', '2015-12-15 00:00:00', '2016-01-02 00:00:00', '1');
 INSERT INTO `tb_submatter` VALUES ('S-AFS2A5E6439B4C89E', 'AFS8BC5A412C8B6D5F0', '1', 'adasdasd', '2015-12-10 00:00:00', '2015-12-24 00:00:00', '1');
+INSERT INTO `tb_submatter` VALUES ('S-AFS3561C4E0801602', 'AFS885C849D48C12BBD', '1', 'asdadasd', '2015-12-01 00:00:00', '2015-12-23 00:00:00', '1');
+INSERT INTO `tb_submatter` VALUES ('S-AFS536EF486A8A5DA', 'AFSB9B294A74838818B', '1', 'QWEQEQWE', '2015-12-07 00:00:00', '2015-12-18 00:00:00', '1');
 INSERT INTO `tb_submatter` VALUES ('S-AFS616334E689B4A3', 'AFSAB81B4A09AE0254E', '1', 'sub matter ke tiga', '2015-11-29 00:00:00', '2015-12-25 00:00:00', '1');
 INSERT INTO `tb_submatter` VALUES ('S-AFS7EAA545F9BF17B', 'AFSAB81B4A09AE0254E', '1', 'Lorem ipsum dolor sit amet', '2015-11-29 00:00:00', '2015-12-11 00:00:00', '1');
 INSERT INTO `tb_submatter` VALUES ('S-AFS8854B4B4A6A1EB', 'AFSD2FAF4BCC8DF6014', '1', 'sub matter rita sri wahyusih', '2015-07-26 00:00:00', '2016-01-01 00:00:00', '1');
+INSERT INTO `tb_submatter` VALUES ('S-AFS8F2474F3A0D27F', 'AFSB96EF4389949BE9B', '1', 'Sub Matter tambahan', '2015-10-25 00:00:00', '2015-12-31 00:00:00', '1');
 INSERT INTO `tb_submatter` VALUES ('S-AFS8FD7044E8D22DD', 'AFS4922b4c5ba927ffc', '1', 'Sub Matter baru', '2015-11-29 00:00:00', '2015-12-23 00:00:00', '1');
 INSERT INTO `tb_submatter` VALUES ('S-AFS9D9734FCA467CB', 'AFSAB81B4A09AE0254E', '1', 'qweqeqwe', '2015-12-07 00:00:00', '2015-12-31 00:00:00', '1');
 INSERT INTO `tb_submatter` VALUES ('S-AFSC0C8A47797C49B', 'AFSACD0347408681778', '1', 'sub matter', '2015-11-29 00:00:00', '2015-12-17 00:00:00', '1');
@@ -854,39 +875,39 @@ CREATE TABLE `tb_subtimesheet` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for tb_successfee
--- ----------------------------
-DROP TABLE IF EXISTS `tb_successfee`;
-CREATE TABLE `tb_successfee` (
-  `id_successfee` int(11) NOT NULL AUTO_INCREMENT,
-  `id_matter` varchar(255) NOT NULL,
-  `biaya` float(255,0) DEFAULT NULL,
-  `description` text,
-  PRIMARY KEY (`id_successfee`,`id_matter`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
--- ----------------------------
--- Records of tb_successfee
--- ----------------------------
-INSERT INTO `tb_successfee` VALUES ('1', 'AFS2015201591333', '50000000', 'Description');
-
--- ----------------------------
 -- Table structure for tb_timesheet
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_timesheet`;
 CREATE TABLE `tb_timesheet` (
   `id_timesheet` int(11) NOT NULL AUTO_INCREMENT,
   `id_matter` varchar(255) DEFAULT NULL,
-  `id_user` int(255) DEFAULT NULL,
-  `input_date` datetime DEFAULT NULL,
-  `hour` float(255,0) DEFAULT NULL,
+  `id_user` int(11) DEFAULT NULL,
+  `input_date` date DEFAULT NULL,
+  `hour` float DEFAULT NULL,
   `description` text,
   PRIMARY KEY (`id_timesheet`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_timesheet
 -- ----------------------------
+INSERT INTO `tb_timesheet` VALUES ('1', 'AFS4D7C74079B187959', '11', '2015-12-10', '1', 'asdadadsa');
+INSERT INTO `tb_timesheet` VALUES ('2', 'AFS7ad474b2bb3cfb61', '11', '2015-12-10', '2', 'qweqeqwe');
+INSERT INTO `tb_timesheet` VALUES ('3', 'AFS7da134ac29af768a', '11', '2015-12-10', '1', 'qweqeqwe');
+INSERT INTO `tb_timesheet` VALUES ('4', 'AFS35f3b400da90646f', '15', '2015-12-10', '1', 'asdadas');
+INSERT INTO `tb_timesheet` VALUES ('5', 'AFSAB9A14867B837358', '15', '2015-12-10', '2', 'asdadasd');
+INSERT INTO `tb_timesheet` VALUES ('6', 'AFS35f3b400da90646f', '15', '2015-12-10', '1', 'zxczczcz');
+INSERT INTO `tb_timesheet` VALUES ('7', 'AFS4D7C74079B187959', '1', '2015-12-10', '1', 'asdada');
+INSERT INTO `tb_timesheet` VALUES ('8', 'AFS658284946853C50B', '1', '2015-12-10', '2', 'timesheet');
+INSERT INTO `tb_timesheet` VALUES ('9', 'AFS8D9A348C3B629E4A', '1', '2015-12-10', '4', 'adasdas');
+INSERT INTO `tb_timesheet` VALUES ('10', 'AFS8D9A348C3B629E4A', '1', '2015-12-10', '1', 'aa');
+INSERT INTO `tb_timesheet` VALUES ('11', 'AFS8BC5A412C8B6D5F0', '15', '2015-12-10', '2', 'asdadsa');
+INSERT INTO `tb_timesheet` VALUES ('12', 'AFSE044745249EB8D86', '15', '2015-12-10', '1', 'qweqewqe');
+INSERT INTO `tb_timesheet` VALUES ('13', 'AFSFBF5148DCB265314', '15', '2015-12-10', '3', 'zczxczc');
+INSERT INTO `tb_timesheet` VALUES ('14', 'AFSb95be4d09a01ad52', '15', '2015-12-10', '2', 'qweqweqwe');
+INSERT INTO `tb_timesheet` VALUES ('15', 'AFS2015213464896', '15', '2015-12-10', '2', 'sdfsdfsdf');
+INSERT INTO `tb_timesheet` VALUES ('16', 'AFS029cf4ed0afa1442', '15', '2015-12-10', '2', 'qweqweqwe');
+INSERT INTO `tb_timesheet` VALUES ('17', 'AFSFD06A4ED99CEA986', '15', '2015-12-10', '1', 'asdadasd');
 
 -- ----------------------------
 -- Table structure for tb_user
@@ -998,7 +1019,7 @@ INNER JOIN tb_matter_hourly ON tb_matter_hourly.id_matter = tb_matter.id_matter
 INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
 INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment
 WHERE
-tb_matter.id_matter = tb_matter_hourly.id_matter ; ;
+tb_matter.id_matter = tb_matter_hourly.id_matter ;
 
 -- ----------------------------
 -- View structure for v_matter_lumpsum
@@ -1031,7 +1052,7 @@ INNER JOIN tb_matter_lumpsum ON tb_matter_lumpsum.id_matter = tb_matter.id_matte
 INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
 INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment
 WHERE
-tb_matter.id_matter = tb_matter_lumpsum.id_matter ; ;
+tb_matter.id_matter = tb_matter_lumpsum.id_matter ;
 
 -- ----------------------------
 -- View structure for v_matter_probono
@@ -1056,7 +1077,7 @@ INNER JOIN tb_matter_probono ON tb_matter_probono.id_matter = tb_matter.id_matte
 INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
 INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment
 WHERE
-tb_matter.id_matter = tb_matter_probono.id_matter ; ;
+tb_matter.id_matter = tb_matter_probono.id_matter ;
 
 -- ----------------------------
 -- View structure for v_matter_project
@@ -1088,7 +1109,7 @@ INNER JOIN tb_matter_project ON tb_matter_project.id_matter = tb_matter.id_matte
 INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
 INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment
 WHERE
-tb_matter.id_matter = tb_matter_project.id_matter ; ;
+tb_matter.id_matter = tb_matter_project.id_matter ;
 
 -- ----------------------------
 -- View structure for v_matter_retainer
@@ -1117,7 +1138,7 @@ INNER JOIN tb_matter_retainer ON tb_matter_retainer.id_matter = tb_matter.id_mat
 INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
 INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment
 WHERE
-tb_matter.id_matter = tb_matter_retainer.id_matter ; ;
+tb_matter.id_matter = tb_matter_retainer.id_matter ;
 
 -- ----------------------------
 -- View structure for v_matter_successfee
@@ -1143,7 +1164,7 @@ INNER JOIN tb_matter_successfee ON tb_matter_successfee.id_matter = tb_matter.id
 INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
 INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment
 WHERE
-tb_matter.id_matter = tb_matter_successfee.id_matter ; ;
+tb_matter.id_matter = tb_matter_successfee.id_matter ;
 
 -- ----------------------------
 -- View structure for v_submatter_lumpsum
@@ -1171,7 +1192,7 @@ FROM
 tb_submatter
 INNER JOIN tb_sublumpsum ON tb_sublumpsum.id_submatter = tb_submatter.id_submatter
 INNER JOIN tb_matter ON tb_submatter.id_matter = tb_matter.id_matter
-INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client ; ;
+INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client ;
 
 -- ----------------------------
 -- View structure for v_user
