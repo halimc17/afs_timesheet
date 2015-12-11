@@ -22,7 +22,16 @@
 			editSubLumpsum(id);
 		});
 
+		$('[name="btnSubmitHourly"]').button().on( "click", function() {			
+			saveSubHourly();
 
+		});
+
+		$('[name="btnSubmitRetainer"]').button().on( "click", function() {			
+			saveSubRetainer();
+
+		});
+		
 		var table = $("#tableSubLumpsum").dataTable({
 			"sPaginationType": "bootstrap",
 			"sDom": "<'row'<'col-xs-6 col-left'l><'col-xs-6 col-right'<'export-data'T>f>r>t<'row'<'col-xs-6 col-left'i><'col-xs-6 col-right'p>>",
@@ -126,6 +135,52 @@
 		})
 		
 	}
+	function saveSubRetainer(){
+		if(save_method == 'add'){
+			url = "<?php echo site_url('sub_matter/addRecord_subRetainer'); ?>";
+		}else{
+			url = "<?php echo site_url('sub_matter/editRecord_subRetainer'); ?>";
+		}
+
+		$.ajax({
+			url : url,
+			type : "POST",
+			data : $('#formSubRetainer').serialize(),
+			dataType : "JSON",
+			success : function(data){
+				$('#modalRetainer').modal('hide');				
+				window.location = "<?php echo site_url('sub_matter/get_record/'.$this->uri->segment(3).'/'.$this->uri->segment(4)); ?>";
+			},
+			error: function (jqXHR, textStatus, errorThrown)
+	            {
+	                alert('Error adding / update data');
+	            } 
+		});
+	}
+
+
+	function saveSubHourly(){
+		if(save_method == 'add'){
+			url = "<?php echo site_url('sub_matter/addRecord_subHourly'); ?>";
+		}else{
+			url = "<?php echo site_url('sub_matter/editRecord_subHourly'); ?>";
+		}
+
+		$.ajax({
+			url : url,
+			type : "POST",
+			data : $('#formSubHourly').serialize(),
+			dataType : "JSON",
+			success : function(data){
+				$('#modalLumpsum').modal('hide');				
+				window.location = "<?php echo site_url('sub_matter/get_record/'.$this->uri->segment(3).'/'.$this->uri->segment(4)); ?>";
+			},
+			error: function (jqXHR, textStatus, errorThrown)
+	            {
+	                alert('Error adding / update data');
+	            } 
+		});		
+	}
 
 	function saveSubLumpsum(){
 		if(save_method == 'add'){
@@ -180,8 +235,11 @@
 	
 
 	function add_subHourly(){
+		save_method = 'add';
+
 		$('html, body').animate({ scrollTop: 0 }, 'fast');
 		$('#modalHourly').modal('show');	
+		$('#formSubHourly')[0].reset();
 
 		var id = "<?php echo $this->uri->segment(3); ?>";
 		var url = paymentType();
@@ -191,17 +249,20 @@
 			dataType: "JSON",
 			success: function(data){
 				$('[name="txt_id_matter_disabled"]').val(data.id_matter);				
+				$('[name="txt_id_matter_hourly"]').val(data.id_matter);
 				$('[name="txt_nama_client"]').val(data.nama_client);
 				$('[name="txt_matter"]').val(data.matter);
 			}
 		});
 
 		var id_matter = generateUUID();
-      	var textbox = document.getElementById('txt_id_subMatter');      	
+      	var textbox = document.getElementById('txt_id_subMatter_hr');      	
 	    textbox.value = id_matter;	
 	}
 
 	function add_subRetainer(){
+		save_method = 'add';
+
 		$('html, body').animate({ scrollTop: 0 }, 'fast');
 		$('#modalRetainer').modal('show');
 
@@ -214,12 +275,13 @@
 			success: function(data){
 				$('[name="txt_id_matter_disabled"]').val(data.id_matter);
 				$('[name="txt_nama_client"]').val(data.nama_client);
+				$('[name="txt_id_matter_r"]').val(data.id_matter);
 				$('[name="txt_matter"]').val(data.matter);
 			}
 		});
 
 		var id_matter = generateUUID();
-      	var textbox = document.getElementById('txt_id_subMatter');      	
+      	var textbox = document.getElementById('txt_id_subMatter_rt');      	
 	    textbox.value = id_matter;	
 	}
 
@@ -942,8 +1004,8 @@
 												<tbody>	
 												<?php 
 												$counter = 1;
-												if(isset($records)){
-													foreach($records as $row){ ?>
+												if(isset($records_sublumpsum)){
+													foreach($records_sublumpsum as $row){ ?>
 
 												
 													<tr>
@@ -957,7 +1019,7 @@
 														$closeDate = new DateTime($row->close_date);
 														echo $closeDate->format('d-m-Y'); ?></td>
 														<td><?php echo number_format($row->success_fee); ?></td>
-														<td>0</td>														
+														<td><a href="#">0</a></td>														
 														<td align="center">
 															<button type="button" name="btnActive" class="btn btn-success" onclick="#" />
 																<i class="entypo-check"></i>
@@ -1017,16 +1079,20 @@
 														<th>Action</th>
 													</tr>
 												</thead>
-												<tbody>													
+												<tbody>	
+												<?php 
+												$counter = 1;
+												if(isset($records_subhourly)){
+													foreach($records_subhourly as $row2){ ?>
 													<tr>
-														<td>Gecko</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>														
-														<td>Firefox 1.0</td>
+														<td><?php echo $counter; ?></td>
+														<td><?php echo $row2->id_matter; ?></td>
+														<td><?php echo $row2->id_submatter; ?></td>
+														<td><?php echo $row2->nama_client; ?></td>
+														<td><?php echo $row2->subMatter; ?></td>
+														<td><?php echo $row2->open_date; ?></td>
+														<td><?php echo $row2->close_date; ?></td>														
+														<td>0</td>
 														<td align="center">
 															<button type="button" name="btnActive" class="btn btn-success" onclick="#" />
 																<i class="entypo-check"></i>
@@ -1040,7 +1106,11 @@
 																<i class="entypo-trash"></i>
 															</button>
 														</td>
-													</tr>																																					
+													</tr>
+
+												<?php $counter++;	}
+												} ?>											
+																																																		
 												</tbody>
 												<tfoot>
 													<tr>
@@ -1075,9 +1145,8 @@
 												<thead>
 													<tr>
 														<th>No</th>
-														<th>Id Matter</th>																		
-														<th>Client</th>
-														<th>Matter</th>
+														<th>Id Sub Matter</th>																																
+														<th>Sub Matter</th>
 														<th>Open Date</th>
 														<th>Close Date</th>
 														<th>Jangka Waktu</th>
@@ -1090,20 +1159,23 @@
 														<th style="width:160px;">Action</th>
 													</tr>
 												</thead>
-												<tbody>													
+												<tbody>	
+												<?php 
+												$counter = 1;
+												if(isset($records_subretainer)){
+													foreach($records_subretainer as $row3){ ?>
 													<tr>
-														<td>Gecko</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>														
-														<td>Firefox 1.0</td>
-														<td>Firefox 1.0</td>
+														<td><?php echo $counter; ?></td>
+														<td><?php echo $row3->id_submatter; ?></td>
+														<td><?php echo $row3->subMatter; ?></td>
+														<td><?php echo $row3->open_date; ?></td>
+														<td><?php echo $row3->close_date; ?></td>
+														<td><?php echo $row3->jangka_waktu; ?></td>
+														<td><?php echo $row3->biaya; ?></td>
+														<td><?php echo $row3->jam; ?></td>
+														<td><?php echo $row3->disc; ?></td>
+														<td><?php echo $row3->description; ?></td>														
+														<td>0</td>														
 														<td align="center">
 															<button type="button" name="btnActive" class="btn btn-success" onclick="#" />
 																<i class="entypo-check"></i>
@@ -1117,14 +1189,15 @@
 																<i class="entypo-trash"></i>
 															</button>
 														</td>
-													</tr>																																				
+													</tr>
+												<?php $counter++;	}
+												} ?>																																				
 												</tbody>
 												<tfoot>
 													<tr>
 														<th>No</th>
-														<th>Id Matter</th>																		
-														<th>Client</th>
-														<th>Matter</th>
+														<th>Id Sub Matter</th>																																
+														<th>Sub Matter</th>
 														<th>Open Date</th>
 														<th>Close Date</th>
 														<th>Jangka Waktu</th>
@@ -1544,13 +1617,13 @@
 				
 				<div class="modal-body">
 				
-				<form role="form" class="form-horizontal form-groups-bordered" method="post" id="formHourly" action="#" style="padding:10px;">
+				<form role="form" class="form-horizontal form-groups-bordered" method="post" id="formSubHourly" action="#" style="padding:10px;">
 								<div class="row">
 									<div class="col-md-6">						
 										<div class="form-group">
 											<label for="txt_id_matter_disabled" class="control-label">Id Matter</label>
 											<input type="text" class="form-control" id="txt_id_matter_disabled" name="txt_id_matter_disabled" value="" disabled />
-											<input type="hidden" class="form-control" id="txt_id_matter_h" name="txt_id_matter_h" value=""  />
+											<input type="hidden" class="form-control" id="txt_id_matter_hourly" name="txt_id_matter_hourly" value=""  />
 											<input type="hidden" class="form-control" id="txt_id_payment" name="txt_id_payment" value="2"> <!--id payment hourly-->
 										</div>							
 									</div>
@@ -1567,6 +1640,16 @@
 										<div class="form-group">
 											<label for="txt_matter" class="control-label">Matter</label>
 											<input type="text" class="form-control" id="txt_matter" name="txt_matter" value="" disabled />											
+										</div>							
+									</div>
+									
+								</div>
+
+								<div class="row">
+									<div class="col-md-12">						
+										<div class="form-group">
+											<label for="txt_id_subMatter_hr" class="control-label">Id Sub Matter</label>
+											<input type="text" class="form-control" id="txt_id_subMatter_hr" name="txt_id_subMatter_hr" value="" />											
 										</div>							
 									</div>
 									
@@ -1698,7 +1781,7 @@
 				
 				<div class="modal-body">
 				
-				<form role="form" class="form-horizontal form-groups-bordered" id="formRetainer" method="post" action="#" style="padding:10px;">
+				<form role="form" class="form-horizontal form-groups-bordered" id="formSubRetainer" method="post" action="#" style="padding:10px;">
 								<div class="row">
 									<div class="col-md-6">						
 										<div class="form-group">
@@ -1721,6 +1804,16 @@
 										<div class="form-group">
 											<label for="txt_matter" class="control-label">Matter</label>
 											<input type="text" class="form-control" id="txt_matter" name="txt_matter" value="" disabled />
+										</div>							
+									</div>
+									
+								</div>
+
+								<div class="row">
+									<div class="col-md-12">						
+										<div class="form-group">
+											<label for="txt_id_subMatter_rt" class="control-label">Id Sub Matter</label>
+											<input type="text" class="form-control" id="txt_id_subMatter_rt" name="txt_id_subMatter_rt" value="">
 										</div>							
 									</div>
 									

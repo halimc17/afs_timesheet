@@ -59,7 +59,11 @@ class Sub_matter extends CI_Controller {
 		//$obj = json_decode($data);
 		//echo $obj->{'id_matter'};
 		$this->load->model('sublumpsum_model');
-		$data['records'] = $this->sublumpsum_model->get_record();
+		$this->load->model('subhourly_model');
+		$this->load->model('subretainer_model');
+		$data['records_sublumpsum'] = $this->sublumpsum_model->get_record();
+		$data['records_subhourly'] = $this->subhourly_model->get_record();
+		$data['records_subretainer'] = $this->subretainer_model->get_record();
 
 		$this->load->view('sub_matter_view', $data);
 
@@ -127,12 +131,55 @@ class Sub_matter extends CI_Controller {
 	}
 
 	public function addRecord_subHourly(){
-		
+		$data = array('id_submatter' => $this->input->post('txt_id_subMatter_hr'),
+				'id_matter' => $this->input->post('txt_id_matter_hourly'),
+                'id_payment' => $this->input->post('txt_id_payment'),
+                'matter' => $this->input->post('txt_sub_matter'),
+                'open_date' => $this->input->post('txt_open_date'),
+                'close_date' => $this->input->post('txt_close_date'));
+
+		$data2 = array('id_submatter' => $this->input->post('txt_id_subMatter_hr'),
+				'managing_partner' => $this->input->post('txt_managing_partner'),
+				'partner' => $this->input->post('txt_partner'),
+				'junior_partner' => $this->input->post('txt_junior_partner'),
+				'senior_associate' => $this->input->post('txt_senior_associate'),
+				'mid_associate' => $this->input->post('txt_mid_associate'),
+				'junior_associate' => $this->input->post('txt_junior_associate'),
+				'disc' => $this->input->post('txt_disc'),
+				'description' => $this->input->post('txt_keterangan'));
+
+		$this->load->model('submatter_model');
+		$this->load->model('subhourly_model');
+
+        $this->submatter_model->add_record($data);
+        $this->subhourly_model->add_record($data2);
+
+        echo json_encode(array("status" => TRUE));
 		
 	}
 
 	public function addRecord_subRetainer(){
-		
+		$data = array('id_submatter' => $this->input->post('txt_id_subMatter_rt'),
+				'id_matter' => $this->input->post('txt_id_matter_r'),
+                'id_payment' => $this->input->post('txt_id_payment'),
+                'matter' => $this->input->post('txt_sub_matter'),
+                'open_date' => $this->input->post('txt_open_date'),
+                'close_date' => $this->input->post('txt_close_date'));
+
+		$data2 = array('id_submatter' => $this->input->post('txt_id_subMatter_rt'),
+				'jangka_waktu' => $this->input->post('txt_jangka_waktu'),
+				'biaya' => $this->input->post('txt_biaya'),
+				'jam' => $this->input->post('txt_jam'),
+				'disc' => $this->input->post('txt_disc'),
+				'description' => $this->input->post('txt_keterangan'));
+
+		$this->load->model('submatter_model');
+		$this->load->model('subretainer_model');
+
+        $this->submatter_model->add_record($data);
+        $this->subretainer_model->add_record($data2);
+
+        echo json_encode(array("status" => TRUE));	
 		
 	}
 
