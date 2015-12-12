@@ -149,7 +149,7 @@
 			dataType : "JSON",
 			success : function(data){
 				$('#modalRetainer').modal('hide');				
-				window.location = "<?php echo site_url('sub_matter/get_record/'.$this->uri->segment(3).'/'.$this->uri->segment(4)); ?>";
+				window.location = "<?php echo site_url('sub_matter/get_record/'.$this->uri->segment(3).'/'.$this->uri->segment(4).'/3'); ?>";
 			},
 			error: function (jqXHR, textStatus, errorThrown)
 	            {
@@ -173,7 +173,7 @@
 			dataType : "JSON",
 			success : function(data){
 				$('#modalLumpsum').modal('hide');				
-				window.location = "<?php echo site_url('sub_matter/get_record/'.$this->uri->segment(3).'/'.$this->uri->segment(4)); ?>";
+				window.location = "<?php echo site_url('sub_matter/get_record/'.$this->uri->segment(3).'/'.$this->uri->segment(4).'/2'); ?>";
 			},
 			error: function (jqXHR, textStatus, errorThrown)
 	            {
@@ -196,7 +196,7 @@
 			dataType : "JSON",
 			success : function(data){
 				$('#modalLumpsum').modal('hide');				
-				window.location = "<?php echo site_url('sub_matter/get_record/'.$this->uri->segment(3).'/'.$this->uri->segment(4)); ?>";
+				window.location = "<?php echo site_url('sub_matter/get_record/'.$this->uri->segment(3).'/'.$this->uri->segment(4).'/1'); ?>";
 			},
 			error: function (jqXHR, textStatus, errorThrown)
 	            {
@@ -937,39 +937,42 @@
 						
 						<!--tabs-->
 						<div class="col-md-12">
+						<?php 
+						$active = $this->uri->segment(5);
+						 ?>
 		
 							<ul class="nav nav-tabs bordered"><!-- available classes "bordered", "right-aligned" -->
-								<li class="active">
+								<li <?php if(($active == 1) OR ($active == "")){echo "class=\"active\"";} ?>>
 									<a href="#lumpsum" data-toggle="tab">
 										<span class="visible-xs"><i class="entypo-home"></i></span>
 										<span class="hidden-xs">LUMPSUM</span>
 									</a>
 								</li>
-								<li>
+								<li <?php if($active == 2){echo "class=\"active\"";} ?>>
 									<a href="#hourly" data-toggle="tab">
 										<span class="visible-xs"><i class="entypo-user"></i></span>
 										<span class="hidden-xs">HOURLY</span>
 									</a>
 								</li>
-								<li>
+								<li <?php if($active == 3){echo "class=\"active\"";} ?>>
 									<a href="#retainer" data-toggle="tab">
 										<span class="visible-xs"><i class="entypo-mail"></i></span>
 										<span class="hidden-xs">RETAINER</span>
 									</a>
 								</li>
-								<li>
+								<li <?php if($active == 4){echo "class=\"active\"";} ?>>
 									<a href="#successfee" data-toggle="tab">
 										<span class="visible-xs"><i class="entypo-cog"></i></span>
 										<span class="hidden-xs">SUCCESS FEE</span>
 									</a>
 								</li>
-								<li>
+								<li <?php if($active == 5){echo "class=\"active\"";} ?>>
 									<a href="#probono" data-toggle="tab">
 										<span class="visible-xs"><i class="entypo-cog"></i></span>
 										<span class="hidden-xs">PROBONO</span>
 									</a>
 								</li>
-								<li>
+								<li <?php if($active == 6){echo "class=\"active\"";} ?>>
 									<a href="#project" data-toggle="tab">
 										<span class="visible-xs"><i class="entypo-cog"></i></span>
 										<span class="hidden-xs">PROJECT</span>
@@ -978,7 +981,7 @@
 							</ul>
 							
 							<div class="tab-content">
-								<div class="tab-pane active" id="lumpsum">
+								<div class="tab-pane <?php if(($active == 1) OR ($active == "")){echo "active";} ?>" id="lumpsum">
 									<div class="row">
 										<div class="col-md-12">	
 											<button type="button" class="btn btn-info" onclick="add_subLumpsum()" style="float:right;">+ Add New</button>
@@ -1055,7 +1058,7 @@
 									</div>
 									
 								</div>
-								<div class="tab-pane" id="hourly">
+								<div class="tab-pane <?php if($active == 2){echo "active";} ?>" id="hourly">
 									<div class="row">
 										<div class="col-md-12">	
 											<button type="button" class="btn btn-info" onclick="add_subHourly()" style="float:right;">+ Add New</button>
@@ -1068,7 +1071,7 @@
 												<thead>
 													<tr>
 														<th>No</th>
-														<th>Id Matter</th>														
+																											
 														<th>Id Sub Matter</th>
 														<th>Client</th>
 														<th>Matter</th>
@@ -1086,12 +1089,14 @@
 													foreach($records_subhourly as $row2){ ?>
 													<tr>
 														<td><?php echo $counter; ?></td>
-														<td><?php echo $row2->id_matter; ?></td>
+													
 														<td><?php echo $row2->id_submatter; ?></td>
 														<td><?php echo $row2->nama_client; ?></td>
 														<td><?php echo $row2->subMatter; ?></td>
-														<td><?php echo $row2->open_date; ?></td>
-														<td><?php echo $row2->close_date; ?></td>														
+														<td><?php $openDate = new DateTime($row2->open_date);
+														echo $openDate->format('d-m-Y'); ?></td>
+														<td><?php $openDate = new DateTime($row2->open_date);
+														echo $openDate->format('d-m-Y'); ?></td>														
 														<td>0</td>
 														<td align="center">
 															<button type="button" name="btnActive" class="btn btn-success" onclick="#" />
@@ -1115,7 +1120,7 @@
 												<tfoot>
 													<tr>
 														<th>No</th>
-														<th>Id Matter</th>														
+																					
 														<th>Id Sub Matter</th>
 														<th>Client</th>
 														<th>Matter</th>
@@ -1132,7 +1137,7 @@
 									</div>
 
 								</div>
-								<div class="tab-pane" id="retainer">
+								<div class="tab-pane <?php if($active == 3){echo "active";} ?>" id="retainer">
 									<div class="row">
 										<div class="col-md-12">	
 											<button type="button" class="btn btn-info" onclick="add_subRetainer()" style="float:right;">+ Add New</button>
@@ -1168,8 +1173,10 @@
 														<td><?php echo $counter; ?></td>
 														<td><?php echo $row3->id_submatter; ?></td>
 														<td><?php echo $row3->subMatter; ?></td>
-														<td><?php echo $row3->open_date; ?></td>
-														<td><?php echo $row3->close_date; ?></td>
+														<td><?php $openDate = new DateTime($row3->open_date);
+														echo $openDate->format('d-m-Y'); ?></td>
+														<td><?php $openDate = new DateTime($row3->open_date);
+														echo $openDate->format('d-m-Y'); ?></td>
 														<td><?php echo $row3->jangka_waktu; ?></td>
 														<td><?php echo $row3->biaya; ?></td>
 														<td><?php echo $row3->jam; ?></td>
@@ -1217,7 +1224,7 @@
 										
 								</div>
 								
-								<div class="tab-pane" id="successfee">
+								<div class="tab-pane <?php if($active == 4){echo "active";} ?>" id="successfee">
 
 									<div class="row">
 										<div class="col-md-12">	
@@ -1291,7 +1298,7 @@
 
 								</div>
 
-								<div class="tab-pane" id="probono">
+								<div class="tab-pane <?php if($active == 5){echo "active";} ?>" id="probono">
 									<div class="row">
 										<div class="col-md-12">	
 											<button type="button" class="btn btn-info" onclick="add_subProbono()" style="float:right;">+ Add New</button>
@@ -1364,7 +1371,7 @@
 
 								</div>
 
-								<div class="tab-pane" id="project">
+								<div class="tab-pane <?php if($active == 6){echo "active";} ?>" id="project">
 									<div class="row">
 										<div class="col-md-12">	
 											<button type="button" class="btn btn-info" onclick="add_subProject()" style="float:right;">+ Add New</button>
