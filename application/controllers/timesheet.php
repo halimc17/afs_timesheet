@@ -26,6 +26,7 @@ class Timesheet extends CI_Controller {
                 'id_user' => $this->session->userdata('id_user'),
                 'input_date' => $this->input->post('txt_date'),
                 'hour' => $this->input->post('txt_hours'),
+                'id_work_type' => $this->input->post('combo_worktype'),
                 'description' => $this->input->post('txt_description')
             );
 
