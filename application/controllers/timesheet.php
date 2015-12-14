@@ -13,7 +13,9 @@ class Timesheet extends CI_Controller {
 	public function index()
 	{
 		$this->load->Model('matter_assign_model');
+		$this->load->Model('worktype_model');
 		$data['matter_assigned'] =$this->matter_assign_model->get_assign();
+		$data['worktype'] =$this->worktype_model->get_records();
 
 		$this->load->view('timesheet_view', $data);
 	}	

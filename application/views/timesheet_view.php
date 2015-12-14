@@ -211,7 +211,22 @@
 							<div class="form-group" style="padding-left:10px;">
 								<label for="txt_inisial" class="control-label">Inisial</label>							
 								<input type="text" class="form-control" id="txt_inisial" name="txt_inisial" value="<?php echo $this->session->userdata('inisial'); ?>" disabled />
-							</div>						
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="combo_worktype" class="control-label">Work Type</label>																
+								<select class="form-control" id="combo_worktype" name="combo_worktype">
+									<?php if(isset($worktype)){
+										foreach($worktype as $a){ ?>
+										<option><?php echo $a->worktype; ?></option>
+									<?php	}
+									} ?>
+								</select>
+							</div>
 						</div>
 					</div>
 
