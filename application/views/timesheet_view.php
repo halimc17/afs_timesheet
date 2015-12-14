@@ -222,7 +222,7 @@
 								<select class="form-control" id="combo_worktype" name="combo_worktype">
 									<?php if(isset($worktype)){
 										foreach($worktype as $a){ ?>
-										<option><?php echo $a->worktype; ?></option>
+										<option value="<?php echo $a->id_work_type; ?>"><?php echo $a->worktype; ?></option>
 									<?php	}
 									} ?>
 								</select>
