@@ -771,7 +771,7 @@
 																		<td><?php echo $row2->matter; ?></td>																																																																										
 																		<td><?php echo $row2->open_date; ?></td>																				
 																		<td><?php echo $row2->close_date; ?></td>																				
-																		<td>0</td>																				
+																		<td><?php echo $row2->jml_subMatter; ?></td>																				
 																																																																										
 																		<td>
 																			<a href="<?php echo site_url('matter/assign/'); ?>/<?php echo $row2->id_matter; ?>">
@@ -855,7 +855,7 @@
 																			<td><?php echo $row3->open_date; ?></td>																				
 																			<td><?php echo $row3->close_date; ?></td>																				
 																			<td><?php echo $row3->jangka_waktu; ?></td>																				
-																			<td>0</td>																				
+																			<td><?php echo $row3->jml_subMatter; ?></td>																				
 																																																																											
 																			<td>
 																				<a href="<?php echo site_url('matter/assign/'); ?>/<?php echo $row3->id_matter; ?>">

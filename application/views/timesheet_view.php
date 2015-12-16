@@ -239,13 +239,30 @@
 						</div>
 					</div>	
 
-					<div class="row">
-						<div class="col-md-2">
+					<div class="row">						
+						<div class="col-md-4">
 							<div class="form-group">
-								<label for="txt_hours" class="control-label">Hours</label>
-								<input type="text" class="form-control" id="txt_hours" name="txt_hours" value="">
+								<label for="txt_start" class="control-label">Start</label>
+								<div class="input-group">
+									<input type="text" name="txt_start" class="form-control timepicker" data-template="dropdown" data-show-seconds="false" data-default-time="00:00 AM" data-show-meridian="false" data-minute-step="5" data-second-step="5" />
+									<div class="input-group-addon">
+											<a href="#"><i class="entypo-clock"></i></a>
+									</div>
+								</div>
 							</div>
-						</div>						
+						</div>
+
+						<div class="col-md-4">
+							<div class="form-group" style="padding-left:10px;">
+								<label for="txt_end" class="control-label">End</label>
+								<div class="input-group">
+									<input type="text" name="txt_end" class="form-control timepicker" data-template="dropdown" data-show-seconds="false" data-default-time="00:00 AM" data-show-meridian="false" data-minute-step="5" data-second-step="5" />
+									<div class="input-group-addon">
+											<a href="#"><i class="entypo-clock"></i></a>
+									</div>
+								</div>
+							</div>
+						</div>				
 					</div>								
 				</div>
 					
@@ -349,6 +366,7 @@
 	<script src="<?php echo base_url(); ?>template/assets/js/bootstrap.js"></script>
 	<script src="<?php echo base_url(); ?>template/assets/js/joinable.js"></script>
 	<script src="<?php echo base_url(); ?>template/assets/js/resizeable.js"></script>
+	<script src="<?php echo base_url(); ?>template/assets/js/bootstrap-timepicker.min.js"></script>
 	<script src="<?php echo base_url(); ?>template/assets/js/neon-api.js"></script>
 	<script src="<?php echo base_url(); ?>template/assets/js/jquery.dataTables.min.js"></script>
 	<script src="<?php echo base_url(); ?>template/assets/js/bootstrap-datepicker.js"></script>
