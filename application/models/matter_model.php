@@ -21,6 +21,14 @@ class Matter_model extends CI_Model{
  
         return $query->row();
 	}
+
+	public function get_record2(){
+		$this->db->from('v_matter_detail');
+		$this->db->where('id_matter', $this->uri->segment(3));
+		$query = $this->db->get();
+
+		return $query->row();
+	}
 	
 	public function add_record($data){
 		$this->db->insert('tb_matter',$data);		
