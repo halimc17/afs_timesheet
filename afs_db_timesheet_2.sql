@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2015-12-17 15:56:46
+Date: 2015-12-17 23:09:23
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -144,24 +144,25 @@ DROP TABLE IF EXISTS `tb_jabatan`;
 CREATE TABLE `tb_jabatan` (
   `id_jabatan` int(11) NOT NULL AUTO_INCREMENT,
   `nama_jabatan` varchar(255) DEFAULT NULL,
+  `rate` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_jabatan`)
 ) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_jabatan
 -- ----------------------------
-INSERT INTO `tb_jabatan` VALUES ('1', 'MANAGING PARTNER');
-INSERT INTO `tb_jabatan` VALUES ('2', 'PARTNER');
-INSERT INTO `tb_jabatan` VALUES ('3', 'MID-ASSOCIATE');
-INSERT INTO `tb_jabatan` VALUES ('4', 'JUNIOR ASSOCIATE');
-INSERT INTO `tb_jabatan` VALUES ('5', 'SENIOR ASSOCIATE');
-INSERT INTO `tb_jabatan` VALUES ('6', 'OFFICE MANAGER');
-INSERT INTO `tb_jabatan` VALUES ('7', 'FINANCE AND ACCOUNTING');
-INSERT INTO `tb_jabatan` VALUES ('8', 'SECRETARIAL AND ADMIN');
-INSERT INTO `tb_jabatan` VALUES ('9', 'HOSPITALITY');
-INSERT INTO `tb_jabatan` VALUES ('10', 'DRIVER');
-INSERT INTO `tb_jabatan` VALUES ('11', 'PARALEGAL');
-INSERT INTO `tb_jabatan` VALUES ('12', 'IT');
+INSERT INTO `tb_jabatan` VALUES ('1', 'MANAGING PARTNER', '600');
+INSERT INTO `tb_jabatan` VALUES ('2', 'PARTNER', '350');
+INSERT INTO `tb_jabatan` VALUES ('3', 'MID-ASSOCIATE', '150');
+INSERT INTO `tb_jabatan` VALUES ('4', 'JUNIOR ASSOCIATE', '120');
+INSERT INTO `tb_jabatan` VALUES ('5', 'SENIOR ASSOCIATE', '200');
+INSERT INTO `tb_jabatan` VALUES ('6', 'OFFICE MANAGER', '0');
+INSERT INTO `tb_jabatan` VALUES ('7', 'FINANCE AND ACCOUNTING', '0');
+INSERT INTO `tb_jabatan` VALUES ('8', 'SECRETARIAL AND ADMIN', '0');
+INSERT INTO `tb_jabatan` VALUES ('9', 'HOSPITALITY', '0');
+INSERT INTO `tb_jabatan` VALUES ('10', 'DRIVER', '0');
+INSERT INTO `tb_jabatan` VALUES ('11', 'PARALEGAL', '0');
+INSERT INTO `tb_jabatan` VALUES ('12', 'IT', '0');
 
 -- ----------------------------
 -- Table structure for tb_lumpsum
@@ -969,7 +970,7 @@ INSERT INTO `tb_timesheet` VALUES ('21', 'AFS35f3b400da90646f', '15', '2015-12-1
 INSERT INTO `tb_timesheet` VALUES ('22', 'AFSb95be4d09a01ad52', '15', '2015-12-16', null, 'due dilligence timesheet', '6', '16:20:00', '17:00:00');
 INSERT INTO `tb_timesheet` VALUES ('23', 'AFSAB9A14867B837358', '15', '2015-12-16', null, 'ghjghjghj', '4', '14:10:00', '15:00:00');
 INSERT INTO `tb_timesheet` VALUES ('24', 'AFS35f3b400da90646f', '15', '2015-12-16', null, 'timesheet meeting', '3', '14:00:00', '15:00:00');
-INSERT INTO `tb_timesheet` VALUES ('25', 'AFS35f3b400da90646f', '15', '2015-12-17', null, 'Drafting timesheet', '4', '05:10:00', '09:10:00');
+INSERT INTO `tb_timesheet` VALUES ('25', 'AFS35f3b400da90646f', '15', '2015-12-17', null, 'Drafting timesheet', '4', '05:10:00', '09:15:00');
 
 -- ----------------------------
 -- Table structure for tb_user
@@ -1076,7 +1077,7 @@ tb_user.nama,
 tb_user.inisial
 FROM
 tb_matter_assign
-INNER JOIN tb_user ON tb_user.id_user = tb_matter_assign.id_user ;
+INNER JOIN tb_user ON tb_user.id_user = tb_matter_assign.id_user ; ;
 
 -- ----------------------------
 -- View structure for v_matter_detail
@@ -1097,7 +1098,7 @@ tb_payment.payment_name
 FROM
 tb_matter
 INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
-INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment ;
+INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment ; ;
 
 -- ----------------------------
 -- View structure for v_matter_hourly
@@ -1130,7 +1131,7 @@ INNER JOIN tb_matter_hourly ON tb_matter_hourly.id_matter = tb_matter.id_matter
 INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
 INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment
 WHERE
-tb_matter.id_matter = tb_matter_hourly.id_matter ;
+tb_matter.id_matter = tb_matter_hourly.id_matter ; ;
 
 -- ----------------------------
 -- View structure for v_matter_lumpsum
@@ -1163,7 +1164,7 @@ INNER JOIN tb_matter_lumpsum ON tb_matter_lumpsum.id_matter = tb_matter.id_matte
 INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
 INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment
 WHERE
-tb_matter.id_matter = tb_matter_lumpsum.id_matter ;
+tb_matter.id_matter = tb_matter_lumpsum.id_matter ; ;
 
 -- ----------------------------
 -- View structure for v_matter_probono
@@ -1188,7 +1189,7 @@ INNER JOIN tb_matter_probono ON tb_matter_probono.id_matter = tb_matter.id_matte
 INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
 INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment
 WHERE
-tb_matter.id_matter = tb_matter_probono.id_matter ;
+tb_matter.id_matter = tb_matter_probono.id_matter ; ;
 
 -- ----------------------------
 -- View structure for v_matter_project
@@ -1220,7 +1221,7 @@ INNER JOIN tb_matter_project ON tb_matter_project.id_matter = tb_matter.id_matte
 INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
 INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment
 WHERE
-tb_matter.id_matter = tb_matter_project.id_matter ;
+tb_matter.id_matter = tb_matter_project.id_matter ; ;
 
 -- ----------------------------
 -- View structure for v_matter_retainer
@@ -1250,7 +1251,7 @@ INNER JOIN tb_matter_retainer ON tb_matter_retainer.id_matter = tb_matter.id_mat
 INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
 INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment
 WHERE
-tb_matter.id_matter = tb_matter_retainer.id_matter ;
+tb_matter.id_matter = tb_matter_retainer.id_matter ; ;
 
 -- ----------------------------
 -- View structure for v_matter_successfee
@@ -1276,7 +1277,7 @@ INNER JOIN tb_matter_successfee ON tb_matter_successfee.id_matter = tb_matter.id
 INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
 INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment
 WHERE
-tb_matter.id_matter = tb_matter_successfee.id_matter ;
+tb_matter.id_matter = tb_matter_successfee.id_matter ; ;
 
 -- ----------------------------
 -- View structure for v_submatter_hourly
@@ -1304,7 +1305,7 @@ FROM
 tb_submatter
 INNER JOIN tb_subhourly ON tb_subhourly.id_submatter = tb_submatter.id_submatter
 INNER JOIN tb_matter ON tb_matter.id_matter = tb_submatter.id_matter
-INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client ;
+INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client ; ;
 
 -- ----------------------------
 -- View structure for v_submatter_lumpsum
@@ -1332,7 +1333,7 @@ FROM
 tb_submatter
 INNER JOIN tb_sublumpsum ON tb_sublumpsum.id_submatter = tb_submatter.id_submatter
 INNER JOIN tb_matter ON tb_submatter.id_matter = tb_matter.id_matter
-INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client ;
+INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client ; ;
 
 -- ----------------------------
 -- View structure for v_submatter_retainer
@@ -1357,7 +1358,7 @@ FROM
 tb_submatter
 INNER JOIN tb_subretainer ON tb_subretainer.id_submatter = tb_submatter.id_submatter
 INNER JOIN tb_matter ON tb_matter.id_matter = tb_submatter.id_matter
-INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client ;
+INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client ; ;
 
 -- ----------------------------
 -- View structure for v_user
