@@ -55,12 +55,36 @@ class Timesheet extends CI_Controller {
 	public function detail(){
 		$this->load->model('matter_model');
 		$this->load->model('timesheet_model');
+		$this->load->Model('worktype_model');
 		$matter = json_encode($this->matter_model->get_record2());			
 		$data['timesheet'] = $this->timesheet_model->get_records();			
-		$data['matter'] = $matter;		
+		$data['matter'] = $matter;	
+		$data['worktype'] =$this->worktype_model->get_records();	
 		//$data['timesheet'] = $timesheet;		
 
 		$this->load->view('matter_detail_view', $data);
 		//echo $timesheet;
+	}
+
+	public function get_record(){
+		$this->load->model('timesheet_model');
+		$data = $this->timesheet_model->get_record();
+
+		echo json_encode($data);
+	}
+
+	public function edit_record(){
+		$data = array(
+				'input_date' => $this->input->post('txt_date'),
+				'description' => $this->input->post('txt_description'),
+				'id_work_type' => $this->input->post('combo_worktype'),
+				'start' => $this->input->post('txt_start'),
+				'end' => $this->input->post('txt_end')
+			);
+
+		$this->load->model('timesheet_model');
+        $this->timesheet_model->update_record(array('id_timesheet' => $this->input->post('txt_id_timesheet')), $data);
+
+        echo json_encode(array("status" => TRUE));
 	}
 }

@@ -37,6 +37,19 @@ class Timesheet_model extends CI_Model{
 		return $query->result();
 	}
 
+	public function get_record(){
+		$this->db->from('tb_timesheet');
+        $this->db->where('id_timesheet',$this->uri->segment(3));
+        $query = $this->db->get();
+ 
+        return $query->row();
+	}
+
+	public function update_record($where, $data){
+		$this->db->update('tb_timesheet', $data, $where);
+        return $this->db->affected_rows();
+	}
+
 }
 
 ?>
