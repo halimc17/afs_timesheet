@@ -33,7 +33,7 @@ class Timesheet_model extends CI_Model{
 									INNER JOIN tb_user ON tb_user.id_user = tb_timesheet.id_user
 									INNER JOIN tb_work_type ON tb_work_type.id_work_type = tb_timesheet.id_work_type
 									WHERE
-									tb_timesheet.id_matter = '".$this->uri->segment(3)."' AND tb_timesheet.id_user = ".$this->session->userdata('id_user'));							
+									tb_timesheet.id_matter = '".$this->uri->segment(3)."' AND tb_timesheet.id_user = ".$this->session->userdata('id_user')." ORDER BY tb_timesheet.id_timesheet DESC");							
 		return $query->result();
 	}
 
