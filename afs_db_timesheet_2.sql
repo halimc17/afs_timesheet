@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2015-12-17 23:09:23
+Date: 2015-12-18 16:41:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -32,7 +32,7 @@ CREATE TABLE `tb_client` (
   `active` int(11) DEFAULT NULL,
   `potential` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_client`)
-) ENGINE=InnoDB AUTO_INCREMENT=94 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_client
@@ -115,7 +115,8 @@ INSERT INTO `tb_client` VALUES ('76', 'Yuli Kusnadi', 'Yuli Kusnadi', '081355877
 INSERT INTO `tb_client` VALUES ('77', 'Zahir Ali', 'Zahir Ali', '082115554444', '08522555447', 'zahir.ali@gmail.com', 'Jl. Cendana Blok C', 'ZA', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i', '1', '0');
 INSERT INTO `tb_client` VALUES ('89', 'Kingking Firdaus', 'Kingking Firdaus', '082113708280', '082113708888', 'kingking.firdaus@gmail.com', 'Jl. Cendani 1 No 60 Blok C pondok Bambu Jakarta Timur', 'KKF', 'Keterangan Kingking Firdaus', null, null);
 INSERT INTO `tb_client` VALUES ('92', 'Toufan', 'Toufan', '082115548887', '08966658885', 'toufan@gmail.com', 'Bintara 2', 'TFN', 'Keterangan Toufan', null, null);
-INSERT INTO `tb_client` VALUES ('93', 'Risky', 'Risky', '082113334445', '082236645', 'risky@gmail.com', 'Jatiwaringin', 'RK', 'keterangan', null, null);
+INSERT INTO `tb_client` VALUES ('93', 'Risky', 'Risky', '082113334445', '082236645', 'risky@gmail.com', 'Jatiwaringin', 'RK', 'keterangan client', null, null);
+INSERT INTO `tb_client` VALUES ('94', 'Total oil Indonesia', '', '', '', '', '', '', 'PT. Total Oil Indonesia', null, null);
 
 -- ----------------------------
 -- Table structure for tb_divisi
@@ -207,7 +208,7 @@ CREATE TABLE `tb_matter` (
   `active` int(11) DEFAULT '1',
   `input_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`,`id_matter`)
-) ENGINE=InnoDB AUTO_INCREMENT=84 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=85 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_matter
@@ -263,6 +264,7 @@ INSERT INTO `tb_matter` VALUES ('80', 'AFS8BC5A412C8B6D5F0', '65', '2', 'Matter 
 INSERT INTO `tb_matter` VALUES ('81', 'AFSB9B294A74838818B', '57', '1', 'Matter Robert Tantular', '2015-12-16', '2015-12-31', '1', null);
 INSERT INTO `tb_matter` VALUES ('82', 'AFSA19964291B6C4D3A', '93', '6', 'asdasdasd', '2015-11-30', '2016-01-01', '1', null);
 INSERT INTO `tb_matter` VALUES ('83', 'AFS885C849D48C12BBD', '76', '6', 'fgfggf', '2015-11-29', '2015-12-23', '1', null);
+INSERT INTO `tb_matter` VALUES ('84', 'AFS8FD8D4940B1CC3C3', '94', '2', 'Investigasi Kriminal', '2015-09-01', '0000-00-00', '1', null);
 
 -- ----------------------------
 -- Table structure for tb_matter_assign
@@ -273,7 +275,7 @@ CREATE TABLE `tb_matter_assign` (
   `id_matter` varchar(255) DEFAULT NULL,
   `id_user` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_matter_assign`)
-) ENGINE=InnoDB AUTO_INCREMENT=115 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=121 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_matter_assign
@@ -381,6 +383,12 @@ INSERT INTO `tb_matter_assign` VALUES ('110', 'AFSB9B294A74838818B', '5');
 INSERT INTO `tb_matter_assign` VALUES ('112', 'AFS2015213464896', '15');
 INSERT INTO `tb_matter_assign` VALUES ('113', 'AFS2015213464896', '14');
 INSERT INTO `tb_matter_assign` VALUES ('114', 'AFSA768E4E0C9F2E431', '15');
+INSERT INTO `tb_matter_assign` VALUES ('115', 'AFSB9B294A74838818B', '15');
+INSERT INTO `tb_matter_assign` VALUES ('116', 'AFS8FD8D4940B1CC3C3', '1');
+INSERT INTO `tb_matter_assign` VALUES ('117', 'AFS8FD8D4940B1CC3C3', '16');
+INSERT INTO `tb_matter_assign` VALUES ('118', 'AFS8FD8D4940B1CC3C3', '10');
+INSERT INTO `tb_matter_assign` VALUES ('119', 'AFS8FD8D4940B1CC3C3', '14');
+INSERT INTO `tb_matter_assign` VALUES ('120', 'AFS8FD8D4940B1CC3C3', '11');
 
 -- ----------------------------
 -- Table structure for tb_matter_hourly
@@ -398,7 +406,7 @@ CREATE TABLE `tb_matter_hourly` (
   `disc` int(255) DEFAULT NULL,
   `description` text,
   PRIMARY KEY (`id_hourly`,`id_matter`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_matter_hourly
@@ -409,6 +417,7 @@ INSERT INTO `tb_matter_hourly` VALUES ('8', 'AFS4774c475ab2bd559', '10000000', '
 INSERT INTO `tb_matter_hourly` VALUES ('11', 'AFSA768E4E0C9F2E431', '120000000', '30000000', '30000000', '50000000', '90000000', '10000000', '25', 'Lorem ipsum dolor sit amet');
 INSERT INTO `tb_matter_hourly` VALUES ('12', 'AFS8D9A348C3B629E4A', '50000000', '10000000', '20000000', '500000', '15000000', '10000000', '25', 'lorem ipsum dolor sit amet');
 INSERT INTO `tb_matter_hourly` VALUES ('13', 'AFS8BC5A412C8B6D5F0', '50000000', '10000000', '20000000', '30000000', '60000000', '10000000', '25', 'lorem ipsum dolor sit amet');
+INSERT INTO `tb_matter_hourly` VALUES ('14', 'AFS8FD8D4940B1CC3C3', '600', '350', '300', '200', '150', '120', '0', 'Investigasi kriminal PT. Total Oil Indonesia');
 
 -- ----------------------------
 -- Table structure for tb_matter_lumpsum
@@ -443,7 +452,7 @@ INSERT INTO `tb_matter_lumpsum` VALUES ('23', 'AFSD2FAF4BCC8DF6014', '50000000',
 INSERT INTO `tb_matter_lumpsum` VALUES ('24', 'AFS2D13B4B86BA57C07', '120000000', '20000000', '50000000', '50000000', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet');
 INSERT INTO `tb_matter_lumpsum` VALUES ('25', 'AFSACD0347408681778', '150000000', '50000000', '15000000', '60000000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet');
 INSERT INTO `tb_matter_lumpsum` VALUES ('26', 'AFSAB81B4A09AE0254E', '350000000', '250000000', '50000000', '100000000', 'Lorem ipsum dolor sit amet', 'lorem ipsum dolor', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo');
-INSERT INTO `tb_matter_lumpsum` VALUES ('27', 'AFSB9B294A74838818B', '500000000', '100000000', '200000000', '200000000', 'asd', 'iouiouiouiou', 'iouiouiouio', 'Keterangan matter robert tantular');
+INSERT INTO `tb_matter_lumpsum` VALUES ('27', 'AFSB9B294A74838818B', '500000000', '100000000', '200000000', '200000000', 'asd', 'aaaaaaaaa', 'aaaaaaaaaaaaaa', 'Keterangan matter robert tantular');
 
 -- ----------------------------
 -- Table structure for tb_matter_ope
@@ -654,7 +663,7 @@ CREATE TABLE `tb_reimburstment` (
   `jumlah` float DEFAULT NULL,
   `input_date` date DEFAULT NULL,
   PRIMARY KEY (`id_reimburstment`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_reimburstment
@@ -668,6 +677,11 @@ INSERT INTO `tb_reimburstment` VALUES ('12', 'AFSFBF5148DCB265314', '15', '6', '
 INSERT INTO `tb_reimburstment` VALUES ('13', 'AFSb95be4d09a01ad52', '15', '7', '1500000', '2015-12-10');
 INSERT INTO `tb_reimburstment` VALUES ('14', 'AFSAB9A14867B837358', '15', '1', '50000', '2015-12-10');
 INSERT INTO `tb_reimburstment` VALUES ('15', 'AFS35f3b400da90646f', '15', '2', '25000', '2015-12-10');
+INSERT INTO `tb_reimburstment` VALUES ('16', 'AFS4a03148558bf54b8', '2', '1', '250000', '2015-12-18');
+INSERT INTO `tb_reimburstment` VALUES ('17', 'AFSFE6A3430FA469C79', '2', '1', '300000', '2015-12-18');
+INSERT INTO `tb_reimburstment` VALUES ('18', 'AFSf185e4fedb457a56', '2', '1', '250000', '2015-12-18');
+INSERT INTO `tb_reimburstment` VALUES ('19', 'AFSB9B294A74838818B', '2', '1', '300000', '2015-12-18');
+INSERT INTO `tb_reimburstment` VALUES ('20', 'AFS4a03148558bf54b8', '2', '3', '25000', '2015-12-18');
 
 -- ----------------------------
 -- Table structure for tb_subhourly
@@ -711,7 +725,7 @@ CREATE TABLE `tb_sublumpsum` (
   `desc_term3` varchar(255) DEFAULT NULL,
   `description` text,
   PRIMARY KEY (`id_sublumpsum`,`id_submatter`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_sublumpsum
@@ -737,6 +751,7 @@ INSERT INTO `tb_sublumpsum` VALUES ('18', 'S-AFS536EF486A8A5DA', '123', '11', '1
 INSERT INTO `tb_sublumpsum` VALUES ('19', 'S-AFS8F2474F3A0D27F', '120000', '100000', '200000', '30000', 'ooo', 'ooo', 'oo', 'ooo');
 INSERT INTO `tb_sublumpsum` VALUES ('20', 'S-AFS1BE21418849543', '120000000', '20000000', '50000000', '50000000', 'aaa', 'aaa', 'aaa', 'aaa');
 INSERT INTO `tb_sublumpsum` VALUES ('21', 'S-AFS3E36E44BA7C4A6', '12', '12', '12', '1212', '12', '12', '12', '12');
+INSERT INTO `tb_sublumpsum` VALUES ('22', 'S-AFSC7EDA47A87A330', '123', '232', '32323', '2323', 'asdasd', 'asd', 'asd', 'asdasd');
 
 -- ----------------------------
 -- Table structure for tb_submatter
@@ -778,6 +793,7 @@ INSERT INTO `tb_submatter` VALUES ('S-AFS9D9734FCA467CB', 'AFSAB81B4A09AE0254E',
 INSERT INTO `tb_submatter` VALUES ('S-AFSA3CC14CDB8455B', 'AFSAB9A14867B837358', '3', 'fgdfgd', '2015-12-28 00:00:00', '2015-12-25 00:00:00', '1');
 INSERT INTO `tb_submatter` VALUES ('S-AFSA70BC4A3AABA0B', 'AFSAB9A14867B837358', '2', 'asdasdasda', '2016-01-03 00:00:00', '2016-01-09 00:00:00', '1');
 INSERT INTO `tb_submatter` VALUES ('S-AFSC0C8A47797C49B', 'AFSACD0347408681778', '1', 'sub matter', '2015-11-29 00:00:00', '2015-12-17 00:00:00', '1');
+INSERT INTO `tb_submatter` VALUES ('S-AFSC7EDA47A87A330', 'AFSB9B294A74838818B', '1', 'asdada', '2015-11-30 00:00:00', '2015-12-22 00:00:00', '1');
 INSERT INTO `tb_submatter` VALUES ('S-AFSC81A04F68BFE87', 'AFSAB81B4A09AE0254E', '1', 'sub matter ke dua', '2015-11-29 00:00:00', '2015-12-19 00:00:00', '1');
 INSERT INTO `tb_submatter` VALUES ('S-AFSD2D3E4E78F003B', 'AFSAB81B4A09AE0254E', '1', 'sub matter ke empat', '2015-11-29 00:00:00', '2015-12-17 00:00:00', '1');
 INSERT INTO `tb_submatter` VALUES ('S-AFSE490147281945C', 'AFSAB81B4A09AE0254E', '1', 'sub matter awal dua', '2015-09-27 00:00:00', '2015-12-26 00:00:00', '1');
@@ -941,7 +957,7 @@ CREATE TABLE `tb_timesheet` (
   `start` time DEFAULT NULL,
   `end` time DEFAULT NULL,
   PRIMARY KEY (`id_timesheet`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=214 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_timesheet
@@ -959,18 +975,206 @@ INSERT INTO `tb_timesheet` VALUES ('10', 'AFS8D9A348C3B629E4A', '1', '2015-12-10
 INSERT INTO `tb_timesheet` VALUES ('11', 'AFS8BC5A412C8B6D5F0', '15', '2015-12-10', '2', 'asdadsa', '5', '09:50:00', '11:50:00');
 INSERT INTO `tb_timesheet` VALUES ('12', 'AFSE044745249EB8D86', '15', '2015-12-10', '1', 'qweqewqe', '6', '07:00:00', '10:50:00');
 INSERT INTO `tb_timesheet` VALUES ('13', 'AFSFBF5148DCB265314', '15', '2015-12-10', '3', 'zczxczc', '4', '21:00:00', '23:00:00');
-INSERT INTO `tb_timesheet` VALUES ('14', 'AFSb95be4d09a01ad52', '15', '2015-12-10', '2', 'qweqweqwe', '2', null, null);
+INSERT INTO `tb_timesheet` VALUES ('14', 'AFSb95be4d09a01ad52', '15', '2015-12-10', '2', 'qweqweqwe', '2', '05:05:00', '07:40:00');
 INSERT INTO `tb_timesheet` VALUES ('15', 'AFS2015213464896', '15', '2015-12-10', '2', 'sdfsdfsdf', '3', '09:50:00', '12:12:00');
 INSERT INTO `tb_timesheet` VALUES ('16', 'AFS029cf4ed0afa1442', '15', '2015-12-10', '2', 'qweqweqwe', '5', '19:00:00', '21:30:00');
 INSERT INTO `tb_timesheet` VALUES ('17', 'AFSFD06A4ED99CEA986', '15', '2015-12-10', '1', 'asdadasd', '7', '18:00:00', '21:00:00');
-INSERT INTO `tb_timesheet` VALUES ('18', 'AFSA768E4E0C9F2E431', '15', '2015-12-14', '1', 'test timesheet 123', '6', '22:00:00', '23:59:00');
+INSERT INTO `tb_timesheet` VALUES ('18', 'AFSA768E4E0C9F2E431', '15', '2015-12-14', '1', 'test timesheet 123', '6', '23:00:00', '23:59:00');
 INSERT INTO `tb_timesheet` VALUES ('19', 'AFS35f3b400da90646f', '15', '2015-12-16', '130', 'asdasdasd', '6', '14:05:00', '15:45:00');
 INSERT INTO `tb_timesheet` VALUES ('20', 'AFSAB9A14867B837358', '15', '2015-12-16', '1', 'asdasdasd', '3', '14:00:00', '15:00:00');
 INSERT INTO `tb_timesheet` VALUES ('21', 'AFS35f3b400da90646f', '15', '2015-12-16', null, 'sidang timesheet', '2', '01:00:00', '02:05:00');
 INSERT INTO `tb_timesheet` VALUES ('22', 'AFSb95be4d09a01ad52', '15', '2015-12-16', null, 'due dilligence timesheet', '6', '16:20:00', '17:00:00');
 INSERT INTO `tb_timesheet` VALUES ('23', 'AFSAB9A14867B837358', '15', '2015-12-16', null, 'ghjghjghj', '4', '14:10:00', '15:00:00');
-INSERT INTO `tb_timesheet` VALUES ('24', 'AFS35f3b400da90646f', '15', '2015-12-16', null, 'timesheet meeting', '3', '14:00:00', '15:00:00');
-INSERT INTO `tb_timesheet` VALUES ('25', 'AFS35f3b400da90646f', '15', '2015-12-17', null, 'Drafting timesheet', '4', '05:10:00', '09:15:00');
+INSERT INTO `tb_timesheet` VALUES ('24', 'AFS35f3b400da90646f', '15', '2015-12-16', null, 'timesheet meeting', '3', '14:00:00', '15:05:00');
+INSERT INTO `tb_timesheet` VALUES ('25', 'AFS35f3b400da90646f', '15', '2015-12-17', null, 'Pertemuan dengan Bonie Guido dari S&P untuk membahas penanganan kasus TOI di kepolisian perairan', '4', '05:00:00', '06:30:00');
+INSERT INTO `tb_timesheet` VALUES ('26', 'AFS4a03148558bf54b8', '2', '2015-12-18', null, 'asdasdas', '3', '02:20:00', '03:30:00');
+INSERT INTO `tb_timesheet` VALUES ('27', 'AFSFE6A3430FA469C79', '2', '2015-12-18', null, 'asdasdad', '2', '11:20:00', '12:03:00');
+INSERT INTO `tb_timesheet` VALUES ('28', 'AFS4a03148558bf54b8', '2', '2015-12-18', null, 'asdadasd', '3', '10:50:00', '11:50:00');
+INSERT INTO `tb_timesheet` VALUES ('29', 'AFSf185e4fedb457a56', '2', '2015-12-18', null, 'asasdasd', '6', '12:30:00', '15:00:00');
+INSERT INTO `tb_timesheet` VALUES ('30', 'AFSB9B294A74838818B', '2', '2015-12-18', null, 'wqeqweqwe', '7', '12:30:00', '13:00:00');
+INSERT INTO `tb_timesheet` VALUES ('31', 'AFS8FD8D4940B1CC3C3', '1', '2015-09-15', null, 'Pembicaraan mengenai kasus yang dialami oleh PT Total Oil Indonesia (“TOI”) di Indonesia', '3', '12:00:00', '12:30:00');
+INSERT INTO `tb_timesheet` VALUES ('32', 'AFS8FD8D4940B1CC3C3', '1', '2015-09-16', null, 'Pertemuan dengan Susandarini and Partners (“S&P”) untuk membahas perkembangan kasus di kantor S&P ', '3', '12:00:00', '13:00:00');
+INSERT INTO `tb_timesheet` VALUES ('33', 'AFS8FD8D4940B1CC3C3', '1', '2015-09-22', null, 'Pertemuan dengan Bonie Guido dari S&P untuk membahas penanganan kasus TOI di kepolisian perairan', '3', '12:00:00', '13:30:00');
+INSERT INTO `tb_timesheet` VALUES ('34', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-05', null, 'Mempelajari berkas pertama yang dikirimkan; dan (ii) diskusi internal mengenai Laporan Penanganan Perkara dari Juniver Girsang & Rekan', '7', '12:00:00', '13:00:00');
+INSERT INTO `tb_timesheet` VALUES ('35', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-05', null, 'Internal meeting membahas perkara, memo dan peraturan terkait,  sebagai hasil riset dan analisa dari UU Migas dan Permen ESDM No.16/2011', '3', '13:00:00', '15:00:00');
+INSERT INTO `tb_timesheet` VALUES ('36', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-05', null, 'Internal meeting, membahas ulang berkas dan membuat list hal-hal yang perlu diklarifikasi sebelum Video Confrence pada tanggal 6 Oktober 2015, pembahasan dengan Bonie Guido dari S&P terkait dengan penanganan kasus', '3', '12:00:00', '13:00:00');
+INSERT INTO `tb_timesheet` VALUES ('37', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-06', null, 'Diskusi dengan Bonie dari S&P terkait dengan  argumentasi yang dapat di pergunakan untuk melakukan pembelaan terhadap TOI', '3', '15:00:00', '16:00:00');
+INSERT INTO `tb_timesheet` VALUES ('38', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-07', null, 'Mempelajari berkas perkara yang baru diterima', '7', '13:00:00', '14:00:00');
+INSERT INTO `tb_timesheet` VALUES ('39', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-08', null, 'Perjalanan menuju dan kembali dari lokasi meeting di Equity Tower, untuk meeting  Video Confrence dengan pihak TOI di Singapura', '13', '13:00:00', '14:00:00');
+INSERT INTO `tb_timesheet` VALUES ('40', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-08', null, 'Video Conference dengan pihak TOI di Singapura ', '3', '16:00:00', '18:00:00');
+INSERT INTO `tb_timesheet` VALUES ('41', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-09', null, 'Korespodensi email terkait rencana pemeriksaan Bpk Yonaz sebagai saksi', '3', '12:00:00', '12:20:00');
+INSERT INTO `tb_timesheet` VALUES ('42', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-09', null, 'Pembicaran melalui telepon dan pertemuan dengan Bpk Bonie, Susandarini&Partners, perihal rencana pemeriksaan  Bpk Yonaz sebagai saksi', '3', '13:00:00', '14:30:00');
+INSERT INTO `tb_timesheet` VALUES ('43', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-12', null, 'Perjalanan menuju dan kembali dari lokasi meeting', '13', '13:00:00', '14:00:00');
+INSERT INTO `tb_timesheet` VALUES ('44', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-12', null, 'Meeting persiapan pertama untuk pemeriksaan Bpk Yonaz sebagai saksi', '3', '10:00:00', '13:00:00');
+INSERT INTO `tb_timesheet` VALUES ('45', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-13', null, 'Perjalanan menuju dan kembali dari lokasi meeting di Equity Tower', '13', '13:00:00', '14:00:00');
+INSERT INTO `tb_timesheet` VALUES ('46', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-13', null, 'Meeting persiapan kedua (confrence call) untuk pemeriksaan Bpk Yonaz sebagai saksi', '3', '14:00:00', '15:00:00');
+INSERT INTO `tb_timesheet` VALUES ('47', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-13', null, 'Internal meeting persiapan dokumen dan argumen  untuk menjelang pemeriksaan Bpk Yonas sebagai saksi', '3', '10:00:00', '12:00:00');
+INSERT INTO `tb_timesheet` VALUES ('48', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-13', null, 'Pembicaraan melalui telepon dengan Bonie Guido dari S&P terkait dengan pemeriksaan bapak Yonaz sebagai saksi', '3', '12:00:00', '12:30:00');
+INSERT INTO `tb_timesheet` VALUES ('49', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-15', null, 'Perjalanan menuju kantor TOI untuk  pemeriksaan Bpk Yonaz sebagai saksi', '13', '12:00:00', '12:45:00');
+INSERT INTO `tb_timesheet` VALUES ('50', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-15', null, 'Pemeriksaan Bpk Yonaz sebagai saksi', '3', '10:00:00', '10:12:00');
+INSERT INTO `tb_timesheet` VALUES ('51', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-15', null, 'Perjalanan pulang dari kantor TOI ', '13', '13:00:00', '13:45:00');
+INSERT INTO `tb_timesheet` VALUES ('52', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-15', null, 'Pembicaraan telepon dengan Bapak Bonie dari S&P terkait dengan hasil pemeriksaan saksi bapak Yonaz', '3', '13:00:00', '14:00:00');
+INSERT INTO `tb_timesheet` VALUES ('53', 'AFS8FD8D4940B1CC3C3', '1', '0000-00-00', null, 'Perjalanan menuju meeting di Equity Tower', '13', '13:00:00', '13:30:00');
+INSERT INTO `tb_timesheet` VALUES ('54', 'AFS8FD8D4940B1CC3C3', '1', '0000-00-00', null, 'Internal meeting dengan Bpk Bonie, Susandarini & Partners', '3', '13:00:00', '14:00:00');
+INSERT INTO `tb_timesheet` VALUES ('55', 'AFS8FD8D4940B1CC3C3', '1', '0000-00-00', null, 'Perjalanan pulang dari meeting di Equity Tower', '13', '13:00:00', '13:30:00');
+INSERT INTO `tb_timesheet` VALUES ('56', 'AFS8FD8D4940B1CC3C3', '1', '0000-00-00', null, 'Internal meeting membahas tahapan berikutnya', '3', '13:00:00', '14:00:00');
+INSERT INTO `tb_timesheet` VALUES ('57', 'AFS8FD8D4940B1CC3C3', '1', '0000-00-00', null, 'Internal email dan internal meeting membahas  progress report, kronologis versi PT SBE, Pembelaan, Perkembangan Perkara dan Langkah Hukum', '3', '13:00:00', '14:00:00');
+INSERT INTO `tb_timesheet` VALUES ('58', 'AFS8FD8D4940B1CC3C3', '1', '0000-00-00', null, 'Finalize  progress report, kronologis versi PT SBE, Pembelaan, Perkembangan Perkara dan Langkah Hukum', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('59', 'AFS8FD8D4940B1CC3C3', '1', '0000-00-00', null, 'Diskusi dengan pihak kejaksaan di Kejaksaan Agung', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('60', 'AFS8FD8D4940B1CC3C3', '1', '0000-00-00', null, 'Pembicaraan telepon dengan Bonie Guido dari Susandarini and Partners mengenai perkembangan Perkara', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('61', 'AFS8FD8D4940B1CC3C3', '1', '0000-00-00', null, 'Pertemuan dengan Bapak Bonie Guido dari S&P terkait dengan perkembangan perkara', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('62', 'AFS8FD8D4940B1CC3C3', '1', '0000-00-00', null, 'Perjalanan menuju lokasi meeting di BPH Migas', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('63', 'AFS8FD8D4940B1CC3C3', '1', '0000-00-00', null, 'Meeting dengan saksi ahli migas dari BPH Migas', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('64', 'AFS8FD8D4940B1CC3C3', '1', '0000-00-00', null, 'Perjalanan kembali dari lokasi meeting di BPH Migas', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('65', 'AFS8FD8D4940B1CC3C3', '1', '0000-00-00', null, 'Perjalanan menuju meeting dengan Susandarini & Partners', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('66', 'AFS8FD8D4940B1CC3C3', '1', '0000-00-00', null, 'Meeting membahas perkembangan perkara, perihal translate dokumen perjanjian dan kemungkinan pengajuan affidavit saksi ahli migas', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('67', 'AFS8FD8D4940B1CC3C3', '1', '0000-00-00', null, 'Perjalanan kembali dari lokasi meeting di equity', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('68', 'AFS8FD8D4940B1CC3C3', '1', '0000-00-00', null, 'Internal meeting terkait materi saksi ahli dalam perkara, persiapan pengajuan affidavit', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('69', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-28', null, 'Review dan analisa Peraturan Pemerintah No. 36 Tahun 2004 dan Permen ESDM No.16 Tahun 2011', '3', '08:00:00', '09:00:00');
+INSERT INTO `tb_timesheet` VALUES ('70', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-29', null, 'Internal meeting membahas tanggapan dari saksi ahli migas', '3', '17:00:00', '18:00:00');
+INSERT INTO `tb_timesheet` VALUES ('71', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-29', null, 'Perjalanan menuju lokasi meeting di BPH Migas', '13', '18:00:00', '18:30:00');
+INSERT INTO `tb_timesheet` VALUES ('72', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-29', null, 'Meeting dengan ahli migas di BPH Migas', '3', '14:00:00', '17:00:00');
+INSERT INTO `tb_timesheet` VALUES ('73', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-29', null, 'Perjalanan kembali dari lokasi meeting di BPH Migas', '13', '13:00:00', '13:30:00');
+INSERT INTO `tb_timesheet` VALUES ('74', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-29', null, 'Perjalanan menuju meeting dengan Susandarini & Partners', '13', '12:00:00', '12:30:00');
+INSERT INTO `tb_timesheet` VALUES ('75', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-29', null, 'Meeting membahas perkembangan perkara, perihal translate dokumen perjanjian dan kemungkinan pengajuan affidavit saksi ahli migas', '3', '08:00:00', '11:00:00');
+INSERT INTO `tb_timesheet` VALUES ('76', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-29', null, 'Perjalanan kembali dari lokasi meeting di equity', '13', '15:00:00', '15:30:00');
+INSERT INTO `tb_timesheet` VALUES ('77', 'AFS8FD8D4940B1CC3C3', '1', '2015-10-30', null, 'Internal meeting dan review  draft surat permohonan penilaian bentuk kerjasama', '3', '14:00:00', '15:00:00');
+INSERT INTO `tb_timesheet` VALUES ('78', 'AFS8FD8D4940B1CC3C3', '1', '2015-11-02', null, 'Internal meeting dan review  draft surat permohonan  penjelasan konsekuensi ', '3', '13:00:00', '14:00:00');
+INSERT INTO `tb_timesheet` VALUES ('79', 'AFS8FD8D4940B1CC3C3', '16', '2015-09-16', null, 'Pertemuan dengan Susandarini and Partners (“S&P”) untuk membahas perkembangan kasus di kantor S&P ', '3', '10:00:00', '11:00:00');
+INSERT INTO `tb_timesheet` VALUES ('80', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-05', null, 'Internal meeting pasca  pemeriksaan Bpk Yonaz sebagai saksi', '3', '13:00:00', '14:00:00');
+INSERT INTO `tb_timesheet` VALUES ('81', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-05', null, '(i) Mempelajari berkas pertama yang dikirimkan; dan (ii) diskusi internal mengenai Laporan Penanganan Perkara dari Juniver Girsang & Rekan', '7', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('82', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-05', null, '(i) Melakukan riset; dan\n(ii) analisa peraturan perundangan-undangan terkait perkara, antara lain:\n1. Undang-Undang Nomor 22 Tahun 2001 tentang Minyak dan Gas Bumi (“UU Migas”); 2. Peraturan Menteri ESDM Nomor 16 Tahun 2011 (“Permen ESDM No.16/2011”)', '7', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('83', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-05', null, 'Internal meeting membahas perkara, memo dan peraturan terkait,  sebagai hasil riset dan analisa dari UU Migas dan Permen ESDM No.16/2011', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('84', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-05', null, 'Mempelajari berkas kedua yang dikirimkan dan diskusi internal atas berkas dimaksud serta hal-hal yang perlu didiskusikan dengan Susandarini & Partners, sebagaimana yang telah di email pada tanggal 30 September 2015', '7', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('85', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-05', null, 'Internal meeting, membahas ulang berkas dan membuat list hal-hal yang perlu diklarifikasi sebelum Video Confrence pada tanggal 6 Oktober 2015, pembahasan dengan Bonie Guido dari S&P terkait dengan penanganan kasus', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('86', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-05', null, 'Drafting surat kuasa untuk PT TOI dan Bpk Emmanuel Maurice', '4', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('87', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-06', null, 'Diskusi dengan Pak Bonie dari S&P terkait dengan draft Kuasa ', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('88', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-07', null, 'Mempelajari berkas perkara yang baru diterima', '7', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('89', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-07', null, 'Perjalanan menuju dan kembali dari lokasi meeting di SKK Migas, untuk mencari saksi ahli dan berkonsultasi', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('90', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-07', null, 'Berkordinasi dan berkonsultasi dengan pihak SKK Migas', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('91', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-08', null, 'Perjalanan menuju dan kembali dari lokasi meeting di Equity Tower, untuk meeting  Video Confrence dengan pihak TOI di Singapura', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('92', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-08', null, 'Video Conference dengan pihak TOI di Singapura ', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('93', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-09', null, 'Korespodensi email terkait rencana pemeriksaan Bpk Yonaz sebagai saksi', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('94', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-09', null, 'Perjalanan menuju dan kembali dari lokasi meeting, menemui pihak Kementerian ESDM ', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('95', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-09', null, 'Berkordinasi dan berkonsultasi dengan pihak  Kementerian ESDM', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('96', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-12', null, 'Perjalanan menuju dan kembali dari lokasi meeting', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('97', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-12', null, 'Meeting persiapan pertama untuk pemeriksaan Bpk Yonaz sebagai saksi', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('98', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-12', null, 'Mempersiapkan draft keterangan tambahan untuk disampaikan oleh  Bpk Yonaz', '7', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('99', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-13', null, 'Perjalanan menuju dan kembali dari lokasi meeting di Equity Tower', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('100', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-13', null, 'Meeting persiapan kedua (confrence call) untuk pemeriksaan Bpk Yonaz sebagai saksi', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('101', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-13', null, 'Internal meeting persiapan dokumen dan argumen  untuk menjelang pemeriksaan Bpk Yonas sebagai saksi', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('102', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-15', null, 'Perjalanan menuju kantor TOI untuk  pemeriksaan Bpk Yonaz sebagai saksi', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('103', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-15', null, 'Pemeriksaan Bpk Yonaz sebagai saksi', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('104', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-15', null, 'Perjalanan pulang dari kantor TOI ', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('105', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-16', null, 'Internal meeting pasca  pemeriksaan Bpk Yonaz sebagai saksi', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('106', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-16', null, 'Menyusun resume pemeriksaan  Bpk Yonaz', '7', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('107', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-16', null, 'Email kepada klien perihal resume pemeriksaan', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('108', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-16', null, 'Perjalanan menuju meeting di Equity Tower', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('109', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-16', null, 'Internal meeting dengan Bpk Bonie, Susandarini & Partners', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('110', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-16', null, 'Perjalanan pulang dari meeting di Equity Tower', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('111', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-16', null, 'Internal meeting membahas tahapan berikutnya', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('112', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-16', null, 'Perjalanan menuju Kejaksaan Agung menjajaki Jaksa Peneliti perkara', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('113', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-16', null, 'Penjajakan Jaksa Peneliti perkara di Kejaksaan Agung', '7', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('114', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-16', null, 'Perjalanan kembali dari Kejaksaan Agung ', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('115', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-16', null, 'Drafting progress report, kronologis versi PT SBE, Pembelaan, Perkembangan Perkara dan Langkah Hukum', '4', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('116', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-16', null, 'Internal email dan internal meeting membahas  progress report, kronologis versi PT SBE, Pembelaan, Perkembangan Perkara dan Langkah Hukum', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('117', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-19', null, 'Finalize  progress report, kronologis versi PT SBE, Pembelaan, Perkembangan Perkara dan Langkah Hukum', '7', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('118', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-19', null, 'Korespodensi email  perihal  progress report, kronologis versi PT SBE, Pembelaan, Perkembangan Perkara dan Langkah Hukum', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('119', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-19', null, 'Perjalanan menuju pertemuan dengan Penyidik', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('120', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-19', null, 'Kordinasi dengan penyidik terkait arah penyidikan', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('121', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-19', null, 'Perjalanan kembali dari pertemuan dengan Penyidik', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('122', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-20', null, 'Revisi atas resume keterangan saksi Bpk Yonaz', '7', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('123', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-20', null, 'Korespodensi email  perihal  revisi atas resume keterangan  saksi Bpk Yonaz', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('124', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-20', null, 'Perjalanan menuju Kejaksaan Agung ', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('125', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-20', null, 'Diskusi dengan pihak kejaksaan di Kejaksaan Agung', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('126', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-20', null, 'Perjalanan kembali dari Kejaksaan Agung ', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('127', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-22', null, 'Perjalanan menuju ke Dirjen Migas', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('128', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-22', null, 'Penjajakan saksi ahli dari Dirjen Migas', '7', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('129', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-22', null, 'Perjalanan kembali dari Dirjen Migas', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('130', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-23', null, 'Perjalanan menuju ke BPH Migas', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('131', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-23', null, 'Penjajakan saksi ahli dari BPH Migas', '7', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('132', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-23', null, 'Perjalanan kembali dari BPH Migas', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('133', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-23', null, 'Korespodensi email  perihal  progress report', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('134', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-27', null, 'Perjalanan menuju lokasi meeting di BPH Migas', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('135', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-27', null, 'Meeting dengan saksi ahli migas dari BPH Migas', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('136', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-27', null, 'Perjalanan kembali dari lokasi meeting di BPH Migas', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('137', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-27', null, 'Perjalanan menuju meeting dengan Susandarini & Partners', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('138', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-27', null, 'Meeting membahas perkembangan perkara, perihal translate dokumen perjanjian dan kemungkinan pengajuan affidavit saksi ahli migas', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('139', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-27', null, 'Perjalanan kembali dari lokasi meeting di equity', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('140', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-28', null, 'Internal meeting terkait materi saksi ahli dalam perkara, persiapan pengajuan affidavit', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('141', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-28', null, 'Review dan analisa Peraturan Pemerintah No. 36 Tahun 2004 dan Permen ESDM No.16 Tahun 2011', '7', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('142', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-29', null, 'Internal meeting membahas tanggapan dari saksi ahli migas', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('143', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-29', null, 'Perjalanan menuju lokasi meeting di BPH Migas', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('144', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-29', null, 'Meeting dengan ahli migas di BPH Migas', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('145', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-29', null, 'Perjalanan kembali dari lokasi meeting di BPH Migas', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('146', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-29', null, 'Perjalanan menuju meeting dengan Susandarini & Partners', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('147', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-29', null, 'Meeting membahas perkembangan perkara, perihal translate dokumen perjanjian dan kemungkinan pengajuan affidavit saksi ahli migas', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('148', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-29', null, 'Perjalanan kembali dari lokasi meeting di equity', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('149', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-30', null, 'Drafting surat permohonan penilaian bentuk kerjasama untuk dikirimkan kepada saksi ahli migas', '4', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('150', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-30', null, 'Internal meeting dan review  draft surat permohonan penilaian bentuk kerjasama', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('151', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-30', null, 'Review dan revisi hasil terjemahan tersumpah atas 2 (dua) dokumen yang perlu ditranslate resmi antara lain perjanjian jual beli dan surat penunjukkan distributor', '4', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('152', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-30', null, 'Perjalanan menuju dan kembali dari lokasi meeting di SKK Migas, untuk bertemu saksi ahli migas', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('153', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-30', null, 'Konsultasi terkait format surat  permohonan penilaian bentuk kerjasama', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('154', 'AFS8FD8D4940B1CC3C3', '16', '2015-10-31', null, 'Drafting surat permohonan  penjelasan konsekuensi hukum untuk dikirimkan kepada saksi ahli migas', '4', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('155', 'AFS8FD8D4940B1CC3C3', '16', '2015-11-02', null, 'Internal meeting dan review  draft surat permohonan  penjelasan konsekuensi ', '3', '15:00:00', '16:00:00');
+INSERT INTO `tb_timesheet` VALUES ('156', 'AFS8FD8D4940B1CC3C3', '16', '2015-11-02', null, 'Perjalanan menuju dan kembali dari lokasi meeting di SKK Migas, untuk bertemu saksi ahli migas', '13', '13:00:00', '14:00:00');
+INSERT INTO `tb_timesheet` VALUES ('157', 'AFS8FD8D4940B1CC3C3', '16', '2015-11-02', null, 'Konsultasi terkait format surat  permohonan', '3', '14:00:00', '16:00:00');
+INSERT INTO `tb_timesheet` VALUES ('158', 'AFS8FD8D4940B1CC3C3', '10', '2015-09-16', null, 'Pertemuan dengan Susandarini and Partners (“S&P”) untuk membahas perkembangan kasus di kantor S&P ', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('159', 'AFS8FD8D4940B1CC3C3', '10', '2015-10-05', null, '(i) Mempelajari berkas pertama yang dikirimkan; dan (ii) diskusi internal mengenai Laporan Penanganan Perkara dari Juniver Girsang & Rekan', '7', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('160', 'AFS8FD8D4940B1CC3C3', '10', '2015-10-05', null, '(i) Melakukan riset; dan\n(ii) analisa peraturan perundangan-undangan terkait perkara, antara lain:\n? Undang-Undang Nomor 22 Tahun 2001 tentang Minyak dan Gas Bumi (“UU Migas”);\n? Peraturan Menteri ESDM Nomor 16 Tahun 2011 (“Permen ESDM No.16/2011”)\n', '7', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('161', 'AFS8FD8D4940B1CC3C3', '10', '2015-10-05', null, 'Internal meeting membahas perkara, memo dan peraturan terkait,  sebagai hasil riset dan analisa dari UU Migas dan Permen ESDM No.16/2011', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('162', 'AFS8FD8D4940B1CC3C3', '10', '2015-10-05', null, 'Mempelajari berkas kedua yang dikirimkan dan diskusi internal atas berkas dimaksud serta hal-hal yang perlu didiskusikan dengan Susandarini & Partners, sebagaimana yang telah di email pada tanggal 30 September 2015', '7', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('163', 'AFS8FD8D4940B1CC3C3', '10', '2015-10-05', null, 'Internal meeting, membahas ulang berkas dan membuat list hal-hal yang perlu diklarifikasi sebelum Video Confrence pada tanggal 6 Oktober 2015, pembahasan dengan Bonie Guido dari S&P terkait dengan penanganan kasus', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('164', 'AFS8FD8D4940B1CC3C3', '10', '2015-10-05', null, 'Drafting surat kuasa untuk PT TOI dan Bpk Emmanuel Maurice', '4', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('165', 'AFS8FD8D4940B1CC3C3', '10', '2015-10-07', null, 'Mempelajari berkas perkara yang baru diterima', '7', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('166', 'AFS8FD8D4940B1CC3C3', '10', '2015-10-07', null, 'Perjalanan menuju dan kembali dari lokasi meeting di SKK Migas, untuk mencari saksi ahli dan berkonsultasi', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('167', 'AFS8FD8D4940B1CC3C3', '10', '2015-10-07', null, 'Berkordinasi dan berkonsultasi dengan pihak SKK Migas', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('168', 'AFS8FD8D4940B1CC3C3', '10', '2015-10-08', null, 'Korespodensi email terkait revisi surat kuasa', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('169', 'AFS8FD8D4940B1CC3C3', '10', '2015-10-08', null, 'Perjalanan menuju dan kembali dari lokasi meeting di Equity Tower, untuk meeting  Video Confrence dengan pihak TOI di Singapura', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('170', 'AFS8FD8D4940B1CC3C3', '10', '2015-10-08', null, 'Video Conference dengan pihak TOI di Singapura ', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('171', 'AFS8FD8D4940B1CC3C3', '10', '2015-10-09', null, 'Perjalanan menuju dan kembali dari lokasi meeting, menemui pihak Kementerian ESDM ', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('172', 'AFS8FD8D4940B1CC3C3', '10', '2015-10-09', null, 'Berkordinasi dan berkonsultasi dengan pihak  Kementerian ESDM', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('173', 'AFS8FD8D4940B1CC3C3', '10', '2015-11-02', null, 'Internal meeting dan review  draft surat permohonan  penjelasan konsekuensi ', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('174', 'AFS8FD8D4940B1CC3C3', '10', '2015-11-02', null, 'Perjalanan menuju dan kembali dari lokasi meeting di SKK Migas, untuk bertemu saksi ahli migas', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('175', 'AFS8FD8D4940B1CC3C3', '10', '2015-11-02', null, 'Konsultasi terkait format surat  permohonan', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('176', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-15', null, 'Perjalanan menuju kantor TOI untuk  pemeriksaan Bpk Yonaz sebagai saksi', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('177', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-15', null, 'Pemeriksaan Bpk Yonaz sebagai saksi', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('178', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-15', null, 'Perjalanan pulang dari kantor TOI ', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('179', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-16', null, 'Menyusun resume pemeriksaan  Bpk Yonaz', '7', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('180', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-16', null, 'Internal email dan internal meeting membahas  progress report, kronologis versi PT SBE, Pembelaan, Perkembangan Perkara dan Langkah Hukum', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('181', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-20', null, 'Revisi atas resume keterangan saksi Bpk Yonaz', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('182', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-20', null, 'Mengatur jadwal pertemuan dengan pihak Migas', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('183', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-20', null, 'Perjalanan pulang pergi ke Migas', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('184', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-22', null, 'Perjalanan menuju ke Dirjen Migas', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('185', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-22', null, 'Penjajakan saksi ahli dari Dirjen Migas', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('186', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-22', null, 'Perjalanan kembali dari Dirjen Migas', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('187', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-23', null, 'Perjalanan menuju ke BPH Migas', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('188', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-23', null, 'Penjajakan saksi ahli dari BPH Migas', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('189', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-23', null, 'Perjalanan kembali dari BPH Migas', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('190', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-27', null, 'Perjalanan menuju lokasi meeting di BPH Migas', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('191', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-27', null, 'Meeting dengan saksi ahli migas dari BPH Migas', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('192', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-27', null, 'Perjalanan kembali dari lokasi meeting di BPH Migas', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('193', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-27', null, 'Perjalanan menuju meeting dengan Susandarini & Partners', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('194', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-27', null, 'Meeting membahas perkembangan perkara, perihal translate dokumen perjanjian dan kemungkinan pengajuan affidavit saksi ahli migas', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('195', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-27', null, 'Perjalanan kembali dari lokasi meeting di equity', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('196', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-28', null, 'Internal meeting terkait materi saksi ahli dalam perkara, persiapan pengajuan affidavit', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('197', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-28', null, 'Review dan analisa Peraturan Pemerintah No. 36 Tahun 2004 dan Permen ESDM No.16 Tahun 2011', '7', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('198', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-29', null, 'Internal meeting membahas tanggapan dari saksi ahli migas', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('199', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-29', null, 'Perjalanan menuju lokasi meeting di BPH Migas', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('200', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-29', null, 'Meeting dengan ahli migas di BPH Migas', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('201', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-29', null, 'Perjalanan kembali dari lokasi meeting di BPH Migas', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('202', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-29', null, 'Perjalanan menuju meeting dengan Susandarini & Partners', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('203', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-29', null, 'Meeting membahas perkembangan perkara, perihal translate dokumen perjanjian dan kemungkinan pengajuan affidavit saksi ahli migas', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('204', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-29', null, 'Perjalanan kembali dari lokasi meeting di equity', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('205', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-29', null, 'Kordinasi dengan penyidik ', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('206', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-29', null, 'Kordinasi dengan penterjemah tersumpah atas 2 (dua) dokumen yang perlu ditranslate resmi antara lain perjanjian jual beli dan surat penunjukkan distributor, untuk nantinya dilampirkan di surat permohonan kepada saksi ahli migas', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('207', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-30', null, 'Drafting surat permohonan penilaian bentuk kerjasama untuk dikirimkan kepada saksi ahli migas', '4', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('208', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-30', null, 'Internal meeting dan review  draft surat permohonan penilaian bentuk kerjasama', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('209', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-30', null, 'Review dan revisi hasil terjemahan tersumpah atas 2 (dua) dokumen yang perlu ditranslate resmi antara lain perjanjian jual beli dan surat penunjukkan distributor', '4', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('210', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-30', null, 'Perjalanan menuju dan kembali dari lokasi meeting di SKK Migas, untuk bertemu saksi ahli migas', '13', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('211', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-30', null, 'Konsultasi terkait format surat  permohonan penilaian bentuk kerjasama', '3', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('212', 'AFS8FD8D4940B1CC3C3', '14', '2015-10-31', null, 'Drafting surat permohonan  penjelasan konsekuensi hukum untuk dikirimkan kepada saksi ahli migas', '4', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('213', 'AFS8FD8D4940B1CC3C3', '14', '2015-11-02', null, 'Internal meeting dan review  draft surat permohonan  penjelasan konsekuensi ', '3', '13:00:00', '14:00:00');
 
 -- ----------------------------
 -- Table structure for tb_user
@@ -1047,7 +1251,7 @@ CREATE TABLE `tb_work_type` (
   `worktype` varchar(255) DEFAULT NULL,
   `inisial` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_work_type`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_work_type
@@ -1064,6 +1268,7 @@ INSERT INTO `tb_work_type` VALUES ('9', 'KEPAILITAN', 'KPL');
 INSERT INTO `tb_work_type` VALUES ('10', 'KPPU', 'KPP');
 INSERT INTO `tb_work_type` VALUES ('11', 'ARBITRASE', 'ARB');
 INSERT INTO `tb_work_type` VALUES ('12', 'MAHKAMAH KONSTITUSI', 'MK');
+INSERT INTO `tb_work_type` VALUES ('13', 'TRAVEL', 'TR');
 
 -- ----------------------------
 -- View structure for v_matter_assign

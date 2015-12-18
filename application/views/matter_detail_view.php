@@ -84,7 +84,7 @@
 						<?php if(isset($matter)){
 							$row = json_decode($matter) ?>						
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-5">
 								<table class="table table-bordered">
 									<thead>
 										<tr>
@@ -134,6 +134,28 @@
 									</tbody>
 								</table>
 							</div>
+
+							<div class="col-md-2">
+								<table class="table table-bordered">
+									<thead>
+										<tr>
+											<th>Total Time (minutes)</th>											
+										</tr>
+									</thead>
+									<tbody>
+										<?php 
+										$totalTime = 0;
+										if(isset($timesheet)){
+											foreach($timesheet as $row3){
+												$totalTime = $totalTime + timeDiff($row3->start,$row3->end);
+											}
+										} ?>
+										<tr>
+											<td align="center"><h2><?php echo $totalTime; ?></h2></td>											
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
 						<?php } ?>
 						</div>					
@@ -161,7 +183,7 @@
 										<th>Start</th>
 										<th>End</th>
 										<th>Minutes</th>
-										<th>Action</th>												
+										<th width="120">Action</th>												
 									</tr>
 								</thead>
 								<tbody>
