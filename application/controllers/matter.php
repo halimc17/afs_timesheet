@@ -28,7 +28,6 @@ class Matter extends CI_Controller {
 		
 		$this->load->model('client_model');
 		$data['records_client'] = $this->client_model->get_records(); //ambil semua records client
-
 		
 		$this->load->view("matter_view", $data);		
 	}	

@@ -193,7 +193,9 @@
 										foreach($timesheet as $row2){ ?>
 									<tr>
 										<td><?php echo $counter; ?></td>												
-										<td><?php echo $row2->input_date; ?></td>																								
+										<td><?php 
+											$inputDate = new DateTime($row2->input_date);
+											echo $inputDate->format('d-m-Y'); ?></td>																								
 										<td><?php echo $row2->inisial; ?></td>																								
 										<td><?php echo $row2->description; ?></td>																								
 										<td><?php echo $row2->start; ?></td>																								

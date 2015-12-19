@@ -119,8 +119,12 @@
 										<td><?php echo $row->payment_name; ?></td>
 										<td><?php echo $row->nama_client; ?></td>
 										<td><?php echo $row->matter; ?></td>
-										<td><?php echo $row->open_date; ?></td>			
-										<td><?php echo $row->close_date; ?></td>										
+										<td><?php 
+											$openDate = new DateTime($row->open_date);
+											echo $openDate->format('d-m-Y'); ?></td>			
+										<td><?php 
+											$closeDate = new DateTime($row->close_date);
+											echo $closeDate->format('d-m-Y'); ?></td>										
 										<td align="center"><?php echo $row->jml_timesheet; ?></td>										
 										<td align="center"><?php echo $row->jml_reimburstment; ?></td>										
 										<td class="center">

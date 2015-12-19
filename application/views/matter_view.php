@@ -659,7 +659,7 @@
 																		<th>Sub Matter</th>
 																		<th>Assign</th>
 																		<th>Active</th>
-																		<th style="width:160px;">Action</th>
+																		<th width="120">Action</th>
 																	</tr>
 																</thead>
 																<tbody>	
@@ -672,8 +672,14 @@
 																		<td><a href="<?php echo site_url('sub_matter/get_record/')."/".$row->id_matter."/".$row->id_payment; ?>"><?php echo $row->id_matter; ?></a></td>																				
 																		<td><?php echo $row->nama_client; ?></td>																				
 																		<td><?php echo $row->matter; ?></td>																																																																										
-																		<td><?php echo $row->open_date; ?></td>																				
-																		<td><?php echo $row->close_date; ?></td>																				
+																		<td><?php 
+																		$openDate = new DateTime($row->open_date);
+																		echo $openDate->format('d-m-Y'); ?>
+																		</td>																				
+																		<td><?php 
+																		$closeDate = new DateTime($row->close_date);
+																		echo $closeDate->format('d-m-Y'); ?>
+																		</td>																				
 																		<td><?php echo number_format($row->success_fee); ?></td>																				
 																		<td align="center"><?php echo $row->jml_subMatter; ?></td>																																																																																														
 																		<td align="center">
@@ -756,7 +762,7 @@
 																		<th>Sub Matter</th>
 																		<th>Assign</th>
 																		<th>Active</th>
-																		<th style="width:160px;">Action</th>
+																		<th width="120">Action</th>
 																	</tr>
 																</thead>
 																<tbody>	
@@ -769,8 +775,14 @@
 																		<td><a href="<?php echo site_url('sub_matter/get_record/')."/".$row2->id_matter."/".$row2->id_payment; ?>"><?php echo $row2->id_matter; ?></a></td>
 																		<td><?php echo $row2->nama_client; ?></td>																				
 																		<td><?php echo $row2->matter; ?></td>																																																																										
-																		<td><?php echo $row2->open_date; ?></td>																				
-																		<td><?php echo $row2->close_date; ?></td>																				
+																		<td><?php 
+																		$openDate = new DateTime($row2->open_date);
+																		echo $openDate->format('d-m-Y'); ?>
+																		</td>																				
+																		<td><?php 
+																		$closeDate = new DateTime($row2->close_date);
+																		echo $closeDate->format('d-m-Y'); ?>
+																		</td>																				
 																		<td><?php echo $row2->jml_subMatter; ?></td>																				
 																																																																										
 																		<td>
@@ -778,7 +790,17 @@
 																				<?php echo $row2->assigned; ?>
 																			</a>
 																		</td>																																																								
-																		<td align="center"><i class="entypo entypo-check"></i></td>
+																		<td align="center">
+																				<?php if ($row2->active == 1) { ?>													
+																						<button type="button" name="btnActive" class="btn btn-success" onclick="location.href='<?php echo site_url('matter/change_active/'.$row2->id_matter.'/0') ?>';" />
+																							<i class="entypo-check"></i>
+																						</button>
+																				<?php }else{ ?>
+																						<button type="button" name="btnNotActive" class="btn btn-danger" onclick="location.href='<?php echo site_url('matter/change_active/'.$row2->id_matter.'/1') ?>';">
+																							<i class="entypo-cancel"></i>
+																						</button>
+																				<?php } ?>												
+																		</td>
 																		<td class="center">
 																			<button type="button" name="btnEditActionHourly" class="btn btn-success" id="<?php echo $row2->id_matter; ?>">
 																				
@@ -839,7 +861,7 @@
 																			<th>Sub Matter</th>
 																			<th>Assign</th>
 																			<th>Active</th>
-																			<th style="width:160px;">Action</th>
+																			<th width="120">Action</th>
 																		</tr>
 																	</thead>
 																	<tbody>	
@@ -852,8 +874,14 @@
 																			<td><a href="<?php echo site_url('sub_matter/get_record/')."/".$row3->id_matter."/".$row3->id_payment; ?>"><?php echo $row3->id_matter; ?></a></td>																				
 																			<td><?php echo $row3->nama_client; ?></td>																				
 																			<td><?php echo $row3->matter; ?></td>																																																																										
-																			<td><?php echo $row3->open_date; ?></td>																				
-																			<td><?php echo $row3->close_date; ?></td>																				
+																			<td><?php 
+																			$openDate = new DateTime($row3->open_date);
+																			echo $openDate->format('d-m-Y'); ?>
+																			</td>																				
+																			<td><?php 
+																			$closeDate = new DateTime($row3->close_date);
+																			echo $closeDate->format('d-m-Y'); ?>
+																			</td>																				
 																			<td><?php echo $row3->jangka_waktu; ?></td>																				
 																			<td><?php echo $row3->jml_subMatter; ?></td>																				
 																																																																											
@@ -862,7 +890,17 @@
 																				<?php echo $row3->assigned; ?>
 																			</a>
 																			</td>																																																								
-																			<td align="center"><i class="entypo entypo-check"></i></td>
+																			<td align="center">
+																				<?php if ($row3->active == 1) { ?>													
+																						<button type="button" name="btnActive" class="btn btn-success" onclick="location.href='<?php echo site_url('matter/change_active/'.$row3->id_matter.'/0') ?>';" />
+																							<i class="entypo-check"></i>
+																						</button>
+																				<?php }else{ ?>
+																						<button type="button" name="btnNotActive" class="btn btn-danger" onclick="location.href='<?php echo site_url('matter/change_active/'.$row3->id_matter.'/1') ?>';">
+																							<i class="entypo-cancel"></i>
+																						</button>
+																				<?php } ?>												
+																		</td>
 																			<td class="center">
 																				<button type="button" name="btnEditActionRetainer" class="btn btn-success" id="<?php echo $row3->id_matter; ?>">
 																					
@@ -922,7 +960,7 @@
 																			<th>Sub Matter</th>
 																			<th>Assign</th>
 																			<th>Active</th>
-																			<th style="width:160px;">Action</th>
+																			<th width="120">Action</th>
 																		</tr>
 																	</thead>
 																	<tbody>	
@@ -935,8 +973,14 @@
 																			<td><a href="<?php echo site_url('sub_matter/get_record/')."/".$row4->id_matter."/".$row4->id_payment; ?>"><?php echo $row4->id_matter; ?></a></td>																				
 																			<td><?php echo $row4->nama_client; ?></td>																				
 																			<td><?php echo $row4->matter; ?></td>																																																																										
-																			<td><?php echo $row4->open_date; ?></td>																																																																										
-																			<td><?php echo $row4->close_date; ?></td>																																																																										
+																			<td><?php 
+																			$openDate = new DateTime($row4->open_date);
+																			echo $openDate->format('d-m-Y'); ?>
+																			</td>																				
+																			<td><?php 
+																			$closeDate = new DateTime($row4->close_date);
+																			echo $closeDate->format('d-m-Y'); ?>
+																			</td>																																																																										
 																			<td><?php echo number_format($row4->biaya); ?></td>																																																																										
 																			<td>0</td>																																																																										
 																			<td>
@@ -944,7 +988,17 @@
 																				<?php echo $row4->assigned; ?>
 																			</a>
 																			</td>																																																																										
-																			<td align="center"><i class="entypo entypo-check"></i></td>
+																			<td align="center">
+																				<?php if ($row4->active == 1) { ?>													
+																						<button type="button" name="btnActive" class="btn btn-success" onclick="location.href='<?php echo site_url('matter/change_active/'.$row4->id_matter.'/0') ?>';" />
+																							<i class="entypo-check"></i>
+																						</button>
+																				<?php }else{ ?>
+																						<button type="button" name="btnNotActive" class="btn btn-danger" onclick="location.href='<?php echo site_url('matter/change_active/'.$row4->id_matter.'/1') ?>';">
+																							<i class="entypo-cancel"></i>
+																						</button>
+																				<?php } ?>												
+																		</td>
 																			<td class="center">
 																				<button type="button" name="btnEditActionSuccessfee" class="btn btn-success" id="<?php echo $row4->id_matter; ?>">
 																					
@@ -1002,7 +1056,7 @@
 																			<th>Sub Matter</th>
 																			<th>Assign</th>
 																			<th>Active</th>
-																			<th style="width:160px;">Action</th>
+																			<th width="120">Action</th>
 																		</tr>
 																	</thead>
 																	<tbody>	
@@ -1015,8 +1069,14 @@
 																			<td><a href="<?php echo site_url('sub_matter/get_record/')."/".$row5->id_matter."/".$row5->id_payment; ?>"><?php echo $row5->id_matter; ?></a></td>
 																			<td><?php echo $row5->nama_client; ?></td>																				
 																			<td><?php echo $row5->matter; ?></td>																																																																										
-																			<td><?php echo $row5->open_date; ?></td>																				
-																			<td><?php echo $row5->close_date; ?></td>																																																										
+																			<td><?php 
+																			$openDate = new DateTime($row->open_date);
+																			echo $openDate->format('d-m-Y'); ?>
+																			</td>																				
+																			<td><?php 
+																			$closeDate = new DateTime($row->close_date);
+																			echo $closeDate->format('d-m-Y'); ?>
+																			</td>																																																										
 																			<td style="width:250px;"><?php echo $row5->description; ?></td>																																																								
 																			<td>0</td>																																																								
 																			<td>
@@ -1024,7 +1084,17 @@
 																				<?php echo $row5->assigned; ?>
 																			</a>
 																			</td>																																																								
-																			<td align="center"><i class="entypo entypo-check"></i></td>
+																			<td align="center">
+																				<?php if ($row5->active == 1) { ?>													
+																						<button type="button" name="btnActive" class="btn btn-success" onclick="location.href='<?php echo site_url('matter/change_active/'.$row5->id_matter.'/0') ?>';" />
+																							<i class="entypo-check"></i>
+																						</button>
+																				<?php }else{ ?>
+																						<button type="button" name="btnNotActive" class="btn btn-danger" onclick="location.href='<?php echo site_url('matter/change_active/'.$row5->id_matter.'/1') ?>';">
+																							<i class="entypo-cancel"></i>
+																						</button>
+																				<?php } ?>												
+																		</td>
 																			<td class="center">
 																				<button type="button" name="btnEditActionProbono" class="btn btn-success" id="<?php echo $row5->id_matter; ?>">
 																					
@@ -1083,7 +1153,7 @@
 																		<th>Sub Matter</th>
 																		<th>Assign</th>
 																		<th>Active</th>
-																		<th style="width:169px;">Action</th>
+																		<th width="120">Action</th>
 																	</tr>
 																</thead>
 																<tbody>	
@@ -1096,8 +1166,14 @@
 																		<td><a href="<?php echo site_url('sub_matter/get_record/')."/".$row6->id_matter."/".$row6->id_payment; ?>"><?php echo $row6->id_matter; ?></a></td>																				
 																		<td><?php echo $row6->nama_client; ?></td>																				
 																		<td><?php echo $row6->matter; ?></td>																																																																										
-																		<td><?php echo $row6->open_date; ?></td>																				
-																		<td><?php echo $row6->close_date; ?></td>																				
+																		<td><?php 
+																		$openDate = new DateTime($row6->open_date);
+																		echo $openDate->format('d-m-Y'); ?>
+																		</td>																				
+																		<td><?php 
+																		$closeDate = new DateTime($row6->close_date);
+																		echo $closeDate->format('d-m-Y'); ?>
+																		</td>																				
 																		<td><?php echo number_format($row6->success_fee); ?></td>																				
 																		<td>0</td>																				
 																																																																										
@@ -1106,7 +1182,17 @@
 																				<?php echo $row6->assigned; ?>
 																			</a>
 																		</td>																																																								
-																		<td align="center"><i class="entypo entypo-check"></i></td>
+																		<td align="center">
+																				<?php if ($row6->active == 1) { ?>													
+																						<button type="button" name="btnActive" class="btn btn-success" onclick="location.href='<?php echo site_url('matter/change_active/'.$row6->id_matter.'/0') ?>';" />
+																							<i class="entypo-check"></i>
+																						</button>
+																				<?php }else{ ?>
+																						<button type="button" name="btnNotActive" class="btn btn-danger" onclick="location.href='<?php echo site_url('matter/change_active/'.$row6->id_matter.'/1') ?>';">
+																							<i class="entypo-cancel"></i>
+																						</button>
+																				<?php } ?>												
+																		</td>
 																		<td class="center">
 																			<button type="button" name="btnEditActionProject" class="btn btn-success" id="<?php echo $row6->id_matter; ?>">
 																				
@@ -1370,14 +1456,14 @@
 								<div class="row">
 									<div class="col-md-6">						
 										<div class="form-group">
-											<label for="txt_managing_partner" class="control-label">Managing Partner</label>
+											<label for="txt_managing_partner" class="control-label">Managing Partner (USD)</label>
 											<input type="text" class="form-control" id="txt_managing_partner" name="txt_managing_partner" value="">
 										</div>							
 									</div>
 
 									<div class="col-md-6">						
 										<div class="form-group" style="padding-left:10px;">
-											<label for="txt_partner" class="control-label">Partner</label>
+											<label for="txt_partner" class="control-label">Partner (USD)</label>
 											<input type="text" class="form-control" id="txt_partner" name="txt_partner" value="">
 										</div>							
 									</div>									
@@ -1386,13 +1472,13 @@
 								<div class="row">
 									<div class="col-md-6">						
 										<div class="form-group">
-											<label for="txt_junior_partner" class="control-label">Junior Partner</label>							
+											<label for="txt_junior_partner" class="control-label">Junior Partner (USD)</label>							
 											<input type="text" class="form-control" id="txt_junior_partner" name="txt_junior_partner" value="">
 										</div>						
 									</div>
 									<div class="col-md-6">						
 										<div class="form-group" style="padding-left:10px;">
-											<label for="txt_senior_associate" class="control-label">Senior Associate</label>							
+											<label for="txt_senior_associate" class="control-label">Senior Associate (USD)</label>							
 											<input type="text" class="form-control" id="txt_senior_associate" name="txt_senior_associate" value="">
 										</div>						
 									</div>									
@@ -1401,13 +1487,13 @@
 								<div class="row">
 									<div class="col-md-6">						
 										<div class="form-group">
-											<label for="txt_mid_associate" class="control-label">Mid Associate</label>							
+											<label for="txt_mid_associate" class="control-label">Mid Associate (USD)</label>							
 											<input type="text" class="form-control" id="txt_mid_associate" name="txt_mid_associate" value="">
 										</div>						
 									</div>
 									<div class="col-md-6">						
 										<div class="form-group" style="padding-left:10px;">
-											<label for="txt_junior_associate" class="control-label">Junior Associate</label>							
+											<label for="txt_junior_associate" class="control-label">Junior Associate (USD)</label>							
 											<input type="text" class="form-control" id="txt_junior_associate" name="txt_junior_associate" value="">
 										</div>						
 									</div>									
