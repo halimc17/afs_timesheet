@@ -55,7 +55,12 @@
 	            {
 	               alert('Data Tersimpan');
 	               $('#modalTimesheet').modal('hide');		               	               
-	               window.location = "<?php echo site_url('timesheet/detail')."/".$this->uri->segment(3); ?>";               
+	               <?php if($this->uri->segment(4) != NULL){ ?>
+	               		window.location = "<?php echo site_url('timesheet/detail')."/".$this->uri->segment(3)."/".$this->uri->segment(4); ?>";	 
+	               <?php }else{ ?>
+	               		window.location = "<?php echo site_url('timesheet/detail')."/".$this->uri->segment(3); ?>";	
+	               <?php } ?>
+	                              
 	            },
 	            error: function (jqXHR, textStatus, errorThrown)
 	            {
@@ -168,6 +173,7 @@
 		<div class="col-md-12">
 			<div class="panel panel-default panel-shadow" data-collapse="0">
 				<div class="panel-heading">
+
 					<div class="panel-title">Timesheet</div>
 				</div>
 				<div class="panel-body">														
@@ -179,6 +185,7 @@
 										<th>No</th>														
 										<th>Date</th>														
 										<th>Work Type</th>
+										<th>Attorney</th>
 										<th>Description</th>
 										<th>Start</th>
 										<th>End</th>
@@ -197,6 +204,7 @@
 											$inputDate = new DateTime($row2->input_date);
 											echo $inputDate->format('d-m-Y'); ?></td>																								
 										<td><?php echo $row2->inisial; ?></td>																								
+										<td><?php echo $row2->inisial_user; ?></td>																								
 										<td><?php echo $row2->description; ?></td>																								
 										<td><?php echo $row2->start; ?></td>																								
 										<td><?php echo $row2->end; ?></td>																								
@@ -218,6 +226,7 @@
 										<th>No</th>														
 										<th>Date</th>														
 										<th>Work Type</th>
+										<th>Attorney</th>
 										<th>Description</th>
 										<th>Start</th>
 										<th>End</th>

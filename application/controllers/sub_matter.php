@@ -61,9 +61,12 @@ class Sub_matter extends CI_Controller {
 		$this->load->model('sublumpsum_model');
 		$this->load->model('subhourly_model');
 		$this->load->model('subretainer_model');
+		$this->load->model('assigned_model');
+
 		$data['records_sublumpsum'] = $this->sublumpsum_model->get_record();
 		$data['records_subhourly'] = $this->subhourly_model->get_record();
 		$data['records_subretainer'] = $this->subretainer_model->get_record();
+		$data['records_assigned'] = $this->assigned_model->get_assign_timesheet();
 
 		$this->load->view('sub_matter_view', $data);
 

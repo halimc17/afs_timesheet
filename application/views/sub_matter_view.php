@@ -928,6 +928,48 @@
 	</div>	
 
 	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default panel-shadow" data-collapse="0">
+				<div class="panel-heading">
+					<div class="panel-title">Attorney Timesheet</div>
+				</div>
+				<div class="panel-body">
+					<div class="col-md-6">
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th width="40px">No</th>
+									<th>Attorney</th>
+									<th>Timesheet</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+							<tbody>
+							<?php 
+							$counter = 1;
+							if(isset($records_assigned)){
+								foreach($records_assigned as $row9){ ?>
+
+								<tr>
+									<td><?php echo $counter; ?></td>
+									<td><?php echo $row9->nama; ?></td>
+									<td><?php echo $row9->jml_timesheet; ?></td>
+									<td><a href="<?php echo site_url('timesheet/detail/'.$this->uri->segment(3).'/'.$row9->id_user) ?>">View</a></td>
+								</tr>
+
+							<?php
+							$counter++;	}
+							} ?>
+								
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
 			<div class="col-md-12">
 				<div class="panel panel-default panel-shadow" data-collapse="0">
 					<div class="panel-heading">

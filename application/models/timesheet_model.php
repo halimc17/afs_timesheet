@@ -16,6 +16,15 @@ class Timesheet_model extends CI_Model{
 	}
 
 	public function get_records(){
+		
+		if($this->session->userdata('admin') == 1 AND $this->uri->segment(4) != NULL){
+			$idUser = $this->uri->segment(4);	
+		}else{
+			$idUser = $this->session->userdata('id_user');	
+		}
+		
+		
+
 		$query = $this->db->query("SELECT
 									tb_timesheet.id_timesheet,
 									tb_timesheet.id_matter,
@@ -26,14 +35,14 @@ class Timesheet_model extends CI_Model{
 									tb_timesheet.id_work_type,
 									tb_timesheet.`start`,
 									tb_timesheet.`end`,
-									tb_user.nama,
+									tb_user.inisial AS inisial_user,
 									tb_work_type.inisial
 									FROM
 									tb_timesheet
 									INNER JOIN tb_user ON tb_user.id_user = tb_timesheet.id_user
 									INNER JOIN tb_work_type ON tb_work_type.id_work_type = tb_timesheet.id_work_type
 									WHERE
-									tb_timesheet.id_matter = '".$this->uri->segment(3)."' AND tb_timesheet.id_user = ".$this->session->userdata('id_user')." ORDER BY tb_timesheet.id_timesheet DESC");							
+									tb_timesheet.id_matter = '".$this->uri->segment(3)."' AND tb_timesheet.id_user = ".$idUser." ORDER BY tb_timesheet.id_timesheet DESC");							
 		return $query->result();
 	}
 

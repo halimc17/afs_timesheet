@@ -63,7 +63,8 @@ class Login_model extends CI_Model{
                     'inisial' => $row->inisial,
                     'status' => $row->status,
                     'id_jabatan' => $row->id_jabatan,
-					'rate' => $row->rate,
+                    'rate' => $row->rate,
+					'admin' => $row->admin,
                     'logged_in' => TRUE
                     );
             $this->load->library('session');    

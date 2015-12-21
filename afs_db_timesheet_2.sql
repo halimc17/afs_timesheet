@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2015-12-18 16:41:22
+Date: 2015-12-21 16:14:59
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -972,7 +972,7 @@ INSERT INTO `tb_timesheet` VALUES ('7', 'AFS4D7C74079B187959', '1', '2015-12-10'
 INSERT INTO `tb_timesheet` VALUES ('8', 'AFS658284946853C50B', '1', '2015-12-10', '2', 'timesheet', '4', null, null);
 INSERT INTO `tb_timesheet` VALUES ('9', 'AFS8D9A348C3B629E4A', '1', '2015-12-10', '4', 'adasdas', '4', null, null);
 INSERT INTO `tb_timesheet` VALUES ('10', 'AFS8D9A348C3B629E4A', '1', '2015-12-10', '1', 'aa', '4', null, null);
-INSERT INTO `tb_timesheet` VALUES ('11', 'AFS8BC5A412C8B6D5F0', '15', '2015-12-10', '2', 'asdadsa', '5', '09:50:00', '11:50:00');
+INSERT INTO `tb_timesheet` VALUES ('11', 'AFS8BC5A412C8B6D5F0', '15', '2015-12-10', '2', 'asdadsa', '5', '09:50:00', '12:00:00');
 INSERT INTO `tb_timesheet` VALUES ('12', 'AFSE044745249EB8D86', '15', '2015-12-10', '1', 'qweqewqe', '6', '07:00:00', '10:50:00');
 INSERT INTO `tb_timesheet` VALUES ('13', 'AFSFBF5148DCB265314', '15', '2015-12-10', '3', 'zczxczc', '4', '21:00:00', '23:00:00');
 INSERT INTO `tb_timesheet` VALUES ('14', 'AFSb95be4d09a01ad52', '15', '2015-12-10', '2', 'qweqweqwe', '2', '05:05:00', '07:40:00');
@@ -1121,7 +1121,7 @@ INSERT INTO `tb_timesheet` VALUES ('156', 'AFS8FD8D4940B1CC3C3', '16', '2015-11-
 INSERT INTO `tb_timesheet` VALUES ('157', 'AFS8FD8D4940B1CC3C3', '16', '2015-11-02', null, 'Konsultasi terkait format surat  permohonan', '3', '14:00:00', '16:00:00');
 INSERT INTO `tb_timesheet` VALUES ('158', 'AFS8FD8D4940B1CC3C3', '10', '2015-09-16', null, 'Pertemuan dengan Susandarini and Partners (“S&P”) untuk membahas perkembangan kasus di kantor S&P ', '3', '00:00:00', '00:00:00');
 INSERT INTO `tb_timesheet` VALUES ('159', 'AFS8FD8D4940B1CC3C3', '10', '2015-10-05', null, '(i) Mempelajari berkas pertama yang dikirimkan; dan (ii) diskusi internal mengenai Laporan Penanganan Perkara dari Juniver Girsang & Rekan', '7', '00:00:00', '00:00:00');
-INSERT INTO `tb_timesheet` VALUES ('160', 'AFS8FD8D4940B1CC3C3', '10', '2015-10-05', null, '(i) Melakukan riset; dan\n(ii) analisa peraturan perundangan-undangan terkait perkara, antara lain:\n? Undang-Undang Nomor 22 Tahun 2001 tentang Minyak dan Gas Bumi (“UU Migas”);\n? Peraturan Menteri ESDM Nomor 16 Tahun 2011 (“Permen ESDM No.16/2011”)\n', '7', '00:00:00', '00:00:00');
+INSERT INTO `tb_timesheet` VALUES ('160', 'AFS8FD8D4940B1CC3C3', '10', '2015-10-05', null, '(i) Melakukan riset; dan\r\n(ii) analisa peraturan perundangan-undangan terkait perkara, antara lain:\r\nUndang-Undang Nomor 22 Tahun 2001 tentang Minyak dan Gas Bumi (“UU Migas”);\r\n? Peraturan Menteri ESDM Nomor 16 Tahun 2011 (“Permen ESDM No.16/2011”)\r\n', '7', '00:00:00', '00:00:00');
 INSERT INTO `tb_timesheet` VALUES ('161', 'AFS8FD8D4940B1CC3C3', '10', '2015-10-05', null, 'Internal meeting membahas perkara, memo dan peraturan terkait,  sebagai hasil riset dan analisa dari UU Migas dan Permen ESDM No.16/2011', '3', '00:00:00', '00:00:00');
 INSERT INTO `tb_timesheet` VALUES ('162', 'AFS8FD8D4940B1CC3C3', '10', '2015-10-05', null, 'Mempelajari berkas kedua yang dikirimkan dan diskusi internal atas berkas dimaksud serta hal-hal yang perlu didiskusikan dengan Susandarini & Partners, sebagaimana yang telah di email pada tanggal 30 September 2015', '7', '00:00:00', '00:00:00');
 INSERT INTO `tb_timesheet` VALUES ('163', 'AFS8FD8D4940B1CC3C3', '10', '2015-10-05', null, 'Internal meeting, membahas ulang berkas dan membuat list hal-hal yang perlu diklarifikasi sebelum Video Confrence pada tanggal 6 Oktober 2015, pembahasan dengan Bonie Guido dari S&P terkait dengan penanganan kasus', '3', '00:00:00', '00:00:00');
@@ -1226,8 +1226,8 @@ INSERT INTO `tb_user` VALUES ('19', 'Tommy Simorangkir', 'TS', '0818 621 331', '
 INSERT INTO `tb_user` VALUES ('20', 'Anastasia Putri', 'AP', '0813 1072 4852', '', '', 'anastasiaputri@afs-partnership.com', 'anastasiaputri.afs@gmail.com', '108', 'Staff', '6', '7', 'anastasia', 'e10adc3949ba59abbe56e057f20f883e', '0', '1', null);
 INSERT INTO `tb_user` VALUES ('21', 'Edward Poluan(Edo)', 'EDU', '0838 9183 0550', '021-9710 1417', '', '', '', '', 'Staff', '6', '9', 'edward', 'e10adc3949ba59abbe56e057f20f883e', '0', '1', null);
 INSERT INTO `tb_user` VALUES ('22', 'Haerul Djamal', 'HD', '0857 7103 3050', '0817 6081 513', '021-41762913', '', '', '', 'Staff', '6', '9', 'haerul', 'e10adc3949ba59abbe56e057f20f883e', '0', '1', null);
-INSERT INTO `tb_user` VALUES ('23', 'Kairin Driver(afs)', 'KN', '0852 1693 8847', '0878 8273 8239', '', '', '', '', 'Staff', '6', '10', 'kairin', 'e10adc3949ba59abbe56e057f20f883e', '0', '0', null);
-INSERT INTO `tb_user` VALUES ('24', 'Karmuji', 'KM', '0813 1922 1228', '', '', '', '', '', 'Staff', '6', '10', 'karmuji', 'e10adc3949ba59abbe56e057f20f883e', '0', '0', null);
+INSERT INTO `tb_user` VALUES ('23', 'Kairin Driver(afs)', 'KN', '0852 1693 8847', '0878 8273 8239', '', '', '', '', 'Staff', '6', '10', 'kairin', 'e10adc3949ba59abbe56e057f20f883e', '0', '1', null);
+INSERT INTO `tb_user` VALUES ('24', 'Karmuji', 'KM', '0813 1922 1228', '', '', '', '', '', 'Staff', '6', '10', 'karmuji', 'e10adc3949ba59abbe56e057f20f883e', '0', '1', null);
 INSERT INTO `tb_user` VALUES ('25', 'Lutgarda DM Ningrum', 'LN', '0878 84282 389', '', '', 'lutgardaningrum@afs-partnership.com', 'lutgardwy.afs@gmail.com', '108', 'Staff', '6', '7', 'lutgarda', 'e10adc3949ba59abbe56e057f20f883e', '0', '1', null);
 INSERT INTO `tb_user` VALUES ('26', 'Nindya Pransiska', 'NP', '0819 0556 2412', '', '', 'nindyafransisca@afs-partnership.com', 'nindyafransisca.afs@gmail.com', '110', 'Staff', '6', '8', 'nindya', 'e10adc3949ba59abbe56e057f20f883e', '0', '1', null);
 INSERT INTO `tb_user` VALUES ('27', 'Nova Natalia Notorahardjo', 'NN', '0817 655 4720', '', '', 'novanatalia@afs-partnership.com', 'nova.afs@gmail.com', '108', 'Staff', '6', '6', 'nova', 'e10adc3949ba59abbe56e057f20f883e', '0', '1', null);
@@ -1235,9 +1235,9 @@ INSERT INTO `tb_user` VALUES ('28', 'Rio Kadafi', 'RK', '0877 7007 7557', '', ''
 INSERT INTO `tb_user` VALUES ('29', 'Rini Sulastri', 'RS', '0812 8172 2556', '0896 3443 4084', '', 'rinisulastri@afs-partnership.com', 'rinisulastri.afs@gmail.com', '0/100', 'Staff', '6', '8', 'rini', 'e10adc3949ba59abbe56e057f20f883e', '0', '1', null);
 INSERT INTO `tb_user` VALUES ('30', 'Risky', 'RY', '0812 8026 5356', '', '', '', 'risky.goky@gmail.com', '110', 'Staff', '6', '12', 'risky', 'e10adc3949ba59abbe56e057f20f883e', '0', '1', null);
 INSERT INTO `tb_user` VALUES ('31', 'Toufan', 'TF', '0818 0620 2600', '', '', '', 'toufanster@gmail.com', '110', 'Staff', '6', '12', 'toufan', 'e10adc3949ba59abbe56e057f20f883e', '0', '1', null);
-INSERT INTO `tb_user` VALUES ('32', 'Tono', 'TN', '0878 8428 8555', '', '', '', '', '', 'Staff', '6', '10', 'tono', 'e10adc3949ba59abbe56e057f20f883e', '0', '0', null);
-INSERT INTO `tb_user` VALUES ('33', 'Timen', 'TM', '0813 8086 5597', '', '', '', '', '', 'Staff', '6', '10', 'timen', 'e10adc3949ba59abbe56e057f20f883e', '0', '0', null);
-INSERT INTO `tb_user` VALUES ('34', 'Yulianto', 'YO', '0857 1958 3734', '021-9976 8381', '', '', '', '', 'Staff', '6', '10', 'yulianto', 'e10adc3949ba59abbe56e057f20f883e', '0', '0', null);
+INSERT INTO `tb_user` VALUES ('32', 'Tono', 'TN', '0878 8428 8555', '', '', '', '', '', 'Staff', '6', '10', 'tono', 'e10adc3949ba59abbe56e057f20f883e', '0', '1', null);
+INSERT INTO `tb_user` VALUES ('33', 'Timen', 'TM', '0813 8086 5597', '', '', '', '', '', 'Staff', '6', '10', 'timen', 'e10adc3949ba59abbe56e057f20f883e', '0', '1', null);
+INSERT INTO `tb_user` VALUES ('34', 'Yulianto', 'YO', '0857 1958 3734', '021-9976 8381', '', '', '', '', 'Staff', '6', '10', 'yulianto', 'e10adc3949ba59abbe56e057f20f883e', '0', '1', null);
 INSERT INTO `tb_user` VALUES ('35', 'Yuli Hartini', 'YH', '0818 0777 9442', '0812 9616 0750', '', '', '', '', 'Staff', '6', '9', 'yuli', 'e10adc3949ba59abbe56e057f20f883e', '0', '1', null);
 INSERT INTO `tb_user` VALUES ('36', 'Kingking Firdaus', 'KKF', '082113708280', '', null, 'halimc17@yahoo.com', 'kingking.firdaus@gmail.com', '', 'Staff', '6', '12', 'firdausk', '017eef8839e5a0bd21ab422195ee6164', '1', '1', null);
 INSERT INTO `tb_user` VALUES ('46', 'Teddy Syaiful', 'TS', '444444', '000000', '111111', 'teddy@gmail.com', 'teddy.s@gmail.com', '021', 'Managing Partner', '6', '12', 'teddy.syaiful', '017eef8839e5a0bd21ab422195ee6164', '0', '1', null);
