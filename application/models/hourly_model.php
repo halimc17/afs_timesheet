@@ -20,6 +20,11 @@ class Hourly_model extends CI_Model{
 		$query = $this->db->query("select * from tb_hourly where id_hourly = ".$this->uri->segment(3));
 		return $query->result();
 	}
+
+	public function get_record2($idMatter){
+		$query = $this->db->query("select * from tb_hourly where id_matter = '".$idMatter."'");
+		return $query->result();
+	}
 	
 	public function add_record($data){
 		$this->db->insert('tb_matter_hourly', $data);

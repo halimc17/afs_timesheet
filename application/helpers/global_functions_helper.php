@@ -16,5 +16,51 @@ function timeDiff($firstTime,$lastTime)
 	//echo timeDiff("2002-04-16 10:00:00","2002-03-16 18:56:32");
 }
 
+function billableHour($minutes, $idPayment, $idMatter, $idJabatan){
+	if($idPayment == 2){
+		$bill = $minutes + 300;
+
+		$ci =& get_instance();
+		$class = $ci->db->query("SELECT * FROM tb_matter_hourly WHERE id_matter = '".$idMatter."'");
+	    $class = json_encode($class->row());		
+		$row = json_decode($class);
+
+		$rateManagingPartner = $row->{'managing_partner'}; 
+		$ratePartner = $row->{'partner'}; 
+		$rateJuniorPartner = $row->{'junior_partner'}; 
+		$rateSeniorAssociate = $row->{'senior_associate'}; 
+		$rateMidAssociate = $row->{'mid_associate'}; 
+		$rateJuniorAssociate = $row->{'junior_associate'}; 
+
+
+		switch ($idJabatan) {
+		    case 1: //managing partner
+		        $bill = "$".($rateManagingPartner/60)*$minutes;
+		        break;
+		    case 2: //partner
+		        $bill = "$".($ratePartner/60)*$minutes;
+		        break;
+		    case 3: //mid-associate
+		        $bill = "$".($rateMidAssociate/60)*$minutes;
+		        break;
+		    case 4: //junior Associate
+		    	$bill = "$".($rateJuniorAssociate/60)*$minutes;
+		    	break;
+		    case 5: // Senior Associate
+		    	$bill = "$".($rateSeniorAssociate/60)*$minutes;
+		    	break;
+		    case 13: // Senior Associate
+		    	$bill = "$".($rateJuniorPartner/60)*$minutes;
+		    	break;
+		    default:
+		        echo "$0";
+		}
+	}else{
+		$bill = 0;
+	}
+
+	return $bill;
+}
+
 
  ?>

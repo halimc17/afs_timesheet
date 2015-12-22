@@ -23,8 +23,6 @@ class Timesheet_model extends CI_Model{
 			$idUser = $this->session->userdata('id_user');	
 		}
 		
-		
-
 		$query = $this->db->query("SELECT
 									tb_timesheet.id_timesheet,
 									tb_timesheet.id_matter,
@@ -36,13 +34,23 @@ class Timesheet_model extends CI_Model{
 									tb_timesheet.`start`,
 									tb_timesheet.`end`,
 									tb_user.inisial AS inisial_user,
-									tb_work_type.inisial
+									tb_work_type.inisial,
+									tb_matter.id_payment,
+									tb_payment.payment_name,
+									tb_jabatan.id_jabatan,
+									tb_jabatan.nama_jabatan,
+									tb_jabatan.rate
 									FROM
 									tb_timesheet
 									INNER JOIN tb_user ON tb_user.id_user = tb_timesheet.id_user
 									INNER JOIN tb_work_type ON tb_work_type.id_work_type = tb_timesheet.id_work_type
+									INNER JOIN tb_matter ON tb_matter.id_matter = tb_timesheet.id_matter
+									INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment
+									INNER JOIN tb_jabatan ON tb_jabatan.id_jabatan = tb_user.id_jabatan
 									WHERE
-									tb_timesheet.id_matter = '".$this->uri->segment(3)."' AND tb_timesheet.id_user = ".$idUser." ORDER BY tb_timesheet.id_timesheet DESC");							
+									tb_timesheet.id_matter = '".$this->uri->segment(3)."' AND tb_timesheet.id_user = ".$idUser."
+									ORDER BY tb_timesheet.id_timesheet DESC");
+		
 		return $query->result();
 	}
 

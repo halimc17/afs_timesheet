@@ -190,6 +190,7 @@
 										<th>Start</th>
 										<th>End</th>
 										<th>Minutes</th>
+										<th>Billable Hour</th>
 										<th width="120">Action</th>												
 									</tr>
 								</thead>
@@ -209,6 +210,7 @@
 										<td><?php echo $row2->start; ?></td>																								
 										<td><?php echo $row2->end; ?></td>																								
 										<td><?php echo timeDiff($row2->start,$row2->end); ?></td>																								
+										<td><?php echo billableHour(timeDiff($row2->start,$row2->end), $row2->id_payment, $row2->id_matter, $row2->id_jabatan); ?></td>																								
 										<td>
 											<button type="button" name="btnEditActionTimesheet" class="btn btn-success" onclick="editTimesheet(<?php echo $row2->id_timesheet; ?>)" id="<?php echo $row2->id_timesheet; ?>">																				
 												<i class="entypo-pencil"></i>
@@ -231,6 +233,7 @@
 										<th>Start</th>
 										<th>End</th>
 										<th>Minutes</th>
+										<th>Billable Hour</th>
 										<th>Action</th>											
 									</tr>
 								</tfoot>

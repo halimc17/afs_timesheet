@@ -33,12 +33,12 @@ class Matter_assign_model extends CI_Model{
 									(SELECT COUNT(id_matter) FROM tb_reimburstment WHERE tb_reimburstment.id_matter = tb_matter.id_matter AND tb_reimburstment.id_user = ".$this->session->userdata('id_user').") 
 									AS jml_reimburstment	
 									FROM
-									tb_matter
+									tb_matter 
 									INNER JOIN tb_matter_assign ON tb_matter_assign.id_matter = tb_matter.id_matter
 									INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
 									INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment
 									WHERE
-									tb_matter_assign.id_user = ".$this->session->userdata('id_user'));		
+									tb_matter_assign.id_user = ".$this->session->userdata('id_user')." ORDER BY tb_matter.id DESC");		
 		return $query->result();
 	}
 }
