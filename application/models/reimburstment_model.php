@@ -15,6 +15,49 @@ class Reimburstment_model extends CI_Model{
         return $this->db->insert_id();
 	}
 
+	public function get_records(){
+		$query = $this->db->query("SELECT
+									tb_reimburstment.id_matter,
+									tb_reimburstment.id_user,
+									(SELECT COUNT(tb_reimburstment.id_reimburstment) FROM tb_reimburstment WHERE tb_reimburstment.id_user = tb_user.id_user 
+									AND tb_reimburstment.id_matter = '".$this->uri->segment(3)."') AS jml_reimburstment,
+									tb_user.nama
+									FROM
+									tb_reimburstment
+									INNER JOIN tb_user ON tb_user.id_user = tb_reimburstment.id_user
+									WHERE
+									tb_reimburstment.id_matter = '".$this->uri->segment(3)."'
+									GROUP BY
+									tb_reimburstment.id_user");
+		return $query->result();
+	}
+
+	public function get_record(){
+
+		if($this->session->userdata('admin') == 1 AND $this->uri->segment(4) != NULL){
+			$idUser = $this->uri->segment(4);	
+		}else{
+			$idUser = $this->session->userdata('id_user');	
+		}
+
+		$query = $this->db->query("SELECT
+									tb_reimburstment.id_matter,
+									tb_reimburstment.id_user,
+									tb_user.nama,
+									tb_user.inisial,
+									tb_reimburstment.type_reimburstment,
+									tb_reimburstment.jumlah,
+									tb_reimburstment.input_date
+									FROM
+									tb_reimburstment
+									INNER JOIN tb_user ON tb_user.id_user = tb_reimburstment.id_user
+									WHERE
+									tb_reimburstment.id_matter = '".$this->uri->segment(3)."' AND
+									tb_reimburstment.id_user = ".$idUser);
+
+		return $query->result();
+	}
+
 }
 
 ?>

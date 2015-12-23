@@ -56,11 +56,13 @@ class Timesheet extends CI_Controller {
 		$this->load->model('matter_model');
 		$this->load->model('timesheet_model');
 		$this->load->Model('worktype_model');
+		$this->load->Model('reimburstment_model');
 		
 		$matter = json_encode($this->matter_model->get_record2());			
 		$data['timesheet'] = $this->timesheet_model->get_records();			
 		$data['matter'] = $matter;	
 		$data['worktype'] =$this->worktype_model->get_records();	
+		$data['reimburstment'] =$this->reimburstment_model->get_record();	
 		//$data['timesheet'] = $timesheet;		
 
 		$this->load->view('matter_detail_view', $data);

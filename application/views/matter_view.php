@@ -1619,7 +1619,7 @@
 								<div class="row">
 									<div class="col-md-6">						
 										<div class="form-group">
-											<label for="txt_jam" class="control-label">Jam</label>							
+											<label for="txt_jam" class="control-label">Minutes</label>							
 											<input type="text" class="form-control" id="txt_jam" name="txt_jam" value="">
 										</div>						
 									</div>

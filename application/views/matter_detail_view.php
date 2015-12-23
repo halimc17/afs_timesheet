@@ -22,6 +22,14 @@
 			
 		});
 
+		var table2 = $("#tableOPE").dataTable({
+			"sPaginationType": "bootstrap",
+			"sDom": "<'row'<'col-xs-6 col-left'l><'col-xs-6 col-right'<'export-data'T>f>r>t<'row'<'col-xs-6 col-left'i><'col-xs-6 col-right'p>>",
+			"oTableTools": {
+			},
+			
+		});
+
 		
 	});
 
@@ -244,6 +252,71 @@
 			</div>
 		</div> 
 	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default panel-shadow" data-collapse="0">
+				<div class="panel-heading">
+					<div class="panel-title">OPE</div>
+				</div>
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-7">
+							<table class="table table-bordered datatable" id="tableOPE">
+								<thead>
+									<tr>
+										<th width="50">No</th>														
+										<th>Date</th>														
+										<th>Inisial</th>
+										<th>Type</th>
+										<th>Jumlah</th>									
+										<th width="120">Action</th>												
+									</tr>
+								</thead>
+								<tbody>	
+								<?php 
+								$counter = 1;
+								if(isset($reimburstment)){
+									foreach($reimburstment as $row3){ ?>
+									<tr>
+										<td><?php echo $counter; ?></td>
+										<td><?php echo $row3->input_date; ?></td>												
+										<td><?php echo $row3->inisial; ?></td>															
+										<td><?php echo $row3->type_reimburstment; ?></td>																								
+										<td><?php echo number_format($row3->jumlah); ?></td>																																																									
+										<td>
+											<button type="button" name="btnEditActionTimesheet" class="btn btn-success" onclick="#">																				
+												<i class="entypo-pencil"></i>
+											</button>
+											<button type="button" name="btnDeleteAction" class="btn btn-danger" id="#" onclick="#">	
+												<i class="entypo-trash"></i>
+											</button>
+										</td>																								
+									</tr>
+								
+								<?php
+								$counter++;	}
+								} ?>							
+																							
+								</tbody>	
+								<tfoot>
+									<tr>
+										<th>No</th>														
+										<th>Inisial</th>														
+										<th>Date</th>														
+										<th>Type</th>
+										<th>Jumlah</th>									
+										<th width="120">Action</th>										
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 </div>	
 
 

@@ -352,6 +352,7 @@
 	    textbox.value = id_matter;	
 	}
 
+
 	function generateUUID(){
 	    var d = new Date().getTime();
 	    if(window.performance && typeof window.performance.now === "function"){
@@ -381,7 +382,7 @@
 								$row = json_decode($lumpsum);								
 								?>
 								<div class="row">
-									<div class="col-md-6">
+									<div class="col-md-4">
 										<table class="table table-bordered">
 											<thead>
 												<tr>
@@ -435,7 +436,7 @@
 											</tbody>
 										</table>	
 									</div>
-									<div class="col-md-6">
+									<div class="col-md-4">
 										<table class="table table-bordered">
 											<thead>
 												<tr>
@@ -491,7 +492,7 @@
 								$row = json_decode($hourly);
 								?>
 								<div class="row">
-									<div class="col-md-6">
+									<div class="col-md-4">
 										<table class="table table-bordered">
 											<thead>
 												<tr>
@@ -541,7 +542,7 @@
 											</tbody>
 										</table>	
 									</div>
-									<div class="col-md-6">
+									<div class="col-md-4">
 										<table class="table table-bordered">
 											<thead>
 												<tr>
@@ -596,7 +597,7 @@
 								$row = json_decode($retainer);
 								?>
 								<div class="row">
-									<div class="col-md-6">
+									<div class="col-md-4">
 										<table class="table table-bordered">
 											<thead>
 												<tr>
@@ -646,7 +647,7 @@
 											</tbody>
 										</table>	
 									</div>
-									<div class="col-md-6">
+									<div class="col-md-4">
 										<table class="table table-bordered">
 											<thead>
 												<tr>
@@ -686,7 +687,7 @@
 								$row = json_decode($successfee);
 								?>
 								<div class="row">
-									<div class="col-md-6">
+									<div class="col-md-4">
 										<table class="table table-bordered">
 											<thead>
 												<tr>
@@ -736,7 +737,7 @@
 											</tbody>
 										</table>	
 									</div>
-									<div class="col-md-6">
+									<div class="col-md-4">
 										<table class="table table-bordered">
 											<thead>
 												<tr>
@@ -761,7 +762,7 @@
 								$row = json_decode($probono);
 								?>
 								<div class="row">
-									<div class="col-md-6">
+									<div class="col-md-4">
 										<table class="table table-bordered">
 											<thead>
 												<tr>
@@ -817,7 +818,7 @@
 								$row = json_decode($project);
 								?>
 								<div class="row">
-									<div class="col-md-6">
+									<div class="col-md-4">
 										<table class="table table-bordered">
 											<thead>
 												<tr>
@@ -867,7 +868,7 @@
 											</tbody>
 										</table>	
 									</div>
-									<div class="col-md-6">
+									<div class="col-md-4">
 										<table class="table table-bordered">
 											<thead>
 												<tr>
@@ -931,17 +932,18 @@
 		<div class="col-md-12">
 			<div class="panel panel-default panel-shadow" data-collapse="0">
 				<div class="panel-heading">
-					<div class="panel-title">Attorney Timesheet</div>
+					<div class="panel-title">Timesheet and OPE</div>
 				</div>
 				<div class="panel-body">
-					<div class="col-md-6">
+					<div class="col-md-4">
 						<table class="table table-bordered">
 							<thead>
 								<tr>
 									<th width="40px">No</th>
 									<th>Attorney</th>
 									<th>Timesheet</th>
-									<th>Action</th>
+									<th>Reimburstment</th>
+									<th width="50">Action</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -953,8 +955,23 @@
 								<tr>
 									<td><?php echo $counter; ?></td>
 									<td><?php echo $row9->nama; ?></td>
-									<td><?php echo $row9->jml_timesheet; ?></td>
-									<td><a href="<?php echo site_url('timesheet/detail/'.$this->uri->segment(3).'/'.$row9->id_user) ?>">View</a></td>
+									<td><?php echo $row9->jml_timesheet; ?></td>									
+									<td>
+										<?php 
+											if(isset($reimburstment)){
+												foreach($reimburstment as $row8){
+													if($row9->id_user == $row8->id_user){
+														echo $row8->jml_reimburstment;
+													}
+												}
+											}
+										?>
+									</td>									
+									<td>											
+										<button type="button" name="btnDetail" class="btn btn-success" id="<?php echo $row9->id_user; ?>" onclick="window.location.href='<?php echo site_url('timesheet/detail/'.$this->uri->segment(3).'/'.$row9->id_user); ?>';" />												
+											<i class="glyphicon glyphicon-eye-open"></i>
+										</button>
+									</td>
 								</tr>
 
 							<?php
@@ -964,6 +981,8 @@
 							</tbody>
 						</table>
 					</div>
+
+					
 				</div>
 			</div>
 		</div>

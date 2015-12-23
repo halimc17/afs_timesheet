@@ -65,6 +65,12 @@
 							</a>
 							
 						</li>
+						<li>
+							<a href="<?php echo site_url('report/'); ?>">
+								<span>Report Timesheet</span>
+							</a>
+							
+						</li>
 						
 					</ul>
 				</li>
