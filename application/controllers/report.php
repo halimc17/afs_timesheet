@@ -17,4 +17,11 @@ class Report extends CI_Controller {
 		
 		
 	}	
+
+	public function byMatter(){
+		$this->load->model('timesheet_model');
+		$data = $this->timesheet_model->get_records_by_matter();
+
+		echo json_encode($data);
+	}
 }

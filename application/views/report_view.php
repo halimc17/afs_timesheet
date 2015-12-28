@@ -7,7 +7,31 @@
 	
 	<?php $this->load->view('topheader_view'); ?>
 
+<script type="text/javascript">
+	jQuery(document).ready(function($)
+	{
+		$('[name="btnSubmit1"]').button().on( "click", function() {	
 
+			var idMatter = document.getElementById('txt_idMatter').value		
+			$.ajax({
+				url:"<?php echo site_url('report/byMatter'); ?>/"+idMatter,
+				type: "GET",
+				dataType: "JSON",
+				success: function(data){
+
+					var a = "JSON will be place here";
+					
+					$("#result").html(a).show();
+				}
+			});
+		});
+
+		$('#chk-1').change(function(){
+		   $("#txt_startDate").prop("disabled", !$(this).is(':checked'));
+		   $("#txt_endDate").prop("disabled", !$(this).is(':checked'));
+		});
+	});
+</script>
 
 
 
@@ -52,21 +76,27 @@
 							
 							<div class="tab-content">
 								<div class="tab-pane active" id="matter">
-										
+									<form role="form" class="form-horizontal form-groups-bordered" method="post" action="#" style="padding:10px;">		
 										<div class="row">
 											<div class="col-md-6">						
 												<div class="form-group">
 													<label for="txt_idMatter" class="control-label">Id Matter</label>
-													<input type="text" class="form-control" id="txt_idMatter" name="txt_idMatter" value="">											
+													<input type="text" class="form-control" id="txt_idMatter" name="txt_idMatter" value="" id="txt_idMatter">											
 												</div>							
-											</div>									
+											</div>	
+											<div class="col-md-6">
+												<div class="checkbox checkbox-replace" style="padding-top:30px;">
+													<input type="checkbox" id="chk-1" value="1">
+													<label>Jangka Waktu </label>
+												</div>
+											</div>
 										</div>
 										<div class="row">
 											<div class="col-md-6">						
 												<div class="form-group">
 													<label for="txt_startDate" class="control-label">Start Date</label>							
 													<div class="input-group">
-														<input type="text" class="form-control datepicker" data-format="dd-mm-yyyy" name="txt_startDate">												
+														<input type="text" class="form-control datepicker" data-format="dd-mm-yyyy" name="txt_startDate" id="txt_startDate" />												
 														<div class="input-group-addon">
 															<a href="#"><i class="entypo-calendar"></i></a>
 														</div>
@@ -78,7 +108,7 @@
 												<div class="form-group" style="padding-left:10px;">
 													<label for="txt_endDate" class="control-label">End date</label>
 													<div class="input-group">
-														<input type="text" class="form-control datepicker" data-format="dd-mm-yyyy" name="txt_endDate">												
+														<input type="text" class="form-control datepicker" data-format="dd-mm-yyyy" name="txt_endDate" id="txt_endDate" />												
 														<div class="input-group-addon">
 															<a href="#"><i class="entypo-calendar"></i></a>
 														</div>
@@ -88,11 +118,11 @@
 										</div>
 
 										<div class="row">
-											<div class="col-md-3">
-												<button type="button" name="btnSubmit" class="btn btn-info">Submit</button>
+											<div class="col-md-3" style="padding:0px;">
+												<button type="button" name="btnSubmit1" class="btn btn-info">Submit</button>
 											</div>											
 										</div>
-
+									</form>
 								</div>
 								<div class="tab-pane" id="attorney">
 									
@@ -135,6 +165,212 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default panel-shadow" data-collapse="0">
+				<div class="panel-heading">
+					<div class="panel-title">Timesheet Report</div>
+				</div>
+				<div class="panel-body">
+					<div id="result">
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default panel-shadow" data-collapse="0">
+				<div class="panel-heading">
+					<div class="panel-title">Timesheet Report</div>
+				</div>
+				<div class="panel-body">
+					
+					<!-- start invoice 
+					<div class="invoice">
+						<div class="row">
+							<div class="col-sm-6 invoice-left">
+		
+								<a href="#">
+									<h2>AFS PARTNERSHIP</h2>
+								</a>
+						
+							</div>
+						
+							<div class="col-sm-6 invoice-right">
+							
+									<h3>INVOICE NO. #5652256</h3>
+									<span>31 October 2013</span>
+							</div>
+						</div>
+
+						<hr class="margin" />
+
+						<div class="row">
+	
+							<div class="col-sm-3 invoice-left">
+							
+								<h4>Client</h4>
+								John Doe
+								<br />
+								Mr Nilson Otto
+								<br />
+								FoodMaster Ltd
+								
+							</div>
+						
+							<div class="col-sm-3 invoice-left">
+								 
+								<h4>&nbsp;</h4>
+								1982 OOP
+								<br />
+								Madrid, Spain
+								<br />
+								+1 (151) 225-4183
+							</div>
+							
+							<div class="col-md-6 invoice-right">
+							
+								<h4>Payment Details:</h4>
+								<strong>V.A.T Reg #:</strong> 542554(DEMO)78
+								<br />
+								<strong>Account Name:</strong> FoodMaster Ltd
+								<br />
+								<strong>SWIFT code:</strong> 45454DEMO545DEMO
+								
+							</div>
+							
+						</div>
+
+						<div class="margin"></div>
+
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th class="text-center">#</th>
+									<th width="60%">Product</th>
+									<th>Quantity</th>
+									<th>Price</th>
+								</tr>
+							</thead>
+							
+							<tbody>
+								<tr>
+									<td class="text-center">1</td>
+									<td>On am we offices expense thought</td>
+									<td>1</td>
+									<td class="text-right">$1,290</td>
+								</tr>
+								
+								<tr>
+									<td class="text-center">2</td>
+									<td>Up do view time they shot</td>
+									<td>1</td>
+									<td class="text-right">$400</td>
+								</tr>
+								
+								<tr>
+									<td class="text-center">3</td>
+									<td>Way ham unwilling not breakfast</td>
+									<td>1</td>
+									<td class="text-right">$550</td>
+								</tr>
+								
+								<tr>
+									<td class="text-center">4</td>
+									<td>Songs to an blush woman be sorry</td>
+									<td>1</td>
+									<td class="text-right">$4020</td>
+								</tr>
+								
+								<tr>
+									<td class="text-center">5</td>
+									<td>Luckily offered article led lasting</td>
+									<td>1</td>
+									<td class="text-right">$87</td>
+								</tr>
+								
+								<tr>
+									<td class="text-center">6</td>
+									<td>Of as by belonging therefore suspicion</td>
+									<td>1</td>
+									<td class="text-right">$140</td>
+								</tr>
+							</tbody>
+						</table>
+
+						<div class="margin"></div>
+
+						<div class="row">
+	
+							<div class="col-sm-6">
+							
+								<div class="invoice-left">
+						
+									795 Park Ave, Suite 120
+									<br />
+									San Francisco, CA 94107
+									<br />
+									P: (234) 145-1810
+									<br />
+									Full Name
+									<br />
+									first.last@email.com
+								</div>
+							
+							</div>
+							
+							<div class="col-sm-6">
+								
+								<div class="invoice-right">
+									
+									<ul class="list-unstyled">
+										<li>
+											Sub - Total amount: 
+											<strong>$6,487</strong>
+										</li>
+										<li>
+											VAT: 
+											<strong>12.9%</strong>
+										</li>
+										<li>
+											Discount: 
+											-----
+										</li>
+										<li>
+											Grand Total:
+											<strong>$7,304</strong>
+										</li>
+									</ul>
+									
+									<br />
+									
+									<a href="javascript:window.print();" class="btn btn-primary btn-icon icon-left hidden-print">
+										Print Invoice
+										<i class="entypo-doc-text"></i>
+									</a>
+									
+									&nbsp;
+									
+									<a href="mailbox-compose.html" class="btn btn-success btn-icon icon-left hidden-print">
+										Send Invoice
+										<i class="entypo-mail"></i>
+									</a>
+								</div>
+								
+							</div>
+							
+						</div>
+					</div>
+					 end invoice -->
+				</div>
+			</div>
+		</div>
+	</div>
+
 	
 	<div class="row">
 		<div class="col-md-12">

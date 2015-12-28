@@ -67,6 +67,28 @@ class Timesheet_model extends CI_Model{
         return $this->db->affected_rows();
 	}
 
+	public function get_records_by_matter(){
+		$query = $this->db->query("SELECT
+									tb_timesheet.id_timesheet,
+									tb_timesheet.id_matter,
+									tb_timesheet.id_user,
+									tb_timesheet.input_date,
+									tb_timesheet.description,
+									tb_timesheet.id_work_type,
+									tb_timesheet.`start`,
+									tb_timesheet.`end`,
+									tb_user.nama,
+									tb_user.inisial
+									FROM
+									tb_timesheet
+									INNER JOIN tb_user ON tb_user.id_user = tb_timesheet.id_user
+									WHERE
+									tb_timesheet.id_matter = '".$this->uri->segment(3)."'
+									ORDER BY
+									tb_timesheet.id_user ASC");
+		return $query->result();
+	}
+
 }
 
 ?>
