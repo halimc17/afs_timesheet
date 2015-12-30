@@ -68,6 +68,30 @@ class Matter_model extends CI_Model{
 							
 		return $query->result();
 	}
+
+	public function get_matter(){
+
+		$query = $this->db->query("SELECT
+									tb_matter.id,
+									tb_matter.id_matter,
+									tb_matter.id_client,
+									tb_matter.id_payment,
+									tb_matter.matter,
+									tb_matter.open_date,
+									tb_matter.close_date,
+									tb_matter.active,
+									tb_matter.input_date,
+									tb_client.nama_client,
+									tb_payment.payment_name
+									FROM
+									tb_matter
+									INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
+									INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment
+									WHERE
+									tb_matter.id_matter = '".$this->input->post('txt_idMatter')."'");
+
+		return $query->result();
+	}
 }
 
 ?>

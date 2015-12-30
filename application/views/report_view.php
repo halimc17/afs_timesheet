@@ -10,21 +10,7 @@
 <script type="text/javascript">
 	jQuery(document).ready(function($)
 	{
-		$('[name="btnSubmit1"]').button().on( "click", function() {	
-
-			var idMatter = document.getElementById('txt_idMatter').value		
-			$.ajax({
-				url:"<?php echo site_url('report/byMatter'); ?>/"+idMatter,
-				type: "GET",
-				dataType: "JSON",
-				success: function(data){
-
-					var a = "JSON will be place here";
-					
-					$("#result").html(a).show();
-				}
-			});
-		});
+		
 
 		$('#chk-1').change(function(){
 		   $("#txt_startDate").prop("disabled", !$(this).is(':checked'));
@@ -76,7 +62,7 @@
 							
 							<div class="tab-content">
 								<div class="tab-pane active" id="matter">
-									<form role="form" class="form-horizontal form-groups-bordered" method="post" action="#" style="padding:10px;">		
+									<form role="form" class="form-horizontal form-groups-bordered" method="post" action="<?php echo site_url('report/byMatter'); ?>" style="padding:10px;">		
 										<div class="row">
 											<div class="col-md-6">						
 												<div class="form-group">
@@ -119,7 +105,7 @@
 
 										<div class="row">
 											<div class="col-md-3" style="padding:0px;">
-												<button type="button" name="btnSubmit1" class="btn btn-info">Submit</button>
+												<button type="submit" name="btnSubmit1" class="btn btn-info">Submit</button>
 											</div>											
 										</div>
 									</form>
@@ -168,19 +154,12 @@
 
 	<div class="row">
 		<div class="col-md-12">
-			<div class="panel panel-default panel-shadow" data-collapse="0">
-				<div class="panel-heading">
-					<div class="panel-title">Timesheet Report</div>
-				</div>
-				<div class="panel-body">
-					<div id="result">
 
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
 	
+
+	<?php if(isset($reports) AND isset($matter)){ ?>
 	<div class="row">
 		<div class="col-md-12">
 			<div class="panel panel-default panel-shadow" data-collapse="0">
@@ -189,9 +168,18 @@
 				</div>
 				<div class="panel-body">
 					
-					<!-- start invoice 
+					<!-- start invoice -->
 					<div class="invoice">
 						<div class="row">
+						<?php if(isset($matter)){
+							foreach($matter as $row1){
+								$idMatter = $row1->id_matter;
+								$matterName = $row1->matter;
+								$openDate = $row1->open_date;
+								$namaClient = $row1->nama_client;
+								$payment = $row1->payment_name;
+							}
+						} ?>
 							<div class="col-sm-6 invoice-left">
 		
 								<a href="#">
@@ -202,8 +190,8 @@
 						
 							<div class="col-sm-6 invoice-right">
 							
-									<h3>INVOICE NO. #5652256</h3>
-									<span>31 October 2013</span>
+									<h3>MATTER ID. #<?php echo $idMatter ?></h3>
+									<span><?php echo date('d-m-Y') ?></span>
 							</div>
 						</div>
 
@@ -214,32 +202,27 @@
 							<div class="col-sm-3 invoice-left">
 							
 								<h4>Client</h4>
-								John Doe
-								<br />
-								Mr Nilson Otto
-								<br />
-								FoodMaster Ltd
-								
+								<?php echo $namaClient; ?>
+								<h4>Matter</h4>
+								<?php echo $matterName; ?>
 							</div>
 						
 							<div class="col-sm-3 invoice-left">
 								 
-								<h4>&nbsp;</h4>
+								<!--<h4>&nbsp;</h4>
 								1982 OOP
 								<br />
 								Madrid, Spain
 								<br />
-								+1 (151) 225-4183
+								+1 (151) 225-4183-->
 							</div>
 							
 							<div class="col-md-6 invoice-right">
 							
 								<h4>Payment Details:</h4>
-								<strong>V.A.T Reg #:</strong> 542554(DEMO)78
-								<br />
-								<strong>Account Name:</strong> FoodMaster Ltd
-								<br />
-								<strong>SWIFT code:</strong> 45454DEMO545DEMO
+								<?php echo $payment; ?>
+								<h4>Open Date</h4>
+								<?php echo $openDate; ?>
 								
 							</div>
 							
@@ -251,54 +234,39 @@
 							<thead>
 								<tr>
 									<th class="text-center">#</th>
-									<th width="60%">Product</th>
-									<th>Quantity</th>
-									<th>Price</th>
+									<th>Attorney</th>
+									<th>Input Date</th>
+									<th>Description</th>
+									<th>Type</th>
+									<th>Start</th>
+									<th>End</th>
+									<th>Minutes</th>
+									<th>Billable Hour</th>
 								</tr>
 							</thead>
 							
 							<tbody>
-								<tr>
-									<td class="text-center">1</td>
-									<td>On am we offices expense thought</td>
-									<td>1</td>
-									<td class="text-right">$1,290</td>
-								</tr>
-								
-								<tr>
-									<td class="text-center">2</td>
-									<td>Up do view time they shot</td>
-									<td>1</td>
-									<td class="text-right">$400</td>
-								</tr>
-								
-								<tr>
-									<td class="text-center">3</td>
-									<td>Way ham unwilling not breakfast</td>
-									<td>1</td>
-									<td class="text-right">$550</td>
-								</tr>
-								
-								<tr>
-									<td class="text-center">4</td>
-									<td>Songs to an blush woman be sorry</td>
-									<td>1</td>
-									<td class="text-right">$4020</td>
-								</tr>
-								
-								<tr>
-									<td class="text-center">5</td>
-									<td>Luckily offered article led lasting</td>
-									<td>1</td>
-									<td class="text-right">$87</td>
-								</tr>
-								
-								<tr>
-									<td class="text-center">6</td>
-									<td>Of as by belonging therefore suspicion</td>
-									<td>1</td>
-									<td class="text-right">$140</td>
-								</tr>
+								<?php 
+									$subTotal = 0;
+									$counter = 1;
+									if(isset($reports)){
+										foreach($reports as $row){ ?>
+									<tr>
+											<td class="text-center"><?php echo $counter; ?></td>
+											<td><?php echo $row->inisial; ?></td>
+											<td><?php echo $row->input_date; ?></td>
+											<td><?php echo $row->description; ?></td>										
+											<td><?php echo $row->worktype; ?></td>										
+											<td><?php echo $row->start; ?></td>										
+											<td><?php echo $row->end; ?></td>										
+											<td class="text-center"><?php echo timeDiff($row->start,$row->end); ?></td>										
+											<td class="text-right"><?php echo "$".billableHour(timeDiff($row->start,$row->end), $row->id_payment, $row->id_matter, $row->id_jabatan);  ?></td>										
+										</tr>
+								<?php
+										$counter++;
+										$subTotal = $subTotal + billableHour(timeDiff($row->start,$row->end), $row->id_payment, $row->id_matter, $row->id_jabatan);
+										}
+									} ?>
 							</tbody>
 						</table>
 
@@ -310,15 +278,15 @@
 							
 								<div class="invoice-left">
 						
-									795 Park Ave, Suite 120
+									Menara Thamrin, 14th Floor Suite 1408
 									<br />
-									San Francisco, CA 94107
+									Jl. MH. Thamrin, Kav 3
 									<br />
-									P: (234) 145-1810
+									Jakarta 10250
 									<br />
-									Full Name
+									Telp. 021-39830488 / Fax. 021-39830456
 									<br />
-									first.last@email.com
+									Email : afs@afs-partnership.com
 								</div>
 							
 							</div>
@@ -329,20 +297,8 @@
 									
 									<ul class="list-unstyled">
 										<li>
-											Sub - Total amount: 
-											<strong>$6,487</strong>
-										</li>
-										<li>
-											VAT: 
-											<strong>12.9%</strong>
-										</li>
-										<li>
-											Discount: 
-											-----
-										</li>
-										<li>
-											Grand Total:
-											<strong>$7,304</strong>
+											Total amount: 
+											<strong>$<?php echo number_format($subTotal); ?></strong>
 										</li>
 									</ul>
 									
@@ -355,7 +311,7 @@
 									
 									&nbsp;
 									
-									<a href="mailbox-compose.html" class="btn btn-success btn-icon icon-left hidden-print">
+									<a href="#" class="btn btn-success btn-icon icon-left hidden-print">
 										Send Invoice
 										<i class="entypo-mail"></i>
 									</a>
@@ -365,11 +321,12 @@
 							
 						</div>
 					</div>
-					 end invoice -->
+					<!-- end invoice -->
 				</div>
 			</div>
 		</div>
 	</div>
+	<?php } ?>
 
 	
 	<div class="row">

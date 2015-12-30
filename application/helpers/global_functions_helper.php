@@ -62,7 +62,7 @@ function billableHour($minutes, $idPayment, $idMatter, $idJabatan){
 		$bill = 0;
 	}
 
-	return $bill;
+	return round($bill);
 }
 
 
