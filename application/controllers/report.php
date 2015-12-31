@@ -22,12 +22,16 @@ class Report extends CI_Controller {
 
 		$this->load->model('matter_model');
 		$this->load->model('timesheet_model');
-		
-		$data['matter'] = $this->matter_model->get_matter();
-		$data['reports'] = $this->timesheet_model->get_records_by_matter();
 
-		//var_dump($data);
-		//echo json_encode($data);
+		if($this->input->post("chk-1") == 1){
+			$data['matter'] = $this->matter_model->get_matter();
+			$data['reports'] = $this->timesheet_model->get_records_by_matter_date();
+		}else{
+			
+			$data['matter'] = $this->matter_model->get_matter();
+			$data['reports'] = $this->timesheet_model->get_records_by_matter();
+		}
+
 		$this->load->view('report_view', $data);
 	}
 }

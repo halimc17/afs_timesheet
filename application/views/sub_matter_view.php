@@ -415,16 +415,19 @@
 													<td>4</td>
 													<td>Open Date</td>
 													<td><?php 
-													$openDate = new DateTime($row->{'open_date'});
-													echo $openDate->format('d-m-Y'); ?></td>
+													echo formatTanggal($row->{'open_date'});
+													//$openDate = new DateTime($row->{'open_date'});
+													//echo $openDate->format('d-m-Y'); ?></td>
 												</tr>
 
 												<tr>
 													<td>5</td>
 													<td>Close Date</td>
 													<td><?php 
-													$closeDate = new DateTime($row->{'close_date'});
-													echo $closeDate->format('d-m-Y'); ?></td>
+													echo formatTanggal($row->{'close_date'});	
+
+													//$closeDate = new DateTime($row->{'close_date'});
+													//echo $closeDate->format('d-m-Y'); ?></td>
 												</tr>
 
 												<tr>
@@ -524,13 +527,13 @@
 												<tr>
 													<td>4</td>
 													<td>Open Date</td>
-													<td><?php echo $row->{'open_date'}; ?></td>
+													<td><?php echo formatTanggal($row->{'open_date'}); ?></td>
 												</tr>
 
 												<tr>
 													<td>5</td>
 													<td>Close Date</td>
-													<td><?php echo $row->{'close_date'}; ?></td>
+													<td><?php echo formatTanggal($row->{'close_date'}); ?></td>
 												</tr>
 
 												<tr>
@@ -629,13 +632,13 @@
 												<tr>
 													<td>4</td>
 													<td>Open Date</td>
-													<td><?php echo $row->{'open_date'}; ?></td>
+													<td><?php echo formatTanggal($row->{'open_date'}); ?></td>
 												</tr>
 
 												<tr>
 													<td>5</td>
 													<td>Close Date</td>
-													<td><?php echo $row->{'close_date'}; ?></td>
+													<td><?php echo formatTanggal($row->{'close_date'}); ?></td>
 												</tr>
 
 												<tr>
@@ -719,13 +722,13 @@
 												<tr>
 													<td>4</td>
 													<td>Open Date</td>
-													<td><?php echo $row->{'open_date'}; ?></td>
+													<td><?php echo formatTanggal($row->{'open_date'}); ?></td>
 												</tr>
 
 												<tr>
 													<td>5</td>
 													<td>Close Date</td>
-													<td><?php echo $row->{'close_date'}; ?></td>
+													<td><?php echo formatTanggal($row->{'close_date'}); ?></td>
 												</tr>
 
 												<tr>
@@ -794,13 +797,13 @@
 												<tr>
 													<td>4</td>
 													<td>Open Date</td>
-													<td><?php echo $row->{'open_date'}; ?></td>
+													<td><?php echo formatTanggal($row->{'open_date'}); ?></td>
 												</tr>
 
 												<tr>
 													<td>5</td>
 													<td>Close Date</td>
-													<td><?php echo $row->{'close_date'}; ?></td>
+													<td><?php echo formatTanggal($row->{'close_date'}); ?></td>
 												</tr>
 
 												<tr>
@@ -850,13 +853,13 @@
 												<tr>
 													<td>4</td>
 													<td>Open Date</td>
-													<td><?php echo $row->{'open_date'}; ?></td>
+													<td><?php echo formatTanggal($row->{'open_date'}); ?></td>
 												</tr>
 
 												<tr>
 													<td>5</td>
 													<td>Close Date</td>
-													<td><?php echo $row->{'close_date'}; ?></td>
+													<td><?php echo formatTanggal($row->{'close_date'}); ?></td>
 												</tr>
 
 												<tr>

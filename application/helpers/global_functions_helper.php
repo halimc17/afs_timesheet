@@ -65,5 +65,21 @@ function billableHour($minutes, $idPayment, $idMatter, $idJabatan){
 	return round($bill);
 }
 
+function formatTanggal($date){
+
+	if($date == '0000-00-00'){
+		
+		$date = 'Not Defined';
+		return $date;
+	}else{
+		$mysql_date = $date;   // date in Y-m-d format as MySQL stores it
+		$date_obj = date_create_from_format('Y-m-d',$mysql_date);
+		$date = date_format($date_obj, 'd-m-Y');	
+
+		return $date;
+	}
+	
+}
+
 
  ?>

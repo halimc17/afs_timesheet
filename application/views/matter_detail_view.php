@@ -129,15 +129,18 @@
 											<td>4</td>
 											<td>Open Date</td>
 											<td><?php 
-											$openDate = new DateTime($row->{'open_date'});
-											echo $openDate->format('d-m-Y'); ?></td>
+											echo formatTanggal($row->{'open_date'});
+
+											//$openDate = new DateTime($row->{'open_date'});
+											//echo $openDate->format('d-m-Y'); ?></td>
 										</tr>
 										<tr>
 											<td>5</td>
 											<td>Close Date</td>
 											<td><?php 
-											$closeDate = new DateTime($row->{'close_date'});
-											echo $closeDate->format('d-m-Y'); ?></td>
+											echo formatTanggal($row->{'close_date'});
+											//$closeDate = new DateTime($row->{'close_date'});
+											//echo $closeDate->format('d-m-Y'); ?></td>
 										</tr>
 										<tr>
 											<td>6</td>
@@ -268,6 +271,7 @@
 										<th width="50">No</th>														
 										<th>Date</th>														
 										<th>Inisial</th>
+										<th>Keterangan</th>
 										<th>Type</th>
 										<th>Jumlah</th>									
 										<th width="120">Action</th>												
@@ -280,8 +284,9 @@
 									foreach($reimburstment as $row3){ ?>
 									<tr>
 										<td><?php echo $counter; ?></td>
-										<td><?php echo $row3->input_date; ?></td>												
+										<td><?php echo formatTanggal($row3->input_date); ?></td>												
 										<td><?php echo $row3->inisial; ?></td>															
+										<td><?php echo $row3->keterangan; ?></td>															
 										<td><?php echo $row3->type_reimburstment; ?></td>																								
 										<td><?php echo number_format($row3->jumlah); ?></td>																																																									
 										<td>
@@ -303,6 +308,7 @@
 									<tr>
 										<th>No</th>														
 										<th>Inisial</th>														
+										<th>Keterangan</th>														
 										<th>Date</th>														
 										<th>Type</th>
 										<th>Jumlah</th>									

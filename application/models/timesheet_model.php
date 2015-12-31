@@ -93,6 +93,34 @@ class Timesheet_model extends CI_Model{
 		return $query->result();
 	}
 
+	public function get_records_by_matter_date(){
+		$query = $this->db->query("SELECT
+									tb_timesheet.id_timesheet,
+									tb_timesheet.id_matter,
+									tb_timesheet.id_user,
+									tb_timesheet.input_date,
+									tb_timesheet.description,
+									tb_timesheet.`start`,
+									tb_timesheet.`end`,
+									tb_user.nama,
+									tb_user.inisial,
+									tb_work_type.worktype,
+									tb_matter.id_payment,
+									tb_user.id_jabatan
+									FROM
+									tb_timesheet
+									INNER JOIN tb_user ON tb_user.id_user = tb_timesheet.id_user
+									INNER JOIN tb_work_type ON tb_work_type.id_work_type = tb_timesheet.id_work_type
+									INNER JOIN tb_matter ON tb_matter.id_matter = tb_timesheet.id_matter
+									WHERE
+									tb_timesheet.id_matter = '".$this->input->post('txt_idMatter')."' AND
+									tb_timesheet.input_date BETWEEN DATE('".$this->input->post('txt_startDate')."') AND DATE('".$this->input->post('txt_endDate')."')
+									ORDER BY
+									tb_timesheet.id_user ASC");
+
+		return $query->result();
+	}
+
 }
 
 ?>

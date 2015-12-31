@@ -44,7 +44,8 @@ class Timesheet extends CI_Controller {
                 'id_user' => $this->session->userdata('id_user'),
                 'input_date' => $this->input->post('txt_date'),
                 'type_reimburstment' => $this->input->post('combo_reimburstment'),
-                'jumlah' => $this->input->post('txt_jumlah')
+                'jumlah' => $this->input->post('txt_jumlah'),
+                'keterangan' => $this->input->post('txt_keterangan')
             );
 
 		$this->load->model('reimburstment_model');

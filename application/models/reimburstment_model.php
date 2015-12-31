@@ -47,6 +47,7 @@ class Reimburstment_model extends CI_Model{
 									tb_user.inisial,
 									tb_reimburstment.type_reimburstment,
 									tb_reimburstment.jumlah,
+									tb_reimburstment.keterangan,
 									tb_reimburstment.input_date
 									FROM
 									tb_reimburstment

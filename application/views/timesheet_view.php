@@ -120,11 +120,10 @@
 										<td><?php echo $row->nama_client; ?></td>
 										<td><?php echo $row->matter; ?></td>
 										<td><?php 
-											$openDate = new DateTime($row->open_date);
-											echo $openDate->format('d-m-Y'); ?></td>			
+												echo formatTanggal($row->open_date);
+											?></td>			
 										<td><?php 
-											$closeDate = new DateTime($row->close_date);
-											echo $closeDate->format('d-m-Y'); ?></td>										
+											echo formatTanggal($row->close_date); ?></td>										
 										<td align="center"><?php echo $row->jml_timesheet; ?></td>										
 										<td align="center"><?php echo $row->jml_reimburstment; ?></td>										
 										<td class="center">
@@ -345,6 +344,14 @@
 								<label for="txt_jumlah" class="control-label">Jumlah</label>
 								<input type="text" class="form-control" id="txt_jumlah" name="txt_jumlah" value="" />
 							</div>							
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+								<textarea class="form-control" id="txt_keterangan" name="txt_keterangan"></textarea>
+							</div>
 						</div>
 					</div>
 

@@ -72,7 +72,7 @@
 											</div>	
 											<div class="col-md-6">
 												<div class="checkbox checkbox-replace" style="padding-top:30px;">
-													<input type="checkbox" id="chk-1" value="1">
+													<input type="checkbox" id="chk-1" value="1" name="chk-1">
 													<label>Jangka Waktu </label>
 												</div>
 											</div>
@@ -82,7 +82,7 @@
 												<div class="form-group">
 													<label for="txt_startDate" class="control-label">Start Date</label>							
 													<div class="input-group">
-														<input type="text" class="form-control datepicker" data-format="dd-mm-yyyy" name="txt_startDate" id="txt_startDate" />												
+														<input type="text" class="form-control datepicker" data-format="yyyy-mm-dd" name="txt_startDate" id="txt_startDate" />												
 														<div class="input-group-addon">
 															<a href="#"><i class="entypo-calendar"></i></a>
 														</div>
@@ -94,7 +94,7 @@
 												<div class="form-group" style="padding-left:10px;">
 													<label for="txt_endDate" class="control-label">End date</label>
 													<div class="input-group">
-														<input type="text" class="form-control datepicker" data-format="dd-mm-yyyy" name="txt_endDate" id="txt_endDate" />												
+														<input type="text" class="form-control datepicker" data-format="yyyy-mm-dd" name="txt_endDate" id="txt_endDate" />												
 														<div class="input-group-addon">
 															<a href="#"><i class="entypo-calendar"></i></a>
 														</div>
@@ -254,7 +254,10 @@
 									<tr>
 											<td class="text-center"><?php echo $counter; ?></td>
 											<td><?php echo $row->inisial; ?></td>
-											<td><?php echo $row->input_date; ?></td>
+											<td><?php 
+													$inputDate = new DateTime($row->input_date);
+													echo $inputDate->format('d-m-Y');
+											 ?></td>
 											<td><?php echo $row->description; ?></td>										
 											<td><?php echo $row->worktype; ?></td>										
 											<td><?php echo $row->start; ?></td>										
