@@ -34,19 +34,19 @@
 						<div class="col-md-6">
 		
 							<ul class="nav nav-tabs bordered"><!-- available classes "bordered", "right-aligned" -->
-								<li class="active">
+								<li <?php if($this->uri->segment(2) == "byMatter" OR $this->uri->segment(2) == NULL){echo "class='active'";} ?>>
 									<a href="#matter" data-toggle="tab">
 										<span class="visible-xs"><i class="entypo-home"></i></span>
 										<span class="hidden-xs">Matter</span>
 									</a>
 								</li>
-								<li>
+								<li <?php if($this->uri->segment(2) == "byAttorney"){echo "class='active'";} ?>>
 									<a href="#attorney" data-toggle="tab">
 										<span class="visible-xs"><i class="entypo-user"></i></span>
 										<span class="hidden-xs">Attorney</span>
 									</a>
 								</li>
-								<li>
+								<li <?php if($this->uri->segment(2) == "byClient"){echo "class='active'";} ?>>
 									<a href="#client" data-toggle="tab">
 										<span class="visible-xs"><i class="entypo-mail"></i></span>
 										<span class="hidden-xs">Client</span>
@@ -61,7 +61,7 @@
 							</ul>
 							
 							<div class="tab-content">
-								<div class="tab-pane active" id="matter">
+								<div class="tab-pane <?php if($this->uri->segment(2) == "byMatter" OR $this->uri->segment(2) == NULL){echo "active";} ?>" id="matter">
 									<form role="form" class="form-horizontal form-groups-bordered" method="post" action="<?php echo site_url('report/byMatter'); ?>" style="padding:10px;">		
 										<div class="row">
 											<div class="col-md-6">						
@@ -110,26 +110,56 @@
 										</div>
 									</form>
 								</div>
-								<div class="tab-pane" id="attorney">
+								<div class="tab-pane <?php if($this->uri->segment(2) == "byAttorney"){echo "active";} ?>" id="attorney">
 									
-										<p>Fulfilled direction use continual set him propriety continued. Saw met applauded favourite deficient engrossed concealed and her. Concluded boy perpetual old supposing. Farther related bed and passage comfort civilly. Dashwoods see frankness objection abilities the. As hastened oh produced prospect formerly up am. Placing forming nay looking old married few has. Margaret disposed add screened rendered six say his striking confined. </p>
-										
-										<p>When be draw drew ye. Defective in do recommend suffering. House it seven in spoil tiled court. Sister others marked fat missed did out use. Alteration possession dispatched collecting instrument travelling he or on. Snug give made at spot or late that mr. </p>
-										
-										<p>Luckily friends do ashamed to do suppose. Tried meant mr smile so. Exquisite behaviour as to middleton perfectly. Chicken no wishing waiting am. Say concerns dwelling graceful six humoured. Whether mr up savings talking an. Active mutual nor father mother exeter change six did all. </p>
-							
-										<p>Carriage quitting securing be appetite it declared. High eyes kept so busy feel call in. Would day nor ask walls known. But preserved advantage are but and certainty earnestly enjoyment. Passage weather as up am exposed. And natural related man subject. Eagerness get situation his was delighted. </p>
+										<form role="form" class="form-horizontal form-groups-bordered" method="post" action="<?php echo site_url('report/byAttorney'); ?>" style="padding:10px;">
+											<div class="row">
+												<div class="col-md-6">						
+													<div class="form-group">
+														<label for="txt_idMatter" class="control-label">Attorney</label>												
+														<select class="form-control" id="comboAttorney" name="comboAttorney">
+															<?php if(isset($attorney)){
+																foreach($attorney as $rowAttorney){ ?>
+																	<option value="<?php echo $rowAttorney->id_user; ?>"><?php echo $rowAttorney->nama." (".$rowAttorney->inisial.")"; ?></option>
+															<?php	}
+															} ?>															
+														</select>
+													</div>							
+												</div>													
+											</div>
+
+											<div class="row">
+												<div class="col-md-3" style="padding:0px;">
+													<button type="submit" name="btnSubmit2" class="btn btn-info">Submit</button>
+												</div>											
+											</div>
+										</form>
 										
 								</div>
-								<div class="tab-pane" id="client">
+								<div class="tab-pane <?php if($this->uri->segment(2) == "byClient"){echo "active";} ?>" id="client">
 										
-										<p>When be draw drew ye. Defective in do recommend suffering. House it seven in spoil tiled court. Sister others marked fat missed did out use. Alteration possession dispatched collecting instrument travelling he or on. Snug give made at spot or late that mr. </p>
-										
-										<p>Carriage quitting securing be appetite it declared. High eyes kept so busy feel call in. Would day nor ask walls known. But preserved advantage are but and certainty earnestly enjoyment. Passage weather as up am exposed. And natural related man subject. Eagerness get situation his was delighted. </p>
-							
-										<p>Fulfilled direction use continual set him propriety continued. Saw met applauded favourite deficient engrossed concealed and her. Concluded boy perpetual old supposing. Farther related bed and passage comfort civilly. Dashwoods see frankness objection abilities the. As hastened oh produced prospect formerly up am. Placing forming nay looking old married few has. Margaret disposed add screened rendered six say his striking confined. </p>
-										
-										<p>Luckily friends do ashamed to do suppose. Tried meant mr smile so. Exquisite behaviour as to middleton perfectly. Chicken no wishing waiting am. Say concerns dwelling graceful six humoured. Whether mr up savings talking an. Active mutual nor father mother exeter change six did all. </p>
+										<form role="form" class="form-horizontal form-groups-bordered" method="post" action="<?php echo site_url('report/byClient'); ?>" style="padding:10px;">
+											<div class="row">
+												<div class="col-md-6">						
+													<div class="form-group">
+														<label for="txt_idMatter" class="control-label">Client</label>												
+														<select class="form-control" id="comboClient" name="comboClient">
+															<?php if(isset($client)){
+																foreach($client as $rowClient){ ?>
+																	<option value="<?php echo $rowClient->id_client; ?>"><?php echo $rowClient->nama_client; ?></option>
+															<?php	}
+															} ?>															
+														</select>
+													</div>							
+												</div>													
+											</div>
+
+											<div class="row">
+												<div class="col-md-3" style="padding:0px;">
+													<button type="submit" name="btnSubmit3" class="btn btn-info">Submit</button>
+												</div>											
+											</div>
+										</form>
 								</div>
 								
 								<div class="tab-pane" id="ope">
@@ -152,11 +182,104 @@
 		</div>
 	</div>
 
+	
+	<?php if(isset($timesheet)){ ?>
 	<div class="row">
 		<div class="col-md-12">
-
+			<div class="panel panel-default panel-shadow" data-collapse="0">
+				<div class="panel-heading">
+					<div class="panel-title">Attorney Daily Timesheet</div>
+				</div>
+				<div class="panel-body">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th class="text-center">#</th>
+								<th>Attorney</th>
+								<th>ID Matter</th>
+								<th>Client</th>
+								<th>Matter</th>
+								<th>Input Date</th>
+								<th>Description</th>
+								<th>Start</th>
+								<th>End</th>
+								<th>Minutes</th>
+								<th>Billable Hour</th>
+							</tr>
+						</thead>
+						<tbody>
+						<?php $counter = 1;
+						foreach($timesheet as $rowTimesheet){ ?>
+							<tr>
+								<td><?php echo $counter; ?></td>
+								<td><?php echo $rowTimesheet->inisial; ?></td>
+								<td><?php echo $rowTimesheet->id_matter; ?></td>
+								<td><?php echo $rowTimesheet->nama_client; ?></td>
+								<td><?php echo $rowTimesheet->matter; ?></td>
+								<td><?php echo formatTanggal($rowTimesheet->input_date); ?></td>
+								<td><?php echo $rowTimesheet->description; ?></td>
+								<td><?php echo $rowTimesheet->start; ?></td>
+								<td><?php echo $rowTimesheet->end; ?></td>
+								<td><?php echo timeDiff($rowTimesheet->start,$rowTimesheet->end); ?></td>
+								<td><?php echo "$".billableHour(timeDiff($rowTimesheet->start,$rowTimesheet->end), $rowTimesheet->id_payment, $rowTimesheet->id_matter, $rowTimesheet->id_jabatan);  ?></td>
+							</tr>
+						<?php $counter++; } ?>							
+						</tbody>
+					</table>
+				</div>
+			</div>
 		</div>
 	</div>
+	<?php } ?>
+
+	<?php if(isset($timesheetClient)){ ?>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default panel-shadow" data-collapse="0">
+				<div class="panel-heading">
+					<div class="panel-title">Timesheet by Client</div>
+				</div>
+				<div class="panel-body">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th class="text-center">#</th>
+								<th>Client</th>
+								<th>Inisial</th>
+								<th>Input Date</th>
+								<th>Matter</th>
+								<th>Description</th>
+								<th>Worktype</th>
+								<th>Start</th>
+								<th>End</th>
+								<th>Minutes</th>
+								<th>Billable Hour</th>
+							</tr>
+						</thead>
+						<tbody>
+						<?php $counter = 1;
+						foreach($timesheetClient as $rowTimesheetClient){ ?>
+							<tr>
+								<td><?php echo $counter; ?></td>
+								<td><?php echo $rowTimesheetClient->inisial; ?></td>
+								<td><?php echo $rowTimesheetClient->id_matter; ?></td>
+								<td><?php echo $rowTimesheetClient->nama_client; ?></td>
+								<td><?php echo $rowTimesheetClient->matter; ?></td>
+								<td><?php echo formatTanggal($rowTimesheetClient->input_date); ?></td>
+								<td><?php echo $rowTimesheetClient->description; ?></td>
+								<td><?php echo $rowTimesheetClient->start; ?></td>
+								<td><?php echo $rowTimesheetClient->end; ?></td>
+								<td><?php echo timeDiff($rowTimesheetClient->start,$rowTimesheetClient->end); ?></td>
+								<td><?php echo "$".billableHour(timeDiff($rowTimesheetClient->start,$rowTimesheetClient->end), $rowTimesheetClient->id_payment, $rowTimesheetClient->id_matter, $rowTimesheetClient->id_jabatan);  ?></td>
+							</tr>
+						<?php $counter++; } ?>							
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?php } ?>
 	
 
 	<?php if(isset($reports) AND isset($matter)){ ?>

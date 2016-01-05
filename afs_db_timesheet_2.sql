@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2015-12-31 12:28:07
+Date: 2016-01-05 15:14:58
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -43,7 +43,7 @@ INSERT INTO `tb_client` VALUES ('3', 'Andi Vaswani', 'NULL', 'NULL', 'NULL', 'NU
 INSERT INTO `tb_client` VALUES ('4', 'Andrisjah Ali / Irasanti', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i', '1', '0');
 INSERT INTO `tb_client` VALUES ('5', 'Apple International (Harui Matsuka)', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i', '1', '0');
 INSERT INTO `tb_client` VALUES ('6', 'Artolite Abetama', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i', '1', '0');
-INSERT INTO `tb_client` VALUES ('7', 'Bambang Yoga', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i', '1', '0');
+INSERT INTO `tb_client` VALUES ('7', 'Bambang Yoga', 'Bambang Yoga', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i', '1', '0');
 INSERT INTO `tb_client` VALUES ('9', 'BHIT', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i', '1', '0');
 INSERT INTO `tb_client` VALUES ('10', 'BNI Syariah', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i', '1', '0');
 INSERT INTO `tb_client` VALUES ('11', 'Charlie ', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor i', '1', '0');
@@ -674,7 +674,7 @@ CREATE TABLE `tb_reimburstment` (
   `input_date` date DEFAULT NULL,
   `keterangan` text,
   PRIMARY KEY (`id_reimburstment`)
-) ENGINE=InnoDB AUTO_INCREMENT=90 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=187 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_reimburstment
@@ -729,6 +729,103 @@ INSERT INTO `tb_reimburstment` VALUES ('86', 'AFS8FD8D4940B1CC3C3', '1', '1', '3
 INSERT INTO `tb_reimburstment` VALUES ('87', 'AFS8FD8D4940B1CC3C3', '1', '1', '30', '2015-12-01', 'Jakarta Selatan');
 INSERT INTO `tb_reimburstment` VALUES ('88', 'AFS8FD8D4940B1CC3C3', '1', '1', '30', '2015-12-01', 'Jakarta Selatan');
 INSERT INTO `tb_reimburstment` VALUES ('89', 'AFS8FD8D4940B1CC3C3', '1', '1', '30', '2015-12-01', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('90', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-09-16', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('91', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('92', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Pusat');
+INSERT INTO `tb_reimburstment` VALUES ('93', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('94', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('95', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Utara');
+INSERT INTO `tb_reimburstment` VALUES ('96', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('97', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('98', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('99', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('100', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Utara');
+INSERT INTO `tb_reimburstment` VALUES ('101', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Utara');
+INSERT INTO `tb_reimburstment` VALUES ('102', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('103', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('104', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('105', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('106', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Utara');
+INSERT INTO `tb_reimburstment` VALUES ('107', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('108', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('109', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('110', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('111', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('112', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('113', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Utara');
+INSERT INTO `tb_reimburstment` VALUES ('114', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'jakarta barat');
+INSERT INTO `tb_reimburstment` VALUES ('115', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('116', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Utara');
+INSERT INTO `tb_reimburstment` VALUES ('117', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('118', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('119', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Utara');
+INSERT INTO `tb_reimburstment` VALUES ('120', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('121', 'AFS8FD8D4940B1CC3C3', '16', '1', '65', '2015-10-09', 'tanggerang selatan');
+INSERT INTO `tb_reimburstment` VALUES ('122', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('123', 'AFS8FD8D4940B1CC3C3', '16', '3', '3', '2015-10-09', '35 lembar');
+INSERT INTO `tb_reimburstment` VALUES ('124', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('125', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('126', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('127', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('128', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('129', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('130', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Utara');
+INSERT INTO `tb_reimburstment` VALUES ('131', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('132', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('133', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('134', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Utara');
+INSERT INTO `tb_reimburstment` VALUES ('135', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('136', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('137', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('138', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('139', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('140', 'AFS8FD8D4940B1CC3C3', '16', '1', '30', '2015-10-09', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('141', 'AFS8FD8D4940B1CC3C3', '10', '1', '30', '2015-11-13', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('142', 'AFS8FD8D4940B1CC3C3', '10', '1', '30', '2015-11-13', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('143', 'AFS8FD8D4940B1CC3C3', '10', '1', '30', '2015-11-13', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('144', 'AFS8FD8D4940B1CC3C3', '10', '1', '25', '2015-11-13', 'Jakarta Pusat');
+INSERT INTO `tb_reimburstment` VALUES ('145', 'AFS8FD8D4940B1CC3C3', '10', '1', '30', '2015-11-13', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('146', 'AFS8FD8D4940B1CC3C3', '10', '1', '30', '2015-11-13', 'Jakarta Utara');
+INSERT INTO `tb_reimburstment` VALUES ('147', 'AFS8FD8D4940B1CC3C3', '10', '1', '30', '2015-11-13', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('148', 'AFS8FD8D4940B1CC3C3', '10', '1', '30', '2015-11-13', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('149', 'AFS8FD8D4940B1CC3C3', '10', '1', '30', '2015-11-13', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('150', 'AFS8FD8D4940B1CC3C3', '10', '1', '30', '2015-11-13', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('151', 'AFS8FD8D4940B1CC3C3', '10', '1', '30', '2015-11-13', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('152', 'AFS8FD8D4940B1CC3C3', '10', '1', '30', '2015-11-13', 'Jakarta Utara');
+INSERT INTO `tb_reimburstment` VALUES ('153', 'AFS8FD8D4940B1CC3C3', '10', '1', '30', '2015-11-13', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('154', 'AFS8FD8D4940B1CC3C3', '10', '1', '30', '2015-11-13', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('155', 'AFS8FD8D4940B1CC3C3', '10', '1', '30', '2015-11-13', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('156', 'AFS8FD8D4940B1CC3C3', '10', '1', '30', '2015-11-13', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('157', 'AFS8FD8D4940B1CC3C3', '10', '2', '12.8', '2015-11-13', 'Tendean');
+INSERT INTO `tb_reimburstment` VALUES ('158', 'AFS8FD8D4940B1CC3C3', '10', '1', '30', '2015-11-13', 'BPH Migas');
+INSERT INTO `tb_reimburstment` VALUES ('159', 'AFS8FD8D4940B1CC3C3', '10', '1', '30', '2015-11-13', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('160', 'AFS8FD8D4940B1CC3C3', '10', '1', '30', '2015-11-13', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('161', 'AFS8FD8D4940B1CC3C3', '10', '1', '30', '2015-11-13', 'Jakarta Utara');
+INSERT INTO `tb_reimburstment` VALUES ('162', 'AFS8FD8D4940B1CC3C3', '10', '1', '30', '2015-11-13', 'Jakarta Utara');
+INSERT INTO `tb_reimburstment` VALUES ('163', 'AFS8FD8D4940B1CC3C3', '10', '1', '30', '2015-11-13', 'Jakarta Selatan');
+INSERT INTO `tb_reimburstment` VALUES ('164', '', null, null, null, null, '');
+
+-- ----------------------------
+-- Table structure for tb_reimburstment_type
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_reimburstment_type`;
+CREATE TABLE `tb_reimburstment_type` (
+  `id_type` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_type`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of tb_reimburstment_type
+-- ----------------------------
+INSERT INTO `tb_reimburstment_type` VALUES ('1', 'TRANSPORTASI');
+INSERT INTO `tb_reimburstment_type` VALUES ('2', 'KURIR');
+INSERT INTO `tb_reimburstment_type` VALUES ('3', 'FOTO COPY DAN BINDING');
+INSERT INTO `tb_reimburstment_type` VALUES ('4', 'LEGES DAN LEGALISIR');
+INSERT INTO `tb_reimburstment_type` VALUES ('5', 'PERJALANAN DINAS');
+INSERT INTO `tb_reimburstment_type` VALUES ('6', 'BIAYA ADMIN');
+INSERT INTO `tb_reimburstment_type` VALUES ('7', 'BIAYA PIHAK KETIGA');
+INSERT INTO `tb_reimburstment_type` VALUES ('8', 'LAIN LAIN');
 
 -- ----------------------------
 -- Table structure for tb_subhourly

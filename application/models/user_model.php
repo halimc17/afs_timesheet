@@ -44,6 +44,21 @@ class user_model extends CI_Model{
         return $this->db->affected_rows();
 	}
 
+	public function selectAttorney(){
+		$query = $this->db->query("SELECT
+									tb_user.id_user,
+									tb_user.nama,
+									tb_user.`status`,
+									tb_user.inisial
+									FROM
+									tb_user
+									WHERE
+									tb_user.`status` NOT LIKE 'Staff'");
+		return $query->result();
+
+
+	}
+
 
 
 }

@@ -45,6 +45,8 @@
 				$('[name="txt_end"]').val(data.end);			
 				$('[name="txt_date"]').val(data.input_date);			
 				$('[name="txt_id_timesheet"]').val(data.id_timesheet);			
+				$('[name="txt_lawyer"]').val(data.nama);			
+				$('[name="txt_inisial"]').val(data.inisial);			
 							
 				
 				$('html, body').animate({ scrollTop: 0 }, 'fast');
@@ -212,9 +214,7 @@
 										foreach($timesheet as $row2){ ?>
 									<tr>
 										<td><?php echo $counter; ?></td>												
-										<td><?php 
-											$inputDate = new DateTime($row2->input_date);
-											echo $inputDate->format('d-m-Y'); ?></td>																								
+										<td><?php echo formatTanggal($row2->input_date); ?></td>																								
 										<td><?php echo $row2->inisial; ?></td>																								
 										<td><?php echo $row2->inisial_user; ?></td>																								
 										<td><?php echo $row2->description; ?></td>																								
@@ -287,7 +287,7 @@
 										<td><?php echo formatTanggal($row3->input_date); ?></td>												
 										<td><?php echo $row3->inisial; ?></td>															
 										<td><?php echo $row3->keterangan; ?></td>															
-										<td><?php echo $row3->type_reimburstment; ?></td>																								
+										<td><?php echo $row3->type; ?></td>																								
 										<td><?php echo number_format($row3->jumlah); ?></td>																																																									
 										<td>
 											<button type="button" name="btnEditActionTimesheet" class="btn btn-success" onclick="#">																				
@@ -370,13 +370,13 @@
 						<div class="col-md-6">						
 							<div class="form-group">
 								<label for="txt_lawyer" class="control-label">Lawyer</label>
-								<input type="text" class="form-control" id="txt_lawyer" name="txt_lawyer" value="<?php echo $this->session->userdata('nama'); ?>" disabled />
+								<input type="text" class="form-control" id="txt_lawyer" name="txt_lawyer" value="" disabled />
 							</div>							
 						</div>
 						<div class="col-md-3">						
 							<div class="form-group" style="padding-left:10px;">
 								<label for="txt_inisial" class="control-label">Inisial</label>							
-								<input type="text" class="form-control" id="txt_inisial" name="txt_inisial" value="<?php echo $this->session->userdata('inisial'); ?>" disabled />
+								<input type="text" class="form-control" id="txt_inisial" name="txt_inisial" value="" disabled />
 							</div>
 						</div>
 					</div>

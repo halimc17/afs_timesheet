@@ -55,9 +55,26 @@ class Timesheet_model extends CI_Model{
 	}
 
 	public function get_record(){
-		$this->db->from('tb_timesheet');
-        $this->db->where('id_timesheet',$this->uri->segment(3));
-        $query = $this->db->get();
+		//$this->db->from('tb_timesheet');
+        //$this->db->where('id_timesheet',$this->uri->segment(3));
+        //$query = $this->db->get();
+
+        $query = $this->db->query("SELECT
+									tb_timesheet.id_timesheet,
+									tb_timesheet.id_matter,
+									tb_timesheet.id_user,
+									tb_timesheet.input_date,
+									tb_timesheet.description,
+									tb_timesheet.id_work_type,
+									tb_timesheet.`start`,
+									tb_timesheet.`end`,
+									tb_user.nama,
+									tb_user.inisial
+									FROM
+									tb_timesheet
+									INNER JOIN tb_user ON tb_user.id_user = tb_timesheet.id_user
+									WHERE
+									tb_timesheet.id_timesheet = ".$this->uri->segment(3));
  
         return $query->row();
 	}
@@ -117,6 +134,62 @@ class Timesheet_model extends CI_Model{
 									tb_timesheet.input_date BETWEEN DATE('".$this->input->post('txt_startDate')."') AND DATE('".$this->input->post('txt_endDate')."')
 									ORDER BY
 									tb_timesheet.id_user ASC");
+
+		return $query->result();
+	}
+
+	public function get_records_by_attorney(){
+
+		$query = $this->db->query("SELECT
+									tb_user.id_user,
+									tb_user.nama,
+									tb_user.inisial,
+									tb_timesheet.id_matter,
+									tb_timesheet.input_date,
+									tb_timesheet.`hour`,
+									tb_timesheet.description,
+									tb_timesheet.id_work_type,
+									tb_timesheet.`start`,
+									tb_timesheet.`end`,
+									tb_matter.id_client,
+									tb_matter.matter,
+									tb_client.nama_client,
+									tb_user.id_jabatan,
+									tb_matter.id_payment
+									FROM
+									tb_user
+									INNER JOIN tb_timesheet ON tb_timesheet.id_user = tb_user.id_user
+									INNER JOIN tb_matter ON tb_matter.id_matter = tb_timesheet.id_matter
+									INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
+									WHERE
+									tb_user.id_user = ".$this->input->post('comboAttorney'));
+
+		return $query->result();
+	}
+
+	public function get_records_byClient(){
+		$query = $this->db->query("SELECT
+									tb_timesheet.id_timesheet,
+									tb_client.nama_client,
+									tb_user.inisial,
+									tb_timesheet.input_date,
+									tb_matter.matter,
+									tb_timesheet.description,
+									tb_work_type.worktype,
+									tb_timesheet.`start`,
+									tb_timesheet.`end`,
+									tb_matter.id_client,
+									tb_timesheet.id_matter,
+									tb_matter.id_payment,
+									tb_user.id_jabatan
+									FROM
+									tb_timesheet
+									INNER JOIN tb_matter ON tb_matter.id_matter = tb_timesheet.id_matter
+									INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
+									INNER JOIN tb_user ON tb_user.id_user = tb_timesheet.id_user
+									INNER JOIN tb_work_type ON tb_work_type.id_work_type = tb_timesheet.id_work_type
+									WHERE
+									tb_client.id_client = ".$this->input->post('comboClient'));
 
 		return $query->result();
 	}

@@ -328,14 +328,11 @@
 							<div class="form-group">
 								<label for="txt_inisial" class="control-label">Reimburstment</label>
 								<select class="form-control" id="combo_reimburstment" name="combo_reimburstment">
-									<option value="1">Transportasi</option>
-									<option value="2">Kurir</option>
-									<option value="3">Foto Copy dan Binding</option>
-									<option value="4">Leges dan Legalisir</option>
-									<option value="5">Perjalanan Dinas</option>
-									<option value="6">Biaya Admin</option>
-									<option value="7">Biaya Pihak Ketiga</option>
-									<option value="8">Lain Lain</option>
+									<?php if(isset($reimburstmentType)){
+										foreach($reimburstmentType as $row){ ?>
+										<option value="<?php echo $row->id_type; ?>"><?php echo $row->type; ?></option>
+									<?php	}
+									} ?>
 								</select>
 							</div>
 						</div>
