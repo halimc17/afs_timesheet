@@ -194,6 +194,33 @@ class Timesheet_model extends CI_Model{
 		return $query->result();
 	}
 
+	public function get_records_byClient_rekap(){
+		$query = $this->db->query("SELECT
+									tb_timesheet.id_timesheet,
+									tb_timesheet.id_matter,
+									tb_timesheet.id_user,
+									tb_timesheet.input_date,
+									tb_timesheet.description,
+									tb_timesheet.id_work_type,
+									tb_timesheet.`start`,
+									tb_timesheet.`end`,
+									tb_matter.id_client,
+									tb_user.nama,
+									tb_user.inisial,
+									tb_matter.matter,
+									tb_client.nama_client
+									FROM
+									tb_timesheet
+									INNER JOIN tb_matter ON tb_matter.id_matter = tb_timesheet.id_matter
+									INNER JOIN tb_user ON tb_user.id_user = tb_timesheet.id_user
+									INNER JOIN tb_client ON tb_client.id_client = tb_matter.id_client
+									WHERE
+									tb_matter.id_client = ".$this->input->post('comboClient')."
+									GROUP BY
+									tb_timesheet.id_matter");
+		return $query->result();
+	}
+
 }
 
 ?>

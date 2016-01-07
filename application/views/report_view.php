@@ -151,7 +151,14 @@
 															} ?>															
 														</select>
 													</div>							
-												</div>													
+												</div>	
+
+												<div class="col-md-6">
+													<div class="checkbox checkbox-replace" style="padding-top:30px;">
+														<input type="checkbox" id="chk-2" value="1" name="chk-2">
+														<label>Rekap</label>
+													</div>
+												</div>												
 											</div>
 
 											<div class="row">
@@ -271,6 +278,58 @@
 								<td><?php echo $rowTimesheetClient->end; ?></td>
 								<td><?php echo timeDiff($rowTimesheetClient->start,$rowTimesheetClient->end); ?></td>
 								<td><?php echo "$".billableHour(timeDiff($rowTimesheetClient->start,$rowTimesheetClient->end), $rowTimesheetClient->id_payment, $rowTimesheetClient->id_matter, $rowTimesheetClient->id_jabatan);  ?></td>
+							</tr>
+						<?php $counter++; } ?>							
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?php } ?>
+
+	<?php if(isset($timesheetClient_rekap)){ ?>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-default panel-shadow" data-collapse="0">
+				<div class="panel-heading">
+					<div class="panel-title">Timesheet by Client</div>
+				</div>
+				<div class="panel-body">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th class="text-center" width="30">#</th>
+								<th>Client</th>
+								<th>Matter</th>								
+								<th>Timesheet</th>								
+							</tr>
+						</thead>
+						<tbody>
+						<?php $counter = 1;
+						foreach($timesheetClient_rekap as $rowTimesheetClient_rekap){ ?>
+							<tr>
+								<td><?php echo $counter; ?></td>
+								<td><?php echo $rowTimesheetClient_rekap->nama_client; ?></td>
+								<td><?php echo $rowTimesheetClient_rekap->matter; ?></td>
+								<td>
+									<table class="table table-bordered">
+										<thead>
+											<th>#</th>
+											<th>Attorney</th>
+											<th>Total minutes</th>
+											<th>Billable Hour</th>
+										</thead>
+										<tbody>
+											<tr>
+												<td>asdasd</td>
+												<td>asdasd</td>
+												<td>asdasd</td>
+												<td>asdasdads</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
 							</tr>
 						<?php $counter++; } ?>							
 						</tbody>

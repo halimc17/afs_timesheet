@@ -63,14 +63,33 @@ class Report extends CI_Controller {
 
 	public function byClient(){
 
-		$this->load->model('timesheet_model');
-		$data['timesheetClient'] = $this->timesheet_model->get_records_byClient();
+		
+		if($this->input->post('chk-2') == 0){
 
-		$this->load->model('client_model');
-		$data['client'] = $this->client_model->get_records();
+			$this->load->model('timesheet_model');
+			$data['timesheetClient'] = $this->timesheet_model->get_records_byClient();
 
-		$this->load->model('user_model');
-		$data['attorney'] = $this->user_model->selectAttorney();	
+			$this->load->model('client_model');
+			$data['client'] = $this->client_model->get_records();
+
+			$this->load->model('user_model');
+			$data['attorney'] = $this->user_model->selectAttorney();
+
+		}else{
+
+			$this->load->model('timesheet_model');
+			$data['timesheetClient_rekap'] = $this->timesheet_model->get_records_byClient_rekap();
+
+			$this->load->model('client_model');
+			$data['client'] = $this->client_model->get_records();
+
+			$this->load->model('user_model');
+			$data['attorney'] = $this->user_model->selectAttorney();
+
+		}
+		
+
+
 
 		$this->load->view('report_view', $data);
 	}
