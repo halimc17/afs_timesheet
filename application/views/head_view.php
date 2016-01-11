@@ -20,6 +20,7 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>template/assets/css/neon-forms.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>template/assets/css/custom.css">
 
+
 	<script src="<?php echo base_url(); ?>template/assets/js/jquery-1.11.0.min.js"></script>
 
 	<!--[if lt IE 9]><script src="<?php echo base_url(); ?>template/assets/js/ie8-responsive-file-warning.js"></script><![endif]-->

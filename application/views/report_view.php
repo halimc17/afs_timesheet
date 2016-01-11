@@ -16,7 +16,19 @@
 		   $("#txt_startDate").prop("disabled", !$(this).is(':checked'));
 		   $("#txt_endDate").prop("disabled", !$(this).is(':checked'));
 		});
+
+		$("#btnExport").click(function(){
+		   ExportToExcel();
+		});
 	});
+
+	
+
+	function ExportToExcel(){
+       var htmltable= document.getElementById('tblExport');
+       var html = htmltable.outerHTML;
+       window.open('data:application/vnd.ms-excel,' + encodeURIComponent(html));
+    }
 </script>
 
 
@@ -198,6 +210,16 @@
 					<div class="panel-title">Attorney Daily Timesheet</div>
 				</div>
 				<div class="panel-body">
+					<table border="0" class="table responsive">
+						<tr>
+							<td colspan="4"><h2>AFS PARTNERSHIP</h2></td>								
+							<td colspan="5" align="right">
+								<h3>PERSONNEL ID. #asdasd</h3>
+								<span>asdasd</span>
+							</td>
+						</tr>						
+					</table>
+
 					<table class="table table-bordered">
 						<thead>
 							<tr>
@@ -342,7 +364,7 @@
 	
 
 	<?php if(isset($reports) AND isset($matter)){ ?>
-	<div class="row">
+	<div class="row" id="tblExport">
 		<div class="col-md-12">
 			<div class="panel panel-default panel-shadow" data-collapse="0">
 				<div class="panel-heading">
@@ -362,57 +384,38 @@
 								$payment = $row1->payment_name;
 							}
 						} ?>
-							<div class="col-sm-6 invoice-left">
-		
-								<a href="#">
-									<h2>AFS PARTNERSHIP</h2>
-								</a>
-						
-							</div>
-						
-							<div class="col-sm-6 invoice-right">
-							
-									<h3>MATTER ID. #<?php echo $idMatter ?></h3>
-									<span><?php echo date('d-m-Y') ?></span>
-							</div>
-						</div>
-
-						<hr class="margin" />
-
-						<div class="row">
-	
-							<div class="col-sm-3 invoice-left">
-							
-								<h4>Client</h4>
-								<?php echo $namaClient; ?>
-								<h4>Matter</h4>
-								<?php echo $matterName; ?>
-							</div>
-						
-							<div class="col-sm-3 invoice-left">
-								 
-								<!--<h4>&nbsp;</h4>
-								1982 OOP
-								<br />
-								Madrid, Spain
-								<br />
-								+1 (151) 225-4183-->
-							</div>
-							
-							<div class="col-md-6 invoice-right">
-							
-								<h4>Payment Details:</h4>
-								<?php echo $payment; ?>
-								<h4>Open Date</h4>
-								<?php echo $openDate; ?>
-								
-							</div>
 							
 						</div>
+
+						
 
 						<div class="margin"></div>
 
-						<table class="table table-bordered">
+						<table border="0" class="table responsive">
+							<tr>
+								<td colspan="4"><h2>AFS PARTNERSHIP</h2></td>								
+								<td colspan="5" align="right">
+									<h3>MATTER ID. #<?php echo $idMatter ?></h3>
+									<span><?php echo date('d-m-Y') ?></span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="4">
+									<strong>Client</strong><br />
+									<?php echo $namaClient; ?><br />
+									<strong>Matter</strong><br />
+									<?php echo $matterName; ?>
+								</td>
+								<td colspan="5" align="right">
+									<strong>Payment Details:</strong><br />
+									<?php echo $payment; ?><br />
+									<strong>Open Date</strong><br />
+									<?php echo $openDate; ?>
+								</td>
+							</tr>
+						</table>
+
+						<table class="table table-bordered" border="1">
 							<thead>
 								<tr>
 									<th class="text-center">#</th>
@@ -423,7 +426,7 @@
 									<th>Start</th>
 									<th>End</th>
 									<th>Minutes</th>
-									<th>Billable Hour</th>
+									<th>Billable Hour ($)</th>
 								</tr>
 							</thead>
 							
@@ -445,13 +448,40 @@
 											<td><?php echo $row->start; ?></td>										
 											<td><?php echo $row->end; ?></td>										
 											<td class="text-center"><?php echo timeDiff($row->start,$row->end); ?></td>										
-											<td class="text-right"><?php echo "$".billableHour(timeDiff($row->start,$row->end), $row->id_payment, $row->id_matter, $row->id_jabatan);  ?></td>										
+											<td class="text-right"><?php echo billableHour(timeDiff($row->start,$row->end), $row->id_payment, $row->id_matter, $row->id_jabatan);  ?></td>										
 										</tr>
 								<?php
 										$counter++;
 										$subTotal = $subTotal + billableHour(timeDiff($row->start,$row->end), $row->id_payment, $row->id_matter, $row->id_jabatan);
 										}
 									} ?>
+
+									<tr>
+										<td colspan="4"></td>										
+										<td></td>
+										<td></td>										
+										<td colspan="3" align="right"></td>
+									</tr>
+									<tr border="2">
+										<td colspan="4">
+											<div class="invoice-left">						
+												Menara Thamrin, 14th Floor Suite 1408
+												<br />
+												Jl. MH. Thamrin, Kav 3
+												<br />
+												Jakarta 10250
+												<br />
+												Telp. 021-39830488 / Fax. 021-39830456
+												<br />
+												Email : afs@afs-partnership.com
+											</div>	
+										</td>										
+										<td></td>
+										<td></td>										
+										<td colspan="3" align="right">
+											Total amount: <strong>$<?php echo number_format($subTotal); ?></strong>
+										</td>
+									</tr>
 							</tbody>
 						</table>
 
@@ -459,36 +489,7 @@
 
 						<div class="row">
 	
-							<div class="col-sm-6">
-							
-								<div class="invoice-left">
-						
-									Menara Thamrin, 14th Floor Suite 1408
-									<br />
-									Jl. MH. Thamrin, Kav 3
-									<br />
-									Jakarta 10250
-									<br />
-									Telp. 021-39830488 / Fax. 021-39830456
-									<br />
-									Email : afs@afs-partnership.com
-								</div>
-							
-							</div>
-							
-							<div class="col-sm-6">
-								
-								<div class="invoice-right">
-									
-									<ul class="list-unstyled">
-										<li>
-											Total amount: 
-											<strong>$<?php echo number_format($subTotal); ?></strong>
-										</li>
-									</ul>
-									
-									<br />
-									
+							<div class="col-md-5">
 									<a href="javascript:window.print();" class="btn btn-primary btn-icon icon-left hidden-print">
 										Print Invoice
 										<i class="entypo-doc-text"></i>
@@ -496,12 +497,10 @@
 									
 									&nbsp;
 									
-									<a href="#" class="btn btn-success btn-icon icon-left hidden-print">
-										Send Invoice
+									<a href="#" class="btn btn-success btn-icon icon-left hidden-print" id="btnExport">
+										Export to XLS
 										<i class="entypo-mail"></i>
 									</a>
-								</div>
-								
 							</div>
 							
 						</div>
@@ -548,6 +547,7 @@
 	<script src="<?php echo base_url(); ?>template/assets/js/neon-chat.js"></script>
 	<script src="<?php echo base_url(); ?>template/assets/js/neon-custom.js"></script>
 	<script src="<?php echo base_url(); ?>template/assets/js/neon-demo.js"></script>
+	
 
 </body>
 </html>
