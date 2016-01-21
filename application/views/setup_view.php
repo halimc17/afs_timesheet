@@ -12,55 +12,77 @@
 
 
 <div class="main-content">
-	
+
 	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-12">
 			<div class="panel panel-default panel-shadow" data-collapse="0">
 				<div class="panel-heading">
 					<div class="panel-title">Setup</div>
 				</div>
 				<div class="panel-body">
-					<div class="row">
+					<div class="col-md-6">
+						<div class="panel-group" id="accordion-test">
+		
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordion-test" href="#collapseOne">
+											Nilai tukar rupiah
+										</a>
+									</h4>
+								</div>
+								<div id="collapseOne" class="panel-collapse collapse in">
+									<div class="panel-body">
 
-						<div class="col-md-6">
-						
-							<div class="tabs-vertical-env">
-							
-								<ul class="nav tabs-vertical"><!-- available classes "right-aligned" -->
-									<li class="active"><a href="#v-home" data-toggle="tab">Rupiah</a></li>
-									<li><a href="#v-profile" data-toggle="tab">Profile</a></li>
-									<li><a href="#v-messages" data-toggle="tab">Messages</a></li>
-									<li><a href="#v-settings" data-toggle="tab">Settings</a></li>
-								</ul>
-								
-								<div class="tab-content">
-									<div class="tab-pane active" id="v-home">
-										<p>Input nilai tukar rupiah sesuai keperluan output report</p>
 										<form role="form" class="form-horizontal form-groups-bordered" method="post" action="<?php echo site_url('setup/rupiah') ?>" style="padding:10px;">
-											
-											<div class="form-group">
-												<label for="txt_nilaiRupiah" class="control-label">Nilai Rupiah</label>
-												<input type="text" class="form-control" id="txt_nilaiRupiah" name="txt_nilaiRupiah" value="">
+											<div class="row">
+												<div class="col-md-6">																							
+													<div class="form-group">
+														<label for="txt_nilaiRupiah" class="control-label">Nilai Rupiah</label>
+														<input type="text" class="form-control" id="txt_nilaiRupiah" name="txt_nilaiRupiah" value="">
+													</div>
+												</div>
 											</div>
-
-
+											<div class="row">
+												<div class="col-md-3" style="padding:0px;">
+													<button type="submit" name="btnSave" class="btn btn-info" id="btnSave">SAVE</button>
+												</div>
+											</div>
 										</form>
 									</div>
-									<div class="tab-pane" id="v-profile">
-										<p>Fulfilled direction use continual set him propriety continued. Saw met applauded favourite deficient engrossed concealed and her. Concluded boy perpetual old supposing. Farther related bed and passage comfort civilly. Dashwoods see frankness objection abilities the. As hastened oh produced prospect formerly up am. Placing forming nay looking old married few has. Margaret disposed add screened rendered six say his striking confined. </p>
-									</div>
-									<div class="tab-pane" id="v-messages">
-										<p>When be draw drew ye. Defective in do recommend suffering. House it seven in spoil tiled court. Sister others marked fat missed did out use. Alteration possession dispatched collecting instrument travelling he or on. Snug give made at spot or late that mr. </p>
-									</div>
-									<div class="tab-pane" id="v-settings">
-										<p>Luckily friends do ashamed to do suppose. Tried meant mr smile so. Exquisite behaviour as to middleton perfectly. Chicken no wishing waiting am. Say concerns dwelling graceful six humoured. Whether mr up savings talking an. Active mutual nor father mother exeter change six did all. </p>
+								</div>
+							</div>
+							
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordion-test" href="#collapseTwo">
+											Collapsible Group Item #2
+										</a>
+									</h4>
+								</div>
+								<div id="collapseTwo" class="panel-collapse collapse">
+									<div class="panel-body">
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
 									</div>
 								</div>
-								
-							</div>	
-						
+							</div>
+							
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent="#accordion-test" href="#collapseThree">
+											Collapsible Group Item #3
+										</a>
+									</h4>
+								</div>
+								<div id="collapseThree" class="panel-collapse collapse">
+									<div class="panel-body">
+										Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+									</div>
+								</div>
+							</div>
 						</div>
-
 					</div>
 				</div>
 			</div>

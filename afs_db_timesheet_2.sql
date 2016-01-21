@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2016-01-05 15:14:58
+Date: 2016-01-21 16:03:04
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -32,7 +32,7 @@ CREATE TABLE `tb_client` (
   `active` int(11) DEFAULT NULL,
   `potential` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_client`)
-) ENGINE=InnoDB AUTO_INCREMENT=95 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=96 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_client
@@ -117,6 +117,7 @@ INSERT INTO `tb_client` VALUES ('89', 'Kingking Firdaus', 'Kingking Firdaus', '0
 INSERT INTO `tb_client` VALUES ('92', 'Toufan', 'Toufan', '082115548887', '08966658885', 'toufan@gmail.com', 'Bintara 2', 'TFN', 'Keterangan Toufan', null, null);
 INSERT INTO `tb_client` VALUES ('93', 'Risky', 'Risky', '082113334445', '082236645', 'risky@gmail.com', 'Jatiwaringin', 'RK', 'keterangan client', null, null);
 INSERT INTO `tb_client` VALUES ('94', 'Total oil Indonesia', 'aa', '111', '111', 'aa', 'aa', 'aa', 'PT. Total Oil Indonesia', null, null);
+INSERT INTO `tb_client` VALUES ('95', 'Hans Darmono', '', '', '', '', '', '', 'hans darmono', null, null);
 
 -- ----------------------------
 -- Table structure for tb_divisi
@@ -209,7 +210,7 @@ CREATE TABLE `tb_matter` (
   `active` int(11) DEFAULT '1',
   `input_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`,`id_matter`)
-) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_matter
@@ -268,6 +269,7 @@ INSERT INTO `tb_matter` VALUES ('83', 'AFS885C849D48C12BBD', '76', '6', 'fgfggf'
 INSERT INTO `tb_matter` VALUES ('84', 'AFS8FD8D4940B1CC3C3', '94', '2', 'Investigasi Kriminal', '2015-09-01', '0000-00-00', '1', null);
 INSERT INTO `tb_matter` VALUES ('85', 'AFS25E4946D9AA99C90', '5', '3', 'Chosen Car/Mr. Adjito', '2015-06-25', '0000-00-00', '1', null);
 INSERT INTO `tb_matter` VALUES ('86', 'AFS413BF46A4AA07C20', '55', '3', 'Larasati', '2015-05-01', '2015-05-31', '1', null);
+INSERT INTO `tb_matter` VALUES ('87', 'AFSDE510424E935FE9D', '95', '2', 'MKI Tung-Feng', '2014-03-21', '0000-00-00', '1', null);
 
 -- ----------------------------
 -- Table structure for tb_matter_assign
@@ -278,7 +280,7 @@ CREATE TABLE `tb_matter_assign` (
   `id_matter` varchar(255) DEFAULT NULL,
   `id_user` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_matter_assign`)
-) ENGINE=InnoDB AUTO_INCREMENT=131 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=133 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_matter_assign
@@ -394,6 +396,8 @@ INSERT INTO `tb_matter_assign` VALUES ('127', 'AFS413BF46A4AA07C20', '7');
 INSERT INTO `tb_matter_assign` VALUES ('128', 'AFS413BF46A4AA07C20', '8');
 INSERT INTO `tb_matter_assign` VALUES ('129', 'AFS413BF46A4AA07C20', '3');
 INSERT INTO `tb_matter_assign` VALUES ('130', 'AFS413BF46A4AA07C20', '8');
+INSERT INTO `tb_matter_assign` VALUES ('131', 'AFSDE510424E935FE9D', '2');
+INSERT INTO `tb_matter_assign` VALUES ('132', 'AFSDE510424E935FE9D', '15');
 
 -- ----------------------------
 -- Table structure for tb_matter_hourly
@@ -411,7 +415,7 @@ CREATE TABLE `tb_matter_hourly` (
   `disc` int(255) DEFAULT NULL,
   `description` text,
   PRIMARY KEY (`id_hourly`,`id_matter`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_matter_hourly
@@ -423,6 +427,7 @@ INSERT INTO `tb_matter_hourly` VALUES ('11', 'AFSA768E4E0C9F2E431', '120000000',
 INSERT INTO `tb_matter_hourly` VALUES ('12', 'AFS8D9A348C3B629E4A', '50000000', '10000000', '20000000', '500000', '15000000', '10000000', '25', 'lorem ipsum dolor sit amet');
 INSERT INTO `tb_matter_hourly` VALUES ('13', 'AFS8BC5A412C8B6D5F0', '50000000', '10000000', '20000000', '30000000', '60000000', '10000000', '25', 'lorem ipsum dolor sit amet');
 INSERT INTO `tb_matter_hourly` VALUES ('14', 'AFS8FD8D4940B1CC3C3', '600', '350', '300', '200', '150', '120', '0', 'Investigasi kriminal PT. Total Oil Indonesia');
+INSERT INTO `tb_matter_hourly` VALUES ('15', 'AFSDE510424E935FE9D', '600', '350', '300', '200', '150', '120', '0', 'Matter Hans Darmono');
 
 -- ----------------------------
 -- Table structure for tb_matter_lumpsum
@@ -674,7 +679,7 @@ CREATE TABLE `tb_reimburstment` (
   `input_date` date DEFAULT NULL,
   `keterangan` text,
   PRIMARY KEY (`id_reimburstment`)
-) ENGINE=InnoDB AUTO_INCREMENT=187 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=165 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_reimburstment
@@ -1101,7 +1106,7 @@ CREATE TABLE `tb_timesheet` (
   `start` time DEFAULT NULL,
   `end` time DEFAULT NULL,
   PRIMARY KEY (`id_timesheet`)
-) ENGINE=InnoDB AUTO_INCREMENT=236 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=260 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_timesheet
@@ -1311,6 +1316,45 @@ INSERT INTO `tb_timesheet` VALUES ('232', 'AFS25E4946D9AA99C90', '15', '2014-11-
 INSERT INTO `tb_timesheet` VALUES ('233', 'AFS25E4946D9AA99C90', '15', '2014-11-13', null, 'Research regarding civil lawsuit as possible legal action', '7', '11:00:00', '13:00:00');
 INSERT INTO `tb_timesheet` VALUES ('234', 'AFS25E4946D9AA99C90', '15', '2014-11-13', null, 'Drafting internal memorandum regarding civil lawsuit', '4', '11:00:00', '13:30:00');
 INSERT INTO `tb_timesheet` VALUES ('235', 'AFS25E4946D9AA99C90', '15', '2014-11-13', null, 'Internal discussion regarding possible legal actions against Adjito based on research', '3', '11:00:00', '13:00:00');
+INSERT INTO `tb_timesheet` VALUES ('236', 'AFSDE510424E935FE9D', '2', '2014-03-21', null, 'Pembuatan draft saham', '4', '12:00:00', '15:00:00');
+INSERT INTO `tb_timesheet` VALUES ('237', 'AFSDE510424E935FE9D', '2', '2014-03-21', null, 'Pembuatan draft keputusan sirkuler pemegang saham ', '4', '12:00:00', '15:00:00');
+INSERT INTO `tb_timesheet` VALUES ('238', 'AFSDE510424E935FE9D', '2', '2014-03-21', null, 'Pembuatan Draft persetujuan isteri', '4', '12:00:00', '15:00:00');
+INSERT INTO `tb_timesheet` VALUES ('239', 'AFSDE510424E935FE9D', '2', '2014-04-03', null, 'Pembuatan draft perjanjian kerjasama Tung Feng MKI', '4', '12:00:00', '15:00:00');
+INSERT INTO `tb_timesheet` VALUES ('240', 'AFSDE510424E935FE9D', '2', '2014-04-04', null, 'Revisi draft perjanjian kerjasama MKI Tung Feng', '4', '12:00:00', '13:00:00');
+INSERT INTO `tb_timesheet` VALUES ('241', 'AFSDE510424E935FE9D', '2', '2014-04-08', null, 'Revisi Draft Perjanjian Kerjasama Tung Feng sesuai instruksi dari Pak Hans', '4', '12:00:00', '13:00:00');
+INSERT INTO `tb_timesheet` VALUES ('242', 'AFSDE510424E935FE9D', '2', '2014-04-17', null, 'Finalisasi Surat Jaminan dan Ganti Rugi dan Letter of Indemnity untuk Pak Hans Darmono', '5', '12:00:00', '14:00:00');
+INSERT INTO `tb_timesheet` VALUES ('243', 'AFSDE510424E935FE9D', '2', '2014-04-22', null, 'Diskusi dengan Pak Hans Darmono tentang Surat Jaminan dan Ganti Rugi dan Letter of Indemnity', '3', '12:00:00', '13:00:00');
+INSERT INTO `tb_timesheet` VALUES ('244', 'AFSDE510424E935FE9D', '2', '2014-04-22', null, 'Revisi Surat Jaminan dan Ganti Rugi', '3', '14:00:00', '15:00:00');
+INSERT INTO `tb_timesheet` VALUES ('245', 'AFSDE510424E935FE9D', '2', '2014-04-25', null, 'Finalisasi Surat Jaminan dan Ganti Rugi dan Letter of Indemnity untuk Pak Gregory Darmono', '5', '12:00:00', '13:00:00');
+INSERT INTO `tb_timesheet` VALUES ('246', 'AFSDE510424E935FE9D', '15', '2014-03-24', null, 'Pembuatan dan Revisi Draft PPJB Saham', '4', '12:00:00', '14:00:00');
+INSERT INTO `tb_timesheet` VALUES ('247', 'AFSDE510424E935FE9D', '15', '2014-03-24', null, 'Pembuatan dan Revisi Draft Keputusan Sirkuler Pemegang Saham', '4', '12:00:00', '14:00:00');
+INSERT INTO `tb_timesheet` VALUES ('248', 'AFSDE510424E935FE9D', '15', '2014-03-24', null, 'Pembuatan Draft Persetujuan Isteri', '4', '12:00:00', '14:00:00');
+INSERT INTO `tb_timesheet` VALUES ('249', 'AFSDE510424E935FE9D', '15', '2014-03-25', null, 'Revisi Draft PPJB Saham', '4', '12:00:00', '13:30:00');
+INSERT INTO `tb_timesheet` VALUES ('250', 'AFSDE510424E935FE9D', '15', '2014-03-25', null, 'Revisi Draft Keputusan Sirkuler Pemegang Saham', '4', '12:00:00', '13:30:00');
+INSERT INTO `tb_timesheet` VALUES ('251', 'AFSDE510424E935FE9D', '15', '2014-03-25', null, 'Revisi Draft Persetujuan Isteri', '4', '12:00:00', '13:30:00');
+INSERT INTO `tb_timesheet` VALUES ('252', 'AFSDE510424E935FE9D', '15', '2014-03-28', null, 'Korespondensi Permintaan Data Tambahan', '4', '12:00:00', '12:30:00');
+INSERT INTO `tb_timesheet` VALUES ('253', 'AFSDE510424E935FE9D', '15', '2014-03-28', null, 'Finalisasi Draft Perjanjian Jual Beli Saham, Draft Keputusan Sirkuler Pemegan Saham dan Draft Persetujuan Isteri', '5', '12:00:00', '12:30:00');
+INSERT INTO `tb_timesheet` VALUES ('254', 'AFSDE510424E935FE9D', '15', '2014-04-03', null, 'Pembuatan Draft Perjanjian Kerjasama Tung Feng - MKI', '3', '12:00:00', '13:30:00');
+INSERT INTO `tb_timesheet` VALUES ('255', 'AFSDE510424E935FE9D', '15', '2014-04-04', null, 'Revisi Draft Perjanjian Kerjasama Tung Feng - MKI', '5', '12:00:00', '13:00:00');
+INSERT INTO `tb_timesheet` VALUES ('256', 'AFSDE510424E935FE9D', '15', '2014-04-07', null, 'Finalisasi dan Mengirimkan Draft Perjanjian Kerjasama Tung Feng - MKI', '3', '12:00:00', '13:00:00');
+INSERT INTO `tb_timesheet` VALUES ('257', 'AFSDE510424E935FE9D', '15', '2014-04-17', null, 'Finalisasi Surat Jaminan dan Ganti Rugi dan Letter of Indemnity untuk Pak Hans Darmono', '4', '12:00:00', '14:00:00');
+INSERT INTO `tb_timesheet` VALUES ('258', 'AFSDE510424E935FE9D', '15', '2014-04-22', null, 'Diskusi dengan Pak Hans Darmono tentang Surat Jaminan dan Ganti Rugi dan Letter of Indemnity', '5', '12:00:00', '13:30:00');
+INSERT INTO `tb_timesheet` VALUES ('259', 'AFSDE510424E935FE9D', '15', '2014-04-25', null, 'Finalisasi Surat Jaminan dan Ganti Rugi dan Letter of Indemnity untuk Pak Gregory Darmono', '3', '12:00:00', '13:30:00');
+
+-- ----------------------------
+-- Table structure for tb_usd
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_usd`;
+CREATE TABLE `tb_usd` (
+  `id_currency` int(11) NOT NULL AUTO_INCREMENT,
+  `nilai_tukar` float DEFAULT NULL,
+  PRIMARY KEY (`id_currency`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of tb_usd
+-- ----------------------------
+INSERT INTO `tb_usd` VALUES ('1', '13180');
 
 -- ----------------------------
 -- Table structure for tb_user
