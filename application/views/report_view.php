@@ -261,15 +261,40 @@
 	</div>
 	<?php } ?>
 
-	<?php if(isset($timesheetClient)){ ?>
-	<div class="row">
+	<?php if(isset($timesheetClient)){ ?> <!--report timesheet berdasarkan client dan semua attorney-->
+	<div class="row" id="tblExport">
 		<div class="col-md-12">
 			<div class="panel panel-default panel-shadow" data-collapse="0">
 				<div class="panel-heading">
 					<div class="panel-title">Timesheet by Client</div>
 				</div>
 				<div class="panel-body">
-					<table class="table table-bordered">
+					<?php if(isset($timesheetClient)){
+						foreach($timesheetClient as $row6){
+							$namaClient = $row6->nama_client;
+							$idClient = $row6->id_client;
+						}
+					} ?>
+					<table border="0" class="table responsive">
+						<tr>
+							<td colspan="5"><h2>AFS PARTNERSHIP</h2></td>								
+							<td colspan="5" align="right">
+								<h3>CLIENT ID. #<?php echo $idClient; ?></h3>
+								<span><?php echo date('d-m-Y') ?></span>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="4">
+								<strong>Client</strong><br />
+								<?php echo $namaClient; ?><br />
+							</td>
+							<td colspan="5" align="right">
+								&nbsp;
+							</td>
+						</tr>
+					</table>
+
+					<table class="table table-bordered" border="1">
 						<thead>
 							<tr>
 								<th class="text-center">#</th>
@@ -278,7 +303,6 @@
 								<th>Input Date</th>
 								<th>Matter</th>
 								<th>Description</th>
-								<th>Worktype</th>
 								<th>Start</th>
 								<th>End</th>
 								<th>Minutes</th>
@@ -290,27 +314,46 @@
 						foreach($timesheetClient as $rowTimesheetClient){ ?>
 							<tr>
 								<td><?php echo $counter; ?></td>
-								<td><?php echo $rowTimesheetClient->inisial; ?></td>
-								<td><?php echo $rowTimesheetClient->id_matter; ?></td>
 								<td><?php echo $rowTimesheetClient->nama_client; ?></td>
-								<td><?php echo $rowTimesheetClient->matter; ?></td>
+								<td><?php echo $rowTimesheetClient->inisial; ?></td>
 								<td><?php echo formatTanggal($rowTimesheetClient->input_date); ?></td>
+								<td><?php echo $rowTimesheetClient->matter; ?></td>
 								<td><?php echo $rowTimesheetClient->description; ?></td>
 								<td><?php echo $rowTimesheetClient->start; ?></td>
 								<td><?php echo $rowTimesheetClient->end; ?></td>
 								<td><?php echo timeDiff($rowTimesheetClient->start,$rowTimesheetClient->end); ?></td>
-								<td><?php echo "$".billableHour(timeDiff($rowTimesheetClient->start,$rowTimesheetClient->end), $rowTimesheetClient->id_payment, $rowTimesheetClient->id_matter, $rowTimesheetClient->id_jabatan);  ?></td>
+								<td><?php echo billableHour(timeDiff($rowTimesheetClient->start,$rowTimesheetClient->end), $rowTimesheetClient->id_payment, $rowTimesheetClient->id_matter, $rowTimesheetClient->id_jabatan);  ?></td>
 							</tr>
 						<?php $counter++; } ?>							
 						</tbody>
 					</table>
+
+					<div class="margin"></div>
+
+						<div class="row">
+	
+							<div class="col-md-5">
+									<a href="javascript:window.print();" class="btn btn-primary btn-icon icon-left hidden-print">
+										Print Invoice
+										<i class="entypo-doc-text"></i>
+									</a>
+									
+									&nbsp;
+									
+									<a href="#" class="btn btn-success btn-icon icon-left hidden-print" id="btnExport">
+										Export to XLS
+										<i class="entypo-mail"></i>
+									</a>
+							</div>
+							
+						</div>
 				</div>
 			</div>
 		</div>
 	</div>
 	<?php } ?>
 
-	<?php if(isset($timesheetClient_rekap)){ ?>
+	<?php if(isset($timesheetClient_rekap)){ ?> <!--report timesheet berdasarkan client dan rekap attorney-->
 	<div class="row">
 		<div class="col-md-12">
 			<div class="panel panel-default panel-shadow" data-collapse="0">

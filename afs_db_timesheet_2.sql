@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50616
 File Encoding         : 65001
 
-Date: 2016-01-21 16:03:04
+Date: 2016-01-22 16:41:20
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -226,7 +226,6 @@ INSERT INTO `tb_matter` VALUES ('17', 'AFS2015213464896', '16', '3', 'Matter tes
 INSERT INTO `tb_matter` VALUES ('19', 'AFS2015225885522', '31', '4', 'Matter Test 4', '2015-11-16', '2015-11-16', '1', null);
 INSERT INTO `tb_matter` VALUES ('23', 'AFS7ad474b2bb3cfb61', '64', '1', 'Soverign\'s Capital Matter', '2015-11-01', '2015-12-05', '1', null);
 INSERT INTO `tb_matter` VALUES ('29', 'AFS6e6424a49a7292ca', '65', '2', 'Taman Harapan indah matter', '2015-10-26', '2015-11-17', '1', null);
-INSERT INTO `tb_matter` VALUES ('32', 'AFS564984b758dfae90', '68', '2', 'Tiny Tantoro Matter', '2015-11-02', '2015-11-26', '1', null);
 INSERT INTO `tb_matter` VALUES ('34', 'AFSb95be4d09a01ad52', '54', '2', 'RCTI Matter', '2015-10-27', '2015-11-19', '1', null);
 INSERT INTO `tb_matter` VALUES ('35', 'AFS4a03148558bf54b8', '70', '1', 'Trimartheo Matter', '2015-10-29', '2015-11-24', '1', null);
 INSERT INTO `tb_matter` VALUES ('36', 'AFS4774c475ab2bd559', '50', '2', 'Matter Postindo', '2015-11-02', '2015-11-25', '1', null);
@@ -357,8 +356,6 @@ INSERT INTO `tb_matter_assign` VALUES ('81', 'AFSD2FAF4BCC8DF6014', '11');
 INSERT INTO `tb_matter_assign` VALUES ('82', 'AFSB96EF4389949BE9B', '3');
 INSERT INTO `tb_matter_assign` VALUES ('83', 'AFSB96EF4389949BE9B', '9');
 INSERT INTO `tb_matter_assign` VALUES ('84', 'AFSB96EF4389949BE9B', '12');
-INSERT INTO `tb_matter_assign` VALUES ('85', 'AFS564984b758dfae90', '8');
-INSERT INTO `tb_matter_assign` VALUES ('86', 'AFS564984b758dfae90', '11');
 INSERT INTO `tb_matter_assign` VALUES ('90', 'AFS0E45D4D7D9CE6C1D', '8');
 INSERT INTO `tb_matter_assign` VALUES ('91', 'AFS0E45D4D7D9CE6C1D', '16');
 INSERT INTO `tb_matter_assign` VALUES ('92', 'AFS0E45D4D7D9CE6C1D', '17');
@@ -420,7 +417,6 @@ CREATE TABLE `tb_matter_hourly` (
 -- ----------------------------
 -- Records of tb_matter_hourly
 -- ----------------------------
-INSERT INTO `tb_matter_hourly` VALUES ('5', 'AFS564984b758dfae90', '50000000', '20000000', '3000000', '2000000', '50000000', '10000000', '10', 'Description');
 INSERT INTO `tb_matter_hourly` VALUES ('7', 'AFSb95be4d09a01ad52', '100000000', '150000000', '200000000', '20000000', '30000000', '50000000', '25', 'keterangan matter RCTI');
 INSERT INTO `tb_matter_hourly` VALUES ('8', 'AFS4774c475ab2bd559', '10000000', '15000000', '2000000', '30000000', '5000000', '2000000', '12', 'keterangan');
 INSERT INTO `tb_matter_hourly` VALUES ('11', 'AFSA768E4E0C9F2E431', '120000000', '30000000', '30000000', '50000000', '90000000', '10000000', '25', 'Lorem ipsum dolor sit amet');
