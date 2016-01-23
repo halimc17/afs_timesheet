@@ -17,7 +17,7 @@ function timeDiff($firstTime,$lastTime)
 }
 
 function billableHour($minutes, $idPayment, $idMatter, $idJabatan){
-	if($idPayment == 2){
+	if($idPayment == 2){ //jika payment hourly
 		$bill = $minutes + 300;
 
 		$ci =& get_instance();

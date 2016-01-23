@@ -1452,19 +1452,35 @@
 										</div>							
 									</div>
 								</div>
-								
+								<?php if(isset($records_jabatan)){
+									foreach($records_jabatan as $rowJabatan){
+										if($rowJabatan->id_jabatan == 1){
+											$rateManagingPartner = $rowJabatan->rate;
+										}elseif($rowJabatan->id_jabatan == 2){
+											$ratePartner = $rowJabatan->rate;
+										}elseif($rowJabatan->id_jabatan == 3){
+											$rateMidAssociate = $rowJabatan->rate;
+										}elseif($rowJabatan->id_jabatan == 4){
+											$rateJuniorAssociate = $rowJabatan->rate;
+										}elseif($rowJabatan->id_jabatan == 5){
+											$rateSeniorAssociate = $rowJabatan->rate;
+										}elseif($rowJabatan->id_jabatan == 13){
+											$rateJuniorPartner = $rowJabatan->rate;
+										}
+									}
+									} ?>						
 								<div class="row">
 									<div class="col-md-6">						
 										<div class="form-group">
 											<label for="txt_managing_partner" class="control-label">Managing Partner (USD)</label>
-											<input type="text" class="form-control" id="txt_managing_partner" name="txt_managing_partner" value="">
+											<input type="text" class="form-control" id="txt_managing_partner" name="txt_managing_partner" value="<?php echo $rateManagingPartner; ?>">
 										</div>							
 									</div>
 
 									<div class="col-md-6">						
 										<div class="form-group" style="padding-left:10px;">
 											<label for="txt_partner" class="control-label">Partner (USD)</label>
-											<input type="text" class="form-control" id="txt_partner" name="txt_partner" value="">
+											<input type="text" class="form-control" id="txt_partner" name="txt_partner" value="<?php echo $ratePartner; ?>">
 										</div>							
 									</div>									
 								</div>
@@ -1473,13 +1489,13 @@
 									<div class="col-md-6">						
 										<div class="form-group">
 											<label for="txt_junior_partner" class="control-label">Junior Partner (USD)</label>							
-											<input type="text" class="form-control" id="txt_junior_partner" name="txt_junior_partner" value="">
+											<input type="text" class="form-control" id="txt_junior_partner" name="txt_junior_partner" value="<?php echo $rateJuniorPartner; ?>">
 										</div>						
 									</div>
 									<div class="col-md-6">						
 										<div class="form-group" style="padding-left:10px;">
 											<label for="txt_senior_associate" class="control-label">Senior Associate (USD)</label>							
-											<input type="text" class="form-control" id="txt_senior_associate" name="txt_senior_associate" value="">
+											<input type="text" class="form-control" id="txt_senior_associate" name="txt_senior_associate" value="<?php echo $rateSeniorAssociate; ?>">
 										</div>						
 									</div>									
 								</div>
@@ -1488,13 +1504,13 @@
 									<div class="col-md-6">						
 										<div class="form-group">
 											<label for="txt_mid_associate" class="control-label">Mid Associate (USD)</label>							
-											<input type="text" class="form-control" id="txt_mid_associate" name="txt_mid_associate" value="">
+											<input type="text" class="form-control" id="txt_mid_associate" name="txt_mid_associate" value="<?php echo $rateMidAssociate; ?>">
 										</div>						
 									</div>
 									<div class="col-md-6">						
 										<div class="form-group" style="padding-left:10px;">
 											<label for="txt_junior_associate" class="control-label">Junior Associate (USD)</label>							
-											<input type="text" class="form-control" id="txt_junior_associate" name="txt_junior_associate" value="">
+											<input type="text" class="form-control" id="txt_junior_associate" name="txt_junior_associate" value="<?php echo $rateJuniorAssociate; ?>">
 										</div>						
 									</div>									
 								</div>

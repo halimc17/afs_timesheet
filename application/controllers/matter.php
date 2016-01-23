@@ -25,6 +25,9 @@ class Matter extends CI_Controller {
 		$data['records_probono'] = $this->v_matter_probono_model->get_records(); //ambil semua data matter probono						
 		$this->load->model('v_matter_project_model');
 		$data['records_project'] = $this->v_matter_project_model->get_records(); //ambil semua data matter project
+
+		$this->load->model('jabatan_model');
+		$data['records_jabatan'] = $this->jabatan_model->get_records(); // ambil data rate dari setiap jabatan
 		
 		$this->load->model('client_model');
 		$data['records_client'] = $this->client_model->get_records(); //ambil semua records client
