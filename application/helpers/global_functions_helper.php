@@ -58,6 +58,18 @@ function billableHour($minutes, $idPayment, $idMatter, $idJabatan){
 		    default:
 		        echo "$0";
 		}
+	}elseif($idPayment == 3){
+
+		$ci =& get_instance();
+		$class = $ci->db->query("SELECT * FROM tb_jabatan WHERE id_jabatan = ".$idJabatan);
+	    $class = json_encode($class->row());		
+		$row = json_decode($class);
+
+		$bill = $minutes + 300;
+		$rate = $row->{'rate'};
+
+		$bill = ($rate/60)*$minutes;
+
 	}else{
 		$bill = 0;
 	}
