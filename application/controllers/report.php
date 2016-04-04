@@ -32,9 +32,18 @@ class Report extends CI_Controller {
 		$this->load->model('user_model');
 		$data['attorney'] = $this->user_model->selectAttorney();
 
+		$this->load->model('reimburstment_model');
+		
+
 		$this->load->model('client_model');
 		$data['client'] = $this->client_model->get_records();
 		
+
+		if($this->input->post("chk-1") == 1){
+			$data['reimburstment'] = $this->reimburstment_model->get_ope_byDate();
+		}else{
+			$data['reimburstment'] = $this->reimburstment_model->get_ope();
+		}
 
 		if($this->input->post("chk-1") == 1){
 			$data['matter'] = $this->matter_model->get_matter();

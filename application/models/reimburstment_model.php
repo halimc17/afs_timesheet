@@ -60,6 +60,51 @@ class Reimburstment_model extends CI_Model{
 		return $query->result();
 	}
 
+	public function get_ope_byDate(){
+
+		$query = $this->db->query("SELECT
+									tb_reimburstment.id_matter,
+									tb_reimburstment.id_user,
+									tb_user.nama,
+									tb_user.inisial,
+									tb_reimburstment.jumlah,
+									tb_reimburstment.keterangan,
+									tb_reimburstment.input_date,
+									tb_reimburstment_type.type
+									FROM
+									tb_reimburstment
+									INNER JOIN tb_user ON tb_user.id_user = tb_reimburstment.id_user
+									INNER JOIN tb_reimburstment_type ON tb_reimburstment_type.id_type = tb_reimburstment.type_reimburstment
+									WHERE
+									tb_reimburstment.id_matter = '".$this->input->post('txt_idMatter')."' AND
+									tb_reimburstment.input_date BETWEEN DATE('".$this->input->post('txt_startDate')."') AND DATE('".$this->input->post('txt_endDate')."')");
+
+
+		return $query->result();
+	}
+
+	public function get_ope(){
+
+		$query = $this->db->query("SELECT
+									tb_reimburstment.id_matter,
+									tb_reimburstment.id_user,
+									tb_user.nama,
+									tb_user.inisial,
+									tb_reimburstment.jumlah,
+									tb_reimburstment.keterangan,
+									tb_reimburstment.input_date,
+									tb_reimburstment_type.type
+									FROM
+									tb_reimburstment
+									INNER JOIN tb_user ON tb_user.id_user = tb_reimburstment.id_user
+									INNER JOIN tb_reimburstment_type ON tb_reimburstment_type.id_type = tb_reimburstment.type_reimburstment
+									WHERE
+									tb_reimburstment.id_matter = '".$this->input->post('txt_idMatter')."'");
+
+
+		return $query->result();
+	}
+
 }
 
 ?>

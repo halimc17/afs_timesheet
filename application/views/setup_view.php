@@ -39,7 +39,12 @@
 												<div class="col-md-6">																							
 													<div class="form-group">
 														<label for="txt_nilaiRupiah" class="control-label">Nilai Rupiah</label>
-														<input type="text" class="form-control" id="txt_nilaiRupiah" name="txt_nilaiRupiah" value="">
+														<?php if(isset($records)){
+															foreach($records as $row){
+																$nilai_tukar = $row->nilai_tukar;
+ 															}
+															} ?>
+														<input type="text" class="form-control" id="txt_nilaiRupiah" name="txt_nilaiRupiah" value="<?php echo $nilai_tukar; ?>">
 													</div>
 												</div>
 											</div>
@@ -57,7 +62,7 @@
 								<div class="panel-heading">
 									<h4 class="panel-title">
 										<a data-toggle="collapse" data-parent="#accordion-test" href="#collapseTwo">
-											Collapsible Group Item #2
+											Parameter #2
 										</a>
 									</h4>
 								</div>
@@ -72,7 +77,7 @@
 								<div class="panel-heading">
 									<h4 class="panel-title">
 										<a data-toggle="collapse" data-parent="#accordion-test" href="#collapseThree">
-											Collapsible Group Item #3
+											Parameter #3
 										</a>
 									</h4>
 								</div>

@@ -13,8 +13,10 @@ class Setup extends CI_Controller {
 	public function index()
 	{		
 		
-		$this->load->view('setup_view');
-		
-		
+		$this->load->model('setup_model');
+		if($query = $this->setup_model->get_usd()){
+					$data['records'] = $query;
+				}			
+		$this->load->view('setup_view', $data);
 	}	
 }

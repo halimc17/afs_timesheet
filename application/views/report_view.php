@@ -209,7 +209,9 @@
 				<div class="panel-heading">
 					<div class="panel-title">Attorney Daily Timesheet</div>
 				</div>
-				<div class="panel-body">
+				<div class="invoice">
+					<div class="row">
+						<div class="panel-body">
 					<table border="0" class="table responsive">
 						<tr>
 							<td colspan="4"><h2>AFS PARTNERSHIP</h2></td>								
@@ -256,6 +258,8 @@
 						</tbody>
 					</table>
 				</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -268,7 +272,10 @@
 				<div class="panel-heading">
 					<div class="panel-title">Timesheet by Client</div>
 				</div>
-				<div class="panel-body">
+
+				<div class="invoice">
+					<div class="row">
+						<div class="panel-body">
 					<?php if(isset($timesheetClient)){
 						foreach($timesheetClient as $row6){
 							$namaClient = $row6->nama_client;
@@ -348,6 +355,11 @@
 							
 						</div>
 				</div>
+
+					</div>
+
+				</div>
+				
 			</div>
 		</div>
 	</div>
@@ -360,7 +372,9 @@
 				<div class="panel-heading">
 					<div class="panel-title">Timesheet by Client</div>
 				</div>
-				<div class="panel-body">
+				<div class="invoice">
+					<div class="row">
+						<div class="panel-body">
 					<table class="table table-bordered">
 						<thead>
 							<tr>
@@ -399,6 +413,9 @@
 						<?php $counter++; } ?>							
 						</tbody>
 					</table>
+				</div>
+					</div>
+
 				</div>
 			</div>
 		</div>
@@ -508,15 +525,7 @@
 									<tr border="2">
 										<td colspan="4">
 											<div class="invoice-left">						
-												Menara Thamrin, 14th Floor Suite 1408
-												<br />
-												Jl. MH. Thamrin, Kav 3
-												<br />
-												Jakarta 10250
-												<br />
-												Telp. 021-39830488 / Fax. 021-39830456
-												<br />
-												Email : afs@afs-partnership.com
+												TOTAL
 											</div>	
 										</td>										
 										<td></td>
@@ -525,6 +534,60 @@
 											Total amount: <strong>$<?php echo number_format($subTotal); ?></strong>
 										</td>
 									</tr>
+							</tbody>
+						</table>
+
+						<table class="table table-bordered" border="1">
+							<thead>
+								<tr>
+									<th class="text-center">#</th>
+									<th>Date</th>
+									<th>Inisial</th>
+									<th>Keterangan</th>
+									<th>Type</th>
+									<th>Jumlah</th>
+								</tr>
+							</thead>
+							<tbody>
+							<?php 
+							$counter = 1;
+							$subtotal2 = 0;
+							if(isset($reimburstment)){
+								foreach($reimburstment as $row_reimburstment){ ?>
+								<tr>
+									<td><?php echo $counter; ?></td>
+									<td><?php 
+											$inputDate = new DateTime($row_reimburstment->input_date);
+											echo $inputDate->format('d-m-Y');; ?></td>
+									<td><?php echo $row_reimburstment->inisial; ?></td>
+									<td><?php echo $row_reimburstment->keterangan; ?></td>
+									<td><?php echo $row_reimburstment->type; ?></td>
+									<td><?php echo $row_reimburstment->jumlah; ?></td>
+								</tr>
+								<?php	$counter++;									
+										$subtotal2 = $subtotal2 + $row_reimburstment->jumlah;
+								}
+								} ?>
+								<tr>
+										<td colspan="3"></td>										
+										<td></td>
+										<td></td>										
+										<td colspan="3" align="right"></td>
+								</tr>	
+								<tr>									
+										<td colspan="2">
+											<div class="invoice-left">						
+												TOTAL
+											</div>	
+										</td>																													
+										<td colspan="4" align="right">
+											Total amount: <strong>$<?php echo number_format($subtotal2); ?></strong>
+										</td>
+								</tr>	
+								<tr>
+									<td colspan="3"><div class="invoice-left">GRAND TOTAL</div></td>
+									<td colspan="3" align="right"><strong><h2>$<?php echo number_format($subTotal + $subtotal2); ?></h2></strong></td>
+								</tr>						
 							</tbody>
 						</table>
 
