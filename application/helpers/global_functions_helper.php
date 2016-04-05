@@ -89,8 +89,17 @@ function formatTanggal($date){
 		$date = date_format($date_obj, 'd-m-Y');	
 
 		return $date;
-	}
-	
+	}	
+}
+
+function jumlah_ope($idMatter){
+		$ci =& get_instance();
+		$class = $ci->db->query("SELECT SUM(jumlah) as jumlah FROM tb_reimburstment WHERE id_matter = '".$idMatter."'");
+		$class = json_encode($class->row());
+		$row = json_decode($class);
+
+		$jumlah = $row->jumlah;
+		return round($jumlah);
 }
 
 

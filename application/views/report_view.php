@@ -382,6 +382,7 @@
 								<th>Client</th>
 								<th>Matter</th>								
 								<th>Timesheet</th>								
+								<th>OPE</th>								
 							</tr>
 						</thead>
 						<tbody>
@@ -393,18 +394,30 @@
 								<td><?php echo $rowTimesheetClient_rekap->matter; ?></td>
 								<td>
 									<table class="table table-bordered">
-										<thead>
-											<th>#</th>
+										<thead>											
 											<th>Attorney</th>
 											<th>Total minutes</th>
 											<th>Billable Hour</th>
 										</thead>
 										<tbody>
-											<tr>
-												<td>asdasd</td>
-												<td>asdasd</td>
+											<tr> 													
+												<td><?php echo $rowTimesheetClient_rekap->id_matter; ?></td>
 												<td>asdasd</td>
 												<td>asdasdads</td>
+											</tr>
+										</tbody>
+									</table>
+								</td>
+								<td>
+									<table class="table table-bordered">
+										<thead>											
+											<th>Attorney</th>
+											<th>Total OPE</th>											
+										</thead>
+										<tbody>
+											<tr>												
+												<td>asdasd</td>
+												<td><?php echo number_format(jumlah_ope($rowTimesheetClient_rekap->id_matter)); ?></td>												
 											</tr>
 										</tbody>
 									</table>
