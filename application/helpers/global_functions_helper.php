@@ -102,5 +102,19 @@ function jumlah_ope($idMatter){
 		return round($jumlah);
 }
 
+function listChild($idMatter){
+
+		$ci =& get_instance();
+		$class = $ci->db->query("SELECT * FROM tb_matter_retainer WHERE id_parent = '".$idMatter."'");
+		$class = json_encode($class->row());
+		$row = json_decode($class);
+
+		$id_matter = $row->id_matter;
+		$biaya = $row->biaya;
+
+		echo $id_matter;
+		echo $biaya;
+}
+
 
  ?>

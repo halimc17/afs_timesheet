@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2016-04-04 14:28:50
+Date: 2016-04-06 16:15:34
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -210,29 +210,21 @@ CREATE TABLE `tb_matter` (
   `active` int(11) DEFAULT '1',
   `input_date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`,`id_matter`)
-) ENGINE=InnoDB AUTO_INCREMENT=88 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=93 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_matter
 -- ----------------------------
 INSERT INTO `tb_matter` VALUES ('7', 'AFS2015201131777', '18', '5', 'Matter Test 5', '0000-00-00', '2015-12-04', '1', null);
-INSERT INTO `tb_matter` VALUES ('8', 'AFS2015201530333', '19', '4', 'Matter test 4', '0000-00-00', '2015-12-04', '1', null);
 INSERT INTO `tb_matter` VALUES ('10', 'AFS2015201591333', '12', '4', 'Matter Test 4', '2015-11-16', '2015-12-05', '1', null);
-INSERT INTO `tb_matter` VALUES ('11', 'AFS2015201591428', '11', '3', 'Matter test', '2015-11-01', '2015-12-03', '1', null);
-INSERT INTO `tb_matter` VALUES ('14', 'AFS2015201591446', '12', '3', 'Matter CTPI', '2015-08-04', '2015-08-04', '1', null);
 INSERT INTO `tb_matter` VALUES ('15', 'AFS2015201591777', '13', '5', 'Matter Test 5', '2015-10-26', '2015-11-26', '1', null);
 INSERT INTO `tb_matter` VALUES ('16', 'AFS2015213444522', '32', '5', 'Matter Test 5', '2015-11-16', '2015-11-16', '1', null);
-INSERT INTO `tb_matter` VALUES ('17', 'AFS2015213464896', '16', '3', 'Matter test 3', '2015-11-16', '2015-11-16', '1', null);
-INSERT INTO `tb_matter` VALUES ('19', 'AFS2015225885522', '31', '4', 'Matter Test 4', '2015-11-16', '2015-11-16', '1', null);
 INSERT INTO `tb_matter` VALUES ('23', 'AFS7ad474b2bb3cfb61', '64', '1', 'Soverign\'s Capital Matter', '2015-11-01', '2015-12-05', '1', null);
 INSERT INTO `tb_matter` VALUES ('29', 'AFS6e6424a49a7292ca', '65', '2', 'Taman Harapan indah matter', '2015-10-26', '2015-11-17', '1', null);
 INSERT INTO `tb_matter` VALUES ('34', 'AFSb95be4d09a01ad52', '54', '2', 'RCTI Matter', '2015-10-27', '2015-11-19', '1', null);
 INSERT INTO `tb_matter` VALUES ('35', 'AFS4a03148558bf54b8', '70', '1', 'Trimartheo Matter', '2015-10-29', '2015-11-24', '1', null);
 INSERT INTO `tb_matter` VALUES ('36', 'AFS4774c475ab2bd559', '50', '2', 'Matter Postindo', '2015-11-02', '2015-11-25', '1', null);
 INSERT INTO `tb_matter` VALUES ('37', 'AFS35f3b400da90646f', '49', '1', 'Matter PT Pelni', '2015-11-10', '2015-11-18', '1', null);
-INSERT INTO `tb_matter` VALUES ('40', 'AFS7da134ac29af768a', '93', '3', 'matter', '2015-11-04', '2015-11-09', '1', null);
-INSERT INTO `tb_matter` VALUES ('42', 'AFSca5da4dafbb8730c', '61', '3', 'Matter Semesta Marga Raya', '2015-11-11', '2015-11-18', '1', null);
-INSERT INTO `tb_matter` VALUES ('43', 'AFSf185e4fedb457a56', '29', '3', 'asdasdasd', '2015-11-03', '2015-11-18', '1', null);
 INSERT INTO `tb_matter` VALUES ('45', 'AFS331064e5bb248901', '77', '4', 'Matter Zahir Ali', '2015-11-02', '2015-11-04', '1', null);
 INSERT INTO `tb_matter` VALUES ('46', 'AFS0d6d048c58aad681', '55', '4', 'Matter Reliance group', '2015-11-02', '2015-11-19', '1', null);
 INSERT INTO `tb_matter` VALUES ('47', 'AFS029cf4ed0afa1442', '59', '4', 'RSU Herna Matter', '2015-11-03', '2016-01-01', '1', null);
@@ -243,13 +235,10 @@ INSERT INTO `tb_matter` VALUES ('54', 'AFSf942e479c9da234a', '74', '6', 'Matter 
 INSERT INTO `tb_matter` VALUES ('55', 'AFS27a9e4852adf3e22', '59', '6', 'RSU Herna matter', '2015-11-02', '2015-11-11', '1', null);
 INSERT INTO `tb_matter` VALUES ('56', 'AFSb9e1c4a129735b96', '9', '6', 'Matter BHIT', '2015-11-01', '2015-11-26', '1', null);
 INSERT INTO `tb_matter` VALUES ('60', 'AFS736324E40B7213D5', '2', '1', 'Matter Ali Muhhamad', '2015-08-30', '2015-12-04', '1', null);
-INSERT INTO `tb_matter` VALUES ('61', 'AFSFD06A4ED99CEA986', '77', '3', 'matter zahir ali', '2015-11-02', '2015-11-12', '1', null);
-INSERT INTO `tb_matter` VALUES ('62', 'AFSE044745249EB8D86', '89', '4', 'mater', '2015-11-01', '2015-11-11', '1', null);
 INSERT INTO `tb_matter` VALUES ('63', 'AFSE74B34BB9A64D376', '76', '5', 'yuli', '2015-11-04', '2015-12-05', '1', null);
 INSERT INTO `tb_matter` VALUES ('64', 'AFS93D5C418EA446A26', '61', '6', 'semesta marga', '2015-11-18', '2015-11-21', '1', null);
 INSERT INTO `tb_matter` VALUES ('66', 'AFSA768E4E0C9F2E431', '67', '2', 'Matter Telesindo Group', '2015-10-28', '2015-11-26', '1', null);
 INSERT INTO `tb_matter` VALUES ('67', 'AFS8D9A348C3B629E4A', '61', '2', 'Matter Semesta Marga Raya', '2015-10-26', '2015-11-25', '1', null);
-INSERT INTO `tb_matter` VALUES ('68', 'AFS00D1847DBAA78D93', '70', '3', 'Matter Trimartheo', '2015-10-28', '2015-11-12', '1', null);
 INSERT INTO `tb_matter` VALUES ('69', 'AFS0E45D4D7D9CE6C1D', '35', '4', 'Matter Meckel Ali', '2015-11-04', '2015-11-26', '1', null);
 INSERT INTO `tb_matter` VALUES ('70', 'AFSFBF5148DCB265314', '13', '5', 'Lorem Ipsum dolor sit amet', '2015-10-28', '2015-11-26', '1', null);
 INSERT INTO `tb_matter` VALUES ('71', 'AFSFE6A3430FA469C79', '17', '6', 'Matter Firhand Ali', '2015-11-03', '2015-11-27', '1', null);
@@ -266,9 +255,13 @@ INSERT INTO `tb_matter` VALUES ('81', 'AFSB9B294A74838818B', '57', '1', 'Matter 
 INSERT INTO `tb_matter` VALUES ('82', 'AFSA19964291B6C4D3A', '93', '6', 'asdasdasd', '2015-11-30', '2016-01-01', '1', null);
 INSERT INTO `tb_matter` VALUES ('83', 'AFS885C849D48C12BBD', '76', '6', 'fgfggf', '2015-11-29', '2015-12-23', '1', null);
 INSERT INTO `tb_matter` VALUES ('84', 'AFS8FD8D4940B1CC3C3', '94', '2', 'Investigasi Kriminal', '2015-09-01', '0000-00-00', '1', null);
-INSERT INTO `tb_matter` VALUES ('85', 'AFS25E4946D9AA99C90', '5', '3', 'Chosen Car/Mr. Adjito', '2015-06-25', '0000-00-00', '1', null);
-INSERT INTO `tb_matter` VALUES ('86', 'AFS413BF46A4AA07C20', '55', '3', 'Larasati', '2015-05-01', '2015-05-31', '1', null);
+INSERT INTO `tb_matter` VALUES ('86', 'AFS413BF46A4AA07C20', '55', '3', 'Larasati', '2015-05-01', '2016-04-06', '1', null);
 INSERT INTO `tb_matter` VALUES ('87', 'AFSDE510424E935FE9D', '95', '2', 'MKI Tung-Feng', '2014-03-21', '0000-00-00', '1', null);
+INSERT INTO `tb_matter` VALUES ('88', 'AFS9F7234ECF88A3E37', '55', '3', 'AJRI dan ARI', '2015-06-01', '2016-04-06', '1', null);
+INSERT INTO `tb_matter` VALUES ('89', 'AFSCF0BC43FBB8E76C1', '55', '3', 'Tanah daan mogot', '2015-06-01', '2016-04-06', '1', null);
+INSERT INTO `tb_matter` VALUES ('90', 'AFS0E09B428BBD1675B', '55', '3', 'LP Bank Mega', '2015-06-01', '2016-04-06', '1', null);
+INSERT INTO `tb_matter` VALUES ('91', 'AFSD08864BADBFC349C', '55', '3', 'Reliance Retainer', '2015-06-01', '2016-04-06', '1', null);
+INSERT INTO `tb_matter` VALUES ('92', 'AFS6C7AD462D85EFB8B', '55', '3', 'Retainer 2', '2015-10-12', '2016-04-06', '1', null);
 
 -- ----------------------------
 -- Table structure for tb_matter_assign
@@ -336,14 +329,6 @@ INSERT INTO `tb_matter_assign` VALUES ('60', 'AFSFE6A3430FA469C79', '9');
 INSERT INTO `tb_matter_assign` VALUES ('61', 'AFSFE6A3430FA469C79', '14');
 INSERT INTO `tb_matter_assign` VALUES ('62', 'AFSFE6A3430FA469C79', '19');
 INSERT INTO `tb_matter_assign` VALUES ('63', 'AFSFE6A3430FA469C79', '20');
-INSERT INTO `tb_matter_assign` VALUES ('64', 'AFS2015225885522', '10');
-INSERT INTO `tb_matter_assign` VALUES ('65', 'AFS2015225885522', '13');
-INSERT INTO `tb_matter_assign` VALUES ('66', 'AFS2015225885522', '14');
-INSERT INTO `tb_matter_assign` VALUES ('67', 'AFS2015225885522', '16');
-INSERT INTO `tb_matter_assign` VALUES ('68', 'AFSE044745249EB8D86', '5');
-INSERT INTO `tb_matter_assign` VALUES ('69', 'AFSE044745249EB8D86', '11');
-INSERT INTO `tb_matter_assign` VALUES ('71', 'AFSE044745249EB8D86', '15');
-INSERT INTO `tb_matter_assign` VALUES ('72', 'AFSE044745249EB8D86', '16');
 INSERT INTO `tb_matter_assign` VALUES ('73', 'AFSACD0347408681778', '6');
 INSERT INTO `tb_matter_assign` VALUES ('74', 'AFSACD0347408681778', '10');
 INSERT INTO `tb_matter_assign` VALUES ('75', 'AFSACD0347408681778', '13');
@@ -359,14 +344,10 @@ INSERT INTO `tb_matter_assign` VALUES ('84', 'AFSB96EF4389949BE9B', '12');
 INSERT INTO `tb_matter_assign` VALUES ('90', 'AFS0E45D4D7D9CE6C1D', '8');
 INSERT INTO `tb_matter_assign` VALUES ('91', 'AFS0E45D4D7D9CE6C1D', '16');
 INSERT INTO `tb_matter_assign` VALUES ('92', 'AFS0E45D4D7D9CE6C1D', '17');
-INSERT INTO `tb_matter_assign` VALUES ('93', 'AFS029cf4ed0afa1442', '10');
-INSERT INTO `tb_matter_assign` VALUES ('94', 'AFS029cf4ed0afa1442', '15');
-INSERT INTO `tb_matter_assign` VALUES ('95', 'AFS029cf4ed0afa1442', '17');
 INSERT INTO `tb_matter_assign` VALUES ('96', 'AFSFD06A4ED99CEA986', '7');
 INSERT INTO `tb_matter_assign` VALUES ('97', 'AFSFD06A4ED99CEA986', '14');
 INSERT INTO `tb_matter_assign` VALUES ('99', 'AFSFD06A4ED99CEA986', '15');
 INSERT INTO `tb_matter_assign` VALUES ('100', 'AFSFD06A4ED99CEA986', '3');
-INSERT INTO `tb_matter_assign` VALUES ('101', 'AFSf185e4fedb457a56', '2');
 INSERT INTO `tb_matter_assign` VALUES ('102', 'AFS8BC5A412C8B6D5F0', '6');
 INSERT INTO `tb_matter_assign` VALUES ('103', 'AFS8BC5A412C8B6D5F0', '11');
 INSERT INTO `tb_matter_assign` VALUES ('104', 'AFS8BC5A412C8B6D5F0', '15');
@@ -392,7 +373,6 @@ INSERT INTO `tb_matter_assign` VALUES ('126', 'AFS413BF46A4AA07C20', '1');
 INSERT INTO `tb_matter_assign` VALUES ('127', 'AFS413BF46A4AA07C20', '7');
 INSERT INTO `tb_matter_assign` VALUES ('128', 'AFS413BF46A4AA07C20', '8');
 INSERT INTO `tb_matter_assign` VALUES ('129', 'AFS413BF46A4AA07C20', '3');
-INSERT INTO `tb_matter_assign` VALUES ('130', 'AFS413BF46A4AA07C20', '8');
 INSERT INTO `tb_matter_assign` VALUES ('131', 'AFSDE510424E935FE9D', '2');
 INSERT INTO `tb_matter_assign` VALUES ('132', 'AFSDE510424E935FE9D', '15');
 INSERT INTO `tb_matter_assign` VALUES ('133', 'AFSB9B294A74838818B', '1');
@@ -537,6 +517,7 @@ INSERT INTO `tb_matter_project` VALUES ('9', 'AFS885C849D48C12BBD', '120000000',
 DROP TABLE IF EXISTS `tb_matter_retainer`;
 CREATE TABLE `tb_matter_retainer` (
   `id_retainer` int(11) NOT NULL AUTO_INCREMENT,
+  `id_parent` varchar(255) DEFAULT NULL,
   `id_matter` varchar(255) NOT NULL,
   `jangka_waktu` int(255) DEFAULT NULL,
   `biaya` float(255,0) DEFAULT NULL,
@@ -544,26 +525,17 @@ CREATE TABLE `tb_matter_retainer` (
   `disc` int(255) DEFAULT NULL,
   `description` text,
   PRIMARY KEY (`id_retainer`,`id_matter`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_matter_retainer
 -- ----------------------------
-INSERT INTO `tb_matter_retainer` VALUES ('1', 'AFS2015201591428', '120', '50000000', '3000', '10', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo');
-INSERT INTO `tb_matter_retainer` VALUES ('2', 'AFS2015201591446', '100', '10000000', '250', '25', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo');
-INSERT INTO `tb_matter_retainer` VALUES ('3', 'AFS2015213464896', '75', '150000000', '500', '15', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo');
-INSERT INTO `tb_matter_retainer` VALUES ('4', 'AFSabae2471a942b085', '120', '500000000', '3000', '0', 'keterangan');
-INSERT INTO `tb_matter_retainer` VALUES ('5', 'AFS7da134ac29af768a', '250', '150000000', '30', '25', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo');
-INSERT INTO `tb_matter_retainer` VALUES ('6', 'AFS8b4594c86830fa3e', '23', '23', '23', '0', '23');
-INSERT INTO `tb_matter_retainer` VALUES ('7', 'AFSca5da4dafbb8730c', '360', '50000000', '250', '15', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo');
-INSERT INTO `tb_matter_retainer` VALUES ('8', 'AFSf185e4fedb457a56', '120', '350000000', '250', '15', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo');
-INSERT INTO `tb_matter_retainer` VALUES ('9', 'AFSFD06A4ED99CEA986', '350', '500000000', '3500', '25', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo');
-INSERT INTO `tb_matter_retainer` VALUES ('10', 'AFS00D1847DBAA78D93', '120', '500000000', '3500', '25', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo');
-INSERT INTO `tb_matter_retainer` VALUES ('11', 'AFS25E4946D9AA99C90', '0', '0', '0', '0', '');
-INSERT INTO `tb_matter_retainer` VALUES ('12', 'AFS413BF46A4AA07C20', '30', '40000000', '600', '20', 'Matter Larasati');
-INSERT INTO `tb_matter_retainer` VALUES ('13', 'AFS3EA6F4B248613E52', '30', '40000000', '600', '20', 'Matter Tanah Daan Mogot');
-INSERT INTO `tb_matter_retainer` VALUES ('14', 'AFS8705F4742A46C447', '60', '40000000', '600', '20', 'Matter AJRI dan ARI');
-INSERT INTO `tb_matter_retainer` VALUES ('15', 'AFS82CB04D629D8413C', '60', '40000000', '600', '20', 'ajri dan ari');
+INSERT INTO `tb_matter_retainer` VALUES ('12', 'AFSD08864BADBFC349C', 'AFS413BF46A4AA07C20', '30', '400000', '600', '20', 'Matter Larasati');
+INSERT INTO `tb_matter_retainer` VALUES ('16', 'AFSD08864BADBFC349C', 'AFS9F7234ECF88A3E37', '30', '400000', '600', '0', 'AJRI dan ARI');
+INSERT INTO `tb_matter_retainer` VALUES ('17', 'AFSD08864BADBFC349C', 'AFSCF0BC43FBB8E76C1', '30', '400000', '600', '0', 'Tanah daan mogot');
+INSERT INTO `tb_matter_retainer` VALUES ('18', 'AFSD08864BADBFC349C', 'AFS0E09B428BBD1675B', '30', '400000', '600', '0', 'LP Bank Mega');
+INSERT INTO `tb_matter_retainer` VALUES ('19', null, 'AFSD08864BADBFC349C', '30', '400000', '600', '0', 'Reliance group');
+INSERT INTO `tb_matter_retainer` VALUES ('20', null, 'AFS6C7AD462D85EFB8B', '30', '400000', '600', '0', '');
 
 -- ----------------------------
 -- Table structure for tb_matter_successfee
@@ -676,7 +648,7 @@ CREATE TABLE `tb_reimburstment` (
   `input_date` date DEFAULT NULL,
   `keterangan` text,
   PRIMARY KEY (`id_reimburstment`)
-) ENGINE=InnoDB AUTO_INCREMENT=166 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=167 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_reimburstment
@@ -806,6 +778,7 @@ INSERT INTO `tb_reimburstment` VALUES ('161', 'AFS8FD8D4940B1CC3C3', '10', '1', 
 INSERT INTO `tb_reimburstment` VALUES ('162', 'AFS8FD8D4940B1CC3C3', '10', '1', '30', '2015-11-13', 'Jakarta Utara');
 INSERT INTO `tb_reimburstment` VALUES ('163', 'AFS8FD8D4940B1CC3C3', '10', '1', '30', '2015-11-13', 'Jakarta Selatan');
 INSERT INTO `tb_reimburstment` VALUES ('165', 'AFS8FD8D4940B1CC3C3', '1', '8', '30', '2016-04-04', 'Lain Lain');
+INSERT INTO `tb_reimburstment` VALUES ('166', 'AFS413BF46A4AA07C20', '7', '1', '15', '2016-04-06', 'transportasi');
 
 -- ----------------------------
 -- Table structure for tb_reimburstment_type
@@ -917,34 +890,13 @@ CREATE TABLE `tb_submatter` (
 -- ----------------------------
 -- Records of tb_submatter
 -- ----------------------------
-INSERT INTO `tb_submatter` VALUES ('S-AFS031184059037AF', 'AFSACD0347408681778', '1', 'sub mater dua', '2015-11-29 00:00:00', '2015-12-06 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFS1323A4E2BE5326', 'AFSB9B294A74838818B', '2', 'asdasda', '2015-11-30 00:00:00', '2015-12-31 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFS1BC444C2828CE2', 'AFSAB81B4A09AE0254E', '1', 'tambahan sub matter', '2015-12-06 00:00:00', '2015-12-25 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFS1BE21418849543', 'AFSAB9A14867B837358', '1', 'aaaaa', '2015-12-07 00:00:00', '2015-12-24 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFS1C17744F8EEC43', 'AFS2D13B4B86BA57C07', '1', 'sub matter', '2015-10-04 00:00:00', '2015-12-25 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFS20FF34AE82A357', 'AFSD2FAF4BCC8DF6014', '1', 'sub matter dua sri wahyusih', '2015-12-09 00:00:00', '2016-01-09 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFS27BC646584AA4F', 'AFSAB81B4A09AE0254E', '1', 'tambahan sub matter ke dua', '2015-12-15 00:00:00', '2016-01-02 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFS2A5E6439B4C89E', 'AFS8BC5A412C8B6D5F0', '1', 'adasdasd', '2015-12-10 00:00:00', '2015-12-24 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFS3561C4E0801602', 'AFS885C849D48C12BBD', '1', 'asdadasd', '2015-12-01 00:00:00', '2015-12-23 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFS3D3AB40B93E829', 'AFS8BC5A412C8B6D5F0', '2', 'adasdasd', '2015-11-30 00:00:00', '2015-12-18 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFS3E36E44BA7C4A6', 'AFSAB9A14867B837358', '1', 'qweqwe', '2015-11-29 00:00:00', '2015-12-31 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFS536EF486A8A5DA', 'AFSB9B294A74838818B', '1', 'QWEQEQWE', '2015-12-07 00:00:00', '2015-12-18 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFS5B0384B6B467F6', 'AFSAB9A14867B837358', '3', 'asdadad', '2015-11-29 00:00:00', '2015-12-30 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFS616334E689B4A3', 'AFSAB81B4A09AE0254E', '1', 'sub matter ke tiga', '2015-11-29 00:00:00', '2015-12-25 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFS7EAA545F9BF17B', 'AFSAB81B4A09AE0254E', '1', 'Lorem ipsum dolor sit amet', '2015-11-29 00:00:00', '2015-12-11 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFS8854B4B4A6A1EB', 'AFSD2FAF4BCC8DF6014', '1', 'sub matter rita sri wahyusih', '2015-07-26 00:00:00', '2016-01-01 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFS8F2474F3A0D27F', 'AFSB96EF4389949BE9B', '1', 'Sub Matter tambahan', '2015-10-25 00:00:00', '2015-12-31 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFS8FD7044E8D22DD', 'AFS4922b4c5ba927ffc', '1', 'Sub Matter baru', '2015-11-29 00:00:00', '2015-12-23 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFS9D9734FCA467CB', 'AFSAB81B4A09AE0254E', '1', 'qweqeqwe', '2015-12-07 00:00:00', '2015-12-31 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFSA3CC14CDB8455B', 'AFSAB9A14867B837358', '3', 'fgdfgd', '2015-12-28 00:00:00', '2015-12-25 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFSA70BC4A3AABA0B', 'AFSAB9A14867B837358', '2', 'asdasdasda', '2016-01-03 00:00:00', '2016-01-09 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFSC0C8A47797C49B', 'AFSACD0347408681778', '1', 'sub matter', '2015-11-29 00:00:00', '2015-12-17 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFSC7EDA47A87A330', 'AFSB9B294A74838818B', '1', 'asdada', '2015-11-30 00:00:00', '2015-12-22 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFSC81A04F68BFE87', 'AFSAB81B4A09AE0254E', '1', 'sub matter ke dua', '2015-11-29 00:00:00', '2015-12-19 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFSD2D3E4E78F003B', 'AFSAB81B4A09AE0254E', '1', 'sub matter ke empat', '2015-11-29 00:00:00', '2015-12-17 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFSE490147281945C', 'AFSAB81B4A09AE0254E', '1', 'sub matter awal dua', '2015-09-27 00:00:00', '2015-12-26 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFSE65424C59D8ED9', 'AFSAB9A14867B837358', '2', 'ee', '2016-01-03 00:00:00', '2016-01-08 00:00:00', '1');
-INSERT INTO `tb_submatter` VALUES ('S-AFSF61654AEA8B982', 'AFS0E45D4D7D9CE6C1D', '1', 'sub matter lumpsum', '2015-09-27 00:00:00', '2015-12-31 00:00:00', '1');
+INSERT INTO `tb_submatter` VALUES ('S-AFS1FA9F44D985F43', 'AFS413BF46A4AA07C20', '3', 'AJRI dan ARI', '2015-06-01 00:00:00', '0000-00-00 00:00:00', '1');
+INSERT INTO `tb_submatter` VALUES ('S-AFS3CA9845D8CDC6D', 'AFS413BF46A4AA07C20', '3', 'LP Bank Mega', '2015-09-08 00:00:00', '0000-00-00 00:00:00', '1');
+INSERT INTO `tb_submatter` VALUES ('S-AFS6CA544B79585D1', 'AFS413BF46A4AA07C20', '3', 'Panorama Bali', '2015-09-01 00:00:00', '0000-00-00 00:00:00', '1');
+INSERT INTO `tb_submatter` VALUES ('S-AFS9230F482A404D3', 'AFS413BF46A4AA07C20', '3', 'BKE', '2015-10-05 00:00:00', '0000-00-00 00:00:00', '1');
+INSERT INTO `tb_submatter` VALUES ('S-AFSA997249CADFE26', 'AFS413BF46A4AA07C20', '3', 'Larasati', '2015-06-01 00:00:00', '0000-00-00 00:00:00', '1');
+INSERT INTO `tb_submatter` VALUES ('S-AFSAC6F749F8EA6CA', 'AFS413BF46A4AA07C20', '3', 'Tanah daan mogot', '2015-06-01 00:00:00', '0000-00-00 00:00:00', '1');
+INSERT INTO `tb_submatter` VALUES ('S-AFSFB5534EDBB489B', 'AFS6C7AD462D85EFB8B', '3', 'asdasd', '2016-04-04 00:00:00', '2016-04-26 00:00:00', '1');
 
 -- ----------------------------
 -- Table structure for tb_submatter_assign
@@ -1028,14 +980,11 @@ CREATE TABLE `tb_subretainer` (
   `disc` int(255) DEFAULT NULL,
   `description` text,
   PRIMARY KEY (`id_subretainer`,`id_submatter`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_subretainer
 -- ----------------------------
-INSERT INTO `tb_subretainer` VALUES ('1', 'S-AFS2CBDA47587DADF', '12313', '123123', '123', '123', 'asdasd');
-INSERT INTO `tb_subretainer` VALUES ('2', 'S-AFS5B0384B6B467F6', '12', '12', '12', '12', '12');
-INSERT INTO `tb_subretainer` VALUES ('3', 'S-AFSA3CC14CDB8455B', '34', '34', '34', '34', '34');
 
 -- ----------------------------
 -- Table structure for tb_subsuccessfee
@@ -1103,7 +1052,7 @@ CREATE TABLE `tb_timesheet` (
   `start` time DEFAULT NULL,
   `end` time DEFAULT NULL,
   PRIMARY KEY (`id_timesheet`)
-) ENGINE=InnoDB AUTO_INCREMENT=260 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=273 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_timesheet
@@ -1337,6 +1286,17 @@ INSERT INTO `tb_timesheet` VALUES ('256', 'AFSDE510424E935FE9D', '15', '2014-04-
 INSERT INTO `tb_timesheet` VALUES ('257', 'AFSDE510424E935FE9D', '15', '2014-04-17', null, 'Finalisasi Surat Jaminan dan Ganti Rugi dan Letter of Indemnity untuk Pak Hans Darmono', '4', '12:00:00', '14:00:00');
 INSERT INTO `tb_timesheet` VALUES ('258', 'AFSDE510424E935FE9D', '15', '2014-04-22', null, 'Diskusi dengan Pak Hans Darmono tentang Surat Jaminan dan Ganti Rugi dan Letter of Indemnity', '5', '12:00:00', '13:30:00');
 INSERT INTO `tb_timesheet` VALUES ('259', 'AFSDE510424E935FE9D', '15', '2014-04-25', null, 'Finalisasi Surat Jaminan dan Ganti Rugi dan Letter of Indemnity untuk Pak Gregory Darmono', '3', '12:00:00', '13:30:00');
+INSERT INTO `tb_timesheet` VALUES ('262', 'AFS413BF46A4AA07C20', '5', '2016-04-06', null, 'Meeting dengan bpk budi di Citywalk', '3', '14:00:00', '15:00:00');
+INSERT INTO `tb_timesheet` VALUES ('263', 'AFS413BF46A4AA07C20', '1', '2016-04-06', null, 'Meeting dengan bpk budi di CityWalk', '3', '14:00:00', '15:00:00');
+INSERT INTO `tb_timesheet` VALUES ('264', 'AFS413BF46A4AA07C20', '5', '2016-04-06', null, 'Research dan drafting dokumen-dokumen yang dibutuhkan dalam Kasus Larasati (draft Pernyataan Hutang, draft Kesepakatan Bersama, draft  Persetujuan Suami, draft Perjanjian Pengakuan Hutang, dan draft Akta Pengakuan Hutang)', '4', '12:00:00', '16:30:00');
+INSERT INTO `tb_timesheet` VALUES ('265', 'AFS413BF46A4AA07C20', '1', '2016-04-06', null, 'Diskusi atas draft dokumen-dokumen yang dibutuhkan dalam Kasus Larasati ', '3', '13:00:00', '14:00:00');
+INSERT INTO `tb_timesheet` VALUES ('266', 'AFS413BF46A4AA07C20', '5', '2016-04-06', null, 'Diskusi atas draft dokumen-dokumen yang dibutuhkan dalam Kasus Larasati ', '3', '14:00:00', '14:30:00');
+INSERT INTO `tb_timesheet` VALUES ('267', 'AFS413BF46A4AA07C20', '5', '2016-04-06', null, 'Diskusi atas draft dokumen-dokumen yang dibutuhkan dalam Kasus Larasati ', '3', '14:00:00', '14:30:00');
+INSERT INTO `tb_timesheet` VALUES ('268', 'AFS413BF46A4AA07C20', '7', '2016-04-06', null, 'Drafting Surat Kuasa untuk permasalahan Larasati', '4', '14:00:00', '14:15:00');
+INSERT INTO `tb_timesheet` VALUES ('269', 'AFS413BF46A4AA07C20', '7', '2016-04-06', null, 'Meeting dengan Ibu Ester dan Ibu Tepu membahas tentang perhitungan sisa outstanding Larasati dan perhitungan jumlah setoran Larasati', '3', '14:00:00', '14:45:00');
+INSERT INTO `tb_timesheet` VALUES ('270', 'AFS413BF46A4AA07C20', '3', '2016-04-06', null, 'Meeting dengan Ibu Ester dan Ibu Tepu membahas tentang perhitungan sisa outstanding Larasati dan perhitungan jumlah setoran Larasati', '3', '14:00:00', '14:45:00');
+INSERT INTO `tb_timesheet` VALUES ('271', 'AFS413BF46A4AA07C20', '5', '2016-04-06', null, 'Meeting dengan Bapak Nicky Hogan dan Ibu Ester membicarakan tentang perhitungan outstanding dan perhitungan setoran Larasati', '3', '12:00:00', '14:00:00');
+INSERT INTO `tb_timesheet` VALUES ('272', 'AFS413BF46A4AA07C20', '7', '2016-04-06', null, 'Meeting dengan Bapak Nicky Hogan dan Ibu Ester membicarakan tentang perhitungan outstanding dan perhitungan setoran Larasati', '3', '12:00:00', '14:00:00');
 
 -- ----------------------------
 -- Table structure for tb_usd
@@ -1450,70 +1410,92 @@ INSERT INTO `tb_work_type` VALUES ('13', 'TRAVEL', 'TR');
 -- View structure for v_matter_assign
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_assign`;
-CREATE VIEW `v_matter_assign` AS select `tb_matter_assign`.`id_matter_assign` AS `id_matter_assign`,`tb_matter_assign`.`id_matter` AS `id_matter`,`tb_matter_assign`.`id_user` AS `id_user`,`tb_user`.`nama` AS `nama`,`tb_user`.`inisial` AS `inisial` from (`tb_matter_assign` join `tb_user` on((`tb_user`.`id_user` = `tb_matter_assign`.`id_user`))); ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_assign` AS select `tb_matter_assign`.`id_matter_assign` AS `id_matter_assign`,`tb_matter_assign`.`id_matter` AS `id_matter`,`tb_matter_assign`.`id_user` AS `id_user`,`tb_user`.`nama` AS `nama`,`tb_user`.`inisial` AS `inisial` from (`tb_matter_assign` join `tb_user` on((`tb_user`.`id_user` = `tb_matter_assign`.`id_user`))); ;
 
 -- ----------------------------
 -- View structure for v_matter_detail
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_detail`;
-CREATE VIEW `v_matter_detail` AS select `tb_matter`.`id` AS `id`,`tb_matter`.`id_matter` AS `id_matter`,`tb_matter`.`id_client` AS `id_client`,`tb_matter`.`id_payment` AS `id_payment`,`tb_matter`.`matter` AS `matter`,`tb_matter`.`open_date` AS `open_date`,`tb_matter`.`close_date` AS `close_date`,`tb_matter`.`active` AS `active`,`tb_matter`.`input_date` AS `input_date`,`tb_client`.`nama_client` AS `nama_client`,`tb_payment`.`payment_name` AS `payment_name` from ((`tb_matter` join `tb_client` on((`tb_client`.`id_client` = `tb_matter`.`id_client`))) join `tb_payment` on((`tb_payment`.`id_payment` = `tb_matter`.`id_payment`))); ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_detail` AS select `tb_matter`.`id` AS `id`,`tb_matter`.`id_matter` AS `id_matter`,`tb_matter`.`id_client` AS `id_client`,`tb_matter`.`id_payment` AS `id_payment`,`tb_matter`.`matter` AS `matter`,`tb_matter`.`open_date` AS `open_date`,`tb_matter`.`close_date` AS `close_date`,`tb_matter`.`active` AS `active`,`tb_matter`.`input_date` AS `input_date`,`tb_client`.`nama_client` AS `nama_client`,`tb_payment`.`payment_name` AS `payment_name` from ((`tb_matter` join `tb_client` on((`tb_client`.`id_client` = `tb_matter`.`id_client`))) join `tb_payment` on((`tb_payment`.`id_payment` = `tb_matter`.`id_payment`))); ;
 
 -- ----------------------------
 -- View structure for v_matter_hourly
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_hourly`;
-CREATE VIEW `v_matter_hourly` AS select `tb_matter`.`id_matter` AS `id_matter`,`tb_matter`.`id_client` AS `id_client`,`tb_matter`.`id_payment` AS `id_payment`,`tb_matter`.`matter` AS `matter`,`tb_matter`.`open_date` AS `open_date`,`tb_matter`.`close_date` AS `close_date`,`tb_matter`.`active` AS `active`,`tb_matter_hourly`.`managing_partner` AS `managing_partner`,`tb_matter_hourly`.`partner` AS `partner`,`tb_matter_hourly`.`junior_partner` AS `junior_partner`,`tb_matter_hourly`.`senior_associate` AS `senior_associate`,`tb_matter_hourly`.`mid_associate` AS `mid_associate`,`tb_matter_hourly`.`junior_associate` AS `junior_associate`,`tb_matter_hourly`.`disc` AS `disc`,`tb_client`.`nama_client` AS `nama_client`,`tb_payment`.`payment_name` AS `payment_name`,`tb_matter`.`id` AS `id`,`tb_matter_hourly`.`description` AS `description`,(select count(`tb_matter_assign`.`id_matter`) from `tb_matter_assign` where (`tb_matter_assign`.`id_matter` = `tb_matter`.`id_matter`)) AS `assigned`,(select count(`tb_submatter`.`id_matter`) from `tb_submatter` where (`tb_submatter`.`id_matter` = `tb_matter`.`id_matter`)) AS `jml_subMatter` from (((`tb_matter` join `tb_matter_hourly` on((`tb_matter_hourly`.`id_matter` = `tb_matter`.`id_matter`))) join `tb_client` on((`tb_client`.`id_client` = `tb_matter`.`id_client`))) join `tb_payment` on((`tb_payment`.`id_payment` = `tb_matter`.`id_payment`))) where (`tb_matter`.`id_matter` = `tb_matter_hourly`.`id_matter`); ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_hourly` AS select `tb_matter`.`id_matter` AS `id_matter`,`tb_matter`.`id_client` AS `id_client`,`tb_matter`.`id_payment` AS `id_payment`,`tb_matter`.`matter` AS `matter`,`tb_matter`.`open_date` AS `open_date`,`tb_matter`.`close_date` AS `close_date`,`tb_matter`.`active` AS `active`,`tb_matter_hourly`.`managing_partner` AS `managing_partner`,`tb_matter_hourly`.`partner` AS `partner`,`tb_matter_hourly`.`junior_partner` AS `junior_partner`,`tb_matter_hourly`.`senior_associate` AS `senior_associate`,`tb_matter_hourly`.`mid_associate` AS `mid_associate`,`tb_matter_hourly`.`junior_associate` AS `junior_associate`,`tb_matter_hourly`.`disc` AS `disc`,`tb_client`.`nama_client` AS `nama_client`,`tb_payment`.`payment_name` AS `payment_name`,`tb_matter`.`id` AS `id`,`tb_matter_hourly`.`description` AS `description`,(select count(`tb_matter_assign`.`id_matter`) from `tb_matter_assign` where (`tb_matter_assign`.`id_matter` = `tb_matter`.`id_matter`)) AS `assigned`,(select count(`tb_submatter`.`id_matter`) from `tb_submatter` where (`tb_submatter`.`id_matter` = `tb_matter`.`id_matter`)) AS `jml_subMatter` from (((`tb_matter` join `tb_matter_hourly` on((`tb_matter_hourly`.`id_matter` = `tb_matter`.`id_matter`))) join `tb_client` on((`tb_client`.`id_client` = `tb_matter`.`id_client`))) join `tb_payment` on((`tb_payment`.`id_payment` = `tb_matter`.`id_payment`))) where (`tb_matter`.`id_matter` = `tb_matter_hourly`.`id_matter`); ;
 
 -- ----------------------------
 -- View structure for v_matter_lumpsum
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_lumpsum`;
-CREATE VIEW `v_matter_lumpsum` AS select `tb_matter`.`id_matter` AS `id_matter`,`tb_matter`.`id_client` AS `id_client`,`tb_matter`.`matter` AS `matter`,`tb_matter`.`open_date` AS `open_date`,`tb_matter`.`close_date` AS `close_date`,`tb_matter`.`active` AS `active`,`tb_matter_lumpsum`.`success_fee` AS `success_fee`,`tb_matter_lumpsum`.`term1` AS `term1`,`tb_matter_lumpsum`.`term2` AS `term2`,`tb_matter_lumpsum`.`term3` AS `term3`,`tb_matter_lumpsum`.`desc_term1` AS `desc_term1`,`tb_matter_lumpsum`.`desc_term2` AS `desc_term2`,`tb_matter_lumpsum`.`desc_term3` AS `desc_term3`,`tb_matter_lumpsum`.`description` AS `description`,`tb_client`.`nama_client` AS `nama_client`,`tb_payment`.`payment_name` AS `payment_name`,`tb_matter`.`id` AS `id`,(select count(`tb_matter_assign`.`id_matter`) from `tb_matter_assign` where (`tb_matter_assign`.`id_matter` = `tb_matter`.`id_matter`)) AS `assigned`,(select count(`tb_submatter`.`id_matter`) from `tb_submatter` where (`tb_submatter`.`id_matter` = `tb_matter`.`id_matter`)) AS `jml_subMatter`,`tb_matter`.`id_payment` AS `id_payment` from (((`tb_matter` join `tb_matter_lumpsum` on((`tb_matter_lumpsum`.`id_matter` = `tb_matter`.`id_matter`))) join `tb_client` on((`tb_client`.`id_client` = `tb_matter`.`id_client`))) join `tb_payment` on((`tb_payment`.`id_payment` = `tb_matter`.`id_payment`))) where (`tb_matter`.`id_matter` = `tb_matter_lumpsum`.`id_matter`); ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_lumpsum` AS select `tb_matter`.`id_matter` AS `id_matter`,`tb_matter`.`id_client` AS `id_client`,`tb_matter`.`matter` AS `matter`,`tb_matter`.`open_date` AS `open_date`,`tb_matter`.`close_date` AS `close_date`,`tb_matter`.`active` AS `active`,`tb_matter_lumpsum`.`success_fee` AS `success_fee`,`tb_matter_lumpsum`.`term1` AS `term1`,`tb_matter_lumpsum`.`term2` AS `term2`,`tb_matter_lumpsum`.`term3` AS `term3`,`tb_matter_lumpsum`.`desc_term1` AS `desc_term1`,`tb_matter_lumpsum`.`desc_term2` AS `desc_term2`,`tb_matter_lumpsum`.`desc_term3` AS `desc_term3`,`tb_matter_lumpsum`.`description` AS `description`,`tb_client`.`nama_client` AS `nama_client`,`tb_payment`.`payment_name` AS `payment_name`,`tb_matter`.`id` AS `id`,(select count(`tb_matter_assign`.`id_matter`) from `tb_matter_assign` where (`tb_matter_assign`.`id_matter` = `tb_matter`.`id_matter`)) AS `assigned`,(select count(`tb_submatter`.`id_matter`) from `tb_submatter` where (`tb_submatter`.`id_matter` = `tb_matter`.`id_matter`)) AS `jml_subMatter`,`tb_matter`.`id_payment` AS `id_payment` from (((`tb_matter` join `tb_matter_lumpsum` on((`tb_matter_lumpsum`.`id_matter` = `tb_matter`.`id_matter`))) join `tb_client` on((`tb_client`.`id_client` = `tb_matter`.`id_client`))) join `tb_payment` on((`tb_payment`.`id_payment` = `tb_matter`.`id_payment`))) where (`tb_matter`.`id_matter` = `tb_matter_lumpsum`.`id_matter`); ;
 
 -- ----------------------------
 -- View structure for v_matter_probono
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_probono`;
-CREATE VIEW `v_matter_probono` AS select `tb_matter`.`id_matter` AS `id_matter`,`tb_matter`.`id_client` AS `id_client`,`tb_matter`.`id_payment` AS `id_payment`,`tb_matter`.`matter` AS `matter`,`tb_matter`.`open_date` AS `open_date`,`tb_matter`.`close_date` AS `close_date`,`tb_matter`.`active` AS `active`,`tb_client`.`nama_client` AS `nama_client`,`tb_payment`.`payment_name` AS `payment_name`,`tb_matter_probono`.`description` AS `description`,`tb_matter`.`id` AS `id`,(select count(`tb_matter_assign`.`id_matter`) from `tb_matter_assign` where (`tb_matter_assign`.`id_matter` = `tb_matter`.`id_matter`)) AS `assigned` from (((`tb_matter` join `tb_matter_probono` on((`tb_matter_probono`.`id_matter` = `tb_matter`.`id_matter`))) join `tb_client` on((`tb_client`.`id_client` = `tb_matter`.`id_client`))) join `tb_payment` on((`tb_payment`.`id_payment` = `tb_matter`.`id_payment`))) where (`tb_matter`.`id_matter` = `tb_matter_probono`.`id_matter`); ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_probono` AS select `tb_matter`.`id_matter` AS `id_matter`,`tb_matter`.`id_client` AS `id_client`,`tb_matter`.`id_payment` AS `id_payment`,`tb_matter`.`matter` AS `matter`,`tb_matter`.`open_date` AS `open_date`,`tb_matter`.`close_date` AS `close_date`,`tb_matter`.`active` AS `active`,`tb_client`.`nama_client` AS `nama_client`,`tb_payment`.`payment_name` AS `payment_name`,`tb_matter_probono`.`description` AS `description`,`tb_matter`.`id` AS `id`,(select count(`tb_matter_assign`.`id_matter`) from `tb_matter_assign` where (`tb_matter_assign`.`id_matter` = `tb_matter`.`id_matter`)) AS `assigned` from (((`tb_matter` join `tb_matter_probono` on((`tb_matter_probono`.`id_matter` = `tb_matter`.`id_matter`))) join `tb_client` on((`tb_client`.`id_client` = `tb_matter`.`id_client`))) join `tb_payment` on((`tb_payment`.`id_payment` = `tb_matter`.`id_payment`))) where (`tb_matter`.`id_matter` = `tb_matter_probono`.`id_matter`); ;
 
 -- ----------------------------
 -- View structure for v_matter_project
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_project`;
-CREATE VIEW `v_matter_project` AS select `tb_matter`.`id_matter` AS `id_matter`,`tb_matter`.`id_client` AS `id_client`,`tb_matter`.`id_payment` AS `id_payment`,`tb_matter`.`matter` AS `matter`,`tb_matter`.`open_date` AS `open_date`,`tb_matter`.`close_date` AS `close_date`,`tb_matter`.`active` AS `active`,`tb_matter_project`.`success_fee` AS `success_fee`,`tb_matter_project`.`term1` AS `term1`,`tb_matter_project`.`term2` AS `term2`,`tb_matter_project`.`term3` AS `term3`,`tb_matter_project`.`desc_term1` AS `desc_term1`,`tb_matter_project`.`desc_term2` AS `desc_term2`,`tb_matter_project`.`desc_term3` AS `desc_term3`,`tb_matter_project`.`description` AS `description`,`tb_client`.`nama_client` AS `nama_client`,`tb_payment`.`payment_name` AS `payment_name`,`tb_matter`.`id` AS `id`,(select count(`tb_matter_assign`.`id_matter`) from `tb_matter_assign` where (`tb_matter_assign`.`id_matter` = `tb_matter`.`id_matter`)) AS `assigned` from (((`tb_matter` join `tb_matter_project` on((`tb_matter_project`.`id_matter` = `tb_matter`.`id_matter`))) join `tb_client` on((`tb_client`.`id_client` = `tb_matter`.`id_client`))) join `tb_payment` on((`tb_payment`.`id_payment` = `tb_matter`.`id_payment`))) where (`tb_matter`.`id_matter` = `tb_matter_project`.`id_matter`); ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_project` AS select `tb_matter`.`id_matter` AS `id_matter`,`tb_matter`.`id_client` AS `id_client`,`tb_matter`.`id_payment` AS `id_payment`,`tb_matter`.`matter` AS `matter`,`tb_matter`.`open_date` AS `open_date`,`tb_matter`.`close_date` AS `close_date`,`tb_matter`.`active` AS `active`,`tb_matter_project`.`success_fee` AS `success_fee`,`tb_matter_project`.`term1` AS `term1`,`tb_matter_project`.`term2` AS `term2`,`tb_matter_project`.`term3` AS `term3`,`tb_matter_project`.`desc_term1` AS `desc_term1`,`tb_matter_project`.`desc_term2` AS `desc_term2`,`tb_matter_project`.`desc_term3` AS `desc_term3`,`tb_matter_project`.`description` AS `description`,`tb_client`.`nama_client` AS `nama_client`,`tb_payment`.`payment_name` AS `payment_name`,`tb_matter`.`id` AS `id`,(select count(`tb_matter_assign`.`id_matter`) from `tb_matter_assign` where (`tb_matter_assign`.`id_matter` = `tb_matter`.`id_matter`)) AS `assigned` from (((`tb_matter` join `tb_matter_project` on((`tb_matter_project`.`id_matter` = `tb_matter`.`id_matter`))) join `tb_client` on((`tb_client`.`id_client` = `tb_matter`.`id_client`))) join `tb_payment` on((`tb_payment`.`id_payment` = `tb_matter`.`id_payment`))) where (`tb_matter`.`id_matter` = `tb_matter_project`.`id_matter`); ;
 
 -- ----------------------------
 -- View structure for v_matter_retainer
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_retainer`;
-CREATE VIEW `v_matter_retainer` AS select `tb_matter`.`id_matter` AS `id_matter`,`tb_matter`.`id_client` AS `id_client`,`tb_matter`.`id_payment` AS `id_payment`,`tb_matter`.`matter` AS `matter`,`tb_matter`.`open_date` AS `open_date`,`tb_matter`.`close_date` AS `close_date`,`tb_matter`.`active` AS `active`,`tb_matter_retainer`.`jangka_waktu` AS `jangka_waktu`,`tb_matter_retainer`.`biaya` AS `biaya`,`tb_matter_retainer`.`jam` AS `jam`,`tb_matter_retainer`.`disc` AS `disc`,`tb_matter_retainer`.`description` AS `description`,`tb_client`.`nama_client` AS `nama_client`,`tb_payment`.`payment_name` AS `payment_name`,`tb_matter`.`id` AS `id`,(select count(`tb_matter_assign`.`id_matter`) from `tb_matter_assign` where (`tb_matter_assign`.`id_matter` = `tb_matter`.`id_matter`)) AS `assigned`,(select count(`tb_submatter`.`id_matter`) from `tb_submatter` where (`tb_submatter`.`id_matter` = `tb_matter`.`id_matter`)) AS `jml_subMatter` from (((`tb_matter` join `tb_matter_retainer` on((`tb_matter_retainer`.`id_matter` = `tb_matter`.`id_matter`))) join `tb_client` on((`tb_client`.`id_client` = `tb_matter`.`id_client`))) join `tb_payment` on((`tb_payment`.`id_payment` = `tb_matter`.`id_payment`))) where (`tb_matter`.`id_matter` = `tb_matter_retainer`.`id_matter`); ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_retainer` AS SELECT
+tb_matter.id_matter AS id_matter,
+tb_matter.id_client AS id_client,
+tb_matter.id_payment AS id_payment,
+tb_matter.matter AS matter,
+tb_matter.open_date AS open_date,
+tb_matter.close_date AS close_date,
+tb_matter.active AS active,
+tb_matter_retainer.jangka_waktu AS jangka_waktu,
+tb_matter_retainer.biaya AS biaya,
+tb_matter_retainer.jam AS jam,
+tb_matter_retainer.disc AS disc,
+tb_matter_retainer.description AS description,
+tb_client.nama_client AS nama_client,
+tb_payment.payment_name AS payment_name,
+tb_matter.id AS id,
+(select count(`tb_matter_assign`.`id_matter`) from `tb_matter_assign` where (`tb_matter_assign`.`id_matter` = `tb_matter`.`id_matter`)) AS assigned,
+(select count(`tb_submatter`.`id_matter`) from `tb_submatter` where (`tb_submatter`.`id_matter` = `tb_matter`.`id_matter`)) AS jml_subMatter,
+tb_matter_retainer.id_parent
+from (((`tb_matter` join `tb_matter_retainer` on((`tb_matter_retainer`.`id_matter` = `tb_matter`.`id_matter`))) join `tb_client` on((`tb_client`.`id_client` = `tb_matter`.`id_client`))) join `tb_payment` on((`tb_payment`.`id_payment` = `tb_matter`.`id_payment`)))
+WHERE
+(tb_matter.id_matter = tb_matter_retainer.id_matter) AND
+tb_matter_retainer.id_parent IS NULL ;
 
 -- ----------------------------
 -- View structure for v_matter_successfee
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_successfee`;
-CREATE VIEW `v_matter_successfee` AS select `tb_matter`.`id_matter` AS `id_matter`,`tb_matter`.`id_client` AS `id_client`,`tb_matter`.`id_payment` AS `id_payment`,`tb_matter`.`matter` AS `matter`,`tb_matter`.`open_date` AS `open_date`,`tb_matter`.`close_date` AS `close_date`,`tb_matter`.`active` AS `active`,`tb_matter_successfee`.`biaya` AS `biaya`,`tb_matter_successfee`.`description` AS `description`,`tb_client`.`nama_client` AS `nama_client`,`tb_payment`.`payment_name` AS `payment_name`,`tb_matter`.`id` AS `id`,(select count(`tb_matter_assign`.`id_matter`) from `tb_matter_assign` where (`tb_matter_assign`.`id_matter` = `tb_matter`.`id_matter`)) AS `assigned` from (((`tb_matter` join `tb_matter_successfee` on((`tb_matter_successfee`.`id_matter` = `tb_matter`.`id_matter`))) join `tb_client` on((`tb_client`.`id_client` = `tb_matter`.`id_client`))) join `tb_payment` on((`tb_payment`.`id_payment` = `tb_matter`.`id_payment`))) where (`tb_matter`.`id_matter` = `tb_matter_successfee`.`id_matter`); ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_successfee` AS select `tb_matter`.`id_matter` AS `id_matter`,`tb_matter`.`id_client` AS `id_client`,`tb_matter`.`id_payment` AS `id_payment`,`tb_matter`.`matter` AS `matter`,`tb_matter`.`open_date` AS `open_date`,`tb_matter`.`close_date` AS `close_date`,`tb_matter`.`active` AS `active`,`tb_matter_successfee`.`biaya` AS `biaya`,`tb_matter_successfee`.`description` AS `description`,`tb_client`.`nama_client` AS `nama_client`,`tb_payment`.`payment_name` AS `payment_name`,`tb_matter`.`id` AS `id`,(select count(`tb_matter_assign`.`id_matter`) from `tb_matter_assign` where (`tb_matter_assign`.`id_matter` = `tb_matter`.`id_matter`)) AS `assigned` from (((`tb_matter` join `tb_matter_successfee` on((`tb_matter_successfee`.`id_matter` = `tb_matter`.`id_matter`))) join `tb_client` on((`tb_client`.`id_client` = `tb_matter`.`id_client`))) join `tb_payment` on((`tb_payment`.`id_payment` = `tb_matter`.`id_payment`))) where (`tb_matter`.`id_matter` = `tb_matter_successfee`.`id_matter`); ;
 
 -- ----------------------------
 -- View structure for v_submatter_hourly
 -- ----------------------------
 DROP VIEW IF EXISTS `v_submatter_hourly`;
-CREATE VIEW `v_submatter_hourly` AS select `tb_submatter`.`id_submatter` AS `id_submatter`,`tb_submatter`.`id_matter` AS `id_matter`,`tb_submatter`.`id_payment` AS `id_payment`,`tb_submatter`.`matter` AS `subMatter`,`tb_submatter`.`open_date` AS `open_date`,`tb_submatter`.`close_date` AS `close_date`,`tb_submatter`.`active` AS `active`,`tb_subhourly`.`managing_partner` AS `managing_partner`,`tb_subhourly`.`partner` AS `partner`,`tb_subhourly`.`junior_partner` AS `junior_partner`,`tb_subhourly`.`senior_associate` AS `senior_associate`,`tb_subhourly`.`mid_associate` AS `mid_associate`,`tb_subhourly`.`junior_associate` AS `junior_associate`,`tb_subhourly`.`disc` AS `disc`,`tb_subhourly`.`description` AS `description`,`tb_matter`.`matter` AS `matter`,`tb_client`.`nama_client` AS `nama_client` from (((`tb_submatter` join `tb_subhourly` on((`tb_subhourly`.`id_submatter` = `tb_submatter`.`id_submatter`))) join `tb_matter` on((`tb_matter`.`id_matter` = `tb_submatter`.`id_matter`))) join `tb_client` on((`tb_client`.`id_client` = `tb_matter`.`id_client`))); ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_submatter_hourly` AS select `tb_submatter`.`id_submatter` AS `id_submatter`,`tb_submatter`.`id_matter` AS `id_matter`,`tb_submatter`.`id_payment` AS `id_payment`,`tb_submatter`.`matter` AS `subMatter`,`tb_submatter`.`open_date` AS `open_date`,`tb_submatter`.`close_date` AS `close_date`,`tb_submatter`.`active` AS `active`,`tb_subhourly`.`managing_partner` AS `managing_partner`,`tb_subhourly`.`partner` AS `partner`,`tb_subhourly`.`junior_partner` AS `junior_partner`,`tb_subhourly`.`senior_associate` AS `senior_associate`,`tb_subhourly`.`mid_associate` AS `mid_associate`,`tb_subhourly`.`junior_associate` AS `junior_associate`,`tb_subhourly`.`disc` AS `disc`,`tb_subhourly`.`description` AS `description`,`tb_matter`.`matter` AS `matter`,`tb_client`.`nama_client` AS `nama_client` from (((`tb_submatter` join `tb_subhourly` on((`tb_subhourly`.`id_submatter` = `tb_submatter`.`id_submatter`))) join `tb_matter` on((`tb_matter`.`id_matter` = `tb_submatter`.`id_matter`))) join `tb_client` on((`tb_client`.`id_client` = `tb_matter`.`id_client`))); ;
 
 -- ----------------------------
 -- View structure for v_submatter_lumpsum
 -- ----------------------------
 DROP VIEW IF EXISTS `v_submatter_lumpsum`;
-CREATE VIEW `v_submatter_lumpsum` AS select `tb_submatter`.`id_submatter` AS `id_submatter`,`tb_submatter`.`id_matter` AS `id_matter`,`tb_submatter`.`id_payment` AS `id_payment`,`tb_submatter`.`matter` AS `submatter`,`tb_submatter`.`open_date` AS `open_date`,`tb_submatter`.`close_date` AS `close_date`,`tb_submatter`.`active` AS `active`,`tb_sublumpsum`.`success_fee` AS `success_fee`,`tb_sublumpsum`.`term1` AS `term1`,`tb_sublumpsum`.`term2` AS `term2`,`tb_sublumpsum`.`term3` AS `term3`,`tb_sublumpsum`.`desc_term1` AS `desc_term1`,`tb_sublumpsum`.`desc_term2` AS `desc_term2`,`tb_sublumpsum`.`desc_term3` AS `desc_term3`,`tb_sublumpsum`.`description` AS `description`,`tb_client`.`nama_client` AS `nama_client`,`tb_matter`.`matter` AS `matter` from (((`tb_submatter` join `tb_sublumpsum` on((`tb_sublumpsum`.`id_submatter` = `tb_submatter`.`id_submatter`))) join `tb_matter` on((`tb_submatter`.`id_matter` = `tb_matter`.`id_matter`))) join `tb_client` on((`tb_client`.`id_client` = `tb_matter`.`id_client`))); ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_submatter_lumpsum` AS select `tb_submatter`.`id_submatter` AS `id_submatter`,`tb_submatter`.`id_matter` AS `id_matter`,`tb_submatter`.`id_payment` AS `id_payment`,`tb_submatter`.`matter` AS `submatter`,`tb_submatter`.`open_date` AS `open_date`,`tb_submatter`.`close_date` AS `close_date`,`tb_submatter`.`active` AS `active`,`tb_sublumpsum`.`success_fee` AS `success_fee`,`tb_sublumpsum`.`term1` AS `term1`,`tb_sublumpsum`.`term2` AS `term2`,`tb_sublumpsum`.`term3` AS `term3`,`tb_sublumpsum`.`desc_term1` AS `desc_term1`,`tb_sublumpsum`.`desc_term2` AS `desc_term2`,`tb_sublumpsum`.`desc_term3` AS `desc_term3`,`tb_sublumpsum`.`description` AS `description`,`tb_client`.`nama_client` AS `nama_client`,`tb_matter`.`matter` AS `matter` from (((`tb_submatter` join `tb_sublumpsum` on((`tb_sublumpsum`.`id_submatter` = `tb_submatter`.`id_submatter`))) join `tb_matter` on((`tb_submatter`.`id_matter` = `tb_matter`.`id_matter`))) join `tb_client` on((`tb_client`.`id_client` = `tb_matter`.`id_client`))); ;
 
 -- ----------------------------
 -- View structure for v_submatter_retainer
 -- ----------------------------
 DROP VIEW IF EXISTS `v_submatter_retainer`;
-CREATE VIEW `v_submatter_retainer` AS select `tb_submatter`.`id_submatter` AS `id_submatter`,`tb_submatter`.`id_matter` AS `id_matter`,`tb_submatter`.`id_payment` AS `id_payment`,`tb_submatter`.`matter` AS `subMatter`,`tb_submatter`.`open_date` AS `open_date`,`tb_submatter`.`close_date` AS `close_date`,`tb_submatter`.`active` AS `active`,`tb_subretainer`.`jangka_waktu` AS `jangka_waktu`,`tb_subretainer`.`biaya` AS `biaya`,`tb_subretainer`.`jam` AS `jam`,`tb_subretainer`.`disc` AS `disc`,`tb_subretainer`.`description` AS `description`,`tb_matter`.`matter` AS `matter`,`tb_client`.`nama_client` AS `nama_client` from (((`tb_submatter` join `tb_subretainer` on((`tb_subretainer`.`id_submatter` = `tb_submatter`.`id_submatter`))) join `tb_matter` on((`tb_matter`.`id_matter` = `tb_submatter`.`id_matter`))) join `tb_client` on((`tb_client`.`id_client` = `tb_matter`.`id_client`))); ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_submatter_retainer` AS select `tb_submatter`.`id_submatter` AS `id_submatter`,`tb_submatter`.`id_matter` AS `id_matter`,`tb_submatter`.`id_payment` AS `id_payment`,`tb_submatter`.`matter` AS `subMatter`,`tb_submatter`.`open_date` AS `open_date`,`tb_submatter`.`close_date` AS `close_date`,`tb_submatter`.`active` AS `active`,`tb_subretainer`.`jangka_waktu` AS `jangka_waktu`,`tb_subretainer`.`biaya` AS `biaya`,`tb_subretainer`.`jam` AS `jam`,`tb_subretainer`.`disc` AS `disc`,`tb_subretainer`.`description` AS `description`,`tb_matter`.`matter` AS `matter`,`tb_client`.`nama_client` AS `nama_client` from (((`tb_submatter` join `tb_subretainer` on((`tb_subretainer`.`id_submatter` = `tb_submatter`.`id_submatter`))) join `tb_matter` on((`tb_matter`.`id_matter` = `tb_submatter`.`id_matter`))) join `tb_client` on((`tb_client`.`id_client` = `tb_matter`.`id_client`))); ;
 
 -- ----------------------------
 -- View structure for v_user
 -- ----------------------------
 DROP VIEW IF EXISTS `v_user`;
-CREATE VIEW `v_user` AS select `tb_user`.`id_user` AS `id_user`,`tb_user`.`nama` AS `nama`,`tb_user`.`inisial` AS `inisial`,`tb_user`.`mobile1` AS `mobile1`,`tb_user`.`mobile2` AS `mobile2`,`tb_user`.`home_phone` AS `home_phone`,`tb_user`.`email1` AS `email1`,`tb_user`.`email2` AS `email2`,`tb_user`.`ext` AS `ext`,`tb_user`.`status` AS `status`,`tb_user`.`username` AS `username`,`tb_user`.`password` AS `password`,`tb_user`.`admin` AS `admin`,`tb_user`.`active` AS `active`,`tb_user`.`last_login` AS `last_login`,`tb_divisi`.`nama_divisi` AS `nama_divisi`,`tb_jabatan`.`nama_jabatan` AS `nama_jabatan`,`tb_user`.`id_jabatan` AS `id_jabatan`,`tb_user`.`id_divisi` AS `id_divisi` from ((`tb_user` join `tb_divisi` on((`tb_divisi`.`id_divisi` = `tb_user`.`id_divisi`))) join `tb_jabatan` on((`tb_jabatan`.`id_jabatan` = `tb_user`.`id_jabatan`))) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_user` AS select `tb_user`.`id_user` AS `id_user`,`tb_user`.`nama` AS `nama`,`tb_user`.`inisial` AS `inisial`,`tb_user`.`mobile1` AS `mobile1`,`tb_user`.`mobile2` AS `mobile2`,`tb_user`.`home_phone` AS `home_phone`,`tb_user`.`email1` AS `email1`,`tb_user`.`email2` AS `email2`,`tb_user`.`ext` AS `ext`,`tb_user`.`status` AS `status`,`tb_user`.`username` AS `username`,`tb_user`.`password` AS `password`,`tb_user`.`admin` AS `admin`,`tb_user`.`active` AS `active`,`tb_user`.`last_login` AS `last_login`,`tb_divisi`.`nama_divisi` AS `nama_divisi`,`tb_jabatan`.`nama_jabatan` AS `nama_jabatan`,`tb_user`.`id_jabatan` AS `id_jabatan`,`tb_user`.`id_divisi` AS `id_divisi` from ((`tb_user` join `tb_divisi` on((`tb_divisi`.`id_divisi` = `tb_user`.`id_divisi`))) join `tb_jabatan` on((`tb_jabatan`.`id_jabatan` = `tb_user`.`id_jabatan`))) ;

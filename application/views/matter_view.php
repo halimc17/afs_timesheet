@@ -872,8 +872,8 @@
 																		<tr class="odd gradeX">
 																			<td><?php echo $counter3; ?></td>																				
 																			<td><a href="<?php echo site_url('sub_matter/get_record/')."/".$row3->id_matter."/".$row3->id_payment; ?>"><?php echo $row3->id_matter; ?></a></td>																				
-																			<td><?php echo $row3->nama_client; ?></td>																				
-																			<td><?php echo $row3->matter; ?></td>																																																																										
+																			<td><?php echo $row3->nama_client; ?></td>																			
+																			<td><?php echo $row3->matter; ?></td>														
 																			<td><?php 
 																			$openDate = new DateTime($row3->open_date);
 																			echo $openDate->format('d-m-Y'); ?>
@@ -882,14 +882,13 @@
 																			$closeDate = new DateTime($row3->close_date);
 																			echo $closeDate->format('d-m-Y'); ?>
 																			</td>																				
-																			<td><?php echo $row3->jangka_waktu; ?></td>																				
-																			<td><?php echo $row3->jml_subMatter; ?></td>																				
-																																																																											
+																			<td><?php echo $row3->jangka_waktu; ?></td>																			
+																			<td><?php echo $row3->jml_subMatter; ?></td>													
 																			<td>
 																				<a href="<?php echo site_url('matter/assign/'); ?>/<?php echo $row3->id_matter; ?>">
 																				<?php echo $row3->assigned; ?>
 																			</a>
-																			</td>																																																								
+																			</td>																											
 																			<td align="center">
 																				<?php if ($row3->active == 1) { ?>													
 																						<button type="button" name="btnActive" class="btn btn-success" onclick="location.href='<?php echo site_url('matter/change_active/'.$row3->id_matter.'/0') ?>';" />
@@ -911,9 +910,10 @@
 																					<i class="entypo-trash"></i>
 																				</button>											
 																			</td>
-																		</tr>
+																		</tr>	
+																								
 																	<?php	$counter3++;}
-																	}?>																	
+																	}?>																
 																	</tbody>
 																	<tfoot>
 																		<tr>

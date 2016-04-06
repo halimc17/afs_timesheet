@@ -216,8 +216,15 @@
 						<tr>
 							<td colspan="4"><h2>AFS PARTNERSHIP</h2></td>								
 							<td colspan="5" align="right">
-								<h3>PERSONNEL ID. #asdasd</h3>
-								<span>asdasd</span>
+							<?php
+							foreach($timesheet as $row_attorney){
+								$nama = $row_attorney->nama;
+								$idPersonel = $row_attorney->id_user;
+								} 
+								
+								?>
+								<h3>PERSONNEL ID. #<?php echo $idPersonel; ?></h3>
+								<span><h3><strong><?php echo $nama; ?>	</strong></h3></span>
 							</td>
 						</tr>						
 					</table>
