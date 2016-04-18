@@ -31,10 +31,6 @@
 			saveRetainer();
 		});
 
-		$('[name="btnSubmitClientRetainer"]').button().on( "click", function() {			
-			saveClientRetainer();
-		});
-
 		$('[name="btnEditActionRetainer"]').button().on( "click", function() {	
 			var id = $(this).attr("id");		
 			edit_retainer(id);
@@ -301,30 +297,6 @@
         	});
 	}
 
-	function saveClientRetainer(){
-		if(save_method = 'add'){
-			url = "<?php echo site_url('matter/add_record_client_retainer'); ?>";
-		}else{
-			url = "<?php echo site_url('matter/edit_record_client_retainer'); ?>";
-		}
-		$.ajax({
-				url : url,
-	            type: "POST",
-	            data: $('#formClientRetainer').serialize(),
-	            dataType: "JSON",
-	            success: function(data)
-	            {
-	               //if success close modal and reload ajax table
-	               $('#modalClientRetainer').modal('hide');		               
-	               window.location = "<?php echo site_url('matter/index/3'); ?>";               
-	            },
-	            error: function (jqXHR, textStatus, errorThrown)
-	            {
-	                alert('Error adding / update data');
-	            }
-		});
-	}
-
 	function add_retainer(){		
 		save_method = 'add';
 		$('#formRetainer')[0].reset(); // reset form on modals
@@ -339,21 +311,6 @@
 	    textbox.value = id_matter;
 	    textbox2.value = id_matter;
 
-	}
-
-	function add_retainer_client(){
-		save_metod = 'add';
-		$('#formClientRetainer')[0].reset(); // reset form on modals
-		$('html, body').animate({ scrollTop: 0 }, 'fast');
-		$('[name="btnSubmitClientRetainer"]').text('Save');      	
-      	$('#modalClientRetainer').modal('show'); 
-      	// show bootstrap modal      	      	
-
-	    var id_matter = generateUUID();
-      	var textbox = document.getElementById('txt_id_matter_r');
-      	var textbox2 = document.getElementById('txt_id_matter_r_disabled');
-	    textbox.value = id_matter;
-	    textbox2.value = id_matter;
 	}
 
 	function edit_retainer(id){
@@ -884,7 +841,7 @@
 											
 											<div class="row">
 												<div class="col-md-12">	
-													<button type="button" class="btn btn-info" onclick="add_retainer_client()" style="float:right;">+ Add Client</button>													
+													<button type="button" class="btn btn-info" onclick="add_retainer()" style="float:right;">+ Add New</button>
 												</div>
 											</div>	
 											<br />
@@ -1588,113 +1545,6 @@
 		</div> <!-- form modal matter Hourly -->	
 	</div>
 	
-
-
-	<div class="modal fade" id="modalClientRetainer">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title">New Client (RETAINER)</h4>
-				</div>
-				
-				<div class="modal-body">
-				
-				<form role="form" class="form-horizontal form-groups-bordered" id="formClientRetainer" method="post" action="#" style="padding:10px;">
-								<div class="row">									
-									<div class="col-md-6">						
-										<div class="form-group">
-											<label for="combo_client" class="control-label">Client</label>							
-											<select class="form-control" id="combo_client" name="combo_client">
-												<?php if (isset($records_client)) {
-													foreach ($records_client as $row6) { ?>														
-														<option value="<?php echo $row6->id_client; ?>"><?php echo $row6->nama_client; ?></option>
-												<?php	}
-												} ?>												
-											</select>											
-										</div>						
-									</div>
-								</div>						
-							
-								
-								<div class="row">
-									<div class="col-md-6">						
-										<div class="form-group">
-											<label for="txt_open_date" class="control-label">Open Date</label>							
-											<div class="input-group">
-												<input type="text" class="form-control datepicker" data-format="yyyy-mm-dd" name="txt_open_date">												
-												<div class="input-group-addon">
-													<a href="#"><i class="entypo-calendar"></i></a>
-												</div>
-											</div>
-										</div>						
-									</div>
-									
-									<div class="col-md-6">						
-										<div class="form-group" style="padding-left:10px;">
-											<label for="txt_close_date" class="control-label">Close date</label>
-											<div class="input-group">
-												<input type="text" class="form-control datepicker" data-format="yyyy-mm-dd" name="txt_close_date">												
-												<div class="input-group-addon">
-													<a href="#"><i class="entypo-calendar"></i></a>
-												</div>
-											</div>
-										</div>							
-									</div>
-								</div>
-								
-								<div class="row">
-									<div class="col-md-6">						
-										<div class="form-group">
-											<label for="txt_jangka_waktu" class="control-label">Jangka Waktu (hari)</label>
-											<input type="text" class="form-control" id="txt_jangka_waktu" name="txt_jangka_waktu" value="">
-										</div>							
-									</div>
-
-									<div class="col-md-6">						
-										<div class="form-group" style="padding-left:10px;">
-											<label for="txt_biaya" class="control-label">Biaya</label>
-											<input type="text" class="form-control" id="txt_biaya" name="txt_biaya" value="">
-										</div>							
-									</div>									
-								</div>
-								
-								<div class="row">
-									<div class="col-md-6">						
-										<div class="form-group">
-											<label for="txt_jam" class="control-label">Minutes</label>							
-											<input type="text" class="form-control" id="txt_jam" name="txt_jam" value="">
-										</div>						
-									</div>
-									<div class="col-md-6">						
-										<div class="form-group" style="padding-left:10px;">
-											<label for="txt_disc" class="control-label">Disc (%)</label>							
-											<input type="text" class="form-control" id="txt_disc" name="txt_disc" value="">
-										</div>						
-									</div>									
-								</div>
-								<div class="row">
-									<div class="col-md-12">						
-										<div class="form-group">
-											<label for="txt_keterangan" class="control-label">Keterangan</label>
-											<textarea class="form-control" id="txt_keterangan" name="txt_keterangan"></textarea>
-										</div>							
-									</div>
-								</div>
-							
-					
-				</div>
-				
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="button" name="btnSubmitClientRetainer" class="btn btn-info">Save changes</button>
-				</div>
-				</form>	
-			</div>
-		</div> <!-- form modal matter client Retainer -->	
-	</div>
-
 	<div class="modal fade" id="modalRetainer">
 		<div class="modal-dialog">
 			<div class="modal-content">

@@ -28,6 +28,10 @@ class Retainer_model extends CI_Model{
 	public function delete_record($data){
 		
 	}
+
+	public function add_client($data){
+		$this->db->insert('tb_matter_retainer2',$data);	
+	}
 }
 
 ?>

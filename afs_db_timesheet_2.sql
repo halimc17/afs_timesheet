@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
-Source Server Version : 50505
+Source Server         : LOCALHOST
+Source Server Version : 100109
 Source Host           : localhost:3306
 Source Database       : afs_db_timesheet_2
 
 Target Server Type    : MYSQL
-Target Server Version : 50505
+Target Server Version : 100109
 File Encoding         : 65001
 
-Date: 2016-04-06 16:15:34
+Date: 2016-04-19 06:01:39
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -538,6 +538,30 @@ INSERT INTO `tb_matter_retainer` VALUES ('19', null, 'AFSD08864BADBFC349C', '30'
 INSERT INTO `tb_matter_retainer` VALUES ('20', null, 'AFS6C7AD462D85EFB8B', '30', '400000', '600', '0', '');
 
 -- ----------------------------
+-- Table structure for tb_matter_retainer2
+-- ----------------------------
+DROP TABLE IF EXISTS `tb_matter_retainer2`;
+CREATE TABLE `tb_matter_retainer2` (
+  `id_retainer` int(11) NOT NULL AUTO_INCREMENT,
+  `id_client` int(11) NOT NULL,
+  `jangka_waktu` int(255) DEFAULT NULL,
+  `biaya` float(255,0) DEFAULT NULL,
+  `menit` int(255) DEFAULT NULL,
+  `disc` int(255) DEFAULT NULL,
+  `description` text,
+  `open_date` date DEFAULT NULL,
+  `close_date` date DEFAULT NULL,
+  PRIMARY KEY (`id_retainer`,`id_client`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of tb_matter_retainer2
+-- ----------------------------
+INSERT INTO `tb_matter_retainer2` VALUES ('21', '55', '30', '1000', '600', '0', 'reliance', '2016-04-01', '2016-06-30');
+INSERT INTO `tb_matter_retainer2` VALUES ('22', '95', '30', '1200', '600', '0', 'hans Darmono', '2016-02-01', '2016-05-24');
+INSERT INTO `tb_matter_retainer2` VALUES ('23', '94', '15', '1000', '600', '0', 'Total oil Indonesia', '2016-02-01', '2016-04-28');
+
+-- ----------------------------
 -- Table structure for tb_matter_successfee
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_matter_successfee`;
@@ -980,7 +1004,7 @@ CREATE TABLE `tb_subretainer` (
   `disc` int(255) DEFAULT NULL,
   `description` text,
   PRIMARY KEY (`id_subretainer`,`id_submatter`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_subretainer
@@ -1446,29 +1470,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW
 -- View structure for v_matter_retainer
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_retainer`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_retainer` AS SELECT
-tb_matter.id_matter AS id_matter,
-tb_matter.id_client AS id_client,
-tb_matter.id_payment AS id_payment,
-tb_matter.matter AS matter,
-tb_matter.open_date AS open_date,
-tb_matter.close_date AS close_date,
-tb_matter.active AS active,
-tb_matter_retainer.jangka_waktu AS jangka_waktu,
-tb_matter_retainer.biaya AS biaya,
-tb_matter_retainer.jam AS jam,
-tb_matter_retainer.disc AS disc,
-tb_matter_retainer.description AS description,
-tb_client.nama_client AS nama_client,
-tb_payment.payment_name AS payment_name,
-tb_matter.id AS id,
-(select count(`tb_matter_assign`.`id_matter`) from `tb_matter_assign` where (`tb_matter_assign`.`id_matter` = `tb_matter`.`id_matter`)) AS assigned,
-(select count(`tb_submatter`.`id_matter`) from `tb_submatter` where (`tb_submatter`.`id_matter` = `tb_matter`.`id_matter`)) AS jml_subMatter,
-tb_matter_retainer.id_parent
-from (((`tb_matter` join `tb_matter_retainer` on((`tb_matter_retainer`.`id_matter` = `tb_matter`.`id_matter`))) join `tb_client` on((`tb_client`.`id_client` = `tb_matter`.`id_client`))) join `tb_payment` on((`tb_payment`.`id_payment` = `tb_matter`.`id_payment`)))
-WHERE
-(tb_matter.id_matter = tb_matter_retainer.id_matter) AND
-tb_matter_retainer.id_parent IS NULL ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_retainer` AS select `tb_matter`.`id_matter` AS `id_matter`,`tb_matter`.`id_client` AS `id_client`,`tb_matter`.`id_payment` AS `id_payment`,`tb_matter`.`matter` AS `matter`,`tb_matter`.`open_date` AS `open_date`,`tb_matter`.`close_date` AS `close_date`,`tb_matter`.`active` AS `active`,`tb_matter_retainer`.`jangka_waktu` AS `jangka_waktu`,`tb_matter_retainer`.`biaya` AS `biaya`,`tb_matter_retainer`.`jam` AS `jam`,`tb_matter_retainer`.`disc` AS `disc`,`tb_matter_retainer`.`description` AS `description`,`tb_client`.`nama_client` AS `nama_client`,`tb_payment`.`payment_name` AS `payment_name`,`tb_matter`.`id` AS `id`,(select count(`tb_matter_assign`.`id_matter`) from `tb_matter_assign` where (`tb_matter_assign`.`id_matter` = `tb_matter`.`id_matter`)) AS `assigned`,(select count(`tb_submatter`.`id_matter`) from `tb_submatter` where (`tb_submatter`.`id_matter` = `tb_matter`.`id_matter`)) AS `jml_subMatter` from (((`tb_matter` join `tb_matter_retainer` on((`tb_matter_retainer`.`id_matter` = `tb_matter`.`id_matter`))) join `tb_client` on((`tb_client`.`id_client` = `tb_matter`.`id_client`))) join `tb_payment` on((`tb_payment`.`id_payment` = `tb_matter`.`id_payment`))) where (`tb_matter`.`id_matter` = `tb_matter_retainer`.`id_matter`); ;
 
 -- ----------------------------
 -- View structure for v_matter_successfee

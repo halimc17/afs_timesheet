@@ -220,6 +220,7 @@ if ( ! function_exists('get_config'))
 		if (isset($_config))
 		{
 			return $_config[0];
+			
 		}
 
 		// Is the config file in the environment folder?
@@ -254,7 +255,8 @@ if ( ! function_exists('get_config'))
 			}
 		}
 
-		return $_config[0] =& $config;
+		//return $_config[0] =& $config;
+		$_config[0] =& $config; return $_config[0];
 	}
 }
 

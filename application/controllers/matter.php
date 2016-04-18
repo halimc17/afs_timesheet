@@ -196,6 +196,24 @@ class Matter extends CI_Controller {
         echo json_encode(array("status" => TRUE));
 	}
 
+	
+	public function add_record_client_retainer(){
+		$data = array(              
+                'id_client' => $this->input->post('combo_client'),                                
+                'open_date' => $this->input->post('txt_open_date'),
+                'close_date' => $this->input->post('txt_close_date'),
+                'jangka_waktu' => $this->input->post('txt_jangka_waktu'),
+				'biaya' => $this->input->post('txt_biaya'),
+				'jam' => $this->input->post('txt_jam'),
+				'disc' => $this->input->post('txt_disc'),
+				'description' => $this->input->post('txt_keterangan')	             
+            );
+
+		$this->load->model('retainer_model');
+		$this->retainer_model->add_client($data);
+		echo json_encode(array("status" => TRUE));
+	}
+
 	public function add_record_retainer(){
 
 		$data = array(
