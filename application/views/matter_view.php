@@ -31,6 +31,8 @@
 			saveRetainer();
 		});
 
+		
+
 		$('[name="btnSubmitClientRetainer"]').button().on( "click", function() {			
 			saveClientRetainer();
 		});
@@ -341,7 +343,56 @@
 
 	}
 
-	function add_retainer_client(){
+	function add_matter_retainer(id, clientid, clientname){
+		save_method = 'add';
+		$('#formRetainer2')[0].reset();
+		$('html, body').animate({ scrollTop: 0 }, 'fast');
+		$('#modalRetainer2').modal('show'); 	
+
+		var id_matter = generateUUID();
+      	var textbox = document.getElementById('txt_id_matter_r2');
+      	var textbox2 = document.getElementById('txt_id_matter_r2_disabled');
+      	var textbox3 = document.getElementById('txt_id_client4');
+      	var textbox4 = document.getElementById('txt_id_client3');
+      	var textbox5 = document.getElementById('txt_id_retainer');
+
+	    textbox.value = id_matter;
+	    textbox2.value = id_matter;
+	    textbox3.value = clientid;
+	    textbox4.value = clientname;
+	    textbox5.value = id;
+	}
+
+	function retainerDetail(id){
+		window.location = "<?php echo site_url('matter/retainer_detail') ?>/"+id;
+
+	}
+
+	function saveMatterRetainer(){
+		if(save_method == 'add'){
+			url = "<?php echo site_url('matter/add_matter_retainer'); ?>";
+		}else{
+			url = "<?php echo site_url('matter/edit_matter_retainer'); ?>";
+		}
+		$.ajax({
+	            url : url,
+	            type: "POST",
+	            data: $('#formRetainer2').serialize(),
+	            dataType: "JSON",
+	            success: function(data)
+	            {
+	               //if success close modal and reload ajax table
+	               $('#modalRetainer').modal('hide');		               
+	               window.location = "<?php echo site_url('matter/index/3'); ?>";               
+	            },
+	            error: function (jqXHR, textStatus, errorThrown)
+	            {
+	                alert('Error adding / update data');
+	            }
+        	});
+	}
+
+	function add_retainer_client(id){
 		save_metod = 'add';
 		$('#formClientRetainer')[0].reset(); // reset form on modals
 		$('html, body').animate({ scrollTop: 0 }, 'fast');
@@ -894,29 +945,26 @@
 																	<thead>
 																		<tr>
 																			<th>No</th>
-																			<th>Id Matter</th>																		
-																			<th>Client</th>
-																			<th>Matter</th>
+																																		
+																			<th>Client</th>																			
 																			<th>Open Date</th>
 																			<th>Close Date</th>
-																			<th>Jangka Waktu</th>
-																																					
-																			<th>Sub Matter</th>
-																			<th>Assign</th>
-																			<th>Active</th>
-																			<th width="120">Action</th>
+																			<th>Jangka Waktu</th>																			
+																			<th>Jml Matter</th>																			
+																			
+																			<th width="200">Action</th>
 																		</tr>
 																	</thead>
 																	<tbody>	
 																	<?php 
 																	$counter3 = 1;
-																	if(isset($records_retainer)){
-																		foreach($records_retainer as $row3){ ?>
+																	if(isset($records_client_retainer)){
+																		foreach($records_client_retainer as $row3){ ?>
 																		<tr class="odd gradeX">
 																			<td><?php echo $counter3; ?></td>																				
-																			<td><a href="<?php echo site_url('sub_matter/get_record/')."/".$row3->id_matter."/".$row3->id_payment; ?>"><?php echo $row3->id_matter; ?></a></td>																				
+																																							
 																			<td><?php echo $row3->nama_client; ?></td>																			
-																			<td><?php echo $row3->matter; ?></td>														
+																												
 																			<td><?php 
 																			$openDate = new DateTime($row3->open_date);
 																			echo $openDate->format('d-m-Y'); ?>
@@ -926,30 +974,21 @@
 																			echo $closeDate->format('d-m-Y'); ?>
 																			</td>																				
 																			<td><?php echo $row3->jangka_waktu; ?></td>																			
-																			<td><?php echo $row3->jml_subMatter; ?></td>													
-																			<td>
-																				<a href="<?php echo site_url('matter/assign/'); ?>/<?php echo $row3->id_matter; ?>">
-																				<?php echo $row3->assigned; ?>
-																			</a>
-																			</td>																											
-																			<td align="center">
-																				<?php if ($row3->active == 1) { ?>													
-																						<button type="button" name="btnActive" class="btn btn-success" onclick="location.href='<?php echo site_url('matter/change_active/'.$row3->id_matter.'/0') ?>';" />
-																							<i class="entypo-check"></i>
-																						</button>
-																				<?php }else{ ?>
-																						<button type="button" name="btnNotActive" class="btn btn-danger" onclick="location.href='<?php echo site_url('matter/change_active/'.$row3->id_matter.'/1') ?>';">
-																							<i class="entypo-cancel"></i>
-																						</button>
-																				<?php } ?>												
-																		</td>
+																			<td><?php echo $row3->jml_matter; ?></td>																			
+																								
+																																													
+																			
 																			<td class="center">
-																				<button type="button" name="btnEditActionRetainer" class="btn btn-success" id="<?php echo $row3->id_matter; ?>">
-																					
+																				<button type="button" name="btnAddMatterRetainer" class="btn btn-success" onClick="add_matter_retainer('<?php echo $row3->id_retainer; ?>','<?php echo $row3->id_client; ?>','<?php echo $row3->nama_client; ?>')">
+																					<i class="entypo-plus"></i>
+																				</button>
+																				<button type="button" name="btnAddMatterRetainer" class="btn btn-success" onClick="retainerDetail('<?php echo $row3->id_retainer; ?>')" <?php if($row3->jml_matter == 0){echo "disabled";} ?>>
+																					<i class="entypo-info-circled"></i>
+																				</button>
+																				<button type="button" name="btnEditActionRetainer" class="btn btn-success" id="<?php echo $row3->id_retainer; ?>">
 																					<i class="entypo-pencil"></i>
 																				</button>
-																				<button type="button" name="btnDeleteAction" onclick="gotodelete('<?php echo $row3->id_matter; ?>')" class="btn btn-danger" id="">
-																				
+																				<button type="button" name="btnDeleteAction" onclick="gotodelete('<?php //echo $row3->id_matter; ?>')" class="btn btn-danger" id="">
 																					<i class="entypo-trash"></i>
 																				</button>											
 																			</td>
@@ -961,17 +1000,14 @@
 																	<tfoot>
 																		<tr>
 																			<th>No</th>
-																			<th>Id Matter</th>																		
-																			<th>Client</th>
-																			<th>Matter</th>
+																																		
+																			<th>Client</th>																			
 																			<th>Open Date</th>
 																			<th>Close Date</th>
-																			<th>Jangka Waktu</th>
-																																					
-																			<th>Sub Matter</th>
-																			<th>Assign</th>
-																			<th>Active</th>
-																			<th>Action</th>
+																			<th>Jangka Waktu</th>																			
+																			<th>Jml Matter</th>																			
+																			
+																			<th width="200">Action</th>
 																		</tr>
 																	</tfoot>
 																</table>
@@ -1811,6 +1847,72 @@
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					<button type="button" name="btnSubmitRetainer" class="btn btn-info">Save changes</button>
+				</div>
+				</form>	
+			</div>
+		</div> <!-- form modal matter Retainer -->	
+	</div>
+
+	<div class="modal fade" id="modalRetainer2">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">New Matter (RETAINER)</h4>
+				</div>
+				
+				<div class="modal-body">
+				
+				<form role="form" class="form-horizontal form-groups-bordered" id="formRetainer2" method="post" action="#" style="padding:10px;">
+								<div class="row">
+									<div class="col-md-6">						
+										<div class="form-group">
+											<label for="txt_id_matter_r" class="control-label">Id Matter</label>
+											<input type="text" class="form-control" id="txt_id_matter_r2_disabled" name="txt_id_matter_r2_disabled" value="" disabled />
+											<input type="hidden" class="form-control" id="txt_id_matter_r2" name="txt_id_matter_r2" value=""  />
+											<input type="hidden" class="form-control" id="txt_id_payment" name="txt_id_payment" value="3"  />
+
+											<input type="hidden" class="form-control" id="txt_id_client4" name="txt_id_client4" value="" />
+											<input type="hidden" class="form-control" id="txt_id_retainer" name="txt_id_retainer" value="" />
+										</div>							
+									</div>
+									<div class="col-md-6">						
+										<div class="form-group" style="padding-left:10px;">
+											<label for="combo_client" class="control-label">Client</label>							
+											<input type="text" class="form-control" id="txt_id_client3" name="txt_id_client3" value="" disabled />											
+										</div>						
+									</div>
+								</div>
+								
+								<div class="row">
+									<div class="col-md-12">						
+										<div class="form-group">
+											<label for="txt_matter" class="control-label">Matter</label>
+											<input type="text" class="form-control" id="txt_matter" name="txt_matter" value="">
+										</div>							
+									</div>
+									
+								</div>
+								
+								
+								
+								
+								<div class="row">
+									<div class="col-md-12">						
+										<div class="form-group">
+											<label for="txt_keterangan" class="control-label">Keterangan</label>
+											<textarea class="form-control" id="txt_keterangan" name="txt_keterangan"></textarea>
+										</div>							
+									</div>
+								</div>
+							
+					
+				</div>
+				
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" name="btnSubmitRetainer1" class="btn btn-info" onClick="saveMatterRetainer()">Save changes</button>
 				</div>
 				</form>	
 			</div>

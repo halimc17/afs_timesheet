@@ -17,8 +17,12 @@ class Matter extends CI_Controller {
 		$data['records'] = $this->v_matter_lumpsum_model->get_records(); //ambil semua data matter lumpsum					
 		$this->load->model('v_matter_hourly_model');
 		$data['records_hourly'] = $this->v_matter_hourly_model->get_records(); //ambil semua data matter hourly		
-		$this->load->model('v_matter_retainer_model');
-		$data['records_retainer'] = $this->v_matter_retainer_model->get_records(); //ambil semua data matter retainer		
+		
+		//$this->load->model('v_matter_retainer_model');
+		//$data['records_retainer'] = $this->v_matter_retainer_model->get_records(); //ambil semua data matter retainer		
+		$this->load->model('v_client_retainer_model');
+		$data['records_client_retainer'] = $this->v_client_retainer_model->get_records(); //ambil semua data client matter retainer		
+		
 		$this->load->model('v_matter_successfee_model');
 		$data['records_successfee'] = $this->v_matter_successfee_model->get_records(); //ambil semua data matter success fee						
 		$this->load->model('v_matter_probono_model');
@@ -204,7 +208,7 @@ class Matter extends CI_Controller {
                 'close_date' => $this->input->post('txt_close_date'),
                 'jangka_waktu' => $this->input->post('txt_jangka_waktu'),
 				'biaya' => $this->input->post('txt_biaya'),
-				'jam' => $this->input->post('txt_jam'),
+				'menit' => $this->input->post('txt_jam'),
 				'disc' => $this->input->post('txt_disc'),
 				'description' => $this->input->post('txt_keterangan')	             
             );
@@ -213,6 +217,19 @@ class Matter extends CI_Controller {
 		$this->retainer_model->add_client($data);
 		echo json_encode(array("status" => TRUE));
 	}
+	public function add_matter_retainer(){
+		$data = array(
+                'id_matter' => $this->input->post('txt_id_matter_r2'),
+                'id_retainer' => $this->input->post('txt_id_retainer'),
+                'matter' => $this->input->post('txt_matter'),         
+                'description' => $this->input->post('txt_keterangan')             
+            );
+
+		$this->load->model('retainer_model');
+		$this->retainer_model->add_matter_retainer($data);
+		echo json_encode(array("status" => TRUE));
+	}
+	
 
 	public function add_record_retainer(){
 
@@ -466,6 +483,20 @@ class Matter extends CI_Controller {
 		$this->load->view('assign_view', $data);
 	}
 
+
+	public function assign_retainer(){
+		$this->load->model('user_model');
+		$this->load->model('retainer_model');
+		$this->load->model('v_matter_retainer_assign_model');
+
+		$data['records_retainer'] = $this->retainer_model->get_record_assign();
+		$data['records_user'] = $this->user_model->get_records();
+		$data['records_assign'] = $this->v_matter_retainer_assign_model->get_records_by_id_matter();
+
+		$this->load->view('assign_retainer_view', $data);
+
+	}
+
 	public function assign_user(){
 		$data = array(
 			'id_matter' => $this->input->post('txt_id_matter'),
@@ -482,5 +513,17 @@ class Matter extends CI_Controller {
 		$this->matter_assign_model->delete_record($this->uri->segment(4));
 
 		redirect('matter/assign/'.$this->uri->segment(3));
+	}
+
+	public function retainer_detail(){
+		$this->load->model('retainer_model');		
+		if($query = $this->retainer_model->get_detail_retainer()){
+					$data['records_retainer'] = $query;
+				}
+		if($query = $this->retainer_model->get_retainer_client()){
+			$data['records_client'] = $query;
+		}	
+
+		$this->load->view('retainer_detail_view', $data);
 	}
 }
