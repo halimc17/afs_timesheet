@@ -109,7 +109,7 @@
 										<td><?php echo $counter; ?></td>
 										<td><?php echo $row->id_matter; ?></td>
 										<td><?php echo $row->matter; ?></td>
-										<td><a href="<?php echo site_url('matter/assign_retainer/'.$row->id_matter); ?>">0</a></td>
+										<td><a href="<?php echo site_url('matter/assign_retainer/'.$row->id_matter.'/'.$row->id_retainer); ?>"><?php echo $row->jml_assign; ?></a></td>
 										<td>
 												<button type="button" name="btnActive" class="btn btn-success" onclick="" />
 													<i class="entypo-check"></i>

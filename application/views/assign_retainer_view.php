@@ -145,7 +145,7 @@
 										<div class="row">
 											<div class="col-md-6">
 												<div class="form-group">
-													<button type="button" class="btn btn-default" data-dismiss="modal" onclick="#">DONE</button>
+													<button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='<?php echo site_url('matter/retainer_detail/'.$this->uri->segment(4)); ?>'">DONE</button>
 													<button type="button" name="btnAssignUser" class="btn btn-info" id="#">ASSIGN</button>
 												</div>
 											</div>

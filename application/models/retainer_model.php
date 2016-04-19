@@ -41,7 +41,15 @@ class Retainer_model extends CI_Model{
 	}
 
 	public function get_detail_retainer(){
-		$query = $this->db->query("SELECT * FROM tb_matter_retainer WHERE id_retainer = ".$this->uri->segment(3));
+		$query = $this->db->query("SELECT
+			tb_matter_retainer.id,
+			tb_matter_retainer.id_retainer,
+			tb_matter_retainer.id_matter,
+			tb_matter_retainer.matter,
+			tb_matter_retainer.description,
+			(SELECT COUNT(tb_matter_retainer_assign.id_retainer) FROM tb_matter_retainer_assign WHERE tb_matter_retainer_assign.id_matter = tb_matter_retainer.id_matter) AS jml_assign
+			FROM
+			tb_matter_retainer WHERE id_retainer = ".$this->uri->segment(3));
 		
 		return $query->result();
 	}
@@ -93,6 +101,4 @@ class Retainer_model extends CI_Model{
 }
 
 ?>
-
-
 

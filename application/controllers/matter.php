@@ -524,6 +524,8 @@ class Matter extends CI_Controller {
 			$data['records_client'] = $query;
 		}	
 
+		
+
 		$this->load->view('retainer_detail_view', $data);
 	}
 }
