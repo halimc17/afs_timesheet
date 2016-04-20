@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : LOCALHOST
-Source Server Version : 50505
+Source Server Version : 100109
 Source Host           : localhost:3306
 Source Database       : afs_db_timesheet_2
 
 Target Server Type    : MYSQL
-Target Server Version : 50505
+Target Server Version : 100109
 File Encoding         : 65001
 
-Date: 2016-04-19 15:42:20
+Date: 2016-04-20 08:27:05
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -215,35 +215,14 @@ CREATE TABLE `tb_matter` (
 -- ----------------------------
 -- Records of tb_matter
 -- ----------------------------
-INSERT INTO `tb_matter` VALUES ('7', 'AFS2015201131777', '18', '5', 'Matter Test 5', '0000-00-00', '2015-12-04', '1', null);
-INSERT INTO `tb_matter` VALUES ('10', 'AFS2015201591333', '12', '4', 'Matter Test 4', '2015-11-16', '2015-12-05', '1', null);
-INSERT INTO `tb_matter` VALUES ('15', 'AFS2015201591777', '13', '5', 'Matter Test 5', '2015-10-26', '2015-11-26', '1', null);
 INSERT INTO `tb_matter` VALUES ('16', 'AFS2015213444522', '32', '5', 'Matter Test 5', '2015-11-16', '2015-11-16', '1', null);
-INSERT INTO `tb_matter` VALUES ('23', 'AFS7ad474b2bb3cfb61', '64', '1', 'Soverign\'s Capital Matter', '2015-11-01', '2015-12-05', '1', null);
 INSERT INTO `tb_matter` VALUES ('29', 'AFS6e6424a49a7292ca', '65', '2', 'Taman Harapan indah matter', '2015-10-26', '2015-11-17', '1', null);
-INSERT INTO `tb_matter` VALUES ('34', 'AFSb95be4d09a01ad52', '54', '2', 'RCTI Matter', '2015-10-27', '2015-11-19', '1', null);
-INSERT INTO `tb_matter` VALUES ('35', 'AFS4a03148558bf54b8', '70', '1', 'Trimartheo Matter', '2015-10-29', '2015-11-24', '1', null);
-INSERT INTO `tb_matter` VALUES ('36', 'AFS4774c475ab2bd559', '50', '2', 'Matter Postindo', '2015-11-02', '2015-11-25', '1', null);
-INSERT INTO `tb_matter` VALUES ('37', 'AFS35f3b400da90646f', '49', '1', 'Matter PT Pelni', '2015-11-10', '2015-11-18', '1', null);
-INSERT INTO `tb_matter` VALUES ('45', 'AFS331064e5bb248901', '77', '4', 'Matter Zahir Ali', '2015-11-02', '2015-11-04', '1', null);
-INSERT INTO `tb_matter` VALUES ('46', 'AFS0d6d048c58aad681', '55', '4', 'Matter Reliance group', '2015-11-02', '2015-11-19', '1', null);
-INSERT INTO `tb_matter` VALUES ('47', 'AFS029cf4ed0afa1442', '59', '4', 'RSU Herna Matter', '2015-11-03', '2016-01-01', '1', null);
-INSERT INTO `tb_matter` VALUES ('50', 'AFSfbe814602a092e86', '92', '5', 'Toufan matter', '2015-11-04', '2015-11-19', '1', null);
-INSERT INTO `tb_matter` VALUES ('51', 'AFS4922b4c5ba927ffc', '66', '5', 'Telesindo Group Matter', '2015-11-19', '2015-11-20', '1', null);
-INSERT INTO `tb_matter` VALUES ('53', 'AFS45acb4ef7b5b4d7f', '50', '5', 'Postindo matter', '2015-10-28', '2015-11-26', '1', null);
-INSERT INTO `tb_matter` VALUES ('54', 'AFSf942e479c9da234a', '74', '6', 'Matter wartawan sindo', '2015-11-05', '2015-11-16', '1', null);
-INSERT INTO `tb_matter` VALUES ('55', 'AFS27a9e4852adf3e22', '59', '6', 'RSU Herna matter', '2015-11-02', '2015-11-11', '1', null);
-INSERT INTO `tb_matter` VALUES ('56', 'AFSb9e1c4a129735b96', '9', '6', 'Matter BHIT', '2015-11-01', '2015-11-26', '1', null);
-INSERT INTO `tb_matter` VALUES ('60', 'AFS736324E40B7213D5', '2', '1', 'Matter Ali Muhhamad', '2015-08-30', '2015-12-04', '1', null);
-INSERT INTO `tb_matter` VALUES ('63', 'AFSE74B34BB9A64D376', '76', '5', 'yuli', '2015-11-04', '2015-12-05', '1', null);
 INSERT INTO `tb_matter` VALUES ('64', 'AFS93D5C418EA446A26', '61', '6', 'semesta marga', '2015-11-18', '2015-11-21', '1', null);
 INSERT INTO `tb_matter` VALUES ('66', 'AFSA768E4E0C9F2E431', '67', '2', 'Matter Telesindo Group', '2015-10-28', '2015-11-26', '1', null);
 INSERT INTO `tb_matter` VALUES ('67', 'AFS8D9A348C3B629E4A', '61', '2', 'Matter Semesta Marga Raya', '2015-10-26', '2015-11-25', '1', null);
 INSERT INTO `tb_matter` VALUES ('69', 'AFS0E45D4D7D9CE6C1D', '35', '4', 'Matter Meckel Ali', '2015-11-04', '2015-11-26', '1', null);
 INSERT INTO `tb_matter` VALUES ('70', 'AFSFBF5148DCB265314', '13', '5', 'Lorem Ipsum dolor sit amet', '2015-10-28', '2015-11-26', '1', null);
 INSERT INTO `tb_matter` VALUES ('71', 'AFSFE6A3430FA469C79', '17', '6', 'Matter Firhand Ali', '2015-11-03', '2015-11-27', '1', null);
-INSERT INTO `tb_matter` VALUES ('72', 'AFS658284946853C50B', '60', '1', 'Matter setia utama properti', '2015-12-08', '2015-12-25', '1', null);
-INSERT INTO `tb_matter` VALUES ('73', 'AFS4D7C74079B187959', '51', '1', 'Matter Queeen', '2016-01-06', '2016-04-15', '1', null);
 INSERT INTO `tb_matter` VALUES ('74', 'AFSAB9A14867B837358', '43', '1', 'Matter MNC Finance', '2015-08-03', '2016-08-25', '1', null);
 INSERT INTO `tb_matter` VALUES ('75', 'AFSB96EF4389949BE9B', '55', '1', 'Matter Reliance group', '2015-11-29', '2016-01-01', '1', null);
 INSERT INTO `tb_matter` VALUES ('76', 'AFSD2FAF4BCC8DF6014', '56', '1', 'Matter Sri Wahyusih SUbowo', '2015-12-02', '2016-01-01', '1', null);
@@ -253,15 +232,8 @@ INSERT INTO `tb_matter` VALUES ('79', 'AFSAB81B4A09AE0254E', '46', '1', 'NDSC Ma
 INSERT INTO `tb_matter` VALUES ('80', 'AFS8BC5A412C8B6D5F0', '65', '2', 'Matter Taman harapan indah', '2015-08-30', '2016-01-09', '1', null);
 INSERT INTO `tb_matter` VALUES ('81', 'AFSB9B294A74838818B', '57', '1', 'Matter Robert Tantular', '2015-12-16', '2015-12-31', '1', null);
 INSERT INTO `tb_matter` VALUES ('82', 'AFSA19964291B6C4D3A', '93', '6', 'asdasdasd', '2015-11-30', '2016-01-01', '1', null);
-INSERT INTO `tb_matter` VALUES ('83', 'AFS885C849D48C12BBD', '76', '6', 'fgfggf', '2015-11-29', '2015-12-23', '1', null);
 INSERT INTO `tb_matter` VALUES ('84', 'AFS8FD8D4940B1CC3C3', '94', '2', 'Investigasi Kriminal', '2015-09-01', '0000-00-00', '1', null);
-INSERT INTO `tb_matter` VALUES ('86', 'AFS413BF46A4AA07C20', '55', '3', 'Larasati', '2015-05-01', '2016-04-06', '1', null);
 INSERT INTO `tb_matter` VALUES ('87', 'AFSDE510424E935FE9D', '95', '2', 'MKI Tung-Feng', '2014-03-21', '0000-00-00', '1', null);
-INSERT INTO `tb_matter` VALUES ('88', 'AFS9F7234ECF88A3E37', '55', '3', 'AJRI dan ARI', '2015-06-01', '2016-04-06', '1', null);
-INSERT INTO `tb_matter` VALUES ('89', 'AFSCF0BC43FBB8E76C1', '55', '3', 'Tanah daan mogot', '2015-06-01', '2016-04-06', '1', null);
-INSERT INTO `tb_matter` VALUES ('90', 'AFS0E09B428BBD1675B', '55', '3', 'LP Bank Mega', '2015-06-01', '2016-04-06', '1', null);
-INSERT INTO `tb_matter` VALUES ('91', 'AFSD08864BADBFC349C', '55', '3', 'Reliance Retainer', '2015-06-01', '2016-04-06', '1', null);
-INSERT INTO `tb_matter` VALUES ('92', 'AFS6C7AD462D85EFB8B', '55', '3', 'Retainer 2', '2015-10-12', '2016-04-06', '1', null);
 
 -- ----------------------------
 -- Table structure for tb_matter_assign
@@ -272,42 +244,22 @@ CREATE TABLE `tb_matter_assign` (
   `id_matter` varchar(255) DEFAULT NULL,
   `id_user` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_matter_assign`)
-) ENGINE=InnoDB AUTO_INCREMENT=134 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=138 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_matter_assign
 -- ----------------------------
-INSERT INTO `tb_matter_assign` VALUES ('1', 'AFS4D7C74079B187959', '4');
-INSERT INTO `tb_matter_assign` VALUES ('2', 'AFS4D7C74079B187959', '1');
-INSERT INTO `tb_matter_assign` VALUES ('3', 'AFS4D7C74079B187959', '11');
-INSERT INTO `tb_matter_assign` VALUES ('4', 'AFS4D7C74079B187959', '7');
-INSERT INTO `tb_matter_assign` VALUES ('6', 'AFS658284946853C50B', '1');
-INSERT INTO `tb_matter_assign` VALUES ('7', 'AFS658284946853C50B', '3');
-INSERT INTO `tb_matter_assign` VALUES ('8', 'AFS658284946853C50B', '8');
-INSERT INTO `tb_matter_assign` VALUES ('9', 'AFS658284946853C50B', '16');
 INSERT INTO `tb_matter_assign` VALUES ('10', 'AFSd68d54c4da9559d6', '4');
 INSERT INTO `tb_matter_assign` VALUES ('11', 'AFSd68d54c4da9559d6', '13');
 INSERT INTO `tb_matter_assign` VALUES ('12', 'AFSd68d54c4da9559d6', '15');
 INSERT INTO `tb_matter_assign` VALUES ('13', 'AFSd68d54c4da9559d6', '15');
-INSERT INTO `tb_matter_assign` VALUES ('15', 'AFS7ad474b2bb3cfb61', '17');
-INSERT INTO `tb_matter_assign` VALUES ('19', 'AFS7ad474b2bb3cfb61', '13');
-INSERT INTO `tb_matter_assign` VALUES ('20', 'AFS7ad474b2bb3cfb61', '11');
 INSERT INTO `tb_matter_assign` VALUES ('21', 'AFS736324E40B7213D5', '12');
 INSERT INTO `tb_matter_assign` VALUES ('22', 'AFS736324E40B7213D5', '18');
 INSERT INTO `tb_matter_assign` VALUES ('23', 'AFS736324E40B7213D5', '16');
 INSERT INTO `tb_matter_assign` VALUES ('24', 'AFS736324E40B7213D5', '21');
-INSERT INTO `tb_matter_assign` VALUES ('25', 'AFS35f3b400da90646f', '15');
-INSERT INTO `tb_matter_assign` VALUES ('26', 'AFS35f3b400da90646f', '7');
-INSERT INTO `tb_matter_assign` VALUES ('27', 'AFS35f3b400da90646f', '17');
-INSERT INTO `tb_matter_assign` VALUES ('28', 'AFS35f3b400da90646f', '19');
-INSERT INTO `tb_matter_assign` VALUES ('29', 'AFS35f3b400da90646f', '21');
-INSERT INTO `tb_matter_assign` VALUES ('30', 'AFS4a03148558bf54b8', '2');
-INSERT INTO `tb_matter_assign` VALUES ('31', 'AFS4a03148558bf54b8', '5');
-INSERT INTO `tb_matter_assign` VALUES ('32', 'AFS4a03148558bf54b8', '10');
 INSERT INTO `tb_matter_assign` VALUES ('33', 'AFSAB9A14867B837358', '8');
 INSERT INTO `tb_matter_assign` VALUES ('34', 'AFSAB9A14867B837358', '15');
 INSERT INTO `tb_matter_assign` VALUES ('35', 'AFSAB9A14867B837358', '14');
-INSERT INTO `tb_matter_assign` VALUES ('37', 'AFS4D7C74079B187959', '27');
 INSERT INTO `tb_matter_assign` VALUES ('38', 'AFS00D1847DBAA78D93', '5');
 INSERT INTO `tb_matter_assign` VALUES ('39', 'AFS00D1847DBAA78D93', '14');
 INSERT INTO `tb_matter_assign` VALUES ('40', 'AFS00D1847DBAA78D93', '17');
@@ -320,10 +272,6 @@ INSERT INTO `tb_matter_assign` VALUES ('50', 'AFSFBF5148DCB265314', '5');
 INSERT INTO `tb_matter_assign` VALUES ('51', 'AFSFBF5148DCB265314', '15');
 INSERT INTO `tb_matter_assign` VALUES ('52', 'AFSFBF5148DCB265314', '18');
 INSERT INTO `tb_matter_assign` VALUES ('53', 'AFSA768E4E0C9F2E431', '11');
-INSERT INTO `tb_matter_assign` VALUES ('54', 'AFSb95be4d09a01ad52', '11');
-INSERT INTO `tb_matter_assign` VALUES ('55', 'AFSb95be4d09a01ad52', '9');
-INSERT INTO `tb_matter_assign` VALUES ('56', 'AFSb95be4d09a01ad52', '14');
-INSERT INTO `tb_matter_assign` VALUES ('57', 'AFSb95be4d09a01ad52', '15');
 INSERT INTO `tb_matter_assign` VALUES ('58', 'AFSFE6A3430FA469C79', '2');
 INSERT INTO `tb_matter_assign` VALUES ('60', 'AFSFE6A3430FA469C79', '9');
 INSERT INTO `tb_matter_assign` VALUES ('61', 'AFSFE6A3430FA469C79', '14');
@@ -335,7 +283,6 @@ INSERT INTO `tb_matter_assign` VALUES ('75', 'AFSACD0347408681778', '13');
 INSERT INTO `tb_matter_assign` VALUES ('76', 'AFS2D13B4B86BA57C07', '10');
 INSERT INTO `tb_matter_assign` VALUES ('77', 'AFS2D13B4B86BA57C07', '11');
 INSERT INTO `tb_matter_assign` VALUES ('78', 'AFS2D13B4B86BA57C07', '21');
-INSERT INTO `tb_matter_assign` VALUES ('79', 'AFS4774c475ab2bd559', '6');
 INSERT INTO `tb_matter_assign` VALUES ('80', 'AFSD2FAF4BCC8DF6014', '6');
 INSERT INTO `tb_matter_assign` VALUES ('81', 'AFSD2FAF4BCC8DF6014', '11');
 INSERT INTO `tb_matter_assign` VALUES ('82', 'AFSB96EF4389949BE9B', '3');
@@ -354,7 +301,6 @@ INSERT INTO `tb_matter_assign` VALUES ('104', 'AFS8BC5A412C8B6D5F0', '15');
 INSERT INTO `tb_matter_assign` VALUES ('105', 'AFSAB81B4A09AE0254E', '3');
 INSERT INTO `tb_matter_assign` VALUES ('106', 'AFSAB81B4A09AE0254E', '11');
 INSERT INTO `tb_matter_assign` VALUES ('107', 'AFSAB81B4A09AE0254E', '13');
-INSERT INTO `tb_matter_assign` VALUES ('108', 'AFS4a03148558bf54b8', '8');
 INSERT INTO `tb_matter_assign` VALUES ('109', 'AFSB9B294A74838818B', '2');
 INSERT INTO `tb_matter_assign` VALUES ('110', 'AFSB9B294A74838818B', '5');
 INSERT INTO `tb_matter_assign` VALUES ('114', 'AFSA768E4E0C9F2E431', '15');
@@ -376,6 +322,10 @@ INSERT INTO `tb_matter_assign` VALUES ('129', 'AFS413BF46A4AA07C20', '3');
 INSERT INTO `tb_matter_assign` VALUES ('131', 'AFSDE510424E935FE9D', '2');
 INSERT INTO `tb_matter_assign` VALUES ('132', 'AFSDE510424E935FE9D', '15');
 INSERT INTO `tb_matter_assign` VALUES ('133', 'AFSB9B294A74838818B', '1');
+INSERT INTO `tb_matter_assign` VALUES ('134', 'AFS88A5147BC9E4DB8C', '1');
+INSERT INTO `tb_matter_assign` VALUES ('135', 'AFS88A5147BC9E4DB8C', '1');
+INSERT INTO `tb_matter_assign` VALUES ('136', 'AFS88A5147BC9E4DB8C', '4');
+INSERT INTO `tb_matter_assign` VALUES ('137', 'AFS88A5147BC9E4DB8C', '8');
 
 -- ----------------------------
 -- Table structure for tb_matter_hourly
@@ -398,8 +348,6 @@ CREATE TABLE `tb_matter_hourly` (
 -- ----------------------------
 -- Records of tb_matter_hourly
 -- ----------------------------
-INSERT INTO `tb_matter_hourly` VALUES ('7', 'AFSb95be4d09a01ad52', '100000000', '150000000', '200000000', '20000000', '30000000', '50000000', '25', 'keterangan matter RCTI');
-INSERT INTO `tb_matter_hourly` VALUES ('8', 'AFS4774c475ab2bd559', '10000000', '15000000', '2000000', '30000000', '5000000', '2000000', '12', 'keterangan');
 INSERT INTO `tb_matter_hourly` VALUES ('11', 'AFSA768E4E0C9F2E431', '120000000', '30000000', '30000000', '50000000', '90000000', '10000000', '25', 'Lorem ipsum dolor sit amet');
 INSERT INTO `tb_matter_hourly` VALUES ('12', 'AFS8D9A348C3B629E4A', '50000000', '10000000', '20000000', '500000', '15000000', '10000000', '25', 'lorem ipsum dolor sit amet');
 INSERT INTO `tb_matter_hourly` VALUES ('13', 'AFS8BC5A412C8B6D5F0', '50000000', '10000000', '20000000', '30000000', '60000000', '10000000', '25', 'lorem ipsum dolor sit amet');
@@ -427,19 +375,13 @@ CREATE TABLE `tb_matter_lumpsum` (
 -- ----------------------------
 -- Records of tb_matter_lumpsum
 -- ----------------------------
-INSERT INTO `tb_matter_lumpsum` VALUES ('7', 'AFS7ad474b2bb3cfb61', '500000000', '150000000', '150000000', '200000000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Desc Term 2', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'ooo');
-INSERT INTO `tb_matter_lumpsum` VALUES ('13', 'AFS4a03148558bf54b8', '10000000', '10000000', '5000000', '1000000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet');
-INSERT INTO `tb_matter_lumpsum` VALUES ('14', 'AFS35f3b400da90646f', '50000000', '10000000', '20000000', '30000000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo');
-INSERT INTO `tb_matter_lumpsum` VALUES ('18', 'AFS736324E40B7213D5', '200000', '25000000', '30000000', '45000000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'lorem ipsum dolor sit amet', 'lorem ipsum dolor sit amet', 'lorem ipsum dolor sit amet');
-INSERT INTO `tb_matter_lumpsum` VALUES ('19', 'AFS658284946853C50B', '120000000', '10000000', '20000000', '30000000', 'lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'lorem ipsum dolor sit amet', 'ggg');
-INSERT INTO `tb_matter_lumpsum` VALUES ('20', 'AFS4D7C74079B187959', '65000000', '50000000', '500000', '60000000', 'lorem ipsum dolor sit amet', 'lorem ipsum dolor sit amet', 'lorem ipsum dolor sit amet', 'lorem ipsum dolor sit amet');
-INSERT INTO `tb_matter_lumpsum` VALUES ('21', 'AFSAB9A14867B837358', '500000000', '125000000', '180000000', '300000000', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet');
-INSERT INTO `tb_matter_lumpsum` VALUES ('22', 'AFSB96EF4389949BE9B', '50000000', '10000000', '10000000', '30000000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet');
-INSERT INTO `tb_matter_lumpsum` VALUES ('23', 'AFSD2FAF4BCC8DF6014', '50000000', '20000000', '30000000', '100000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet');
-INSERT INTO `tb_matter_lumpsum` VALUES ('24', 'AFS2D13B4B86BA57C07', '120000000', '20000000', '50000000', '50000000', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet');
-INSERT INTO `tb_matter_lumpsum` VALUES ('25', 'AFSACD0347408681778', '150000000', '50000000', '15000000', '60000000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet');
-INSERT INTO `tb_matter_lumpsum` VALUES ('26', 'AFSAB81B4A09AE0254E', '350000000', '250000000', '50000000', '100000000', 'Lorem ipsum dolor sit amet', 'lorem ipsum dolor', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo');
-INSERT INTO `tb_matter_lumpsum` VALUES ('27', 'AFSB9B294A74838818B', '500000000', '100000000', '200000000', '200000000', 'asd', 'aaaaaaaaa', 'aaaaaaaaaaaaaa', 'Keterangan matter robert tantular');
+INSERT INTO `tb_matter_lumpsum` VALUES ('21', 'AFSAB9A14867B837358', '10000', '125000000', '180000000', '300000000', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet');
+INSERT INTO `tb_matter_lumpsum` VALUES ('22', 'AFSB96EF4389949BE9B', '6000', '10000000', '10000000', '30000000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet');
+INSERT INTO `tb_matter_lumpsum` VALUES ('23', 'AFSD2FAF4BCC8DF6014', '250000', '20000000', '30000000', '100000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet');
+INSERT INTO `tb_matter_lumpsum` VALUES ('24', 'AFS2D13B4B86BA57C07', '100000', '20000000', '50000000', '50000000', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet');
+INSERT INTO `tb_matter_lumpsum` VALUES ('25', 'AFSACD0347408681778', '5000', '50000000', '15000000', '60000000', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet');
+INSERT INTO `tb_matter_lumpsum` VALUES ('26', 'AFSAB81B4A09AE0254E', '3500', '250000000', '50000000', '100000000', 'Lorem ipsum dolor sit amet', 'lorem ipsum dolor', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo');
+INSERT INTO `tb_matter_lumpsum` VALUES ('27', 'AFSB9B294A74838818B', '9000', '5000', '2000', '2000', 'asd', 'aaaaaaaaa', 'aaaaaaaaaaaaaa', 'Keterangan matter robert tantular');
 
 -- ----------------------------
 -- Table structure for tb_matter_ope
@@ -570,13 +512,17 @@ CREATE TABLE `tb_matter_retainer_assign` (
   `id_user` int(11) DEFAULT NULL,
   `id_retainer` int(11) NOT NULL,
   PRIMARY KEY (`id_matter_assign`)
-) ENGINE=InnoDB AUTO_INCREMENT=136 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=151 DEFAULT CHARSET=latin1;
 
 -- ----------------------------
 -- Records of tb_matter_retainer_assign
 -- ----------------------------
-INSERT INTO `tb_matter_retainer_assign` VALUES ('134', 'AFS88A5147BC9E4DB8C', '1', '0');
-INSERT INTO `tb_matter_retainer_assign` VALUES ('135', 'AFS88A5147BC9E4DB8C', '2', '0');
+INSERT INTO `tb_matter_retainer_assign` VALUES ('134', 'AFS88A5147BC9E4DB8C', '1', '21');
+INSERT INTO `tb_matter_retainer_assign` VALUES ('135', 'AFS88A5147BC9E4DB8C', '2', '21');
+INSERT INTO `tb_matter_retainer_assign` VALUES ('147', 'AFS88A5147BC9E4DB8C', '4', '21');
+INSERT INTO `tb_matter_retainer_assign` VALUES ('148', 'AFS88A5147BC9E4DB8C', '6', '21');
+INSERT INTO `tb_matter_retainer_assign` VALUES ('149', 'AFSFFFBE4AFEA342B8F', '2', '21');
+INSERT INTO `tb_matter_retainer_assign` VALUES ('150', 'AFSFFFBE4AFEA342B8F', '3', '21');
 
 -- ----------------------------
 -- Table structure for tb_matter_successfee
@@ -1451,7 +1397,7 @@ INSERT INTO `tb_work_type` VALUES ('13', 'TRAVEL', 'TR');
 -- View structure for v_client_retainer
 -- ----------------------------
 DROP VIEW IF EXISTS `v_client_retainer`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_client_retainer` AS SELECT
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost`  VIEW `v_client_retainer` AS SELECT
 tb_matter_retainer2.id_retainer,
 tb_matter_retainer2.jangka_waktu,
 tb_matter_retainer2.biaya,
@@ -1465,13 +1411,13 @@ tb_matter_retainer2.id_client,
 (select count(`tb_matter_retainer`.`id_retainer`) from `tb_matter_retainer` where (`tb_matter_retainer`.`id_retainer` = `tb_matter_retainer2`.`id_retainer`)) AS `jml_matter`
 FROM
 tb_matter_retainer2
-INNER JOIN tb_client ON tb_matter_retainer2.id_client = tb_client.id_client ;
+INNER JOIN tb_client ON tb_matter_retainer2.id_client = tb_client.id_client ; ;
 
 -- ----------------------------
 -- View structure for v_matter_assign
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_assign`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_assign` AS select `tb_matter_assign`.`id_matter_assign` AS `id_matter_assign`,`tb_matter_assign`.`id_matter` AS `id_matter`,`tb_matter_assign`.`id_user` AS `id_user`,`tb_user`.`nama` AS `nama`,`tb_user`.`inisial` AS `inisial` from (`tb_matter_assign` join `tb_user` on((`tb_user`.`id_user` = `tb_matter_assign`.`id_user`))); ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost`  VIEW `v_matter_assign` AS select `tb_matter_assign`.`id_matter_assign` AS `id_matter_assign`,`tb_matter_assign`.`id_matter` AS `id_matter`,`tb_matter_assign`.`id_user` AS `id_user`,`tb_user`.`nama` AS `nama`,`tb_user`.`inisial` AS `inisial` from (`tb_matter_assign` join `tb_user` on((`tb_user`.`id_user` = `tb_matter_assign`.`id_user`))); ;
 
 -- ----------------------------
 -- View structure for v_matter_detail
@@ -1507,35 +1453,13 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW
 -- View structure for v_matter_retainer
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_retainer`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_retainer` AS SELECT
-tb_matter.id_matter AS id_matter,
-tb_matter.id_client AS id_client,
-tb_matter.id_payment AS id_payment,
-tb_matter.matter AS matter,
-tb_matter.open_date AS open_date,
-tb_matter.close_date AS close_date,
-tb_matter.active AS active,
-tb_matter_retainer.jangka_waktu AS jangka_waktu,
-tb_matter_retainer.biaya AS biaya,
-tb_matter_retainer.jam AS jam,
-tb_matter_retainer.disc AS disc,
-tb_matter_retainer.description AS description,
-tb_client.nama_client AS nama_client,
-tb_payment.payment_name AS payment_name,
-tb_matter.id AS id,
-(select count(`tb_matter_assign`.`id_matter`) from `tb_matter_assign` where (`tb_matter_assign`.`id_matter` = `tb_matter`.`id_matter`)) AS assigned,
-(select count(`tb_submatter`.`id_matter`) from `tb_submatter` where (`tb_submatter`.`id_matter` = `tb_matter`.`id_matter`)) AS jml_subMatter,
-tb_matter_retainer.id_parent
-from (((`tb_matter` join `tb_matter_retainer` on((`tb_matter_retainer`.`id_matter` = `tb_matter`.`id_matter`))) join `tb_client` on((`tb_client`.`id_client` = `tb_matter`.`id_client`))) join `tb_payment` on((`tb_payment`.`id_payment` = `tb_matter`.`id_payment`)))
-WHERE
-(tb_matter.id_matter = tb_matter_retainer.id_matter) AND
-tb_matter_retainer.id_parent IS NULL ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_retainer` AS select `tb_matter`.`id_matter` AS `id_matter`,`tb_matter`.`id_client` AS `id_client`,`tb_matter`.`id_payment` AS `id_payment`,`tb_matter`.`matter` AS `matter`,`tb_matter`.`open_date` AS `open_date`,`tb_matter`.`close_date` AS `close_date`,`tb_matter`.`active` AS `active`,`tb_matter_retainer`.`jangka_waktu` AS `jangka_waktu`,`tb_matter_retainer`.`biaya` AS `biaya`,`tb_matter_retainer`.`jam` AS `jam`,`tb_matter_retainer`.`disc` AS `disc`,`tb_matter_retainer`.`description` AS `description`,`tb_client`.`nama_client` AS `nama_client`,`tb_payment`.`payment_name` AS `payment_name`,`tb_matter`.`id` AS `id`,(select count(`tb_matter_assign`.`id_matter`) from `tb_matter_assign` where (`tb_matter_assign`.`id_matter` = `tb_matter`.`id_matter`)) AS `assigned`,(select count(`tb_submatter`.`id_matter`) from `tb_submatter` where (`tb_submatter`.`id_matter` = `tb_matter`.`id_matter`)) AS `jml_subMatter` from (((`tb_matter` join `tb_matter_retainer` on((`tb_matter_retainer`.`id_matter` = `tb_matter`.`id_matter`))) join `tb_client` on((`tb_client`.`id_client` = `tb_matter`.`id_client`))) join `tb_payment` on((`tb_payment`.`id_payment` = `tb_matter`.`id_payment`))) where (`tb_matter`.`id_matter` = `tb_matter_retainer`.`id_matter`); ;
 
 -- ----------------------------
 -- View structure for v_matter_retainer_assign
 -- ----------------------------
 DROP VIEW IF EXISTS `v_matter_retainer_assign`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `v_matter_retainer_assign` AS SELECT
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost`  VIEW `v_matter_retainer_assign` AS SELECT
 tb_matter_retainer_assign.id_matter_assign,
 tb_matter_retainer_assign.id_matter,
 tb_matter_retainer_assign.id_user,

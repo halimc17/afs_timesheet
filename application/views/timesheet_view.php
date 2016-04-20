@@ -17,6 +17,13 @@
 			"oTableTools": {
 			},			
 		});
+
+		var table = $("#table-5").dataTable({
+			"sPaginationType": "bootstrap",
+			"sDom": "<'row'<'col-xs-6 col-left'l><'col-xs-6 col-right'<'export-data'T>f>r>t<'row'<'col-xs-6 col-left'i><'col-xs-6 col-right'p>>",
+			"oTableTools": {
+			},			
+		});
 	});
 
 	function inputTimesheet(id){
@@ -155,6 +162,63 @@
 										<th>Timesheet</th>										
 										<th>Reimburstment</th>										
 										<th style="width:160px;">Action</th>
+									</tr>
+								</tfoot>
+							</table>
+
+							<table class="table table-bordered datatable" id="table-5">
+								<thead>
+									<tr>
+										<th>No</th>
+										<th>Id Matter</th>										
+										<th>Payment</th>										
+										<th>Client</th>
+										<th>Matter</th>																														
+										<th>Open Date</th>																				
+										<th>Close Date</th>																				
+										<th>Action</th>																				
+									</tr>
+								</thead>
+								<tbody>
+								<?php 
+								$counter = 1;
+								if(isset($matter_assigned_retainer)){
+									foreach($matter_assigned_retainer as $row8){ ?>
+									<tr>
+										<th><?php echo $counter; ?></th>
+										<th><?php echo $row8->id_matter; ?></th>										
+										<th>RETAINER</th>										
+										<th><?php echo $row8->nama_client; ?></th>
+										<th><?php echo $row8->matter; ?></th>																														
+										<th><?php echo $row8->open_date; ?></th>																				
+										<th><?php echo $row8->close_date; ?></th>																				
+										<th class="center">
+											<button type="button" name="btnEditAction" class="btn btn-success" id="<?php echo $row->id_matter; ?>" onclick="inputTimesheet('<?php echo $row->id_matter; ?>')">												
+												<i class="glyphicon glyphicon-arrow-down"></i>
+											</button>
+
+											<button type="button" name="btnInputReimburstment" class="btn btn-success" id="<?php echo $row->id_matter; ?>" onclick="inputReimburstment('<?php echo $row->id_matter; ?>')">												
+												<i class="glyphicon glyphicon-usd"></i>
+											</button>
+											<button type="button" name="btnTimesheetDetail" class="btn btn-success" id="<?php echo $row->id_matter; ?>" onclick="timesheetDetail('<?php echo $row->id_matter; ?>')">												
+												<i class="glyphicon glyphicon-eye-open"></i>
+											</button>											
+										</th>																				
+									</tr>
+									<?php $counter++;}
+									} ?>
+									
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>No</th>
+										<th>Id Matter</th>										
+										<th>Payment</th>										
+										<th>Client</th>
+										<th>Matter</th>																														
+										<th>Open Date</th>																				
+										<th>Close Date</th>																				
+										<th>Action</th>																				
 									</tr>
 								</tfoot>
 							</table>

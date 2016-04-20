@@ -508,6 +508,20 @@ class Matter extends CI_Controller {
 		echo json_encode(array("status" => TRUE));
 	}
 
+	public function assign_retainer_user(){
+
+
+		$data = array(
+			'id_matter' => $this->input->post('txt_id_matter'),
+			'id_user' => $this->input->post('combo_user'),
+			'id_retainer' => $this->input->post('txt_id_retainer')
+			);
+
+		$this->load->model('matter_assign_model');
+		$this->matter_assign_model->add_record_retainer($data);
+		echo json_encode(array("status" => TRUE));
+	}
+
 	public function delete_assign(){
 		$this->load->model('matter_assign_model');
 		$this->matter_assign_model->delete_record($this->uri->segment(4));

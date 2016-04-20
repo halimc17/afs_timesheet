@@ -12,9 +12,12 @@ class Timesheet extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->Model('matter_assign_model');
+		$this->load->Model('matter_assign_model');		
 		$this->load->Model('worktype_model');
+
+
 		$data['matter_assigned'] = $this->matter_assign_model->get_assign();
+		$data['matter_assigned_retainer'] = $this->matter_assign_model->get_assign_retainer();
 		$data['worktype'] = $this->worktype_model->get_records();
 
 		$this->load->model('reimburstmentType_model');

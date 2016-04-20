@@ -12,6 +12,10 @@ class Matter_assign_model extends CI_Model{
 		$this->db->insert('tb_matter_assign',$data);
 	}
 
+	public function add_record_retainer($data){
+		$this->db->insert('tb_matter_retainer_assign',$data);
+	}
+
 	public function delete_record($data){
 		$this->db->where('id_matter_assign', $data);
 		$this->db->delete('tb_matter_assign'); 
@@ -39,6 +43,31 @@ class Matter_assign_model extends CI_Model{
 									INNER JOIN tb_payment ON tb_payment.id_payment = tb_matter.id_payment
 									WHERE
 									tb_matter_assign.id_user = ".$this->session->userdata('id_user')." ORDER BY tb_matter.id DESC");		
+		return $query->result();
+	}
+
+	public function get_assign_retainer(){
+		$query = $this->db->query("SELECT
+									tb_matter_retainer.id,
+									tb_matter_retainer.id_retainer,
+									tb_matter_retainer.id_matter,
+									tb_matter_retainer.matter,
+									tb_matter_retainer.description,
+									tb_matter_retainer_assign.id_user,
+									tb_matter_retainer_assign.id_retainer,
+									tb_matter_retainer2.jangka_waktu,
+									tb_matter_retainer2.biaya,
+									tb_matter_retainer2.menit,
+									tb_matter_retainer2.description,
+									tb_matter_retainer2.open_date,
+									tb_matter_retainer2.close_date,
+									tb_client.nama_client
+									FROM
+									tb_matter_retainer
+									INNER JOIN tb_matter_retainer_assign ON tb_matter_retainer_assign.id_matter = tb_matter_retainer.id_matter
+									INNER JOIN tb_matter_retainer2 ON tb_matter_retainer2.id_retainer = tb_matter_retainer.id_retainer
+									INNER JOIN tb_client ON tb_client.id_client = tb_matter_retainer2.id_client
+									WHERE tb_matter_retainer_assign.id_user = ".$this->session->userdata('id_user')." ORDER BY tb_matter_retainer_assign.id_matter_assign DESC");
 		return $query->result();
 	}
 }

@@ -27,14 +27,14 @@
 	function submit_assign(id){
 		//alert(id);		
 		 $.ajax({
-	            url : "<?php echo site_url('matter/assign_user'); ?>",
+	            url : "<?php echo site_url('matter/assign_retainer_user'); ?>",
 	            type: "POST",
 	            data: $('#formAssign').serialize(),
 	            dataType: "JSON",
 	            success: function(data)
 	            {             
 	             	//alert('User Assigned');
-	             	window.location = "<?php echo site_url('matter/assign/').'/'.$this->uri->segment(3) ?>";
+	             	window.location = "<?php echo site_url('matter/assign_retainer/').'/'.$this->uri->segment(3).'/'.$this->uri->segment(4) ?>";
 	            },
 	            error: function (jqXHR, textStatus, errorThrown)
 	            {
@@ -98,6 +98,7 @@
 												<div class="form-group">
 													<label for="txt_matter" class="control-label">Matter</label>							
 													<input type="text" class="form-control" id="txt_matter" name="txt_matter" value="<?php echo $matter; ?>">
+													<input type="hidden" class="form-control" id="txt_id_retainer" name="txt_id_retainer" value="<?php echo $this->uri->segment(4); ?>">
 												</div>						
 											</div>
 										</div>
@@ -146,7 +147,7 @@
 											<div class="col-md-6">
 												<div class="form-group">
 													<button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='<?php echo site_url('matter/retainer_detail/'.$this->uri->segment(4)); ?>'">DONE</button>
-													<button type="button" name="btnAssignUser" class="btn btn-info" id="#">ASSIGN</button>
+													<button type="button" name="btnAssignUser" class="btn btn-info" id="<?php echo $id_matter; ?>">ASSIGN</button>
 												</div>
 											</div>
 										</div>
